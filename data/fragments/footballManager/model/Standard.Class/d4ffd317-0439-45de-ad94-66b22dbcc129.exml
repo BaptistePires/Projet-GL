@@ -1014,7 +1014,7 @@
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
-                  <ATT name="Changeable">AccesNone</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
                   <ATT name="IsDerived">false</ATT>
                   <ATT name="IsOrdered">false</ATT>
                   <ATT name="IsUnique">false</ATT>

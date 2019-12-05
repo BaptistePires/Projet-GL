@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Consulter les informations de l'administration" version="4">
   <OBJECT>
     <ID name="Consulter les informations de l'administration" mc="Standard.UseCase" uid="ee5a6d03-8d8f-4cb9-8cc3-288bb533ae05"/>
-    <PID name="footballmanager" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+    <PID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -59,6 +59,9 @@
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
+      </COMP>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="d99bde82-3a46-4392-bf5b-b2ba2b852458"/>
       </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
