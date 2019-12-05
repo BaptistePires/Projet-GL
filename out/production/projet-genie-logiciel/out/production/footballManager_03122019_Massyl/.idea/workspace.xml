@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ccffe042-b7f5-4c0e-9dbf-e6771b8ad5e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ImagePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/footballManager_03122019_Massyl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arbitre.java" beforeDir="false" afterPath="$PROJECT_DIR$/Arbitre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entraineur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Entraineur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanceurDePartie.java" beforeDir="false" afterPath="$PROJECT_DIR$/LanceurDePartie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PartieSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/PartieSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/Personne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/President.java" beforeDir="false" afterPath="$PROJECT_DIR$/President.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UWYglCG9SLo7GTBBUJfndTT4fM" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="footballManager_03122019_Massyl" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccffe042-b7f5-4c0e-9dbf-e6771b8ad5e1" name="Default Changelist" comment="" />
+      <created>1575473931517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575473931517</updated>
+      <workItem from="1575473933494" duration="18492000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

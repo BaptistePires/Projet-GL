@@ -10,7 +10,7 @@ import javafx.stage.Window;
 public class Main extends Application {
     public static Stage mainStage;
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ihm/menuPrincipal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../ihm/lanceurDePartie.fxml"));
         primaryStage.setTitle("Football Manager");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

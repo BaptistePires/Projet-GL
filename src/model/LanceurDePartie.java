@@ -19,7 +19,7 @@ public class LanceurDePartie {
 
     public void configure(){
         try{
-            BufferedReader br = new BufferedReader(new FileReader("data/conf"));
+            BufferedReader br = new BufferedReader(new FileReader("src/data/conf"));
             String line;
             TreeMap<String, String> dictionnaire = new TreeMap<String, String>();
             String[] keyValue;
