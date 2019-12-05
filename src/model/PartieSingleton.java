@@ -1,6 +1,10 @@
 package model;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.io.Serializable;
+import java.util.Comparator;
+import java.util.List;
 
 public final class PartieSingleton implements Serializable {
     private String nomFichierSauvegarde;
@@ -69,6 +73,26 @@ public final class PartieSingleton implements Serializable {
     }
 
     public void avancerLeTemps() {
+        while(true){
+            /* Ajout d'un jour à la date courante et récupération des évenements. */
+            dateCourante.avancerDUnJour();
+            List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
+
+            /* Tri des évenements (Les plus importants en tête de liste) */
+            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
+
+            /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
+            * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
+            * et on recommence. */
+            if(evenements.get(0).getImportance()) {
+                break;
+            }else{
+                for(Evenement e: evenements) {
+                    e.processEvenement();
+                }
+            }
+        }
+
     }
 
     public void initDateCourante() {

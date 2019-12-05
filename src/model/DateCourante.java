@@ -6,11 +6,11 @@ public class DateCourante {
     private Date dateDuJour;
 
     public Date getJourCourant() {
-        // TODO Auto-generated return
-        return null;
+        return dateDuJour;
     }
 
     public void avancerDUnJour() {
+        dateDuJour = new Date(dateDuJour.getTime() + (1000 * 60 * 60 * 24));
     }
 
 }
