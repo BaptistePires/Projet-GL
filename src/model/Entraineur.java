@@ -15,6 +15,7 @@ public class Entraineur extends Personne {
     public Entraineur(String nom, String prenom, Date dateDeNaissance, String historique, Equipe equipe){
         this(nom, prenom, dateDeNaissance, historique);
         this.equipe = equipe;
+        equipe.setEntraineur(this);
     }
 
     public Equipe getEquipe(){

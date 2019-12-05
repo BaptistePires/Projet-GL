@@ -1,6 +1,5 @@
 package model;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.TreeMap;
 
@@ -10,8 +9,6 @@ public class LanceurDePartie {
     private static String dossierDeStockageDesDonnees="";
 
     public static LanceurDePartie INSTANCE=new LanceurDePartie();
-
-    public static JFrame fenetrePrincipale;
 
     private LanceurDePartie(){
         configure();
