@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="model" version="4">
+  <OBJECT>
+    <ID name="model" mc="Standard.Package" uid="40267513-6e5d-4d86-9fa6-b933207a431b"/>
+    <PID name="footballManagerDiagrammeDesClassesEtSequences" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[model]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Message" mc="Standard.Class" uid="50b66481-cf0a-4c7a-b681-c5f0bdea1dd8"/>
+        <COMPID name="DateCourante" mc="Standard.Class" uid="19df163b-2151-4476-b0a8-7f43dde4bf8c"/>
+        <COMPID name="Fifa" mc="Standard.Class" uid="f6f552f3-97d0-46a3-9677-42edcc7c2955"/>
+        <COMPID name="BoiteMail" mc="Standard.Class" uid="bd5ce607-5c25-4fcf-8966-ab58934cd426"/>
+        <COMPID name="Evenement" mc="Standard.Class" uid="854df4cd-9ab1-40af-b485-5350f9e0c838"/>
+        <COMPID name="Transfert" mc="Standard.Class" uid="2da39be3-3e05-4a9b-aaad-5bb01ec14070"/>
+        <COMPID name="Journee" mc="Standard.Class" uid="0fe1f835-c564-4c6e-a608-8d4c5b7b83f0"/>
+        <COMPID name="Arbitre" mc="Standard.Class" uid="f7fc1c87-4642-4392-92d4-f8a1b5ebd33f"/>
+        <COMPID name="Ligue" mc="Standard.Class" uid="47c2203c-9c63-475a-8982-ba94c1dcf816"/>
+        <COMPID name="Match" mc="Standard.Class" uid="e980740e-ea5a-4251-9f0e-5717a6448f6a"/>
+        <COMPID name="Calendrier" mc="Standard.Class" uid="042aec4b-3c23-41a7-863b-1f64365eb07e"/>
+        <COMPID name="Contrat" mc="Standard.Class" uid="a507b321-6236-4965-aa5f-261ce36d86bb"/>
+        <COMPID name="Joueur" mc="Standard.Class" uid="3e75c2f1-f322-4da1-b60f-d041f2b2f83e"/>
+        <COMPID name="President" mc="Standard.Class" uid="6c0bfd95-523b-4303-bf50-8494bdd0b1a2"/>
+        <COMPID name="Entraineur" mc="Standard.Class" uid="a62c656b-c477-4c32-ac07-3cd92a19b277"/>
+        <COMPID name="PartieSingleton" mc="Standard.Class" uid="c6f5fecf-3cf5-43b9-a196-0135700448f3"/>
+        <COMPID name="Mercato" mc="Standard.Class" uid="d86b3a2c-a5f4-468f-9787-921dea9810ed"/>
+        <COMPID name="Equipe" mc="Standard.Class" uid="d4ffd317-0439-45de-ad94-66b22dbcc129"/>
+        <COMPID name="Personne" mc="Standard.Class" uid="df4c6153-baf3-442a-aa0a-cfd789e8290f"/>
+        <COMPID name="Strategie" mc="Standard.Class" uid="0fbfb446-6ecc-4850-a2a8-44a9d55ccf33"/>
+        <COMPID name="Statistiques" mc="Standard.Class" uid="69853fa9-c879-45e4-8090-47e7a00829ff"/>
+        <COMPID name="StatistiquesEquipe" mc="Standard.Class" uid="3ba1b13f-58a2-42cf-90e8-12cb80b38acd"/>
+        <COMPID name="StatistiquesJoueur" mc="Standard.Class" uid="a1eab2df-3c17-44ac-8a36-5353d793df6f"/>
+        <COMPID name="StatistiquesSaisonJoueur" mc="Standard.Class" uid="7d8d7b15-791a-4942-8290-a4605ea3f9a9"/>
+        <COMPID name="StatistiquesSaisonEquipe" mc="Standard.Class" uid="99a1b130-1353-4b6d-9171-0ddbd7eee870"/>
+        <COMPID name="Stade" mc="Standard.Class" uid="e03499a7-d46e-4a7b-9d07-47804c165c98"/>
+        <COMPID name="ContratFactory" mc="Standard.Class" uid="58d27ec4-92fa-4f92-b00a-5cb8ff8c7cb9"/>
+        <COMPID name="LanceurDePartie" mc="Standard.Class" uid="240444ea-6d5d-489b-97a6-896a976b60be"/>
+        <COMPID name="MessageFactorySingleton" mc="Standard.Class" uid="ebc13cda-1e69-49d0-87a1-b1179e18fffa"/>
+        <COMPID name="Information" mc="Standard.Class" uid="08634c92-42fe-4342-b94e-45e2713ebec1"/>
+        <COMPID name="Main" mc="Standard.Class" uid="dd5edcc8-0044-4f52-9852-8a00f218cc25"/>
+        <COMPID name="StrategieOffensive" mc="Standard.Class" uid="b86bf5b3-90ef-423f-9610-c2bae44e40e8"/>
+        <COMPID name="StrategieDefensive" mc="Standard.Class" uid="c6b3875a-d11f-4dd4-b975-4a191bc44dfb"/>
+        <OBJECT>
+          <ID name="Poste" mc="Standard.Enumeration" uid="cbdd7d87-6ec0-4d81-ab4c-3719bc440c86"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Poste]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="GB" mc="Standard.EnumerationLiteral" uid="29a33cb2-a6d9-455e-ac86-599a49626f8e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[GB]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ATT" mc="Standard.EnumerationLiteral" uid="dac0b72b-b234-4621-94fc-dbc746c5f001"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ATT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="DEF" mc="Standard.EnumerationLiteral" uid="c9626302-dbb8-4a40-bf0d-e970610d62cf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[DEF]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="MIL" mc="Standard.EnumerationLiteral" uid="3f2de620-efd8-4a5f-a1dd-ae807d14c3c4"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[MIL]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

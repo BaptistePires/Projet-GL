@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="footballManager" version="4">
+  <OBJECT>
+    <ID name="footballManager" mc="Standard.Project" uid="9b7d07b2-735c-473b-afa0-f86bafb6a3a5"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[footballManager]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+        <COMPID name="footballManagerDiagrammeDesClasses" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="footballManager" mc="Infrastructure.DiagramSet" uid="055e9e8d-0445-4c86-923e-402048b8bb3a"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

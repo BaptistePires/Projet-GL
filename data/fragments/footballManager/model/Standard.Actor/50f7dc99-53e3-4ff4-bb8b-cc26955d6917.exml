@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Utilisateur" version="4">
+  <OBJECT>
+    <ID name="Utilisateur" mc="Standard.Actor" uid="50f7dc99-53e3-4ff4-bb8b-cc26955d6917"/>
+    <PID name="footballManagerDiagrammeDesClassesEtSequences" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Utilisateur]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

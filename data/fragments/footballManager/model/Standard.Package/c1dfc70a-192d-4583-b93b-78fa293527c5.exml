@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="java" version="4">
+  <OBJECT>
+    <ID name="java" mc="Standard.Package" uid="c1dfc70a-192d-4583-b93b-78fa293527c5"/>
+    <PID name="footballManagerDiagrammeDesClassesEtSequences" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[java]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="util" mc="Standard.Package" uid="9d45a034-258d-43b1-a92f-d6b590e6ae51"/>
+        <COMPID name="io" mc="Standard.Package" uid="1f8a4e0d-88a7-4013-8dcf-cd36c03d3344"/>
+        <COMPID name="lang" mc="Standard.Package" uid="64e93214-6897-4bc0-89fb-10c916948645"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="02b66ede-3494-4a67-b192-0253db3ee81f"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaExtern" mc="Infrastructure.TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,4 @@
+.mainWindow{
+    -fx-background-image:url("../../data/data/bg_menuPrincipal.jpg");
+    -fx-background-size: auto;
+}
