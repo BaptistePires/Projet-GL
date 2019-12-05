@@ -1,8 +1,6 @@
-#Thu Dec 05 23:15:40 CET 2019
+#Thu Dec 05 23:39:45 CET 2019
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.development.perspective.parentId=app.ui.ext_com.partstack.bottom
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.diagram.perspective.parentId=app.ui.ext_com.partstack.right
-org.modelio.diagram.editor.OpenedDiagrams2='Consulter les informations de l'administration' {f4631206-9b49-459e-a8f8-cbe84ee8f2eb} Standard.SequenceDiagram
-org.modelio.diagram.editor.OpenedDiagrams1='Sequence Diagram - Consulter les informations des \u00E9quipes' {7732bd3b-5b32-4fdb-adf6-92effa6f8f4f} Standard.SequenceDiagram
 org.modelio.diagram.editor.OpenedDiagrams0='footballManagerDiagrammeDesClasses Class diagram' {3ce18249-4696-4010-b7c2-d68774fe008a} Standard.ClassDiagram
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts

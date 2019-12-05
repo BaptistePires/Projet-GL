@@ -622,7 +622,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getJoueurs" mc="Standard.Operation" uid="c325ee84-4420-49ba-8b24-88a32ce751b0"/>
+          <ID name="getJoueurs" mc="Standard.Operation" uid="fa453a3c-c3db-4452-8a08-549028ef2217"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -636,7 +636,7 @@
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="f53ff923-0a7d-4fba-9b21-4dc6c44b71e6"/>
+                <ID name="" mc="Standard.Parameter" uid="1b7f7a5f-ff3b-4fe3-842f-ad43bd123b9f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[11]]></ATT>
@@ -657,7 +657,7 @@
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="d45d27db-97b4-4714-9923-a58810806cb8"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="0d5aa957-63ac-4ecb-ae74-1bff315d7aae"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -665,7 +665,7 @@
                       <DEPENDENCIES>
                         <COMP relation="Actual">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TagParameter" uid="5854156b-75de-4e3e-9811-e9788eb72c94"/>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="9b3b4d73-01f8-4490-95cc-84d17a3ae516"/>
                             <ATTRIBUTES>
                               <ATT name="Value"><![CDATA[List]]></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -687,7 +687,7 @@
             </LINK>
             <COMP relation="DependsOnDependency">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Dependency" uid="f96c6f01-a190-46aa-afe0-e46176e3fecc"/>
+                <ID name="" mc="Infrastructure.Dependency" uid="e5371e0b-35b6-4e62-a68b-2c1a1a13a47a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -706,7 +706,7 @@
             </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="6770d5a2-6524-467d-a5cf-c6447ad1d2b6"/>
+                <ID name="" mc="Infrastructure.Note" uid="7d9dbf43-8f50-49ef-bb6c-eafd1ccdcfe8"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.]]></ATT>
                   <ATT name="MimeType"></ATT>
@@ -720,7 +720,7 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="9f81b0f8-9ab7-4ebd-bc3d-51e4aae9c56e"/>
+                <ID name="" mc="Infrastructure.Note" uid="540efeb7-e63f-4a0c-a090-91cf2901fea3"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return this.joueurs;]]></ATT>
                   <ATT name="MimeType"></ATT>

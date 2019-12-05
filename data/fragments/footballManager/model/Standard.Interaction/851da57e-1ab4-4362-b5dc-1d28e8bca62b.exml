@@ -682,7 +682,7 @@
                   </LINK>
                   <LINK relation="Invoked">
                     <REFOBJ>
-                      <ID name="getJoueurs" mc="Standard.Operation" uid="c325ee84-4420-49ba-8b24-88a32ce751b0"/>
+                      <ID name="getJoueurs" mc="Standard.Operation" uid="fa453a3c-c3db-4452-8a08-549028ef2217"/>
                     </REFOBJ>
                   </LINK>
                 </DEPENDENCIES>
