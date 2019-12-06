@@ -2,3 +2,14 @@
     -fx-background-image:url("../../data/data/bg_menuPrincipal.jpg");
     -fx-background-size: auto;
 }
+
+
+/*
+    Styles fenêtre joueurs
+ */
+.bgAfficherJoueur {
+    /*background: #bdc3c7;  !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  !* Chrome 10-25, Safari 5.1-6 *!*/
+    -fx-background-color:linear-gradient(to top, #ffd89b, #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
