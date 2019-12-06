@@ -68,7 +68,9 @@ public final class PartieSingleton implements Serializable {
     }
 
 
-
+    /**
+     *
+     */
     public void initEntraineur() {
     }
 
@@ -95,7 +97,6 @@ public final class PartieSingleton implements Serializable {
                 }
             }
         }
-
     }
 
     public void initDateCourante() {
