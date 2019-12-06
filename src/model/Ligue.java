@@ -8,16 +8,21 @@ public class Ligue {
 
     private Calendrier calendrier;
 
-    private List<Equipe> equipe = new ArrayList<Equipe> ();
+    private List<Equipe> equipes = new ArrayList<Equipe> ();
 
     private List<Arbitre> arbitres = new ArrayList<Arbitre> ();
 
-    public List<Equipe> getEquipes() {
-        // TODO Auto-generated return
-        return null;
+    public void initLigue() {
     }
 
-    public void initLigue() {
+    public String getNom() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.nom;
+    }
+
+    public List<Equipe> getEquipes() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.equipes;
     }
 
     public List<Equipe> getCLassementEquipes() {
@@ -46,6 +51,9 @@ public class Ligue {
     }
 
     public void initCalendrier() {
+    }
+
+    public void afficherInfosLigue() {
     }
 
 }

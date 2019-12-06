@@ -9,15 +9,18 @@ import javafx.stage.Window;
 
 public class Main extends Application {
     public static Stage mainStage;
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../ihm/lanceurDePartie.fxml"));
+
+    public static void main(String[] args) {
+        LanceurDePartie.INSTANCE.menuPrincipal();
+        launch(args);
+    }
+
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("ihm/menuPrincipal.fxml"));
         primaryStage.setTitle("Football Manager");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         mainStage=primaryStage;
     }
-    public static void main(String[] args) {
-        LanceurDePartie.INSTANCE.menuPrincipal();
-        launch(args);
-    }
+
 }

@@ -1,5 +1,6 @@
 package model;
 
+
 public class Stade {
     private String nom;
 

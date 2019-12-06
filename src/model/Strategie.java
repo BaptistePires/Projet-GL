@@ -1,5 +1,6 @@
 package model;
 
+
 public abstract class Strategie {
     private int agressivite;
 

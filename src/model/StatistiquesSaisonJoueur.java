@@ -1,5 +1,6 @@
 package model;
 
+
 public class StatistiquesSaisonJoueur {
     private int noteGlobale;
 
