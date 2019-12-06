@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Consulter les informations des joueurs" version="4">
   <OBJECT>
     <ID name="Consulter les informations des joueurs" mc="Standard.UseCase" uid="9b1ecc41-1165-47a5-a4d5-d12f14a2cb8c"/>
-    <PID name="footballmanager" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+    <PID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -29,6 +29,9 @@
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
+      </COMP>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Consulter les informations des joueurs" mc="Standard.Interaction" uid="9c7a7f37-4d1b-46b2-a0b7-a9311f2801f5"/>
       </COMP>
       <COMP relation="Descriptor">
         <OBJECT>

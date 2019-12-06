@@ -373,7 +373,7 @@ this.degreDeSatisfaction = 0;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getEquipe" mc="Standard.Operation" uid="32727f4f-7eb0-48d1-9504-349724eec3a2"/>
+          <ID name="getEquipe" mc="Standard.Operation" uid="308446e2-1515-4612-b912-cadfba4059b8"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -387,10 +387,10 @@ this.degreDeSatisfaction = 0;
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="a543222a-ff23-4c83-852b-2067430a54fe"/>
+                <ID name="" mc="Standard.Parameter" uid="3988dc91-d977-47ea-af73-fe5e4be01b6f"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
                   <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
                   <ATT name="TypeConstraint"></ATT>
                   <ATT name="DefaultValue"></ATT>
@@ -409,12 +409,48 @@ this.degreDeSatisfaction = 0;
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f0-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="58dee2d8-f0fd-4c50-9c45-e62695e11f88"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="equipe" mc="Standard.AssociationEnd" uid="230b9bbc-eaed-4b49-9854-cb8a53670bed"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-012b-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ba8635f9-3739-4e0b-a3dc-545ea3af014a"/>
+                <ID name="" mc="Infrastructure.Note" uid="35f4f348-56d5-45f7-af08-ef9c877acb06"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="ae6b0eaf-45d7-41f6-86ad-6127c18b6907"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return this.equipe;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -428,7 +464,7 @@ this.degreDeSatisfaction = 0;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setEquipe" mc="Standard.Operation" uid="4753d99b-68c8-4e3c-a56d-9d436a3f881e"/>
+          <ID name="setEquipe" mc="Standard.Operation" uid="6b7a03bf-75b3-4c61-878e-82ff81dbf63a"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -442,10 +478,10 @@ this.degreDeSatisfaction = 0;
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="equipe" mc="Standard.Parameter" uid="176d9d4d-e924-472b-9532-e873f961fdea"/>
+                <ID name="value" mc="Standard.Parameter" uid="1a3e2812-387e-446e-b6ff-448df2554082"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
                   <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
                   <ATT name="TypeConstraint"></ATT>
                   <ATT name="DefaultValue"></ATT>
@@ -454,7 +490,7 @@ this.degreDeSatisfaction = 0;
                   <ATT name="IsException">false</ATT>
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[equipe]]></ATT>
+                  <ATT name="Name"><![CDATA[value]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -464,12 +500,35 @@ this.degreDeSatisfaction = 0;
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f5-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="dcd802c3-4d80-4524-a9fe-781a53130598"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="equipe" mc="Standard.AssociationEnd" uid="230b9bbc-eaed-4b49-9854-cb8a53670bed"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0130-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="ad393818-0a63-4a7b-8a01-60fd22cfc889"/>
+                <ID name="" mc="Infrastructure.Note" uid="85ab66d3-2ce1-41b9-aa43-46b32840d2a1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.equipe = equipe;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.
+this.equipe = value;]]></ATT>
+                  <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -483,7 +542,7 @@ this.degreDeSatisfaction = 0;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="getDegreDeSatisfaction" mc="Standard.Operation" uid="4f0f1f93-389d-4609-8ab7-ca16c7b6fa55"/>
+          <ID name="getDegreDeSatisfaction" mc="Standard.Operation" uid="5333d872-0466-4ef1-84b9-fe6ab5a207e1"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -497,7 +556,7 @@ this.degreDeSatisfaction = 0;
           <DEPENDENCIES>
             <COMP relation="Return">
               <OBJECT>
-                <ID name="" mc="Standard.Parameter" uid="bc0c5a64-23d0-49be-b8b9-02b097b1715d"/>
+                <ID name="" mc="Standard.Parameter" uid="20dea9e8-b033-49f5-91df-a11cf9720634"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -519,12 +578,48 @@ this.degreDeSatisfaction = 0;
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f0-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="382462d3-4fea-48ee-a92d-1c4397c17013"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="degreDeSatisfaction" mc="Standard.Attribute" uid="ec0b8531-bbde-4b93-a055-9c6d822ee028"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaGetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-012b-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="87915715-9025-43ee-976f-7b47c6187a88"/>
+                <ID name="" mc="Infrastructure.Note" uid="a05f02f8-67b1-4552-b7de-0e0d35615898"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return degreDeSatisfaction;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="a21c0b51-1a23-4b4b-b6fc-5ae6aafd601f"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return this.degreDeSatisfaction;]]></ATT>
+                  <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -538,7 +633,7 @@ this.degreDeSatisfaction = 0;
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="setDegreDeSatisfaction" mc="Standard.Operation" uid="030503e8-8b99-47cb-9655-569a1024c4c6"/>
+          <ID name="setDegreDeSatisfaction" mc="Standard.Operation" uid="1acd4bde-4ddd-4b8f-bbaa-a31388c7634a"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -552,7 +647,7 @@ this.degreDeSatisfaction = 0;
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="valeur" mc="Standard.Parameter" uid="0133bf4d-6e6a-4c79-908a-8a33b0bfb0bd"/>
+                <ID name="value" mc="Standard.Parameter" uid="d4cd487d-20b1-441b-a3a4-cbd9a7611e90"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -564,7 +659,7 @@ this.degreDeSatisfaction = 0;
                   <ATT name="IsException">false</ATT>
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[valeur]]></ATT>
+                  <ATT name="Name"><![CDATA[value]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -574,12 +669,35 @@ this.degreDeSatisfaction = 0;
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec25e8-0000-00f5-0000-000000000000"/>
+            </LINK>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="5ac34661-70de-46f0-8244-3b9466feecfc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="degreDeSatisfaction" mc="Standard.Attribute" uid="ec0b8531-bbde-4b93-a055-9c6d822ee028"/>
+                    </REFOBJ>
+                  </LINK>
+                  <LINK relation="Extension">
+                    <FOREIGNID name="JavaSetter" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0130-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="5c7191b6-990d-4c93-bf82-83bd3579b289"/>
+                <ID name="" mc="Infrastructure.Note" uid="5c3ee309-af5a-4081-be08-505470bca08b"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.degreDeSatisfaction = valeur;]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Content"><![CDATA[// Automatically generated method. Please delete this comment before entering specific code.
+this.degreDeSatisfaction = value;]]></ATT>
+                  <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -592,6 +710,20 @@ this.degreDeSatisfaction = 0;
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+        <OBJECT>
+          <ID name="afficherInfosPresident" mc="Standard.Operation" uid="f2a13608-ef4d-4bc1-870d-f937bf5353e7"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[afficherInfosPresident]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
@@ -600,7 +732,7 @@ this.degreDeSatisfaction = 0;
             <ATT name="TypeConstraint"></ATT>
             <ATT name="Value"></ATT>
             <ATT name="TargetIsClass">false</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
             <ATT name="IsDerived">false</ATT>
             <ATT name="IsOrdered">false</ATT>
             <ATT name="IsUnique">false</ATT>
