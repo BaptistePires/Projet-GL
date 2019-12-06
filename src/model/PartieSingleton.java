@@ -26,17 +26,6 @@ public final class PartieSingleton implements Serializable {
         tableauDeBord();
     }
 
-    public void initEntraineur() {
-    }
-
-    public void initFifa() {
-    }
-
-    public void avancerLeTemps() {
-    }
-
-    public void initDateCourante() {
-    }
 
     public String getNomFichierSauvegarde() {
         return nomFichierSauvegarde;
@@ -78,12 +67,7 @@ public final class PartieSingleton implements Serializable {
         this.entraineur = entraineur;
     }
 
-    public void tableauDeBord() {
-    }
 
-    public void chargerPartieDepuis(final String nomFichierSource) {
-        tableauDeBord();
-    }
 
     public void initEntraineur() {
     }

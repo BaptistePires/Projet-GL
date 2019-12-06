@@ -117,6 +117,90 @@ public class Equipe {
         return this.nbButsEncaisses;
     }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setHistoireDuClub(String histoireDuClub) {
+        this.histoireDuClub = histoireDuClub;
+    }
+
+    public void setBudgetTransferts(int budgetTransferts) {
+        this.budgetTransferts = budgetTransferts;
+    }
+
+    public void setMasseSalariale(int masseSalariale) {
+        this.masseSalariale = masseSalariale;
+    }
+
+    public void setNbPoints(int nbPoints) {
+        this.nbPoints = nbPoints;
+    }
+
+    public void setNbButsMarques(int nbButsMarques) {
+        this.nbButsMarques = nbButsMarques;
+    }
+
+    public void setNbButsEncaisses(int nbButsEncaisses) {
+        this.nbButsEncaisses = nbButsEncaisses;
+    }
+
+    public void setNbVictoires(int nbVictoires) {
+        this.nbVictoires = nbVictoires;
+    }
+
+    public void setNbMatchsNuls(int nbMatchsNuls) {
+        this.nbMatchsNuls = nbMatchsNuls;
+    }
+
+    public void setNbDefaites(int nbDefaites) {
+        this.nbDefaites = nbDefaites;
+    }
+
+    public void setJoueurs(List<Joueur> joueurs) {
+        this.joueurs = joueurs;
+    }
+
+    public Entraineur getEntraineur() {
+        return entraineur;
+    }
+
+    public void setEntraineur(Entraineur entraineur) {
+        this.entraineur = entraineur;
+    }
+
+    public President getPresident() {
+        return president;
+    }
+
+    public void setPresident(President president) {
+        this.president = president;
+    }
+
+    public Strategie getStrategie() {
+        return strategie;
+    }
+
+    public void setStrategie(Strategie strategie) {
+        this.strategie = strategie;
+    }
+
+    public List<StatistiquesSaisonEquipe> getHistoriqueSaisons() {
+        return historiqueSaisons;
+    }
+
+    public void setHistoriqueSaisons(List<StatistiquesSaisonEquipe> historiqueSaisons) {
+        this.historiqueSaisons = historiqueSaisons;
+    }
+
+    public Stade getStade() {
+        return stade;
+    }
+
+    public void setStade(Stade stade) {
+        this.stade = stade;
+    }
+
     @Override
     public String toString(){
         return this.nom;

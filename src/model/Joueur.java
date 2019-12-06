@@ -39,7 +39,7 @@ public class Joueur extends Personne {
     public void initJoueur() {
     }
 
-    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, String nbButsSaison, String nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
+    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         super(nom, prenom, dateDeNaissance, historique);
         configure(etatPhysique, moral, defense, millieu, attaque, notePerformancesRecentes, nbButsSaison,
                 nbPasseDecisiveSaison, nbCartonJauneSaison, nbCartonRougeSaison,
@@ -50,7 +50,7 @@ public class Joueur extends Personne {
         super(nom, prenom, dateDeNaissance, historique);
     }
 
-    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, String nbButsSaison, String nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
+    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         this.etatPhysique = etatPhysique;
         this.moral = moral;
         this.defense = defense;
