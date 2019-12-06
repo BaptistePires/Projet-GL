@@ -2,8 +2,6 @@ package model;
 
 import java.io.*;
 import java.util.TreeMap;
-import javax.swing.*;
-import javax.swing.JFrame;
 
 public class LanceurDePartie {
     public static String dossierDeStockageDesParties="";
@@ -58,9 +56,6 @@ public class LanceurDePartie {
 
     public void quitter() {
         System.exit(0);
-    }
-
-    public void menuPrincipal() {
     }
 
 

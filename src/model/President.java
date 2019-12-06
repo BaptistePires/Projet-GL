@@ -1,8 +1,11 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class President extends Personne {
+    public static ArrayList<President> presidentsAll= new ArrayList<President>();
+
     private int degreDeSatisfaction;
 
     private Equipe equipe;
@@ -22,6 +25,10 @@ public class President extends Personne {
     public President(String nom, String prenom, Date dateDeNaissance, String historique, Equipe e) {
         this(nom, prenom, dateDeNaissance, historique);
         this.equipe = equipe;
+        if(equipe!=null){
+            if(equipe.getPresident()!=null)equipe.getPresident().setEquipe(null);
+            equipe.setPresident(this);
+        }
         this.degreDeSatisfaction = 0;
     }
 

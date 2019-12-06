@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ligue {
+    public static List<Ligue> liguesAll = new ArrayList<Ligue>();
+
     private String nom;
 
     private Calendrier calendrier;
@@ -12,7 +14,20 @@ public class Ligue {
 
     private List<Arbitre> arbitres = new ArrayList<Arbitre> ();
 
+    public Ligue(String nom, Calendrier calendrier, List<Equipe> equipes, List<Arbitre> arbitres){
+        this.nom=nom;
+        this.calendrier = calendrier;
+        this.equipes = equipes;
+        for(Equipe e:equipes)e.setLigue(this);
+        this.arbitres = arbitres;
+        initLigue();
+        liguesAll.add(this);
+    }
+
     public void initLigue() {
+        if(calendrier==null){
+            initCalendrier();
+        }
     }
 
     public String getNom() {

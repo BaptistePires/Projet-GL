@@ -50,7 +50,7 @@ public class CreerNouvellePartieController {
         final Date dateDeNaissance = Date.from(dateDeNaissanceInput.getValue().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
         final Equipe equipe = equipeInput.getValue();
         Entraineur notreEntraineur = new Entraineur(nom, prenom, dateDeNaissance, historique, equipe);
-        PartieSingleton.INSTANCE.setEntraineur(notreEntraineur);
+        PartieSingleton.INSTANCE.initEntraineur(notreEntraineur);
         //TODO lancer le dashboard
     }
 

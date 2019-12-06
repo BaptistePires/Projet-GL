@@ -1,6 +1,7 @@
 package model;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import data.DataGenerator;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -20,6 +21,8 @@ public final class PartieSingleton implements Serializable {
     public static transient PartieSingleton INSTANCE = new PartieSingleton();
 
     public void init(final String nomFichierSauvegarde) {
+        initFifa();
+        setNomFichierSauvegarde(nomFichierSauvegarde);
     }
 
     public void chargerPartieDepuis(final String nomFichierSource) {
@@ -69,10 +72,13 @@ public final class PartieSingleton implements Serializable {
 
 
 
-    public void initEntraineur() {
+    public void initEntraineur(Entraineur entraineur) {
+        INSTANCE.entraineur = entraineur;
+        entraineur.getEquipe().setEntraineur(entraineur);
     }
 
     public void initFifa() {
+        this.fifa = DataGenerator.generateRandomFifa();
     }
 
     public void avancerLeTemps() {

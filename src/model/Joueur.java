@@ -3,8 +3,11 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Joueur extends Personne {
+    public ArrayList<Joueur> joueursAll=new ArrayList<Joueur>();
+
     private int etatPhysique;
 
     private int moral;
@@ -25,7 +28,7 @@ public class Joueur extends Personne {
 
     private int nbCartonRougeSaison;
 
-    private List<Poste> poste = new ArrayList<Poste> ();
+    private Poste poste;
 
     private Equipe equipe;
 
@@ -39,8 +42,11 @@ public class Joueur extends Personne {
     public void initJoueur() {
     }
 
-    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
-        super(nom, prenom, dateDeNaissance, historique);
+    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral,
+                  int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison,
+                  int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, Poste poste,
+                  Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
+        this(nom, prenom, dateDeNaissance, historique);
         configure(etatPhysique, moral, defense, millieu, attaque, notePerformancesRecentes, nbButsSaison,
                 nbPasseDecisiveSaison, nbCartonJauneSaison, nbCartonRougeSaison,
                 poste, equipe, historiqueSaisons);
@@ -48,9 +54,12 @@ public class Joueur extends Personne {
 
     public Joueur(String nom, String prenom, Date dateDeNaissance, String historique) {
         super(nom, prenom, dateDeNaissance, historique);
+        joueursAll.add(this);
     }
 
-    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
+    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes,
+                          int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison,
+                          Poste poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         this.etatPhysique = etatPhysique;
         this.moral = moral;
         this.defense = defense;
@@ -63,6 +72,14 @@ public class Joueur extends Personne {
         this.nbCartonRougeSaison = nbCartonRougeSaison;
         this.poste = poste;
         this.equipe = equipe;
+        if(equipe!=null){
+            if(equipe.getJoueurs()==null){
+                equipe.setJoueurs(new ArrayList<Joueur>());
+                equipe.getJoueurs().add(this);
+            }else{
+                if(!equipe.getJoueurs().contains(this))equipe.getJoueurs().add(this);
+            }
+        }
         this.historiqueSaisons = historiqueSaisons;
     }
 
@@ -116,7 +133,7 @@ public class Joueur extends Personne {
         return this.nbCartonRougeSaison;
     }
 
-    public List<Poste> getPoste() {
+    public Poste getPoste() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.poste;
     }
@@ -126,7 +143,94 @@ public class Joueur extends Personne {
         return this.equipe;
     }
 
+    public void setEtatPhysique(int etatPhysique) {
+        this.etatPhysique = etatPhysique;
+    }
+
+    public void setMoral(int moral) {
+        this.moral = moral;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public void setMillieu(int millieu) {
+        this.millieu = millieu;
+    }
+
+    public void setAttaque(int attaque) {
+        this.attaque = attaque;
+    }
+
+    public void setNotePerformancesRecentes(int notePerformancesRecentes) {
+        this.notePerformancesRecentes = notePerformancesRecentes;
+    }
+
+    public void setNbButsSaison(int nbButsSaison) {
+        this.nbButsSaison = nbButsSaison;
+    }
+
+    public void setNbPasseDecisiveSaison(int nbPasseDecisiveSaison) {
+        this.nbPasseDecisiveSaison = nbPasseDecisiveSaison;
+    }
+
+    public void setNbCartonJauneSaison(int nbCartonJauneSaison) {
+        this.nbCartonJauneSaison = nbCartonJauneSaison;
+    }
+
+    public void setNbCartonRougeSaison(int nbCartonRougeSaison) {
+        this.nbCartonRougeSaison = nbCartonRougeSaison;
+    }
+
+    public void setPoste(Poste poste) {
+        this.poste = poste;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
+    }
+
+    public List<StatistiquesSaisonJoueur> getHistoriqueSaisons() {
+        return historiqueSaisons;
+    }
+
+    public void setHistoriqueSaisons(List<StatistiquesSaisonJoueur> historiqueSaisons) {
+        this.historiqueSaisons = historiqueSaisons;
+    }
+
     public void afficherInfosJoueur() {
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Joueur)) return false;
+        Joueur joueur = (Joueur) o;
+        return getEtatPhysique() == joueur.getEtatPhysique() &&
+                getMoral() == joueur.getMoral() &&
+                getDefense() == joueur.getDefense() &&
+                getMillieu() == joueur.getMillieu() &&
+                getAttaque() == joueur.getAttaque() &&
+                getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
+                getNbButsSaison() == joueur.getNbButsSaison() &&
+                getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
+                getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
+                getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
+                getPoste() == joueur.getPoste() &&
+                Objects.equals(getEquipe(), joueur.getEquipe()) &&
+                Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEtatPhysique(), getMoral(), getDefense(), getMillieu(), getAttaque(),
+                getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
+                getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());
+    }
+
+    @Override
+    public String toString() {
+        return getNom()+" "+getPrenom();
+    }
 }

@@ -1,8 +1,11 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Arbitre extends Personne {
+    public static ArrayList<Arbitre> arbitresAll = new ArrayList<Arbitre>();
+
     private int severite;
 
     public void initArbitre() {

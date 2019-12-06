@@ -1,8 +1,13 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class Entraineur extends Personne {
+
+    public static ArrayList<Entraineur> entraineursAll = new ArrayList<Entraineur>();
+
     private Equipe equipe;
 
     public void initEntraineur() {
@@ -10,12 +15,16 @@ public class Entraineur extends Personne {
 
     public Entraineur(String nom, String prenom, Date dateDeNaissance, String historique) {
         super(nom, prenom, dateDeNaissance, historique);
+        entraineursAll.add(this);
     }
 
     public Entraineur(String nom, String prenom, Date dateDeNaissance, String historique, Equipe equipe) {
         this(nom, prenom, dateDeNaissance, historique);
         this.equipe = equipe;
-        equipe.setEntraineur(this);
+        if(equipe!=null){
+            if(equipe.getEntraineur()!=null)equipe.getEntraineur().setEquipe(null);
+            equipe.setEntraineur(this);
+        }
     }
 
     public Equipe getEquipe() {
@@ -26,4 +35,21 @@ public class Entraineur extends Personne {
         this.equipe = equipe;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Entraineur)) return false;
+        Entraineur that = (Entraineur) o;
+        return Objects.equals(getEquipe(), that.getEquipe());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEquipe());
+    }
+
+    @Override
+    public String toString() {
+        return getNom();
+    }
 }
