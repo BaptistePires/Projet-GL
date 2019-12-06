@@ -101,7 +101,6 @@ public final class PartieSingleton implements Serializable {
                 }
             }
         }
-
     }
 
     public void initDateCourante() {
