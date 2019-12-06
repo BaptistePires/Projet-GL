@@ -3,9 +3,12 @@ package ihm.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import model.Entraineur;
 import model.Equipe;
+import model.Main;
 import model.PartieSingleton;
 
 import java.time.ZoneId;
@@ -48,10 +51,15 @@ public class CreerNouvellePartieController {
         final Equipe equipe = equipeInput.getValue();
         Entraineur notreEntraineur = new Entraineur(nom, prenom, dateDeNaissance, historique, equipe);
         PartieSingleton.INSTANCE.setEntraineur(notreEntraineur);
+        //TODO lancer le dashboard
     }
 
     @FXML
     void annulerAction(){
-
+        try{
+            Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../lanceurDePartie.fxml"))));
+        }catch(Exception e){
+            System.err.println("Echec lors du retour au menu principal : "+e.getClass() + " : "+e.getMessage());
+        }
     }
 }

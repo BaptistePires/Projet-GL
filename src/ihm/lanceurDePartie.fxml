@@ -52,17 +52,17 @@
     </MenuBar>
     <AnchorPane id="a" maxHeight="-1.0" maxWidth="-1.0" prefHeight="208.0" prefWidth="640.0" styleClass="mainWindow" stylesheets="@style/styles.css" VBox.vgrow="ALWAYS">
          <children>
-            <Button layoutX="555.0" layoutY="293.0" maxWidth="343.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="343.0" styleClass="semi-transparent-button" text="Nouvelle partie" textFill="#9e2828">
+            <Button fx:id="nouvellePartieBouton" layoutX="555.0" layoutY="293.0" maxWidth="343.0" mnemonicParsing="false" onAction="#nouvellePartieAction" prefHeight="56.0" prefWidth="343.0" styleClass="semi-transparent-button" text="Nouvelle partie" textFill="#9e2828">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button layoutX="555.0" layoutY="495.0" maxWidth="343.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="343.0" styleClass="semi-transparent-button" text="Quitter" textFill="#9e2828">
+            <Button fx:id="quitterBouton" layoutX="555.0" layoutY="495.0" maxWidth="343.0" mnemonicParsing="false" onAction="#quitterAction" prefHeight="56.0" prefWidth="343.0" styleClass="semi-transparent-button" text="Quitter" textFill="#9e2828">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button layoutX="555.0" layoutY="390.0" maxWidth="343.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="343.0" styleClass="semi-transparent-button" text="Charger une partie" textFill="#9e2828">
+            <Button fx:id="chargerPartieBouton" layoutX="555.0" layoutY="390.0" maxWidth="343.0" mnemonicParsing="false" onAction="#chargerPartieAction" prefHeight="56.0" prefWidth="343.0" styleClass="semi-transparent-button" text="Charger une partie" textFill="#9e2828">
                <font>
                   <Font size="30.0" />
                </font>

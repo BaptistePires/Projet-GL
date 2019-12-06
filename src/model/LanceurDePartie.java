@@ -4,9 +4,9 @@ import java.io.*;
 import java.util.TreeMap;
 
 public class LanceurDePartie {
-    private static String dossierDeStockageDesParties="";
+    public static String dossierDeStockageDesParties="";
 
-    private static String dossierDeStockageDesDonnees="";
+    public static String dossierDeStockageDesDonnees="";
 
     public static LanceurDePartie INSTANCE=new LanceurDePartie();
 
@@ -44,15 +44,18 @@ public class LanceurDePartie {
 
     public void sauvegarderPartie() {
         try{
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(PartieSingleton.INSTANCE.getNomFichierSauvegarde()));
+            ObjectOutputStream out = new ObjectOutputStream(
+                    new FileOutputStream("src/data/"+LanceurDePartie.dossierDeStockageDesParties+"/"
+                            +PartieSingleton.INSTANCE.getNomFichierSauvegarde()));
             out.writeObject(PartieSingleton.INSTANCE);
             out.close();
         }catch (Exception e){
-            System.err.println("Erreur lors de l'enregistrement de la partie :"+e.getClass());
+            System.err.println("Erreur lors de l'enregistrement de la partie :"+e.getClass()+" : "+e.getMessage());
         }
     }
 
     public void quitter() {
+        System.exit(0);
     }
 
     public void menuPrincipal() {
