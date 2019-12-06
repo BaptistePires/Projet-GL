@@ -17,9 +17,9 @@ public class Joueur extends Personne {
 
     private int notePerformancesRecentes;
 
-    private String nbButsSaison;
+    private int nbButsSaison;
 
-    private String nbPasseDecisiveSaison;
+    private int nbPasseDecisiveSaison;
 
     private int nbCartonJauneSaison;
 
@@ -39,23 +39,18 @@ public class Joueur extends Personne {
     public void initJoueur() {
     }
 
-    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique,int etatPhysique, int moral,
-                  int defense, int millieu, int attaque, int notePerformancesRecentes, String nbButsSaison,
-                  String nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste,
-                  Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons){
+    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, String nbButsSaison, String nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         super(nom, prenom, dateDeNaissance, historique);
         configure(etatPhysique, moral, defense, millieu, attaque, notePerformancesRecentes, nbButsSaison,
                 nbPasseDecisiveSaison, nbCartonJauneSaison, nbCartonRougeSaison,
                 poste, equipe, historiqueSaisons);
     }
 
-    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique){
+    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique) {
         super(nom, prenom, dateDeNaissance, historique);
     }
 
-    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes,
-                     String nbButsSaison, String nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison,
-                     List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons){
+    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, String nbButsSaison, String nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, List<Poste> poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         this.etatPhysique = etatPhysique;
         this.moral = moral;
         this.defense = defense;
@@ -69,6 +64,69 @@ public class Joueur extends Personne {
         this.poste = poste;
         this.equipe = equipe;
         this.historiqueSaisons = historiqueSaisons;
+    }
+
+    public int getEtatPhysique() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.etatPhysique;
+    }
+
+    public int getMoral() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.moral;
+    }
+
+    public int getDefense() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.defense;
+    }
+
+    public int getMillieu() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.millieu;
+    }
+
+    public int getAttaque() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.attaque;
+    }
+
+    public int getNotePerformancesRecentes() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.notePerformancesRecentes;
+    }
+
+    public int getNbButsSaison() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.nbButsSaison;
+    }
+
+    public int getNbPasseDecisiveSaison() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.nbPasseDecisiveSaison;
+    }
+
+    public int getNbCartonJauneSaison() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.nbCartonJauneSaison;
+    }
+
+    public int getNbCartonRougeSaison() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.nbCartonRougeSaison;
+    }
+
+    public List<Poste> getPoste() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.poste;
+    }
+
+    public Equipe getEquipe() {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        return this.equipe;
+    }
+
+    public void afficherInfosJoueur() {
     }
 
 }

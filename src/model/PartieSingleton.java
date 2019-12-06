@@ -13,7 +13,26 @@ public final class PartieSingleton implements Serializable {
 
     private Entraineur entraineur;
 
-    public transient static PartieSingleton INSTANCE=new PartieSingleton();
+    public static transient PartieSingleton INSTANCE = new PartieSingleton();
+
+    public void init(final String nomFichierSauvegarde) {
+    }
+
+    public void chargerPartieDepuis(final String nomFichierSource) {
+        tableauDeBord();
+    }
+
+    public void initEntraineur() {
+    }
+
+    public void initFifa() {
+    }
+
+    public void avancerLeTemps() {
+    }
+
+    public void initDateCourante() {
+    }
 
     public String getNomFichierSauvegarde() {
         return nomFichierSauvegarde;
@@ -55,27 +74,7 @@ public final class PartieSingleton implements Serializable {
         this.entraineur = entraineur;
     }
 
-    public void init(final String nomFichierSauvegarde) {
-    }
-
-    public void chargerPartieDepuis(final String nomFichierSource) {
-        tableauDeBord();
-    }
-
-    public void initEntraineur() {
-    }
-
-    public void initFifa() {
-    }
-
-    public void avancerLeTemps() {
-    }
-
-    public void initDateCourante() {
-    }
-
-    public void tableauDeBord(){
-
+    public void tableauDeBord() {
     }
 
 }

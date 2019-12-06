@@ -1,5 +1,6 @@
 package model;
 
+
 public class StatistiquesSaisonEquipe {
     private String Attribute;
 

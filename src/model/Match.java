@@ -1,5 +1,6 @@
 package model;
 
+
 public class Match extends Evenement {
     private Equipe equipe1;
 
@@ -14,13 +15,13 @@ public class Match extends Evenement {
     public void jouerMatch() {
     }
 
-    public void avantEvenement() {
-    }
-
     public void executerEvenement() {
     }
 
     public void apresEvenement() {
+    }
+
+    public void avantEvenement() {
     }
 
 }

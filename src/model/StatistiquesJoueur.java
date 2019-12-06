@@ -1,5 +1,6 @@
 package model;
 
+
 public class StatistiquesJoueur {
     private int nombreDeButsMarques;
 

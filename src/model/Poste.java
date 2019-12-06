@@ -1,5 +1,6 @@
 package model;
 
+
 public enum Poste {
     GB,
     ATT,
