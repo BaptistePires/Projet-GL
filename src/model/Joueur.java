@@ -1,10 +1,7 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Joueur extends Personne implements Serializable {
     public ArrayList<Joueur> joueursAll=new ArrayList<Joueur>();
@@ -36,8 +33,8 @@ public class Joueur extends Personne implements Serializable {
     private List<StatistiquesSaisonJoueur> historiqueSaisons = new ArrayList<StatistiquesSaisonJoueur> ();
 
     public boolean etudierOffreTransfert(final Contrat contratPropose) {
-        // TODO Auto-generated return
-        return false;
+        Random rd = new Random();
+        return rd.nextBoolean();
     }
 
     public void initJoueur() {
