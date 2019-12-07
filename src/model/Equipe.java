@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Equipe {
+public class Equipe implements Serializable {
     public static List<Equipe> equipesAll = new ArrayList<Equipe>();
 
     public static Equipe getEquipeParNom(String nom){

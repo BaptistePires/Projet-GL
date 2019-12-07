@@ -1,9 +1,10 @@
 package model;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Stade {
+public class Stade implements Serializable {
     public static ArrayList<Stade> stadesAll=new ArrayList<Stade>();
 
     private String nom;

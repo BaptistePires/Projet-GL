@@ -1,7 +1,9 @@
 package model;
 
 
-public class StrategieDefensive extends Strategie {
+import java.io.Serializable;
+
+public class StrategieDefensive extends Strategie implements Serializable {
     public void appliquer() {
     }
 

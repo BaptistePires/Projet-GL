@@ -1,7 +1,9 @@
 package model;
 
 
-public abstract class Strategie {
+import java.io.Serializable;
+
+public abstract class Strategie implements Serializable {
     private int agressivite;
 
     private int passes;

@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.TreeMap;
 
-public abstract class Evenement {
+public abstract class Evenement implements Serializable {
     public static TreeMap<Date, List<Evenement>> evenements = new TreeMap<Date, List<Evenement>>();
 
     private boolean importance;

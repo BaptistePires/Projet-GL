@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Statistiques {
+public class Statistiques implements Serializable {
     private StatistiquesEquipe statistiquesEquipeB;
 
     private StatistiquesEquipe statistiquesEquipeA;

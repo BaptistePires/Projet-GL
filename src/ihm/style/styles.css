@@ -1,6 +1,7 @@
 .mainWindow{
     -fx-background-image:url("../../data/data/bg_menuPrincipal.jpg");
     -fx-background-size: auto;
+    -fx-opacity: 100%;
 }
 
 
@@ -10,6 +11,17 @@
 .bgAfficherJoueur {
     /*background: #bdc3c7;  !* fallback for old browsers *!*/
     /*background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  !* Chrome 10-25, Safari 5.1-6 *!*/
-    -fx-background-color:linear-gradient(to top, #ffd89b, #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -fx-background-color:linear-gradient(to right, #ffd89b, #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+.button{
+    -fx-opacity: 90%;
+}
+.buttonAvancer{
+    -fx-background-color: #ddbfbf;
+    -fx-background-radius: 30;
+    -fx-opacity: 60%;
+}
+.button:hover{
+    -fx-background-color: gray;
 }

@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Arbitre extends Personne {
+public class Arbitre extends Personne implements Serializable {
     public static ArrayList<Arbitre> arbitresAll = new ArrayList<Arbitre>();
 
     private int severite;
