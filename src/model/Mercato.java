@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Mercato extends Evenement {
+public class Mercato extends Evenement implements Serializable {
     private Date dateDebut;
 
     private Date dateFin;

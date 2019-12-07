@@ -1,7 +1,9 @@
 package model;
 
 
-public class StatistiquesSaisonJoueur {
+import java.io.Serializable;
+
+public class StatistiquesSaisonJoueur implements Serializable {
     private int noteGlobale;
 
     private int nombreDeButs;

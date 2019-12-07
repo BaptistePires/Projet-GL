@@ -1,7 +1,9 @@
 package model;
 
 
-public enum Poste {
+import java.io.Serializable;
+
+public enum Poste implements Serializable {
     GB,
     ATT,
     DEF,

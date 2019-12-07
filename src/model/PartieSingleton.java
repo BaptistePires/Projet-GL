@@ -3,9 +3,11 @@ package model;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import data.DataGenerator;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.Comparator;
-import java.util.List;
+import java.time.Instant;
+import java.util.*;
 
 public final class PartieSingleton implements Serializable {
     private String nomFichierSauvegarde;
@@ -22,11 +24,22 @@ public final class PartieSingleton implements Serializable {
 
     public void init(final String nomFichierSauvegarde) {
         initFifa();
+        boiteMail = new BoiteMail();
         setNomFichierSauvegarde(nomFichierSauvegarde);
+        dateCourante = new DateCourante();
+        dateCourante.setJourCourant(new GregorianCalendar(2019, Calendar.JULY, 1).getTime());
+        INSTANCE = this;
+        //L'initialisation de l'entraineur se fait au moment ou l'utilisateur saisit ses infos
     }
 
     public void chargerPartieDepuis(final String nomFichierSource) {
-        tableauDeBord();
+        try{
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomFichierSource));
+            INSTANCE = (PartieSingleton) in.readObject();
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors du chargement de la partie "+nomFichierSource+" : "+e.getClass()+" : "+e.getMessage());
+        }
     }
 
 
@@ -106,8 +119,31 @@ public final class PartieSingleton implements Serializable {
     public void initDateCourante() {
     }
 
-    public void tableauDeBord(){
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PartieSingleton)) return false;
+        PartieSingleton that = (PartieSingleton) o;
+        return Objects.equals(getNomFichierSauvegarde(), that.getNomFichierSauvegarde()) &&
+                Objects.equals(getDateCourante(), that.getDateCourante()) &&
+                Objects.equals(getFifa(), that.getFifa()) &&
+                Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
+                Objects.equals(getEntraineur(), that.getEntraineur());
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNomFichierSauvegarde(), getDateCourante(), getFifa(), getBoiteMail(), getEntraineur());
+    }
+
+    @Override
+    public String toString() {
+        return "PartieSingleton{" +
+                "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
+                ", dateCourante=" + dateCourante +
+                ", fifa=" + fifa +
+                ", boiteMail=" + boiteMail +
+                ", entraineur=" + entraineur +
+                '}';
+    }
 }

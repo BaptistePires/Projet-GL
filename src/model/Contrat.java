@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Contrat {
+public class Contrat implements Serializable {
     private Date dateDebut;
 
     private int salaireAnnuelEuro;

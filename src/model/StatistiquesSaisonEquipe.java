@@ -1,7 +1,9 @@
 package model;
 
 
-public class StatistiquesSaisonEquipe {
+import java.io.Serializable;
+
+public class StatistiquesSaisonEquipe implements Serializable {
     private String Attribute;
 
     private Equipe equipe;

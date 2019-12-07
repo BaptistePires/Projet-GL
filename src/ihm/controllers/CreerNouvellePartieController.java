@@ -6,10 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import model.Entraineur;
-import model.Equipe;
-import model.Main;
-import model.PartieSingleton;
+import model.*;
 
 import java.time.ZoneId;
 import java.util.Date;
@@ -51,7 +48,14 @@ public class CreerNouvellePartieController {
         final Equipe equipe = equipeInput.getValue();
         Entraineur notreEntraineur = new Entraineur(nom, prenom, dateDeNaissance, historique, equipe);
         PartieSingleton.INSTANCE.initEntraineur(notreEntraineur);
+        LanceurDePartie.INSTANCE.sauvegarderPartie();
         //TODO lancer le dashboard
+        try{
+            Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage de l'ecran principal du jeu : "+e.getClass()+" "+e.getMessage());
+        }
     }
 
     @FXML

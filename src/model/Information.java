@@ -1,7 +1,9 @@
 package model;
 
 
-public class Information extends Evenement {
+import java.io.Serializable;
+
+public class Information extends Evenement implements Serializable {
     public void avantEvenement() {
     }
 

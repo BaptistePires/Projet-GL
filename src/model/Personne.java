@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Personne {
+public class Personne implements Serializable {
     private String nom;
 
     private String prenom;

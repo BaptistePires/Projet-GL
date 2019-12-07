@@ -38,6 +38,7 @@ public class LanceurDePartieController {
                 System.out.println(resource);
                 Main.mainStage.setScene(new Scene(FXMLLoader.load(resource)));
             }catch(Exception e){
+                e.printStackTrace();
                 System.err.println("Erreur lors du lancement de l'initialisation de la partie : "+e.getClass()+" : "+e.getMessage());
             }
         });
@@ -49,7 +50,12 @@ public class LanceurDePartieController {
         File file = fileChooser.showOpenDialog(Main.mainStage);
         if(file!=null){
             LanceurDePartie.INSTANCE.chargerPartieExistante("src/data/"+LanceurDePartie.dossierDeStockageDesParties+"/"+file.getName());
-            //TODO Lancer le tableau de bord de l'entraineur
+            try{
+                Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
+            }catch(Exception e){
+                e.printStackTrace();
+                System.err.println("Erreur lors de l'affichage de l'ecran principal du jeu : "+e.getClass()+" "+e.getMessage());
+            }
         }
     }
 

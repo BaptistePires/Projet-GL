@@ -1,7 +1,9 @@
 package model;
 
 
-public class Match extends Evenement {
+import java.io.Serializable;
+
+public class Match extends Evenement implements Serializable {
     private Equipe equipe1;
 
     private Equipe equipe2;

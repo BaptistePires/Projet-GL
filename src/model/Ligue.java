@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ligue {
+public class Ligue implements Serializable {
     public static List<Ligue> liguesAll = new ArrayList<Ligue>();
 
     private String nom;

@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
-public class Entraineur extends Personne {
+public class Entraineur extends Personne implements Serializable {
 
     public static ArrayList<Entraineur> entraineursAll = new ArrayList<Entraineur>();
 

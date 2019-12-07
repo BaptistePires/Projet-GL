@@ -1,7 +1,9 @@
 package model;
 
 
-public class StatistiquesEquipe {
+import java.io.Serializable;
+
+public class StatistiquesEquipe implements Serializable {
     private int nombreDeButsMarques;
 
     private int possessionDeBalle;
