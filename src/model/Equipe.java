@@ -1,5 +1,4 @@
 package model;
-
 import java.io.Serializable;
 import java.util.*;
 
@@ -51,6 +50,29 @@ public class Equipe implements Serializable {
     private Ligue ligue;
 
     public void formulerOffreTransfert(final Contrat contratPropose, final Joueur joueurConvoite) {
+        boolean reponse = joueurConvoite.etudierOffreTransfert(contratPropose);
+        if(reponse) {
+            contratPropose.getEquipeSource().joueurs.remove(joueurConvoite);
+            contratPropose.getEquipeSource().masseSalariale--;
+            contratPropose.getEquipeSource().budgetTransferts += contratPropose.getMontantDuTransfert();
+
+            contratPropose.getEquipeDestination().joueurs.add(joueurConvoite);
+            contratPropose.getEquipeDestination().masseSalariale++;
+            contratPropose.getEquipeDestination().budgetTransferts -= contratPropose.getMontantDuTransfert();
+
+            // ici creation event transfert
+            Transfert t = new Transfert(PartieSingleton.INSTANCE.getDateCourante().getJourCourant());
+            t.setContrat(contratPropose);
+            Date dateCourante = PartieSingleton.INSTANCE.getDateCourante().getJourCourant();
+            Evenement.getEvenementsPourLaDate(dateCourante).add(t);
+            for(Mercato m: PartieSingleton.INSTANCE.getFifa().getMercatos()) {
+                if(m.estOuvertAlaDate(dateCourante))
+                    m.addTransfert(t);
+                break;
+            }
+
+        }
+
     }
 
     public Equipe(String nom,String histoireDuClub,int budgetTransferts,int masseSalariale, List<Joueur> joueurs,
