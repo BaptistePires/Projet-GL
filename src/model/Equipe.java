@@ -1,5 +1,4 @@
 package model;
-
 import java.io.Serializable;
 import java.util.*;
 
@@ -62,6 +61,9 @@ public class Equipe implements Serializable {
             contratPropose.getEquipeDestination().budgetTransferts -= contratPropose.getMontantDuTransfert();
 
             // ici creation event transfert
+            Transfert t = new Transfert(PartieSingleton.INSTANCE.getDateCourante().getJourCourant());
+            t.setContrat(contratPropose);
+            Evenement.getEvenementsPourLaDate(PartieSingleton.INSTANCE.getDateCourante().getJourCourant()).add(t);
         }
 
     }
