@@ -30,4 +30,12 @@ public class Mercato extends Evenement implements Serializable {
         contratFactory = new ContratFactory();
     }
 
+    public boolean estOuvertAlaDate(Date d) {
+        return !(d.before(dateDebut) || d.after(dateFin));
+    }
+
+    public void addTransfert(Transfert t) {
+        transferts.add(t);
+    }
+
 }

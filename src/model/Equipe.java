@@ -63,7 +63,14 @@ public class Equipe implements Serializable {
             // ici creation event transfert
             Transfert t = new Transfert(PartieSingleton.INSTANCE.getDateCourante().getJourCourant());
             t.setContrat(contratPropose);
-            Evenement.getEvenementsPourLaDate(PartieSingleton.INSTANCE.getDateCourante().getJourCourant()).add(t);
+            Date dateCourante = PartieSingleton.INSTANCE.getDateCourante().getJourCourant();
+            Evenement.getEvenementsPourLaDate(dateCourante).add(t);
+            for(Mercato m: PartieSingleton.INSTANCE.getFifa().getMercatos()) {
+                if(m.estOuvertAlaDate(dateCourante))
+                    m.addTransfert(t);
+                break;
+            }
+
         }
 
     }

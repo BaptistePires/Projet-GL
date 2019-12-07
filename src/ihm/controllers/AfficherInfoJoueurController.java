@@ -9,10 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import model.Equipe;
-import model.Joueur;
-import model.Main;
-import model.Poste;
+import model.*;
 
 import java.util.Date;
 
@@ -74,11 +71,16 @@ public class AfficherInfoJoueurController {
     }
     @FXML
     void proposerContratCallBack(ActionEvent event) {
+        Mercato mercato = null;
+        for(Mercato m: PartieSingleton.INSTANCE.getFifa().getMercatos()) {
+            if(m.estOuvertAlaDate(PartieSingleton.INSTANCE.getDateCourante().getJourCourant()))
+                mercato = m;
+        }
+        if(mercato == null) return;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
             Parent root = (Parent) loader.load();
             ProposerContratController controller = loader.<ProposerContratController>getController();
-            Joueur joueur = new Joueur("Test", "test", null, "eeeee");
             controller.j = j;
             Scene scene = new Scene(root);
             Main.mainStage.setScene(scene);
