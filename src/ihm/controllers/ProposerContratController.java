@@ -121,12 +121,12 @@ public class ProposerContratController {
             Date dateFinContrat = Date.from(dateFin.getValue().atStartOfDay((ZoneId.systemDefault())).toInstant());
             int montantContrat = Integer.parseInt(inputMontantTransfert.getText());
             int salaireContrat = Integer.parseInt(inputSalaire.getText());
-            Contrat contrat = new ContratFactory().generateContract(dateDebutContrat, dateFinContrat, montantContrat, salaireContrat);
-            contrat.setEquipeDestination(PartieSingleton.INSTANCE.getEntraineur().getEquipe());
-            contrat.setEquipeSource(j.getEquipe());
-            j.getEquipe().formulerOffreTransfert(contrat, j);
+            Contrat contrat = new ContratFactory()
+                    .generateContract(dateDebutContrat, dateFinContrat, montantContrat, salaireContrat, j, j.getEquipe(),
+                            PartieSingleton.INSTANCE.getEntraineur().getEquipe());
+            //j.getEquipe().formulerOffreTransfert(contrat, j);
+            contrat.getEquipeSource().formulerOffreTransfert(contrat, j);
         }
-
     }
 
     private boolean validateDate(DatePicker date, Label alertLabel) {

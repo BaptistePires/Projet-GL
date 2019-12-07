@@ -53,7 +53,7 @@ public class Equipe implements Serializable {
         boolean reponse = joueurConvoite.etudierOffreTransfert(contratPropose);
         if(reponse) {
             contratPropose.getEquipeSource().joueurs.remove(joueurConvoite);
-            contratPropose.getEquipeSource().masseSalariale--;
+            contratPropose.getEquipeSource().masseSalariale-=contratPropose.getSalaireAnnuelEuro()/12;
             contratPropose.getEquipeSource().budgetTransferts += contratPropose.getMontantDuTransfert();
 
             contratPropose.getEquipeDestination().joueurs.add(joueurConvoite);
@@ -61,16 +61,9 @@ public class Equipe implements Serializable {
             contratPropose.getEquipeDestination().budgetTransferts -= contratPropose.getMontantDuTransfert();
 
             // ici creation event transfert
-            Transfert t = new Transfert(PartieSingleton.INSTANCE.getDateCourante().getJourCourant());
-            t.setContrat(contratPropose);
             Date dateCourante = PartieSingleton.INSTANCE.getDateCourante().getJourCourant();
+            Transfert t = new Transfert(dateCourante, contratPropose);
             Evenement.getEvenementsPourLaDate(dateCourante).add(t);
-            for(Mercato m: PartieSingleton.INSTANCE.getFifa().getMercatos()) {
-                if(m.estOuvertAlaDate(dateCourante))
-                    m.addTransfert(t);
-                break;
-            }
-
         }
 
     }

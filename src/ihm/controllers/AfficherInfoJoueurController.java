@@ -74,15 +74,6 @@ public class AfficherInfoJoueurController {
     }
     @FXML
     void proposerContratCallBack(ActionEvent event) {
-        Mercato mercato = null;
-        for(Mercato m: PartieSingleton.INSTANCE.getFifa().getMercatos()) {
-            if(m.estOuvertAlaDate(PartieSingleton.INSTANCE.getDateCourante().getJourCourant()))
-                mercato = m;
-        }
-        if(mercato == null){
-            alertMerca.setText("Il n'y a pas de mercato pour le moment.");
-            return;
-        }
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
             Parent root = (Parent) loader.load();
