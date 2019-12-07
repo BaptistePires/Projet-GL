@@ -1,9 +1,7 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Equipe implements Serializable {
     public static List<Equipe> equipesAll = new ArrayList<Equipe>();
@@ -15,6 +13,8 @@ public class Equipe implements Serializable {
         //Otherwise
         return null;
     }
+
+    private TreeMap<Date, Match> matchsDeLequipe;
 
     private String nom;
 
@@ -88,7 +88,8 @@ public class Equipe implements Serializable {
         nbVictoires=0;
         nbMatchsNuls=0;
         nbDefaites=0;
-        strategie = new StrategieOffensive();
+        matchsDeLequipe = new TreeMap<Date, Match>();
+        strategie = Strategie.pickRandomStrategie();
     }
 
     public boolean isNotreEquipe() {
@@ -99,6 +100,8 @@ public class Equipe implements Serializable {
         // TODO Auto-generated return
         return null;
     }
+
+
 
     public String getNom() {
         // Automatically generated method. Please delete this comment before entering specific code.

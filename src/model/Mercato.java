@@ -23,4 +23,11 @@ public class Mercato extends Evenement implements Serializable {
     public void apresEvenement() {
     }
 
+    public Mercato(Date dateDebut, Date dateFin){
+        super(true,dateDebut);
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        contratFactory = new ContratFactory();
+    }
+
 }

@@ -147,7 +147,7 @@ public class DataGenerator {
         final List<Arbitre> arbitres = new ArrayList<Arbitre>();
         for(int i=0;i<20;i++)equipes.add(generateRandomEquipe());
         for(int i=0;i<20;i++)arbitres.add(generateRandomArbitre());
-        Ligue result = new Ligue("nom_"+id, null, equipes, arbitres);
+        Ligue result = new Ligue("nom_"+id, equipes, arbitres);
         for(Equipe e:result.getEquipes())e.setLigue(result);
         return result;
     }
