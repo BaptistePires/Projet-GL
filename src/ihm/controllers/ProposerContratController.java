@@ -9,10 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import model.Contrat;
-import model.ContratFactory;
-import model.Joueur;
-import model.Main;
+import model.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -90,26 +87,44 @@ public class ProposerContratController {
         if(inputSalaire.getText().length() <= 0) {
             alertSalaire.setText(ALERT_TEXT);
         }else{
-            contratValide = false;
-            alertSalaire.setText("");
+            try{
+                Integer.parseInt(inputSalaire.getText());
+                alertSalaire.setText("");
+            }catch (NumberFormatException e) {
+                alertSalaire.setText("Veuillez entrer un entier");
+                contratValide = false;
+            }
+
         }
 
         if(inputMontantTransfert.getText().length() <= 0) {
             alertMontant.setText(ALERT_TEXT);
         }else{
-            contratValide = false;
-            alertMontant.setText("");
+            try {
+                Integer.parseInt(inputMontantTransfert.getText());
+                alertMontant.setText("");
+            }catch (NumberFormatException e) {
+                contratValide = false;
+                alertMontant.setText("Veuillez entrer un entier.");
+            }
+
         }
 
-        contratValide = validateDate(dateDebut, alertDebut);
-        contratValide = validateDate(dateFin, alertFin);
+        if(!validateDate(dateDebut, alertDebut)){
+            contratValide = false;
+        }
+        if(!validateDate(dateFin, alertFin)){
+            contratValide = false;
+        }
         if(contratValide) {
             Date dateDebutContrat = Date.from(dateDebut.getValue().atStartOfDay((ZoneId.systemDefault())).toInstant());
             Date dateFinContrat = Date.from(dateFin.getValue().atStartOfDay((ZoneId.systemDefault())).toInstant());
-            String montantContrat = inputMontantTransfert.getText();
+            int montantContrat = Integer.parseInt(inputMontantTransfert.getText());
             int salaireContrat = Integer.parseInt(inputSalaire.getText());
             Contrat contrat = new ContratFactory().generateContract(dateDebutContrat, dateFinContrat, montantContrat, salaireContrat);
-            System.out.println(j.etudierOffreTransfert(contrat));
+            contrat.setEquipeDestination(PartieSingleton.INSTANCE.getEntraineur().getEquipe());
+            contrat.setEquipeSource(j.getEquipe());
+            j.getEquipe().formulerOffreTransfert(contrat, j);
         }
 
     }

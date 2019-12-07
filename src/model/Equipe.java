@@ -51,6 +51,19 @@ public class Equipe implements Serializable {
     private Ligue ligue;
 
     public void formulerOffreTransfert(final Contrat contratPropose, final Joueur joueurConvoite) {
+        boolean reponse = joueurConvoite.etudierOffreTransfert(contratPropose);
+        if(reponse) {
+            contratPropose.getEquipeSource().joueurs.remove(joueurConvoite);
+            contratPropose.getEquipeSource().masseSalariale--;
+            contratPropose.getEquipeSource().budgetTransferts += contratPropose.getMontantDuTransfert();
+
+            contratPropose.getEquipeDestination().joueurs.add(joueurConvoite);
+            contratPropose.getEquipeDestination().masseSalariale++;
+            contratPropose.getEquipeDestination().budgetTransferts -= contratPropose.getMontantDuTransfert();
+
+            // ici creation event transfert
+        }
+
     }
 
     public Equipe(String nom,String histoireDuClub,int budgetTransferts,int masseSalariale, List<Joueur> joueurs,
