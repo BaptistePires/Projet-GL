@@ -34,6 +34,6 @@ public class DateCourante implements Serializable {
 
     @Override
     public String toString() {
-        return dateDuJour.toString();
+        return dateDuJour.getDate()+"/"+(dateDuJour.getMonth()+1)+"/"+(dateDuJour.getYear()+1900);
     }
 }

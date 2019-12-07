@@ -3,6 +3,7 @@ package ihm.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -53,8 +54,46 @@ public class TableauDeBordController {
     @FXML
     TableColumn<Match, Stade> stadeCol;
 
+
+    @FXML
+    Label nomDuClubLabel;
+
+    @FXML
+    Label budgetDesTransfertsLabel;
+    @FXML
+    Label masseSalarialeLabel;
+    @FXML
+    Label histoireDuClubLabel;
+    @FXML
+    Label monNomLabel;
+    @FXML
+    Label monPrenomLabel;
+    @FXML
+    Label maDateDeNaissanceLabel;
+    @FXML
+    Label monHistoireLabel;
+
+    @FXML
+    TableView<Joueur> effectifViewTab;
+    @FXML
+    TableColumn<Joueur, String> nomCol;
+    @FXML
+    TableColumn<Joueur, String> prenomCol;
+    @FXML
+    TableColumn<Joueur, Date> neCol;
+    @FXML
+    TableColumn<Joueur, Poste> posCol;
+    @FXML
+    TableColumn<Joueur, Integer> phyCol;
+    @FXML
+    TableColumn<Joueur, Integer> moralCol;
+    @FXML
+    TableColumn<Joueur, Integer> noteCol;
+
+
     @FXML
     public void initialize(){
+
         equipeCol.setCellValueFactory(new PropertyValueFactory<Equipe, String>("nom"));
         ptsCol.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbPoints"));
         victCol.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbVictoires"));
@@ -84,5 +123,29 @@ public class TableauDeBordController {
         calendrierEquipe.sort((m1,m2)->(m1.getDateDeLEvenement().after(m2.getDateDeLEvenement()))?1:((m2.getDateDeLEvenement().after(m1.getDateDeLEvenement()))?-1:0));
         ObservableList<Match> calendrierAMontrer = FXCollections.observableArrayList(calendrierEquipe);
         calendrierViewTab.setItems(calendrierAMontrer);
+
+        nomCol.setCellValueFactory(new PropertyValueFactory<Joueur, String>("nom"));
+        prenomCol.setCellValueFactory(new PropertyValueFactory<Joueur, String>("prenom"));
+        neCol.setCellValueFactory(new PropertyValueFactory<Joueur, Date>("dateDeNaissance"));
+        posCol.setCellValueFactory(new PropertyValueFactory<Joueur, Poste>("poste"));
+        phyCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("etatPhysique"));
+        moralCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral"));
+        noteCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("notePerformancesRecentes"));
+
+        List<Joueur> joueursEquipe = PartieSingleton.INSTANCE.getEntraineur().getEquipe().getJoueurs();
+        ObservableList<Joueur> joueursAAfficher = FXCollections.observableArrayList(joueursEquipe);
+        effectifViewTab.setItems(joueursAAfficher);
+
+        Entraineur moi = PartieSingleton.INSTANCE.getEntraineur();
+        Equipe monEquipe = moi.getEquipe();
+        nomDuClubLabel.setText(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getNom());
+        budgetDesTransfertsLabel.setText(String.valueOf(monEquipe.getBudgetTransferts()));
+        masseSalarialeLabel.setText(String.valueOf(monEquipe.getMasseSalariale()));
+        histoireDuClubLabel.setText(monEquipe.getHistoireDuClub());
+        monNomLabel.setText(moi.getNom());
+        monPrenomLabel.setText(moi.getPrenom());
+        maDateDeNaissanceLabel.setText(moi.getDateDeNaissance().toString());
+        monHistoireLabel.setText(moi.getHistoriqueCarriere());
+
     }
 }
