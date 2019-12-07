@@ -60,6 +60,9 @@ public class AfficherInfoJoueurController {
     @FXML
     private Button btnProposerContrat;
 
+    @FXML
+    private Label alertMerca;
+
     private Joueur j;
 
     public void setJoueur(Joueur j) {
@@ -76,7 +79,10 @@ public class AfficherInfoJoueurController {
             if(m.estOuvertAlaDate(PartieSingleton.INSTANCE.getDateCourante().getJourCourant()))
                 mercato = m;
         }
-        if(mercato == null) return;
+        if(mercato == null){
+            alertMerca.setText("Il n'y a pas de mercato pour le moment.");
+            return;
+        }
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
             Parent root = (Parent) loader.load();
