@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.List;
 
 public class DataGenerator {
+    public static int nbLiguesAGenererAlea=3;
+    public static int nbEquiesAGenererAleaParLigue=4;
+
     public static Joueur generateRandomJoueurAtt(){
         final Joueur res = generateRandomJoueur();
         if(!res.getPoste().equals(Poste.ATT)){
@@ -145,16 +148,16 @@ public class DataGenerator {
         final String id = "Ligue_"+(int)(Math.random()*10000);
         final List<Equipe> equipes = new ArrayList<Equipe>();
         final List<Arbitre> arbitres = new ArrayList<Arbitre>();
-        for(int i=0;i<20;i++)equipes.add(generateRandomEquipe());
-        for(int i=0;i<20;i++)arbitres.add(generateRandomArbitre());
+        for(int i=0;i<nbEquiesAGenererAleaParLigue;i++)equipes.add(generateRandomEquipe());
+        for(int i=0;i<nbEquiesAGenererAleaParLigue;i++)arbitres.add(generateRandomArbitre());
         Ligue result = new Ligue("nom_"+id, equipes, arbitres);
-        for(Equipe e:result.getEquipes())e.setLigue(result);
+        //for(Equipe e:result.getEquipes())e.setLigue(result);
         return result;
     }
 
     public static Fifa generateRandomFifa(){
         final List<Ligue> ligues = new ArrayList<Ligue>();
-        for(int i=0;i<4;i++){
+        for(int i=0;i<nbLiguesAGenererAlea;i++){
             ligues.add(generateRandomLigue());
         }
         return new Fifa(ligues);

@@ -1,2 +1,4 @@
 dossierDeStockageDesParties=parties
 dossierDeStockageDesDonnees=data
+nbLiguesAGenererAlea=4
+nbEquiesAGenererAleaParLigue=20

@@ -65,6 +65,7 @@ public class Ligue implements Serializable {
     }
 
     public void initCalendrier() {
+        System.out.println("init calendrier");
         List<Journee> journees = new ArrayList<Journee>();
         Date today = PartieSingleton.INSTANCE.getDateCourante().getJourCourant();
         if(equipes==null){
@@ -82,15 +83,11 @@ public class Ligue implements Serializable {
                     " arbitre pour "+equipes.size()+" equipes");
             return;
         }
-        for(int i=0; i <= 2*(equipes.size() -1); i++){
-            journees.add(new Journee(today, new ArrayList<Match>()));
-            today = new Date(today.getTime()+(7 * 1000 * 60 * 60 * 24));
-        }
 
-        for(int i=0; i <= equipes.size() -2; i++){
-            for(int j=i; j<=equipes.size() -1; j++){
-
-                for(int k=0;k<equipes.size()-1;k++){
+        for(int i=0; i < equipes.size() -1; i++){
+            for(int j=i+1; j<equipes.size(); j++){
+                int k;
+                for(k=0;k<journees.size();k++){
                     Iterator iter = journees.get(k).getMatchs().iterator();
                     boolean canPlaceIt = true;
                     while(iter.hasNext()){
@@ -104,18 +101,36 @@ public class Ligue implements Serializable {
                             break;
                         }
                     }
-                    if(!canPlaceIt)break;
-                    else{
+                    if(canPlaceIt){
                         Match curMatchAller = new Match(equipes.get(i),equipes.get(j),null,
                                 equipes.get(i).getStade(),journees.get(k).getDateJournee());
-                        Match curMatchRetour = new Match(equipes.get(j),equipes.get(i),null,
-                                equipes.get(j).getStade(), journees.get(k+(equipes.size()-1)).getDateJournee());
+                        equipes.get(j).getMatchsDeLequipe().add(curMatchAller);
+                        equipes.get(i).getMatchsDeLequipe().add(curMatchAller);
                         journees.get(k).getMatchs().add(curMatchAller);
-                        journees.get(k+(equipes.size()-1)).getMatchs().add(curMatchRetour);
                         break;
                     }
-
                 }
+                if(k>=journees.size()) {
+                    journees.add(new Journee(today,new ArrayList<Match>()));
+                    today = new Date(today.getTime()+(7 * 1000 * 60 * 60 * 24));
+                    Match curMatchAller = new Match(equipes.get(i),equipes.get(j),null,
+                            equipes.get(i).getStade(),journees.get(k).getDateJournee());
+                    equipes.get(j).getMatchsDeLequipe().add(curMatchAller);
+                    equipes.get(i).getMatchsDeLequipe().add(curMatchAller);
+                    journees.get(k).getMatchs().add(curMatchAller);
+                }
+            }
+        }
+        int nbJ = journees.size();
+        for(int r=0;r<nbJ;r++){
+            journees.add(new Journee(today, new ArrayList<Match>()));
+            today = new Date(today.getTime()+(7 * 1000 * 60 * 60 * 24));
+            for(Match m:journees.get(r).getMatchs()){
+                Match curMatchRetour = new Match(m.getEquipe2(),m.getEquipe1(),null,m.getEquipe2().getStade(),
+                        journees.get(journees.size()-1).getDateJournee());
+                journees.get(journees.size()-1).getMatchs().add(curMatchRetour);
+                m.getEquipe1().getMatchsDeLequipe().add(curMatchRetour);
+                m.getEquipe2().getMatchsDeLequipe().add(curMatchRetour);
             }
         }
 
@@ -124,13 +139,32 @@ public class Ligue implements Serializable {
             for(int i=0;i<j.getMatchs().size();i++){
                 j.getMatchs().get(i).setArbitre(arbitres.get(i));
             }
+            /*System.out.println(j.getMatchs().size());
+            System.out.println(j);*/
         }
 
         if(calendrier==null)calendrier=new Calendrier(journees);
         else calendrier.setJournees(journees);
     }
 
-    public void afficherInfosLigue() {
+    @Override
+    public String toString(){
+        return this.nom;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ligue)) return false;
+        Ligue ligue = (Ligue) o;
+        return Objects.equals(getNom(), ligue.getNom()) &&
+                Objects.equals(calendrier, ligue.calendrier) &&
+                Objects.equals(getEquipes(), ligue.getEquipes()) &&
+                Objects.equals(arbitres, ligue.arbitres);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNom(), calendrier, getEquipes(), arbitres);
+    }
 }

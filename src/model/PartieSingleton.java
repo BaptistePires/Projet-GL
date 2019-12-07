@@ -23,11 +23,11 @@ public final class PartieSingleton implements Serializable {
     public static transient PartieSingleton INSTANCE = new PartieSingleton();
 
     public void init(final String nomFichierSauvegarde) {
-        initFifa();
         boiteMail = new BoiteMail();
         setNomFichierSauvegarde(nomFichierSauvegarde);
         dateCourante = new DateCourante();
         dateCourante.setJourCourant(new GregorianCalendar(2019, Calendar.JULY, 1).getTime());
+        initFifa();
         INSTANCE = this;
         //L'initialisation de l'entraineur se fait au moment ou l'utilisateur saisit ses infos
     }

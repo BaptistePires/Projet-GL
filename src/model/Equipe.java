@@ -13,7 +13,7 @@ public class Equipe implements Serializable {
         return null;
     }
 
-    private TreeMap<Date, Match> matchsDeLequipe;
+    private List<Match> matchsDeLequipe = new ArrayList<Match>();
 
     private String nom;
 
@@ -90,7 +90,7 @@ public class Equipe implements Serializable {
         nbVictoires=0;
         nbMatchsNuls=0;
         nbDefaites=0;
-        matchsDeLequipe = new TreeMap<Date, Match>();
+        matchsDeLequipe = new ArrayList<Match>();
         strategie = Strategie.pickRandomStrategie();
     }
 
@@ -250,6 +250,14 @@ public class Equipe implements Serializable {
 
     public void setLigue(Ligue ligue) {
         this.ligue = ligue;
+    }
+
+    public List<Match> getMatchsDeLequipe() {
+        return matchsDeLequipe;
+    }
+
+    public void setMatchsDeLequipe(List<Match> matchsDeLequipe) {
+        this.matchsDeLequipe = matchsDeLequipe;
     }
 
     @Override

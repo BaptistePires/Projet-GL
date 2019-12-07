@@ -1,5 +1,7 @@
 package model;
 
+import data.DataGenerator;
+
 import java.io.*;
 import java.util.TreeMap;
 
@@ -27,6 +29,8 @@ public class LanceurDePartie {
             br.close();
             dossierDeStockageDesDonnees = dictionnaire.get("dossierDeStockageDesDonnees");
             dossierDeStockageDesParties = dictionnaire.get("dossierDeStockageDesParties");
+            DataGenerator.nbEquiesAGenererAleaParLigue = Integer.parseInt(dictionnaire.get("nbEquiesAGenererAleaParLigue"));
+            DataGenerator.nbLiguesAGenererAlea = Integer.parseInt(dictionnaire.get("nbLiguesAGenererAlea"));
             System.out.println(dossierDeStockageDesDonnees + " "+dictionnaire);
         }catch(Exception e){
             System.err.println("Erreur lors de la lecture du fichier de configurations :"+e.getClass());
