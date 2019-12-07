@@ -31,6 +31,12 @@ public abstract class Strategie implements Serializable {
     public void permuterJoueurs(final Joueur joueur1, final Joueur joueur2) {
     }
 
+    public static Strategie pickRandomStrategie(){
+        if(Math.random()<0.5){
+            return new StrategieDefensive();
+        }else return new StrategieDefensive();
+    }
+
     public abstract void appliquer();
 
 }

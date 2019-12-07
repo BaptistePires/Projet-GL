@@ -9,15 +9,30 @@ import java.util.TreeMap;
 public abstract class Evenement implements Serializable {
     public static TreeMap<Date, List<Evenement>> evenements = new TreeMap<Date, List<Evenement>>();
 
+    public static List<Evenement> getEvenementsPourLaDate(Date date) {
+        return evenements.get(date);
+    }
+
     private boolean importance;
 
     private Date dateDeLEvenement;
 
-    private boolean tst;
-
-    public static List<Evenement> getEvenementsPourLaDate(Date date) {
-        return evenements.get(date);
+    public boolean isImportance() {
+        return importance;
     }
+
+    public void setImportance(boolean importance) {
+        this.importance = importance;
+    }
+
+    public Date getDateDeLEvenement() {
+        return dateDeLEvenement;
+    }
+
+    public void setDateDeLEvenement(Date dateDeLEvenement) {
+        this.dateDeLEvenement = dateDeLEvenement;
+    }
+
 
     public boolean getImportance() {
         return importance;
@@ -27,6 +42,13 @@ public abstract class Evenement implements Serializable {
         avantEvenement();
         executerEvenement();
         apresEvenement();
+    }
+
+    public Evenement(boolean importance, Date dateDeLEvenement) {
+        this.importance = importance;
+        this.dateDeLEvenement = dateDeLEvenement;
+        evenements.putIfAbsent(dateDeLEvenement, new ArrayList<Evenement>());
+        evenements.get(dateDeLEvenement).add(this);
     }
 
     public abstract void avantEvenement();
