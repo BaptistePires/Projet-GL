@@ -76,18 +76,16 @@ public class AfficherInfoJoueurController {
     void proposerContratCallBack(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
-            VBox root = (VBox) loader.load();
+            Parent root = (Parent) loader.load();
             ProposerContratController controller = loader.<ProposerContratController>getController();
             Joueur joueur = new Joueur("Test", "test", null, "eeeee");
-//  controller.nomJoueur.setText("test");
-            controller.valLabel = "eeee";
+            controller.j = j;
             Scene scene = new Scene(root);
             Main.mainStage.setScene(scene);
-//            controller.setJoueur(joueur);
             Main.mainStage.show();
         } catch (Exception e) {
             System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 

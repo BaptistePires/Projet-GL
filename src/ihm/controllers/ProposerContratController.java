@@ -9,14 +9,34 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.Contrat;
+import model.ContratFactory;
 import model.Joueur;
 import model.Main;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class ProposerContratController {
 
     public ProposerContratController() {
         super();
     }
+
+    public static String ALERT_TEXT = "Veuillez rentrer une valeur valide.";
+
+    @FXML
+    private Label alertDebut;
+
+    @FXML
+    private Label alertFin;
+
+    @FXML
+    private Label alertMontant;
+
+    @FXML
+    private Label alertSalaire;
 
     @FXML
     private Label nomJoueur;
@@ -39,8 +59,10 @@ public class ProposerContratController {
     @FXML
     private Label labelDebut11;
 
+
     @FXML
-    private Label inputSalaireAnnuel;
+    private TextField inputSalaire;
+
 
     @FXML
     private Button soumettreContrat;
@@ -63,14 +85,51 @@ public class ProposerContratController {
 
     @FXML
     void soumettreContrat(ActionEvent event) {
-        System.out.println("Soumettre le contrat au joueur ");
+        boolean contratValide = true;
+
+        if(inputSalaire.getText().length() <= 0) {
+            alertSalaire.setText(ALERT_TEXT);
+        }else{
+            contratValide = false;
+            alertSalaire.setText("");
+        }
+
+        if(inputMontantTransfert.getText().length() <= 0) {
+            alertMontant.setText(ALERT_TEXT);
+        }else{
+            contratValide = false;
+            alertMontant.setText("");
+        }
+
+        contratValide = validateDate(dateDebut, alertDebut);
+        contratValide = validateDate(dateFin, alertFin);
+        if(contratValide) {
+            Date dateDebutContrat = Date.from(dateDebut.getValue().atStartOfDay((ZoneId.systemDefault())).toInstant());
+            Date dateFinContrat = Date.from(dateFin.getValue().atStartOfDay((ZoneId.systemDefault())).toInstant());
+            String montantContrat = inputMontantTransfert.getText();
+            int salaireContrat = Integer.parseInt(inputSalaire.getText());
+            Contrat contrat = new ContratFactory().generateContract(dateDebutContrat, dateFinContrat, montantContrat, salaireContrat);
+            System.out.println(j.etudierOffreTransfert(contrat));
+        }
+
+    }
+
+    private boolean validateDate(DatePicker date, Label alertLabel) {
+
+        LocalDate dateValue = date.getValue();
+        if(dateValue != null) {
+            alertLabel.setText("");
+            return true;
+        }else{
+            alertLabel.setText(ALERT_TEXT);
+            return false;
+        }
     }
 
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
-            nomJoueur.setText(valLabel);
+            nomJoueur.setText("Proposer un contrat à " + j.getNom() + " " + j.getPrenom());
         });
-
     }
 }
