@@ -34,7 +34,9 @@ public class Joueur extends Personne implements Serializable {
 
     public boolean etudierOffreTransfert(final Contrat contratPropose) {
         Random rd = new Random();
-        return rd.nextBoolean();
+        boolean result = rd.nextBoolean();
+        contratPropose.setAccepte(result);
+        return result;
     }
 
     public void initJoueur() {

@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherInfoJoueurController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="514.0" stylesheets="@style/styles.css">
@@ -93,6 +92,7 @@
             <Button fx:id="btnRetour" layoutX="349.0" layoutY="337.0" mnemonicParsing="false" onAction="#retourCallBack" text="Retour" />
             <Button fx:id="btnProposerContrat" layoutX="141.0" layoutY="337.0" mnemonicParsing="false" onAction="#proposerContratCallBack" text="Proposer un contrat" />
             <Button fx:id="btnProposerContrat1" layoutX="322.0" layoutY="265.0" mnemonicParsing="false" onAction="#loadJoueur" text="Load joueur( temp)" />
+            <Label fx:id="alertMerca" layoutX="185.0" layoutY="310.0" textFill="RED" />
          </children>
          <styleClass>
             <String fx:value="bgAfficherJoueur" />

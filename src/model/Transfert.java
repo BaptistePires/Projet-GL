@@ -25,8 +25,9 @@ public class Transfert extends Evenement implements Serializable {
     public void apresEvenement() {
     }
 
-    public Transfert(Date date){
+    public Transfert(Date date, Contrat contrat){
         super(false, date);
+        this.contrat = contrat;
     }
 
     @Override
