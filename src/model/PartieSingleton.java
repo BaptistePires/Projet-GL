@@ -9,7 +9,10 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.*;
 
-public final class PartieSingleton implements Serializable {
+public final class PartieSingleton extends NotreObservable implements Serializable {
+
+    public static int avancerAuMaximum;
+
     private String nomFichierSauvegarde;
 
     private DateCourante dateCourante;
@@ -95,11 +98,12 @@ public final class PartieSingleton implements Serializable {
     }
 
     public void avancerLeTemps() {
-        while(true){
+        int i=0;
+        while(i++<avancerAuMaximum){
             /* Ajout d'un jour à la date courante et récupération des évenements. */
             dateCourante.avancerDUnJour();
             List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
-
+            if(evenements==null)continue;
             /* Tri des évenements (Les plus importants en tête de liste) */
             evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
 
@@ -114,6 +118,31 @@ public final class PartieSingleton implements Serializable {
                 }
             }
         }
+        notifier();
+    }
+
+    public void avancerLeTempsJusqua(Date date){
+        while(date.after(dateCourante.getJourCourant())){
+            /* Ajout d'un jour à la date courante et récupération des évenements. */
+            dateCourante.avancerDUnJour();
+            List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
+            if(evenements==null)continue;
+            /* Tri des évenements (Les plus importants en tête de liste) */
+            System.out.println("Evenements :"+evenements);
+            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
+
+            /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
+             * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
+             * et on recommence. */
+            if(evenements.get(0).getImportance()) {
+                break;
+            }else{
+                for(Evenement e: evenements) {
+                    e.processEvenement();
+                }
+            }
+        }
+        notifier();
     }
 
     public void initDateCourante() {
