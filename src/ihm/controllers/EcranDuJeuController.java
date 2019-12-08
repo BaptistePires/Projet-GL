@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Observateur;
 import model.PartieSingleton;
@@ -64,6 +65,15 @@ public class EcranDuJeuController implements Observateur {
     @FXML
     public void administrationAction(){
 
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../administration.fxml"));
+            VBox dashboard = (VBox) fxmlLoader.load();
+            pane1_1.getChildren().clear();
+            pane1_1.getChildren().add(dashboard);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+        }
     }
 
     @FXML

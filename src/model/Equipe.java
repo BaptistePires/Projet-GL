@@ -70,12 +70,14 @@ public class Equipe implements Serializable {
 
     }
 
-    public Equipe(String nom,String histoireDuClub,int budgetTransferts,int masseSalariale, List<Joueur> joueurs,
+    public Equipe(String nom,String histoireDuClub,int budgetTransferts,int masseSalariale, int budgetTeamBuilding,
+                  List<Joueur> joueurs,
                   Entraineur entraineur, President president, Stade stade, Ligue ligue){
         this.nom = nom;
         this.histoireDuClub = histoireDuClub;
         this.budgetTransferts = budgetTransferts;
         this.masseSalariale = masseSalariale;
+        this.budgetTeamBuilding = budgetTeamBuilding;
         this.joueurs = joueurs;
         this.entraineur = entraineur;
         this.president = president;
@@ -117,7 +119,7 @@ public class Equipe implements Serializable {
     }
 
     public void setBudgetTeamBuilding(int newBudget) {
-        budgetTransferts = newBudget;
+        budgetTeamBuilding = newBudget;
     }
     public String getHistoireDuClub() {
         // Automatically generated method. Please delete this comment before entering specific code.

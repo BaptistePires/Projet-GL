@@ -134,7 +134,7 @@ public class DataGenerator {
             joueurs.add(generateRandomJoueurAtt());
         }
         Equipe result =  new Equipe("nom_"+id,"histoireDuClub_"+id,(int)(Math.random()*100000000),
-                (int)(Math.random()*100000), joueurs, generateRandomEntraineur(), generateRandomPresident(),
+                (int)(Math.random()*100000),(int)(Math.random()*100000), joueurs, generateRandomEntraineur(), generateRandomPresident(),
                 generateRandomStade(), null);
         for(Joueur j:result.getJoueurs()){
             j.setEquipe(result);

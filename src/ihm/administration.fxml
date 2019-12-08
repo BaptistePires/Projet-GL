@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AdministrationController">
    <children>
       <AnchorPane fx:id="mainPane" prefHeight="461.0" prefWidth="600.0" styleClass="bgAfficherJoueur" stylesheets="@style/styles.css">
@@ -19,7 +18,9 @@
             <Button fx:id="btnTrasnfert" layoutX="310.0" layoutY="24.0" mnemonicParsing="false" onAction="#augmentationTrasnfert" text="Demander augmentation" />
             <Button fx:id="btnMasse" layoutX="310.0" layoutY="73.0" mnemonicParsing="false" onAction="#augmentationMasse" text="Demander augmentation" />
             <Button fx:id="btnTeamBuilding" layoutX="310.0" layoutY="121.0" mnemonicParsing="false" onAction="#augmentationTeamBuilding" text="Demander augmentation" />
-            <Button fx:id="btnRetour" layoutX="274.0" layoutY="349.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+            <Label fx:id="etatTransfert" layoutX="490.0" layoutY="28.0" prefHeight="18.0" prefWidth="96.0" />
+            <Label fx:id="etatTeamBuilding" layoutX="490.0" layoutY="133.0" prefHeight="18.0" prefWidth="96.0" />
+            <Label fx:id="etatMasse" layoutX="490.0" layoutY="76.0" prefHeight="18.0" prefWidth="96.0" />
          </children>
       </AnchorPane>
    </children>

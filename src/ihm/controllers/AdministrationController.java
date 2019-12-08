@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import model.Entraineur;
 import model.Equipe;
+import model.PartieSingleton;
 import model.President;
 
 public class AdministrationController {
@@ -36,12 +37,25 @@ public class AdministrationController {
     @FXML
     private Button btnRetour;
 
+    @FXML
+    private Label etatTransfert;
+
+    @FXML
+    private Label etatTeamBuilding;
+
+    @FXML
+    private Label etatMasse;
+
+
     public Equipe equipe;
 
     @FXML
     void augmentationMasse(ActionEvent event) {
         if(equipe.getEntraineur().demanderBudgetMasseSalariale()){
             labelMasse.setText(Integer.toString(equipe.getMasseSalariale()));
+            etatMasse.setText("Accepté");
+        }else{
+            etatMasse.setText("Refusé");
         }
     }
 
@@ -49,6 +63,9 @@ public class AdministrationController {
     void augmentationTeamBuilding(ActionEvent event) {
         if(equipe.getEntraineur().demanderBudgetTeamBuilding()) {
             labelTeamBuilding.setText(Integer.toString(equipe.getBudgetTeamBuilding()));
+            etatTeamBuilding.setText("Accepté");
+        }else{
+            etatTeamBuilding.setText("Refusé");
         }
     }
 
@@ -56,6 +73,9 @@ public class AdministrationController {
     void augmentationTrasnfert(ActionEvent event) {
         if(equipe.getEntraineur().demanderBudgetTransfert()) {
             labelTrasnfert.setText(Integer.toString(equipe.getBudgetTransferts()));
+            etatTransfert.setText("Accepté");
+        }else{
+            etatTransfert.setText("Refusé");
         }
     }
 
@@ -67,16 +87,10 @@ public class AdministrationController {
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
-//            Entraineur e = new Entraineur("Nom", "Prenom", null, "");
-//            President p = new President("Nom", "Prenom", null, "", equipe);
-//            p.setEquipe(equipe);
-//            e.setEquipe(equipe);
-//            equipe = new Equipe("Test", "ter", 82122,
-//                    884555,null, e, p , null, null);
-
+            equipe = PartieSingleton.INSTANCE.getEntraineur().getEquipe();
             labelTrasnfert.setText(Integer.toString(equipe.getBudgetTransferts()));
             labelMasse.setText(Integer.toString(equipe.getMasseSalariale()));
-//            labelTeamBuilding.setText(Integer.toString(equipe.get));
+            labelTeamBuilding.setText(Integer.toString(equipe.getBudgetTransferts()));
         });
     }
 }
