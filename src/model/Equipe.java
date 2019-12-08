@@ -204,9 +204,9 @@ public class Equipe implements Serializable {
         if(newBudget < 0) {
             this.budgetTransferts = Integer.MAX_VALUE;
         }else if(newBudget <= 0) {
-            this.budgetTeamBuilding = 0;
+            this.budgetTransferts = 0;
         }else {
-            this.budgetTeamBuilding = newBudget;
+            this.budgetTransferts = newBudget;
         }
     }
 
