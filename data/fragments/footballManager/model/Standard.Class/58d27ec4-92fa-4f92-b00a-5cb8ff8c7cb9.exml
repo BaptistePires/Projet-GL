@@ -120,7 +120,7 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <LINK relation="Type">
-                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
@@ -174,6 +174,114 @@
                   </COMP>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="personne" mc="Standard.Parameter" uid="09e0ffaa-f3c1-4b65-8345-4f5e99d44a65"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[personne]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Personne" mc="Standard.Class" uid="df4c6153-baf3-442a-aa0a-cfd789e8290f"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="28c46ae3-6d6a-47bd-a0a7-804c577061e1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="equipeSource" mc="Standard.Parameter" uid="84c08bee-3291-4bdb-a133-0de4cb5f8cf4"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[equipeSource]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Equipe" mc="Standard.Class" uid="d4ffd317-0439-45de-ad94-66b22dbcc129"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="7b6cf506-408d-413e-ad17-66f2054079eb"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="equipeDestination" mc="Standard.Parameter" uid="37067e58-2e82-47d1-bf85-db52032b2a63"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[equipeDestination]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Equipe" mc="Standard.Class" uid="d4ffd317-0439-45de-ad94-66b22dbcc129"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="763ed603-a670-4c6d-a8ee-8d4582ae7b3f"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaFinal" mc="Infrastructure.TagType" uid="eb8c1900-000a-b31d-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
             <COMP relation="Return">
               <OBJECT>
@@ -203,7 +311,7 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="1114b6fd-52c8-4208-9d74-2834ee6517ca"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return null;]]></ATT>
+                  <ATT name="Content"><![CDATA[return new Contrat(dateDebut, dateFin, montantDuTransfert, salaireAnnuelEuro, personne, equipeSource, equipeDestination);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -214,21 +322,21 @@
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
-              <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="862f6be3-8bca-464c-9c89-966282e075f1"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[// TODO Auto-generated return]]></ATT>
-                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
             </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Realized">
+        <OBJECT>
+          <ID name="" mc="Standard.InterfaceRealization" uid="f4ae94c3-0ab1-4f3d-abcb-bf6be1760c0d"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Implemented">
+              <ID name="Serializable" mc="Standard.Interface" uid="711b58df-3a40-49d6-9173-5db09fdd3f28"/>
+            </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

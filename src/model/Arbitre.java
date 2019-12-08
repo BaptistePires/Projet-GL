@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Arbitre extends Personne implements Serializable {
-    public static ArrayList<Arbitre> arbitresAll = new ArrayList<Arbitre>();
-
     private int severite;
+
+    public static ArrayList<Arbitre> arbitresAll = new ArrayList<Arbitre>();
 
     public void initArbitre() {
     }

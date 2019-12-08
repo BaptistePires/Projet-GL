@@ -81,9 +81,7 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="387c0506-9b66-416a-aa8d-4572e1efbe0c"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[LanceurDePartie.INSTANCE.menuPrincipal();
-launch(args);
-]]></ATT>
+                  <ATT name="Content"><![CDATA[launch(args);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -152,7 +150,7 @@ launch(args);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="f8226b15-736e-477f-afa4-6f347c0d589f"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Parent root = FXMLLoader.load(getClass().getResource("ihm/menuPrincipal.fxml"));
+                  <ATT name="Content"><![CDATA[Parent root = FXMLLoader.load(getClass().getResource("../ihm/lanceurDePartie.fxml"));
 primaryStage.setTitle("Football Manager");
 primaryStage.setScene(new Scene(root));
 primaryStage.show();
@@ -234,7 +232,7 @@ mainStage=primaryStage;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d790e030-6783-4436-b9ba-d4fdf00ffe5f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2238a19c-52a8-441d-a184-e48287197e08"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

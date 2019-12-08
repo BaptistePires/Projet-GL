@@ -15,6 +15,7 @@ import model.*;
 
 import javax.xml.soap.Text;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Observable;
 
@@ -55,14 +56,13 @@ public class StrategieController {
     TableColumn<Joueur,Integer> cartonJCol;
     @FXML
     TableColumn<Joueur,Integer> butsCol;
-    List<Joueur> joueursChoisissables;
     @FXML
     public void initialize(){
-        List<Joueur> joueursAChoisir = new ArrayList<Joueur>(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getJoueurs());
-        ObservableList<Joueur> observableAjouterJoueur = FXCollections.observableArrayList(joueursAChoisir);
+        final List<Joueur> joueursAChoisir = new ArrayList<Joueur>(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getJoueurs());
+        final ObservableList<Joueur> observableAjouterJoueur = FXCollections.observableArrayList(joueursAChoisir);
         ajouterJoueurChoice.setItems(observableAjouterJoueur);
-        List<Joueur> joueursARetirer = new ArrayList<Joueur>();
-        ObservableList<Joueur> observableRetirerJoueur = FXCollections.observableArrayList(joueursARetirer);
+        final List<Joueur> joueursARetirer = new ArrayList<Joueur>();
+        final ObservableList<Joueur> observableRetirerJoueur = FXCollections.observableArrayList(joueursARetirer);
         retirerJoueurChoice.setItems(observableRetirerJoueur);
 
         retirerJoueurChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Joueur>(){
@@ -76,7 +76,6 @@ public class StrategieController {
                 for(int i=0;i<observableRetirerJoueur.size();i++){
                     if(observableRetirerJoueur.get(i)==null)observableRetirerJoueur.remove(i);
                 }
-                System.out.println("A"+joueurSelectViewTab.getItems());
             }
         } );
 
@@ -92,7 +91,6 @@ public class StrategieController {
                 for(int i=0;i<observableRetirerJoueur.size();i++){
                     if(observableRetirerJoueur.get(i)==null)observableRetirerJoueur.remove(i);
                 }
-                System.out.println("B"+joueurSelectViewTab.getItems());
             }
         } );
 
@@ -120,7 +118,26 @@ public class StrategieController {
     }
     @FXML
     public void validerAction(){
+        if(retirerJoueurChoice.getItems()==null || retirerJoueurChoice.getItems().size()!=11){
+            showAlert("Attention","Incohérence","Il faut avoir exactement 11 joueurs dans la formation");
+            return;
+        }int nbGb=0;
+        for(int i=0;i<retirerJoueurChoice.getItems().size();i++){
+            if(retirerJoueurChoice.getItems().get(i).getPoste().equals(Poste.GB))nbGb++;
+        }
+        if(nbGb!=1){
+            showAlert("Attention","Incohérence","Il faut avoir exactement 1 gardien de but dans la formation");
+            return;
+        }
         if(strategieDefautCheck.isSelected()){
+            Strategie choisie =null;
+            if(strategieDefautChoice.getValue().getClass().equals(StrategieDefensive.class))choisie = new StrategieDefensive();
+            else /*if(strategieDefautChoice.getValue().getClass().equals(StrategieOffensive.class))*/choisie = new StrategieOffensive();
+            HashMap<Joueur,Poste> formation = new HashMap<Joueur, Poste>();
+            for(Joueur j:retirerJoueurChoice.getItems()){
+                formation.putIfAbsent(j,j.getPoste());
+            }
+            choisie.setFormation(formation);
             PartieSingleton.INSTANCE.getEntraineur().getEquipe().setStrategie(strategieDefautChoice.getValue());
             this.showAlert("Information","Stratégie bien mise en place","Votre stratégie a été associée à votre équipe");
 
@@ -143,6 +160,11 @@ public class StrategieController {
                         setAttaque(attaque);
                     }
                 };
+                HashMap<Joueur,Poste> formation = new HashMap<Joueur, Poste>();
+                for(Joueur j:retirerJoueurChoice.getItems()){
+                    formation.putIfAbsent(j,j.getPoste());
+                }
+                s.setFormation(formation);
                 PartieSingleton.INSTANCE.getEntraineur().getEquipe().setStrategie(s);
                 this.showAlert("Information","Stratégie bien mise en place","Votre stratégie a été associée à votre équipe");
             }

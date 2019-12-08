@@ -62,9 +62,9 @@ public class Personne implements Serializable {
         if (!(o instanceof Personne)) return false;
         Personne personne = (Personne) o;
         return Objects.equals(getNom(), personne.getNom()) &&
-                Objects.equals(getPrenom(), personne.getPrenom()) &&
-                Objects.equals(getDateDeNaissance(), personne.getDateDeNaissance()) &&
-                Objects.equals(getHistoriqueCarriere(), personne.getHistoriqueCarriere());
+                        Objects.equals(getPrenom(), personne.getPrenom()) &&
+                        Objects.equals(getDateDeNaissance(), personne.getDateDeNaissance()) &&
+                        Objects.equals(getHistoriqueCarriere(), personne.getHistoriqueCarriere());
     }
 
     @Override
@@ -75,10 +75,11 @@ public class Personne implements Serializable {
     @Override
     public String toString() {
         return "Personne{" +
-                "nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", dateDeNaissance=" + dateDeNaissance +
-                ", historiqueCarriere='" + historiqueCarriere + '\'' +
-                '}';
+                        "nom='" + nom + '\'' +
+                        ", prenom='" + prenom + '\'' +
+                        ", dateDeNaissance=" + dateDeNaissance +
+                        ", historiqueCarriere='" + historiqueCarriere + '\'' +
+                        '}';
     }
+
 }

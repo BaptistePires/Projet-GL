@@ -1,11 +1,15 @@
 package model;
 
-
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.TreeMap;
 
 public abstract class Strategie implements Serializable {
+
+    HashMap<Joueur,Poste> formation=new HashMap<Joueur, Poste>();
+
+
     private int agressivite;
 
     private int passes;
@@ -15,6 +19,24 @@ public abstract class Strategie implements Serializable {
     private int milieu;
 
     private int attaque;
+
+
+    public void placerJoueur(final Joueur joueur, final int indexPosition) {
+    }
+
+    public int indexDuJoueur(final Joueur joueur) {
+        // TODO Auto-generated return
+        return 0;
+    }
+
+    public void permuterJoueurs(final Joueur joueur1, final Joueur joueur2) {
+    }
+
+    public static Strategie pickRandomStrategie() {
+        if(Math.random()<0.5){
+            return new StrategieDefensive();
+        }else return new StrategieDefensive();
+    }
 
     public int getAgressivite() {
         return agressivite;
@@ -64,23 +86,31 @@ public abstract class Strategie implements Serializable {
         this.formation = formation;
     }
 
-    HashMap<Joueur,Poste> formation=new HashMap<Joueur, Poste>();
 
-    public void placerJoueur(final Joueur joueur, final int indexPosition) {
-    }
 
-    public int indexDuJoueur(final Joueur joueur) {
-        // TODO Auto-generated return
-        return 0;
-    }
-
-    public void permuterJoueurs(final Joueur joueur1, final Joueur joueur2) {
-    }
-
-    public static Strategie pickRandomStrategie(){
+    public static void pickRandomStrategie(Equipe e){
+        Strategie s;
         if(Math.random()<0.5){
-            return new StrategieDefensive();
-        }else return new StrategieDefensive();
+            s= new StrategieDefensive();
+        }else s= new StrategieDefensive();
+        HashMap<Joueur, Poste> f = new HashMap<Joueur, Poste>();
+        for(int i =0;i<e.getJoueurs().size();i++){
+            if(e.getJoueurs().get(i).getPoste().equals(Poste.GB)){
+                f.putIfAbsent(e.getJoueurs().get(i),Poste.GB);
+                break;
+            }
+        }
+        Collections.shuffle(e.getJoueurs());
+        int added = 0;
+        for(Joueur j:e.getJoueurs()){
+            if(added==11)break;
+            if(!j.getPoste().equals(Poste.GB)){
+                added++;
+                f.putIfAbsent(j,j.getPoste());
+            }
+        }
+        s.setFormation(f);
+        e.setStrategie(s);
     }
 
     public abstract void appliquer();

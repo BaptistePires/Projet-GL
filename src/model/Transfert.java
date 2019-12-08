@@ -5,16 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Transfert extends Evenement implements Serializable {
-
     private Contrat contrat;
-
-    public Contrat getContrat() {
-        return contrat;
-    }
-
-    public void setContrat(Contrat contrat) {
-        this.contrat = contrat;
-    }
 
     public void avantEvenement() {
     }
@@ -25,7 +16,15 @@ public class Transfert extends Evenement implements Serializable {
     public void apresEvenement() {
     }
 
-    public Transfert(Date date, Contrat contrat){
+    public Contrat getContrat() {
+        return contrat;
+    }
+
+    public void setContrat(Contrat contrat) {
+        this.contrat = contrat;
+    }
+
+    public Transfert(Date date, Contrat contrat) {
         super(false, date);
         this.contrat = contrat;
     }
@@ -46,9 +45,8 @@ public class Transfert extends Evenement implements Serializable {
     @Override
     public String toString() {
         return "Transfert{" +
-                "contrat=" + contrat +
-                '}';
+                        "contrat=" + contrat +
+                        '}';
     }
+
 }
-
-
