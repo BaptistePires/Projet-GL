@@ -174,11 +174,13 @@ sauvegarderPartie();
                 <ID name="" mc="Infrastructure.Note" uid="d21e28b1-f635-4a84-acc4-b5a766ee6450"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try{
-    ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(PartieSingleton.INSTANCE.getNomFichierSauvegarde()));
+    ObjectOutputStream out = new ObjectOutputStream(
+            new FileOutputStream("src/data/"+LanceurDePartie.dossierDeStockageDesParties+"/"
+                    +PartieSingleton.INSTANCE.getNomFichierSauvegarde()));
     out.writeObject(PartieSingleton.INSTANCE);
     out.close();
 }catch (Exception e){
-    System.err.println("Erreur lors de l'enregistrement de la partie :"+e.getClass());
+    System.err.println("Erreur lors de l'enregistrement de la partie :"+e.getClass()+" : "+e.getMessage());
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -206,21 +208,24 @@ sauvegarderPartie();
             <ATT name="Name"><![CDATA[quitter]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
-          <DEPENDENCIES></DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="menuPrincipal" mc="Standard.Operation" uid="53dbda19-7584-4fe1-b3e9-4b6bc20811eb"/>
-          <ATTRIBUTES>
-            <ATT name="Concurrency">false</ATT>
-            <ATT name="Final">false</ATT>
-            <ATT name="Passing">MethodOut</ATT>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[menuPrincipal]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES></DEPENDENCIES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="ba5a2c2d-2b7a-45c2-956a-8b890c39b278"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[System.exit(0);]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
           <ID name="LanceurDePartie" mc="Standard.Operation" uid="878b3858-611b-4de2-a005-c63ecfa5b420"/>
@@ -274,7 +279,7 @@ sauvegarderPartie();
                 <ID name="" mc="Infrastructure.Note" uid="d9fd9129-68a3-4f96-aea2-2a996a890713"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try{
-    BufferedReader br = new BufferedReader(new FileReader("data/conf"));
+    BufferedReader br = new BufferedReader(new FileReader("src/data/conf"));
     String line;
     TreeMap<String, String> dictionnaire = new TreeMap<String, String>();
     String[] keyValue;
@@ -285,7 +290,9 @@ sauvegarderPartie();
     br.close();
     dossierDeStockageDesDonnees = dictionnaire.get("dossierDeStockageDesDonnees");
     dossierDeStockageDesParties = dictionnaire.get("dossierDeStockageDesParties");
-    System.out.println(dossierDeStockageDesDonnees + " "+dictionnaire);
+    DataGenerator.nbEquiesAGenererAleaParLigue = Integer.parseInt(dictionnaire.get("nbEquiesAGenererAleaParLigue"));
+    DataGenerator.nbLiguesAGenererAlea = Integer.parseInt(dictionnaire.get("nbLiguesAGenererAlea"));
+    PartieSingleton.avancerAuMaximum = Integer.parseInt(dictionnaire.get("avancerAuMaximum"));
 }catch(Exception e){
     System.err.println("Erreur lors de la lecture du fichier de configurations :"+e.getClass());
 }
@@ -317,7 +324,7 @@ sauvegarderPartie();
             <ATT name="IsUnique">false</ATT>
             <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
             <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
+            <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">true</ATT>
             <ATT name="IsAbstract">false</ATT>
             <ATT name="Name"><![CDATA[dossierDeStockageDesParties]]></ATT>
@@ -341,7 +348,7 @@ sauvegarderPartie();
             <ATT name="IsUnique">false</ATT>
             <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
             <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
+            <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">true</ATT>
             <ATT name="IsAbstract">false</ATT>
             <ATT name="Name"><![CDATA[dossierDeStockageDesDonnees]]></ATT>
@@ -432,96 +439,8 @@ sauvegarderPartie();
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
-        <OBJECT>
-          <ID name="fenetrePrincipale" mc="Standard.AssociationEnd" uid="cd20bdf3-64c1-49d2-90ac-f1ba9e7cac41"/>
-          <ATTRIBUTES>
-            <ATT name="Aggregation">KindIsAssociation</ATT>
-            <ATT name="IsChangeable">true</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
-            <ATT name="IsDerived">false</ATT>
-            <ATT name="IsOrdered">false</ATT>
-            <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="IsClass">true</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[fenetrePrincipale]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="JFrame" mc="Standard.Class" uid="ef049e8e-ef3c-48b4-89e6-be9587ea7f9a"/>
-            </LINK>
-            <COMP relation="Opposite">
-              <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="b0171880-3579-4996-9425-50b35db7df1d"/>
-                <ATTRIBUTES>
-                  <ATT name="Aggregation">KindIsAssociation</ATT>
-                  <ATT name="IsChangeable">true</ATT>
-                  <ATT name="Changeable">ReadWrite</ATT>
-                  <ATT name="IsDerived">false</ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="Visibility">Private</ATT>
-                  <ATT name="IsClass">false</ATT>
-                  <ATT name="IsAbstract">false</ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Opposite">
-                    <COMPID name="fenetrePrincipale" mc="Standard.AssociationEnd" uid="cd20bdf3-64c1-49d2-90ac-f1ba9e7cac41"/>
-                  </COMP>
-                  <COMP relation="Association">
-                    <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="031a0c16-5137-4806-87ea-606dee774fe4"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES></DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="031a0c16-5137-4806-87ea-606dee774fe4"/>
-            </COMP>
-            <COMP relation="Tag">
-              <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8eb52f33-3596-4075-905f-5e87948fd8f1"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Definition">
-                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-          </DEPENDENCIES>
-        </OBJECT>
       </COMP>
       <COMP relation="OwnedPackageImport">
-        <OBJECT>
-          <ID name="" mc="Standard.PackageImport" uid="31dbb6f4-a7d5-4443-9a4e-1cb8ecd2f8c1"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedPackage">
-              <ID name="swing" mc="Standard.Package" uid="c91fa3af-1d42-4842-992b-c353469dc691"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
         <OBJECT>
           <ID name="" mc="Standard.PackageImport" uid="7837560a-30bd-45d5-9e6e-008677fef254"/>
           <ATTRIBUTES>
@@ -554,6 +473,30 @@ sauvegarderPartie();
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="71457b70-7bd5-4255-9a63-a6c44b19c5e3"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Actual">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="e9276520-74c5-4a68-80ba-2ca261a8f905"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[data.DataGenerator]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaImport" mc="Infrastructure.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

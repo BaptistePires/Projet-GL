@@ -17,6 +17,7 @@
         <COMPID name="util" mc="Standard.Package" uid="9d45a034-258d-43b1-a92f-d6b590e6ae51"/>
         <COMPID name="io" mc="Standard.Package" uid="1f8a4e0d-88a7-4013-8dcf-cd36c03d3344"/>
         <COMPID name="lang" mc="Standard.Package" uid="64e93214-6897-4bc0-89fb-10c916948645"/>
+        <COMPID name="time" mc="Standard.Package" uid="e00f0212-2a6b-4e93-8adb-3cc57e93458a"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

@@ -7,17 +7,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Contrat implements Serializable {
-
-    public Contrat(Date dateDebut, Date dateFin, int montantDuTransfert, int salaireAnnuelEuro, Personne personne, Equipe equipeSource, Equipe equipeDestination){
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.montantDuTransfert = montantDuTransfert;
-        this.salaireAnnuelEuro = salaireAnnuelEuro;
-        this.accepte = false;
-        this.equipeSource = equipeSource;
-        this.equipeDestination = equipeDestination;
-    }
-
     private Date dateDebut;
 
     private int salaireAnnuelEuro;
@@ -39,6 +28,16 @@ public class Contrat implements Serializable {
     public Information renouveler(final Date dateDebut, final String dateFin, final int salaireAnnuelEuro, final int montant) {
         // TODO Auto-generated return
         return null;
+    }
+
+    public Contrat(Date dateDebut, Date dateFin, int montantDuTransfert, int salaireAnnuelEuro, Personne personne, Equipe equipeSource, Equipe equipeDestination) {
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.montantDuTransfert = montantDuTransfert;
+        this.salaireAnnuelEuro = salaireAnnuelEuro;
+        this.accepte = false;
+        this.equipeSource = equipeSource;
+        this.equipeDestination = equipeDestination;
     }
 
     public boolean getAccepte() {
@@ -123,14 +122,14 @@ public class Contrat implements Serializable {
         if (!(o instanceof Contrat)) return false;
         Contrat contrat = (Contrat) o;
         return getSalaireAnnuelEuro() == contrat.getSalaireAnnuelEuro() &&
-                getMontantDuTransfert() == contrat.getMontantDuTransfert() &&
-                isAccepte() == contrat.isAccepte() &&
-                Objects.equals(getDateDebut(), contrat.getDateDebut()) &&
-                Objects.equals(getDateFin(), contrat.getDateFin()) &&
-                Objects.equals(getPersonne(), contrat.getPersonne()) &&
-                Objects.equals(getEquipeDestination(), contrat.getEquipeDestination()) &&
-                Objects.equals(getEquipeSource(), contrat.getEquipeSource()) &&
-                Objects.equals(getHistoriqueRenouvellements(), contrat.getHistoriqueRenouvellements());
+                        getMontantDuTransfert() == contrat.getMontantDuTransfert() &&
+                        isAccepte() == contrat.isAccepte() &&
+                        Objects.equals(getDateDebut(), contrat.getDateDebut()) &&
+                        Objects.equals(getDateFin(), contrat.getDateFin()) &&
+                        Objects.equals(getPersonne(), contrat.getPersonne()) &&
+                        Objects.equals(getEquipeDestination(), contrat.getEquipeDestination()) &&
+                        Objects.equals(getEquipeSource(), contrat.getEquipeSource()) &&
+                        Objects.equals(getHistoriqueRenouvellements(), contrat.getHistoriqueRenouvellements());
     }
 
     @Override
@@ -141,15 +140,16 @@ public class Contrat implements Serializable {
     @Override
     public String toString() {
         return "Contrat{" +
-                "dateDebut=" + dateDebut +
-                ", salaireAnnuelEuro=" + salaireAnnuelEuro +
-                ", dateFin=" + dateFin +
-                ", montantDuTransfert=" + montantDuTransfert +
-                ", accepte=" + accepte +
-                ", personne=" + personne +
-                ", equipeDestination=" + equipeDestination +
-                ", equipeSource=" + equipeSource +
-                ", historiqueRenouvellements=" + historiqueRenouvellements +
-                '}';
+                        "dateDebut=" + dateDebut +
+                        ", salaireAnnuelEuro=" + salaireAnnuelEuro +
+                        ", dateFin=" + dateFin +
+                        ", montantDuTransfert=" + montantDuTransfert +
+                        ", accepte=" + accepte +
+                        ", personne=" + personne +
+                        ", equipeDestination=" + equipeDestination +
+                        ", equipeSource=" + equipeSource +
+                        ", historiqueRenouvellements=" + historiqueRenouvellements +
+                        '}';
     }
+
 }

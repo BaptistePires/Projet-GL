@@ -7,16 +7,16 @@ import java.util.Objects;
 public class DateCourante implements Serializable {
     private Date dateDuJour;
 
-    public void setJourCourant(Date date){
-        this.dateDuJour = date;
-    }
-
     public Date getJourCourant() {
         return dateDuJour;
     }
 
     public void avancerDUnJour() {
         dateDuJour = new Date(dateDuJour.getTime() + (1000 * 60 * 60 * 24));
+    }
+
+    public void setJourCourant(Date date) {
+        this.dateDuJour = date;
     }
 
     @Override
@@ -36,4 +36,5 @@ public class DateCourante implements Serializable {
     public String toString() {
         return dateDuJour.getDate()+"/"+(dateDuJour.getMonth()+1)+"/"+(dateDuJour.getYear()+1900);
     }
+
 }

@@ -2,10 +2,9 @@ package model;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.List;
 
 public class Ligue implements Serializable {
-    public static List<Ligue> liguesAll = new ArrayList<Ligue>();
-
     private String nom;
 
     private Calendrier calendrier;
@@ -14,16 +13,7 @@ public class Ligue implements Serializable {
 
     private List<Arbitre> arbitres = new ArrayList<Arbitre> ();
 
-    public Ligue(String nom, List<Equipe> equipes, List<Arbitre> arbitres){
-        this.nom=nom;
-        this.equipes = equipes;
-        for(Equipe e:equipes)e.setLigue(this);
-        this.arbitres = arbitres;
-        this.calendrier = null;
-        //On initialise le calendrier dans la init qui initialise le calendrier selon les bonnes règles
-        initLigue();
-        liguesAll.add(this);
-    }
+    public static List<Ligue> liguesAll = new ArrayList<Ligue>();
 
     public void initLigue() {
         initCalendrier();
@@ -83,7 +73,7 @@ public class Ligue implements Serializable {
                     " arbitre pour "+equipes.size()+" equipes");
             return;
         }
-
+        
         for(int i=0; i < equipes.size() -1; i++){
             for(int j=i+1; j<equipes.size(); j++){
                 int k;
@@ -133,7 +123,7 @@ public class Ligue implements Serializable {
                 m.getEquipe2().getMatchsDeLequipe().add(curMatchRetour);
             }
         }
-
+        
         for(Journee j:journees){
             Collections.shuffle(arbitres);
             for(int i=0;i<j.getMatchs().size();i++){
@@ -142,13 +132,24 @@ public class Ligue implements Serializable {
             /*System.out.println(j.getMatchs().size());
             System.out.println(j);*/
         }
-
+        
         if(calendrier==null)calendrier=new Calendrier(journees);
         else calendrier.setJournees(journees);
     }
 
+    public Ligue(String nom, List<Equipe> equipes, List<Arbitre> arbitres) {
+        this.nom=nom;
+        this.equipes = equipes;
+        for(Equipe e:equipes)e.setLigue(this);
+        this.arbitres = arbitres;
+        this.calendrier = null;
+        //On initialise le calendrier dans la init qui initialise le calendrier selon les bonnes règles
+        initLigue();
+        liguesAll.add(this);
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return this.nom;
     }
 
@@ -158,13 +159,14 @@ public class Ligue implements Serializable {
         if (!(o instanceof Ligue)) return false;
         Ligue ligue = (Ligue) o;
         return Objects.equals(getNom(), ligue.getNom()) &&
-                Objects.equals(calendrier, ligue.calendrier) &&
-                Objects.equals(getEquipes(), ligue.getEquipes()) &&
-                Objects.equals(arbitres, ligue.arbitres);
+                        Objects.equals(calendrier, ligue.calendrier) &&
+                        Objects.equals(getEquipes(), ligue.getEquipes()) &&
+                        Objects.equals(arbitres, ligue.arbitres);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getNom(), calendrier, getEquipes(), arbitres);
     }
+
 }

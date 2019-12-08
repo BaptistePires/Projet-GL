@@ -11,6 +11,15 @@ public class Journee extends Evenement implements Serializable {
 
     private List<Match> matchs = new ArrayList<Match> ();
 
+    public void avantEvenement() {
+    }
+
+    public void executerEvenement() {
+    }
+
+    public void apresEvenement() {
+    }
+
     public Date getDateJournee() {
         return dateJournee;
     }
@@ -33,23 +42,13 @@ public class Journee extends Evenement implements Serializable {
         this.matchs = matchs;
     }
 
-
-    public void avantEvenement() {
-    }
-
-    public void executerEvenement() {
-    }
-
-    public void apresEvenement() {
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Journee)) return false;
         Journee journee = (Journee) o;
         return Objects.equals(getDateJournee(), journee.getDateJournee()) &&
-                Objects.equals(getMatchs(), journee.getMatchs());
+                        Objects.equals(getMatchs(), journee.getMatchs());
     }
 
     @Override
@@ -60,8 +59,9 @@ public class Journee extends Evenement implements Serializable {
     @Override
     public String toString() {
         return "Journee{" +
-                "dateJournee=" + dateJournee +
-                ", matchs=" + matchs +
-                '}';
+                        "dateJournee=" + dateJournee +
+                        ", matchs=" + matchs +
+                        '}';
     }
+
 }

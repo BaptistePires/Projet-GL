@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.Random;
 
 public class President extends Personne implements Serializable {
-    public static ArrayList<President> presidentsAll= new ArrayList<President>();
-
     private int degreDeSatisfaction;
 
     private Equipe equipe;
+
+    public static ArrayList<President> presidentsAll = new ArrayList<President>();
 
     public boolean objectifFixeALentraineurAtteint() {
         // TODO Auto-generated return

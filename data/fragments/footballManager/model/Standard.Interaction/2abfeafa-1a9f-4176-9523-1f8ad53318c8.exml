@@ -35,11 +35,6 @@
                       <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="32afec34-9b6a-4b89-8093-bbdb16d566c5"/>
                     </REFOBJ>
                   </LINK>
-                  <LINK relation="Invoked">
-                    <REFOBJ>
-                      <ID name="afficherInfosLigue" mc="Standard.Operation" uid="896803d1-33c3-423e-b80e-b964391ccad1"/>
-                    </REFOBJ>
-                  </LINK>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>

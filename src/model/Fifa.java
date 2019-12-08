@@ -8,17 +8,15 @@ import java.util.Objects;
 public class Fifa implements Serializable {
     private List<Ligue> ligues = new ArrayList<Ligue> ();
 
+    public List<Ligue> getLigues() {
+        return ligues;
+    }
 
     public void setLigues(List<Ligue> ligues) {
         this.ligues = ligues;
     }
 
-
-    public List<Ligue> getLigues() {
-        return ligues;
-    }
-
-    public Fifa(List<Ligue> ligues){
+    public Fifa(List<Ligue> ligues) {
         this.ligues = ligues;
     }
 
@@ -38,7 +36,8 @@ public class Fifa implements Serializable {
     @Override
     public String toString() {
         return "Fifa{" +
-                "ligues=" + ligues +
-                '}';
+                        "ligues=" + ligues +
+                        '}';
     }
+
 }
