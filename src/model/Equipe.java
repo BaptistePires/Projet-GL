@@ -23,6 +23,8 @@ public class Equipe implements Serializable {
 
     private int masseSalariale;
 
+    private int budgetTeamBuilding;
+
     private int nbPoints;
 
     private int nbButsMarques;
@@ -110,6 +112,13 @@ public class Equipe implements Serializable {
         return this.nom;
     }
 
+    public int getBudgetTeamBuilding() {
+        return budgetTeamBuilding;
+    }
+
+    public void setBudgetTeamBuilding(int newBudget) {
+        budgetTransferts = newBudget;
+    }
     public String getHistoireDuClub() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.histoireDuClub;

@@ -18,7 +18,7 @@ public class Main extends Application {
 
 //        Parent root = FXMLLoader.load(getClass().getResource("../ihm/afficherMessages.fxml"));
 
-        Parent root = FXMLLoader.load(getClass().getResource("../ihm/administration.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../ihm/lanceurDePartie.fxml"));
 
         primaryStage.setTitle("Football Manager");
         primaryStage.setScene(new Scene(root));
