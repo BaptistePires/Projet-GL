@@ -20,7 +20,6 @@ public abstract class Strategie implements Serializable {
 
     private int attaque;
 
-     HashMap<Joueur, Poste> formation = new HashMap<Joueur, Poste>();
 
     public void placerJoueur(final Joueur joueur, final int indexPosition) {
     }
@@ -32,8 +31,6 @@ public abstract class Strategie implements Serializable {
 
     public void permuterJoueurs(final Joueur joueur1, final Joueur joueur2) {
     }
-
-    public abstract void appliquer();
 
     public static Strategie pickRandomStrategie() {
         if(Math.random()<0.5){
@@ -90,11 +87,6 @@ public abstract class Strategie implements Serializable {
     }
 
 
-    public void placerJoueur(final Joueur joueur, final int indexPosition) {
-    }
-
-    public void permuterJoueurs(final Joueur joueur1, final Joueur joueur2) {
-    }
 
     public static void pickRandomStrategie(Equipe e){
         Strategie s;
