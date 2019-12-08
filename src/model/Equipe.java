@@ -13,7 +13,7 @@ public class Equipe implements Serializable {
 
     private int masseSalariale;
 
-    private int bugetTransfert;
+    private int budgetTeamBuilding;
 
     private int nbPoints;
 
@@ -70,7 +70,7 @@ public class Equipe implements Serializable {
         this.histoireDuClub = histoireDuClub;
         this.budgetTransferts = budgetTransferts;
         this.masseSalariale = masseSalariale;
-        this.bugetTransfert = budgetTeamBuilding;
+        this.budgetTeamBuilding = budgetTeamBuilding;
         this.joueurs = joueurs;
         this.entraineur = entraineur;
         this.president = president;
@@ -106,17 +106,17 @@ public class Equipe implements Serializable {
     }
 
     public int getBudgetTeamBuilding() {
-        return bugetTransfert;
+        return budgetTeamBuilding;
     }
 
     public void setBudgetTeamBuilding(int newBudget) {
 
         if(newBudget < 0) {
-            bugetTransfert = Integer.MAX_VALUE;
+            budgetTeamBuilding = Integer.MAX_VALUE;
         }else if(newBudget <= 0) {
-            bugetTransfert = 0;
+            budgetTeamBuilding = 0;
         }else {
-            bugetTransfert = newBudget;
+            budgetTeamBuilding = newBudget;
         }
     }
 
@@ -204,9 +204,9 @@ public class Equipe implements Serializable {
         if(newBudget < 0) {
             this.budgetTransferts = Integer.MAX_VALUE;
         }else if(newBudget <= 0) {
-            this.bugetTransfert = 0;
+            this.budgetTeamBuilding = 0;
         }else {
-            this.bugetTransfert = newBudget;
+            this.budgetTeamBuilding = newBudget;
         }
     }
 
