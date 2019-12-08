@@ -16,6 +16,7 @@ public class Match extends Evenement implements Serializable {
 
     private Stade stade;
 
+
     public Equipe getEquipe1() {
         return equipe1;
     }
@@ -57,8 +58,8 @@ public class Match extends Evenement implements Serializable {
     }
 
     public Match(Equipe equipe1, Equipe equipe2, Arbitre arbitre, Stade stade, Date date) {
-        super(equipe1.equals(PartieSingleton.INSTANCE.getEntraineur().getEquipe()) ||
-                equipe2.equals(PartieSingleton.INSTANCE.getEntraineur().getEquipe()),date);
+        super(PartieSingleton.INSTANCE.getEntraineur()!=null && (equipe1.equals(PartieSingleton.INSTANCE.getEntraineur().getEquipe()) ||
+                equipe2.equals(PartieSingleton.INSTANCE.getEntraineur().getEquipe())),date);
         this.equipe1 = equipe1;
         this.equipe2 = equipe2;
         this.arbitre = arbitre;
@@ -66,6 +67,8 @@ public class Match extends Evenement implements Serializable {
         //Si this.statistiques == null cela veut dire que le match n'a pas encore eu lieu
         this.statistiques = null;
     }
+
+
 
     public void jouerMatch() {
     }

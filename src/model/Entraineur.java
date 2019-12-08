@@ -25,6 +25,7 @@ public class Entraineur extends Personne implements Serializable {
         if(equipe!=null){
             if(equipe.getEntraineur()!=null)equipe.getEntraineur().setEquipe(null);
             equipe.setEntraineur(this);
+            for(Match m : equipe.getMatchsDeLequipe())m.setImportance(true);
         }
     }
 
