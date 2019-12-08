@@ -2,12 +2,23 @@ package ihm.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import model.Observateur;
 import model.PartieSingleton;
 
-public class EcranDuJeuController {
+public class EcranDuJeuController implements Observateur {
+
+    @Override
+    public void miseAJour(){
+        System.out.println("hi");
+        dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
+    }
+
     @FXML
     GridPane gridMain;
 
@@ -19,7 +30,20 @@ public class EcranDuJeuController {
 
     @FXML
     public void avancerTempsAction(){
-
+        PartieSingleton.INSTANCE.avancerLeTemps();
+    }
+    @FXML
+    public void avancerJusquaAction(){
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customDialogDate.fxml"));
+        try{
+            AnchorPane parent = (AnchorPane) fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -39,8 +63,8 @@ public class EcranDuJeuController {
 
     @FXML
     public void initialize(){
-        System.out.println(dateLabel);
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
+        PartieSingleton.INSTANCE.sabonner(this);
     }
 
     @FXML

@@ -31,7 +31,7 @@ public class LanceurDePartie {
             dossierDeStockageDesParties = dictionnaire.get("dossierDeStockageDesParties");
             DataGenerator.nbEquiesAGenererAleaParLigue = Integer.parseInt(dictionnaire.get("nbEquiesAGenererAleaParLigue"));
             DataGenerator.nbLiguesAGenererAlea = Integer.parseInt(dictionnaire.get("nbLiguesAGenererAlea"));
-            System.out.println(dossierDeStockageDesDonnees + " "+dictionnaire);
+            PartieSingleton.avancerAuMaximum = Integer.parseInt(dictionnaire.get("avancerAuMaximum"));
         }catch(Exception e){
             System.err.println("Erreur lors de la lecture du fichier de configurations :"+e.getClass());
         }
