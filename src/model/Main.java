@@ -15,7 +15,11 @@ public class Main extends Application {
     }
 
     public void start(Stage primaryStage) throws Exception {
+
+//        Parent root = FXMLLoader.load(getClass().getResource("../ihm/afficherMessages.fxml"));
+
         Parent root = FXMLLoader.load(getClass().getResource("../ihm/lanceurDePartie.fxml"));
+
         primaryStage.setTitle("Football Manager");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

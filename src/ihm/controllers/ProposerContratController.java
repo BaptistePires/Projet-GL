@@ -88,7 +88,8 @@ public class ProposerContratController {
             alertSalaire.setText(ALERT_TEXT);
         }else{
             try{
-                Integer.parseInt(inputSalaire.getText());
+                int salaire = Integer.parseInt(inputSalaire.getText());
+
                 alertSalaire.setText("");
             }catch (NumberFormatException e) {
                 alertSalaire.setText("Veuillez entrer un entier");
@@ -101,7 +102,11 @@ public class ProposerContratController {
             alertMontant.setText(ALERT_TEXT);
         }else{
             try {
-                Integer.parseInt(inputMontantTransfert.getText());
+                int monteantT = Integer.parseInt(inputMontantTransfert.getText());
+                if(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getBudgetTransferts() - monteantT < 0){
+                    alertMontant.setText("Votre budget transfert n'est pas assez grand.");
+                    contratValide = false;
+                }
                 alertMontant.setText("");
             }catch (NumberFormatException e) {
                 contratValide = false;

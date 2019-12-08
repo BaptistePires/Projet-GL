@@ -54,4 +54,16 @@ public class Entraineur extends Personne implements Serializable {
     public String toString() {
         return getNom();
     }
+
+    public boolean demanderBudgetTransfert() {
+        return this.getEquipe().getPresident().traiterDemanderBudgetTransfert();
+    }
+
+    public boolean demanderBudgetMasseSalariale() {
+        return getEquipe().getPresident().traiterDemandeMasseSalariale();
+    }
+
+    public boolean demanderBudgetTeamBuilding() {
+        return getEquipe().getPresident().traiterDemandeTeamBuilding();
+    }
 }

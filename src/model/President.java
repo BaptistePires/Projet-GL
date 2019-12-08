@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 public class President extends Personne implements Serializable {
     public static ArrayList<President> presidentsAll= new ArrayList<President>();
@@ -56,4 +57,42 @@ public class President extends Personne implements Serializable {
     public void afficherInfosPresident() {
     }
 
+    public boolean traiterDemanderBudgetTransfert() {
+        Random r = new Random();
+        if(r.nextBoolean()) {
+            int tempBudget = getEquipe().getBudgetTransferts();
+            int augmentation = r.nextInt(10 - 5) + 5;
+            tempBudget *= augmentation;
+            getEquipe().setBudgetTransferts(tempBudget);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean traiterDemandeMasseSalariale() {
+        Random r = new Random();
+        if(r.nextBoolean()) {
+            int tempMasse = getEquipe().getMasseSalariale();
+            int augmentation = r.nextInt(10 - 5) + 5;
+            tempMasse *= augmentation;
+            getEquipe().setMasseSalariale(tempMasse);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean traiterDemandeTeamBuilding() {
+        Random r = new Random();
+        if(r.nextBoolean()) {
+            int budgetTeamBuilding = getEquipe().getBudgetTeamBuilding();
+            int augmentation = r.nextInt(10 - 5) + 5;
+            budgetTeamBuilding *= augmentation;
+            getEquipe().setBudgetTeamBuilding(budgetTeamBuilding);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
