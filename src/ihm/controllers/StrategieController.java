@@ -132,8 +132,7 @@ public class StrategieController {
         if(strategieDefautCheck.isSelected()){
             Strategie choisie =null;
             if(strategieDefautChoice.getValue().getClass().equals(StrategieDefensive.class))choisie = new StrategieDefensive();
-            else if(strategieDefautChoice.getValue().getClass().equals(StrategieOffensive.class))choisie = new StrategieOffensive();
-            else choisie = Strategie.pickRandomStrategie();
+            else /*if(strategieDefautChoice.getValue().getClass().equals(StrategieOffensive.class))*/choisie = new StrategieOffensive();
             HashMap<Joueur,Poste> formation = new HashMap<Joueur, Poste>();
             for(Joueur j:retirerJoueurChoice.getItems()){
                 formation.putIfAbsent(j,j.getPoste());

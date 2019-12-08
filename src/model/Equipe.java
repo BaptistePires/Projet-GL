@@ -95,7 +95,7 @@ public class Equipe implements Serializable {
         nbMatchsNuls=0;
         nbDefaites=0;
         matchsDeLequipe = new ArrayList<Match>();
-        strategie = Strategie.pickRandomStrategie();
+        Strategie.pickRandomStrategie(this);
     }
 
     public boolean isNotreEquipe() {
