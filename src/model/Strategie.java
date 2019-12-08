@@ -2,6 +2,8 @@ package model;
 
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public abstract class Strategie implements Serializable {
     private int agressivite;
@@ -14,11 +16,55 @@ public abstract class Strategie implements Serializable {
 
     private int attaque;
 
-    private String nbDefenseurs;
+    public int getAgressivite() {
+        return agressivite;
+    }
 
-    private String nbMilieux;
+    public void setAgressivite(int agressivite) {
+        this.agressivite = agressivite;
+    }
 
-    private String nbAttaquant;
+    public int getPasses() {
+        return passes;
+    }
+
+    public void setPasses(int passes) {
+        this.passes = passes;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public int getMilieu() {
+        return milieu;
+    }
+
+    public void setMilieu(int milieu) {
+        this.milieu = milieu;
+    }
+
+    public int getAttaque() {
+        return attaque;
+    }
+
+    public void setAttaque(int attaque) {
+        this.attaque = attaque;
+    }
+
+    public HashMap<Joueur, Poste> getFormation() {
+        return formation;
+    }
+
+    public void setFormation(HashMap<Joueur, Poste> formation) {
+        this.formation = formation;
+    }
+
+    HashMap<Joueur,Poste> formation=new HashMap<Joueur, Poste>();
 
     public void placerJoueur(final Joueur joueur, final int indexPosition) {
     }
