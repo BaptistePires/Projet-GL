@@ -26,7 +26,6 @@ public class President extends Personne implements Serializable {
 
     public President(String nom, String prenom, Date dateDeNaissance, String historique, Equipe e) {
         this(nom, prenom, dateDeNaissance, historique);
-        this.equipe = equipe;
         if(equipe!=null){
             if(equipe.getPresident()!=null)equipe.getPresident().setEquipe(null);
             equipe.setPresident(this);
