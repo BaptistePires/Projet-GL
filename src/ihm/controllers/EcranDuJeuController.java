@@ -62,6 +62,11 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
+    public void administrationAction(){
+
+    }
+
+    @FXML
     public void initialize(){
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
         PartieSingleton.INSTANCE.sabonner(this);
@@ -79,5 +84,18 @@ public class EcranDuJeuController implements Observateur {
             System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
         }
 
+    }
+
+    @FXML
+    public void testAction(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../strategie.fxml"));
+            GridPane dashboard = (GridPane) fxmlLoader.load();
+            pane1_1.getChildren().clear();
+            pane1_1.getChildren().add(dashboard);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+        }
     }
 }

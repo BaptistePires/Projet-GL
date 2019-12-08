@@ -160,6 +160,14 @@ public class Equipe implements Serializable {
         return this.nbButsEncaisses;
     }
 
+    public double getNoteMoyenneDeLequipe(){
+        if(joueurs==null)return 0;
+        if(joueurs.size()==0)return 0;
+        int res=0;
+        for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
+        return (double)res/joueurs.size();
+    }
+
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -286,7 +294,9 @@ public class Equipe implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNom(), getHistoireDuClub(), getBudgetTransferts(), getMasseSalariale(), getNbPoints(), getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(), getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());
+        return Objects.hash(getNom(), getHistoireDuClub(), getBudgetTransferts(), getMasseSalariale(), getNbPoints(),
+                getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
+                getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());
     }
 
     @Override
