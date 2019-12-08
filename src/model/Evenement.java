@@ -7,15 +7,21 @@ import java.util.List;
 import java.util.TreeMap;
 
 public abstract class Evenement implements Serializable {
+    private boolean importance;
+
+    private Date dateDeLEvenement;
+
     public static TreeMap<Date, List<Evenement>> evenements = new TreeMap<Date, List<Evenement>>();
+
+    public abstract void avantEvenement();
+
+    public abstract void apresEvenement();
+
+    public abstract void executerEvenement();
 
     public static List<Evenement> getEvenementsPourLaDate(Date date) {
         return evenements.get(date);
     }
-
-    private boolean importance;
-
-    private Date dateDeLEvenement;
 
     public boolean isImportance() {
         return importance;
@@ -33,7 +39,6 @@ public abstract class Evenement implements Serializable {
         this.dateDeLEvenement = dateDeLEvenement;
     }
 
-
     public boolean getImportance() {
         return importance;
     }
@@ -50,11 +55,5 @@ public abstract class Evenement implements Serializable {
         evenements.putIfAbsent(dateDeLEvenement, new ArrayList<Evenement>());
         evenements.get(dateDeLEvenement).add(this);
     }
-
-    public abstract void avantEvenement();
-
-    public abstract void apresEvenement();
-
-    public abstract void executerEvenement();
 
 }

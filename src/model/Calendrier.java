@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Calendrier implements Serializable {
     private List<Journee> journees = new ArrayList<Journee> ();
 
-    public Calendrier(List<Journee> journees){
+    public Calendrier(List<Journee> journees) {
         this.journees = journees;
     }
 
@@ -23,8 +23,8 @@ public class Calendrier implements Serializable {
     @Override
     public String toString() {
         return "Calendrier{" +
-                "journees=" + journees +
-                '}';
+                        "journees=" + journees +
+                        '}';
     }
 
     @Override
@@ -39,4 +39,5 @@ public class Calendrier implements Serializable {
     public int hashCode() {
         return Objects.hash(getJournees());
     }
+
 }

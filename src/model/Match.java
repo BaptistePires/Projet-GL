@@ -1,6 +1,5 @@
 package model;
 
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -16,6 +15,17 @@ public class Match extends Evenement implements Serializable {
 
     private Stade stade;
 
+    public void jouerMatch() {
+    }
+
+    public void executerEvenement() {
+    }
+
+    public void apresEvenement() {
+    }
+
+    public void avantEvenement() {
+    }
 
     public Equipe getEquipe1() {
         return equipe1;
@@ -68,30 +78,16 @@ public class Match extends Evenement implements Serializable {
         this.statistiques = null;
     }
 
-
-
-    public void jouerMatch() {
-    }
-
-    public void executerEvenement() {
-    }
-
-    public void apresEvenement() {
-    }
-
-    public void avantEvenement() {
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Match)) return false;
         Match match = (Match) o;
         return Objects.equals(equipe1, match.equipe1) &&
-                Objects.equals(equipe2, match.equipe2) &&
-                Objects.equals(arbitre, match.arbitre) &&
-                Objects.equals(statistiques, match.statistiques) &&
-                Objects.equals(stade, match.stade);
+                        Objects.equals(equipe2, match.equipe2) &&
+                        Objects.equals(arbitre, match.arbitre) &&
+                        Objects.equals(statistiques, match.statistiques) &&
+                        Objects.equals(stade, match.stade);
     }
 
     @Override
@@ -102,11 +98,12 @@ public class Match extends Evenement implements Serializable {
     @Override
     public String toString() {
         return "Match{" +
-                "equipe1=" + equipe1 +
-                ", equipe2=" + equipe2 +
-                ", arbitre=" + arbitre +
-                ", statistiques=" + statistiques +
-                ", stade=" + stade +
-                '}';
+                        "equipe1=" + equipe1 +
+                        ", equipe2=" + equipe2 +
+                        ", arbitre=" + arbitre +
+                        ", statistiques=" + statistiques +
+                        ", stade=" + stade +
+                        '}';
     }
+
 }

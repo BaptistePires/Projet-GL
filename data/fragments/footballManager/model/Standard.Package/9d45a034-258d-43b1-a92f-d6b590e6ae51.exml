@@ -17,6 +17,8 @@
         <COMPID name="List" mc="Standard.Interface" uid="bbbeb0cc-73dc-43a4-a604-457e35042f6d"/>
         <COMPID name="ArrayList" mc="Standard.Class" uid="347a9276-1903-45e2-a32d-896a6f1aa99f"/>
         <COMPID name="TreeMap" mc="Standard.Class" uid="50fc6176-a938-417e-a990-41b8854e7d86"/>
+        <COMPID name="Objects" mc="Standard.Class" uid="575ffaa1-8a37-4417-b116-970f722defad"/>
+        <COMPID name="HashMap" mc="Standard.Class" uid="d9c3cc25-2b81-4f4c-ab6e-2ebafef17c34"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

@@ -1,19 +1,18 @@
 package model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import data.DataGenerator;
-
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.*;
+import java.util.Date;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import data.DataGenerator;
 
 public final class PartieSingleton extends NotreObservable implements Serializable {
+    private String nomFichierSauvegarde;
 
     public static int avancerAuMaximum;
-
-    private String nomFichierSauvegarde;
 
     private DateCourante dateCourante;
 
@@ -45,6 +44,41 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         }
     }
 
+    public void initEntraineur(Entraineur entraineur) {
+        INSTANCE.entraineur = entraineur;
+        entraineur.getEquipe().setEntraineur(entraineur);
+    }
+
+    public void initFifa() {
+        this.fifa = DataGenerator.generateRandomFifa();
+    }
+
+    public void avancerLeTemps() {
+        int i=0;
+        while(i++<avancerAuMaximum){
+            /* Ajout d'un jour à la date courante et récupération des évenements. */
+            dateCourante.avancerDUnJour();
+            List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
+            if(evenements==null)continue;
+            /* Tri des évenements (Les plus importants en tête de liste) */
+            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
+        
+            /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
+            * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
+            * et on recommence. */
+            if(evenements.get(0).getImportance()) {
+                break;
+            }else{
+                for(Evenement e: evenements) {
+                    e.processEvenement();
+                }
+            }
+        }
+        notifier();
+    }
+
+    public void initDateCourante() {
+    }
 
     public String getNomFichierSauvegarde() {
         return nomFichierSauvegarde;
@@ -86,42 +120,35 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         this.entraineur = entraineur;
     }
 
-
-
-    public void initEntraineur(Entraineur entraineur) {
-        INSTANCE.entraineur = entraineur;
-        entraineur.getEquipe().setEntraineur(entraineur);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PartieSingleton)) return false;
+        PartieSingleton that = (PartieSingleton) o;
+        return Objects.equals(getNomFichierSauvegarde(), that.getNomFichierSauvegarde()) &&
+                        Objects.equals(getDateCourante(), that.getDateCourante()) &&
+                        Objects.equals(getFifa(), that.getFifa()) &&
+                        Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
+                        Objects.equals(getEntraineur(), that.getEntraineur());
     }
 
-    public void initFifa() {
-        this.fifa = DataGenerator.generateRandomFifa();
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNomFichierSauvegarde(), getDateCourante(), getFifa(), getBoiteMail(), getEntraineur());
     }
 
-    public void avancerLeTemps() {
-        int i=0;
-        while(i++<avancerAuMaximum){
-            /* Ajout d'un jour à la date courante et récupération des évenements. */
-            dateCourante.avancerDUnJour();
-            List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
-            if(evenements==null)continue;
-            /* Tri des évenements (Les plus importants en tête de liste) */
-            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
-
-            /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
-            * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
-            * et on recommence. */
-            if(evenements.get(0).getImportance()) {
-                break;
-            }else{
-                for(Evenement e: evenements) {
-                    e.processEvenement();
-                }
-            }
-        }
-        notifier();
+    @Override
+    public String toString() {
+        return "PartieSingleton{" +
+                        "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
+                        ", dateCourante=" + dateCourante +
+                        ", fifa=" + fifa +
+                        ", boiteMail=" + boiteMail +
+                        ", entraineur=" + entraineur +
+                        '}';
     }
 
-    public void avancerLeTempsJusqua(Date date){
+    public void avancerLeTempsJusqua(Date date) {
         while(date.after(dateCourante.getJourCourant())){
             /* Ajout d'un jour à la date courante et récupération des évenements. */
             dateCourante.avancerDUnJour();
@@ -130,7 +157,7 @@ public final class PartieSingleton extends NotreObservable implements Serializab
             /* Tri des évenements (Les plus importants en tête de liste) */
             System.out.println("Evenements :"+evenements);
             evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
-
+        
             /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
              * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
              * et on recommence. */
@@ -145,34 +172,4 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         notifier();
     }
 
-    public void initDateCourante() {
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PartieSingleton)) return false;
-        PartieSingleton that = (PartieSingleton) o;
-        return Objects.equals(getNomFichierSauvegarde(), that.getNomFichierSauvegarde()) &&
-                Objects.equals(getDateCourante(), that.getDateCourante()) &&
-                Objects.equals(getFifa(), that.getFifa()) &&
-                Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
-                Objects.equals(getEntraineur(), that.getEntraineur());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNomFichierSauvegarde(), getDateCourante(), getFifa(), getBoiteMail(), getEntraineur());
-    }
-
-    @Override
-    public String toString() {
-        return "PartieSingleton{" +
-                "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
-                ", dateCourante=" + dateCourante +
-                ", fifa=" + fifa +
-                ", boiteMail=" + boiteMail +
-                ", entraineur=" + entraineur +
-                '}';
-    }
 }

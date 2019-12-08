@@ -6,10 +6,9 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Entraineur extends Personne implements Serializable {
+    private Equipe equipe;
 
     public static ArrayList<Entraineur> entraineursAll = new ArrayList<Entraineur>();
-
-    private Equipe equipe;
 
     public void initEntraineur() {
     }
@@ -54,4 +53,5 @@ public class Entraineur extends Personne implements Serializable {
     public String toString() {
         return getNom();
     }
+
 }

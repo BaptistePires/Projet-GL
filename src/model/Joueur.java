@@ -2,10 +2,11 @@ package model;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Joueur extends Personne implements Serializable {
-    public ArrayList<Joueur> joueursAll=new ArrayList<Joueur>();
-
     private int etatPhysique;
 
     private int moral;
@@ -32,6 +33,8 @@ public class Joueur extends Personne implements Serializable {
 
     private List<StatistiquesSaisonJoueur> historiqueSaisons = new ArrayList<StatistiquesSaisonJoueur> ();
 
+    public ArrayList<Joueur> joueursAll = new ArrayList<Joueur>();
+
     public boolean etudierOffreTransfert(final Contrat contratPropose) {
         Random rd = new Random();
         boolean result = rd.nextBoolean();
@@ -42,10 +45,7 @@ public class Joueur extends Personne implements Serializable {
     public void initJoueur() {
     }
 
-    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral,
-                  int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison,
-                  int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, Poste poste,
-                  Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
+    public Joueur(String nom, String prenom, Date dateDeNaissance, String historique, int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, Poste poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         this(nom, prenom, dateDeNaissance, historique);
         configure(etatPhysique, moral, defense, millieu, attaque, notePerformancesRecentes, nbButsSaison,
                 nbPasseDecisiveSaison, nbCartonJauneSaison, nbCartonRougeSaison,
@@ -57,9 +57,7 @@ public class Joueur extends Personne implements Serializable {
         joueursAll.add(this);
     }
 
-    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes,
-                          int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison,
-                          Poste poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
+    public void configure(int etatPhysique, int moral, int defense, int millieu, int attaque, int notePerformancesRecentes, int nbButsSaison, int nbPasseDecisiveSaison, int nbCartonJauneSaison, int nbCartonRougeSaison, Poste poste, Equipe equipe, List<StatistiquesSaisonJoueur> historiqueSaisons) {
         this.etatPhysique = etatPhysique;
         this.moral = moral;
         this.defense = defense;
@@ -143,6 +141,9 @@ public class Joueur extends Personne implements Serializable {
         return this.equipe;
     }
 
+    public void afficherInfosJoueur() {
+    }
+
     public void setEtatPhysique(int etatPhysique) {
         this.etatPhysique = etatPhysique;
     }
@@ -199,38 +200,36 @@ public class Joueur extends Personne implements Serializable {
         this.historiqueSaisons = historiqueSaisons;
     }
 
-    public void afficherInfosJoueur() {
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Joueur)) return false;
         Joueur joueur = (Joueur) o;
         return getEtatPhysique() == joueur.getEtatPhysique() &&
-                getMoral() == joueur.getMoral() &&
-                getDefense() == joueur.getDefense() &&
-                getMillieu() == joueur.getMillieu() &&
-                getAttaque() == joueur.getAttaque() &&
-                getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
-                getNbButsSaison() == joueur.getNbButsSaison() &&
-                getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
-                getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
-                getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
-                getPoste() == joueur.getPoste() &&
-                Objects.equals(getEquipe(), joueur.getEquipe()) &&
-                Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());
+                        getMoral() == joueur.getMoral() &&
+                        getDefense() == joueur.getDefense() &&
+                        getMillieu() == joueur.getMillieu() &&
+                        getAttaque() == joueur.getAttaque() &&
+                        getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
+                        getNbButsSaison() == joueur.getNbButsSaison() &&
+                        getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
+                        getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
+                        getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
+                        getPoste() == joueur.getPoste() &&
+                        Objects.equals(getEquipe(), joueur.getEquipe()) &&
+                        Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getEtatPhysique(), getMoral(), getDefense(), getMillieu(), getAttaque(),
-                getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
-                getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());
+                        getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
+                        getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());
     }
 
     @Override
     public String toString() {
         return getNom()+" "+getPrenom();
     }
+
 }
