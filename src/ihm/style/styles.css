@@ -30,3 +30,7 @@
     -fx-fill: white;
 
 }
+
+.bg-text-area {
+    text-area-background:  #ab7878;
+}
