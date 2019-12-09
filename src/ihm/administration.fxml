@@ -4,23 +4,120 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AdministrationController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="800.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="1201.0" style="-fx-background-color: #ab7878;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AdministrationController">
    <children>
-      <AnchorPane fx:id="mainPane" prefHeight="461.0" prefWidth="600.0" styleClass="bgAfficherJoueur" stylesheets="@style/styles.css">
+      <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@style/styles.css">
          <children>
-            <Label layoutX="36.0" layoutY="77.0" prefHeight="18.0" prefWidth="122.0" text="Masse salariale :" />
-            <Label layoutX="36.0" layoutY="28.0" prefHeight="18.0" prefWidth="122.0" text="Budget transfert : " />
-            <Label layoutX="41.0" layoutY="125.0" text="Budget team building :" />
-            <Label fx:id="labelTrasnfert" alignment="CENTER" layoutX="207.0" layoutY="28.0" prefHeight="18.0" prefWidth="103.0" />
-            <Label fx:id="labelMasse" alignment="CENTER" layoutX="207.0" layoutY="77.0" prefHeight="18.0" prefWidth="103.0" />
-            <Label fx:id="labelTeamBuilding" alignment="CENTER" layoutX="207.0" layoutY="124.0" prefHeight="18.0" prefWidth="103.0" />
-            <Button fx:id="btnTrasnfert" layoutX="310.0" layoutY="24.0" mnemonicParsing="false" onAction="#augmentationTrasnfert" text="Demander augmentation" />
-            <Button fx:id="btnMasse" layoutX="310.0" layoutY="73.0" mnemonicParsing="false" onAction="#augmentationMasse" text="Demander augmentation" />
-            <Button fx:id="btnTeamBuilding" layoutX="310.0" layoutY="121.0" mnemonicParsing="false" onAction="#augmentationTeamBuilding" text="Demander augmentation" />
-            <Label fx:id="etatTransfert" layoutX="490.0" layoutY="28.0" prefHeight="18.0" prefWidth="96.0" />
-            <Label fx:id="etatTeamBuilding" layoutX="490.0" layoutY="133.0" prefHeight="18.0" prefWidth="96.0" />
-            <Label fx:id="etatMasse" layoutX="490.0" layoutY="76.0" prefHeight="18.0" prefWidth="96.0" />
+            <Label layoutX="180.0" layoutY="619.0" prefHeight="27.0" prefWidth="182.0" styleClass="outline" stylesheets="@style/styles.css" text="Masse salariale :" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="180.0" layoutY="575.0" prefHeight="27.0" prefWidth="182.0" styleClass="outline" stylesheets="@style/styles.css" text="Budget transfert : " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="180.0" layoutY="660.0" styleClass="outline" stylesheets="@style/styles.css" text="Budget team building :" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="labelTrasnfert" alignment="CENTER" layoutX="412.0" layoutY="575.0" prefHeight="27.0" prefWidth="189.0" styleClass="outlined-text" stylesheets="@style/styles.css" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="labelMasse" alignment="CENTER" layoutX="412.0" layoutY="619.0" prefHeight="27.0" prefWidth="189.0" styleClass="outlined-text" stylesheets="@style/styles.css" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="labelTeamBuilding" alignment="CENTER" layoutX="412.0" layoutY="660.0" prefHeight="27.0" prefWidth="189.0" styleClass="outlined-text" stylesheets="@style/styles.css" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Button fx:id="btnTrasnfert" layoutX="620.0" layoutY="570.0" mnemonicParsing="false" onAction="#augmentationTrasnfert" text="Demander augmentation">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button fx:id="btnMasse" layoutX="620.0" layoutY="614.0" mnemonicParsing="false" onAction="#augmentationMasse" text="Demander augmentation">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button fx:id="btnTeamBuilding" layoutX="620.0" layoutY="655.0" mnemonicParsing="false" onAction="#augmentationTeamBuilding" text="Demander augmentation">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Label fx:id="etatTransfert" alignment="CENTER" contentDisplay="CENTER" layoutX="870.0" layoutY="575.0" prefHeight="18.0" prefWidth="96.0" styleClass="outlined-text" stylesheets="@style/styles.css" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="etatTeamBuilding" alignment="CENTER" contentDisplay="CENTER" layoutX="870.0" layoutY="660.0" prefHeight="18.0" prefWidth="96.0" styleClass="outlined-text" stylesheets="@style/styles.css" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="etatMasse" alignment="CENTER" contentDisplay="CENTER" layoutX="870.0" layoutY="619.0" prefHeight="18.0" prefWidth="96.0" styleClass="outlined-text" stylesheets="@style/styles.css" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="7.0" prefHeight="17.0" prefWidth="1201.0" styleClass="outline" stylesheets="@style/styles.css" text="Administration du club" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="96.0" style="-fx-underline: true;" styleClass="outline" stylesheets="@style/styles.css" text="Président" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="156.0" prefHeight="27.0" prefWidth="163.0" styleClass="outline" stylesheets="@style/styles.css" text="Nom" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="199.0" prefHeight="27.0" prefWidth="163.0" styleClass="outline" stylesheets="@style/styles.css" text="Date de Naissance" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="239.0" prefHeight="27.0" prefWidth="163.0" styleClass="outline" stylesheets="@style/styles.css" text="Historique" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelHistoClub" layoutX="405.0" layoutY="388.0" prefHeight="25.0" prefWidth="222.0" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDateNaissance" layoutX="398.0" layoutY="200.0" prefHeight="25.0" prefWidth="222.0" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelHistoPres" layoutX="396.0" layoutY="240.0" prefHeight="25.0" prefWidth="222.0" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="317.0" style="-fx-underline: true;" styleClass="outline" stylesheets="@style/styles.css" text="Club" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="387.0" prefHeight="27.0" prefWidth="163.0" styleClass="outline" stylesheets="@style/styles.css" text="Historique" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="508.0" style="-fx-underline: true;" styleClass="outline" stylesheets="@style/styles.css" text="Budgets du club" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNomPres" layoutX="398.0" layoutY="157.0" prefHeight="25.0" prefWidth="222.0" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

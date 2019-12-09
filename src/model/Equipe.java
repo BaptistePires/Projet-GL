@@ -27,7 +27,7 @@ public class Equipe implements Serializable {
 
     private int nbDefaites;
 
-    private List<Joueur> joueurs = new ArrayList<Joueur> ();
+    private List<Joueur> joueurs = new ArrayList<Joueur>();
 
     private Entraineur entraineur;
 
@@ -35,7 +35,7 @@ public class Equipe implements Serializable {
 
     private Strategie strategie;
 
-    private List<StatistiquesSaisonEquipe> historiqueSaisons = new ArrayList<StatistiquesSaisonEquipe> ();
+    private List<StatistiquesSaisonEquipe> historiqueSaisons = new ArrayList<StatistiquesSaisonEquipe>();
 
     private Stade stade;
 
@@ -47,15 +47,15 @@ public class Equipe implements Serializable {
 
     public void formulerOffreTransfert(final Contrat contratPropose, final Joueur joueurConvoite) {
         boolean reponse = joueurConvoite.etudierOffreTransfert(contratPropose);
-        if(reponse) {
+        if (reponse) {
             contratPropose.getEquipeSource().joueurs.remove(joueurConvoite);
-            contratPropose.getEquipeSource().masseSalariale-=contratPropose.getSalaireAnnuelEuro()/12;
+            contratPropose.getEquipeSource().masseSalariale -= contratPropose.getSalaireAnnuelEuro() / 12;
             contratPropose.getEquipeSource().budgetTransferts += contratPropose.getMontantDuTransfert();
-        
+
             contratPropose.getEquipeDestination().joueurs.add(joueurConvoite);
             contratPropose.getEquipeDestination().masseSalariale++;
             contratPropose.getEquipeDestination().budgetTransferts -= contratPropose.getMontantDuTransfert();
-        
+
             // ici creation event transfert
             Date dateCourante = PartieSingleton.INSTANCE.getDateCourante().getJourCourant();
             Transfert t = new Transfert(dateCourante, contratPropose);
@@ -63,9 +63,9 @@ public class Equipe implements Serializable {
         }
     }
 
-    public Equipe(String nom,String histoireDuClub,int budgetTransferts,int masseSalariale, int budgetTeamBuilding,
+    public Equipe(String nom, String histoireDuClub, int budgetTransferts, int masseSalariale, int budgetTeamBuilding,
                   List<Joueur> joueurs,
-                  Entraineur entraineur, President president, Stade stade, Ligue ligue){
+                  Entraineur entraineur, President president, Stade stade, Ligue ligue) {
         this.nom = nom;
         this.histoireDuClub = histoireDuClub;
         this.budgetTransferts = budgetTransferts;
@@ -81,12 +81,12 @@ public class Equipe implements Serializable {
     }
 
     public void initEquipe() {
-        nbPoints=0;
-        nbButsMarques=0;
-        nbButsEncaisses=0;
-        nbVictoires=0;
-        nbMatchsNuls=0;
-        nbDefaites=0;
+        nbPoints = 0;
+        nbButsMarques = 0;
+        nbButsEncaisses = 0;
+        nbVictoires = 0;
+        nbMatchsNuls = 0;
+        nbDefaites = 0;
         matchsDeLequipe = new ArrayList<Match>();
         Strategie.pickRandomStrategie(this);
     }
@@ -110,8 +110,16 @@ public class Equipe implements Serializable {
     }
 
     public void setBudgetTeamBuilding(int newBudget) {
-        budgetTeamBuilding = newBudget;
+
+        if(newBudget < 0) {
+            budgetTeamBuilding = Integer.MAX_VALUE;
+        }else if(newBudget <= 0) {
+            budgetTeamBuilding = 0;
+        }else {
+            budgetTeamBuilding = newBudget;
+        }
     }
+
     public String getHistoireDuClub() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.histoireDuClub;
@@ -163,8 +171,8 @@ public class Equipe implements Serializable {
     }
 
     public static Equipe getEquipeParNom(String nom) {
-        for(Equipe e :equipesAll){
-            if(e.nom.equals(nom))return e;
+        for (Equipe e : equipesAll) {
+            if (e.nom.equals(nom)) return e;
         }
         //Otherwise
         return null;
@@ -192,12 +200,24 @@ public class Equipe implements Serializable {
         this.histoireDuClub = histoireDuClub;
     }
 
-    public void setBudgetTransferts(int budgetTransferts) {
-        this.budgetTransferts = budgetTransferts;
+    public void setBudgetTransferts(int newBudget) {
+        if(newBudget < 0) {
+            this.budgetTransferts = Integer.MAX_VALUE;
+        }else if(newBudget <= 0) {
+            this.budgetTransferts = 0;
+        }else {
+            this.budgetTransferts = newBudget;
+        }
     }
 
-    public void setMasseSalariale(int masseSalariale) {
-        this.masseSalariale = masseSalariale;
+    public void setMasseSalariale(int newBudget) {
+        if(newBudget < 0) {
+            this.masseSalariale = Integer.MAX_VALUE;
+        }else if(newBudget <= 0) {
+            this.masseSalariale = 0;
+        }else {
+            this.masseSalariale = newBudget;
+        }
     }
 
     public void setNbPoints(int nbPoints) {
@@ -290,29 +310,29 @@ public class Equipe implements Serializable {
         if (!(o instanceof Equipe)) return false;
         Equipe equipe = (Equipe) o;
         return getBudgetTransferts() == equipe.getBudgetTransferts() &&
-                        getMasseSalariale() == equipe.getMasseSalariale() &&
-                        getNbPoints() == equipe.getNbPoints() &&
-                        getNbButsMarques() == equipe.getNbButsMarques() &&
-                        getNbButsEncaisses() == equipe.getNbButsEncaisses() &&
-                        getNbVictoires() == equipe.getNbVictoires() &&
-                        getNbMatchsNuls() == equipe.getNbMatchsNuls() &&
-                        getNbDefaites() == equipe.getNbDefaites() &&
-                        Objects.equals(getNom(), equipe.getNom()) &&
-                        Objects.equals(getHistoireDuClub(), equipe.getHistoireDuClub()) &&
-                        Objects.equals(getJoueurs(), equipe.getJoueurs()) &&
-                        Objects.equals(getEntraineur(), equipe.getEntraineur()) &&
-                        Objects.equals(getPresident(), equipe.getPresident()) &&
-                        Objects.equals(getStrategie(), equipe.getStrategie()) &&
-                        Objects.equals(getHistoriqueSaisons(), equipe.getHistoriqueSaisons()) &&
-                        Objects.equals(getStade(), equipe.getStade()) &&
-                        Objects.equals(getLigue(), equipe.getLigue());
+                getMasseSalariale() == equipe.getMasseSalariale() &&
+                getNbPoints() == equipe.getNbPoints() &&
+                getNbButsMarques() == equipe.getNbButsMarques() &&
+                getNbButsEncaisses() == equipe.getNbButsEncaisses() &&
+                getNbVictoires() == equipe.getNbVictoires() &&
+                getNbMatchsNuls() == equipe.getNbMatchsNuls() &&
+                getNbDefaites() == equipe.getNbDefaites() &&
+                Objects.equals(getNom(), equipe.getNom()) &&
+                Objects.equals(getHistoireDuClub(), equipe.getHistoireDuClub()) &&
+                Objects.equals(getJoueurs(), equipe.getJoueurs()) &&
+                Objects.equals(getEntraineur(), equipe.getEntraineur()) &&
+                Objects.equals(getPresident(), equipe.getPresident()) &&
+                Objects.equals(getStrategie(), equipe.getStrategie()) &&
+                Objects.equals(getHistoriqueSaisons(), equipe.getHistoriqueSaisons()) &&
+                Objects.equals(getStade(), equipe.getStade()) &&
+                Objects.equals(getLigue(), equipe.getLigue());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getNom(), getHistoireDuClub(), getBudgetTransferts(), getMasseSalariale(), getNbPoints(),
-                        getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
-                        getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());
+                getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
+                getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());
     }
 
     @Override
@@ -321,11 +341,11 @@ public class Equipe implements Serializable {
     }
 
     public double getNoteMoyenneDeLequipe() {
-        if(joueurs==null)return 0;
-        if(joueurs.size()==0)return 0;
-        int res=0;
-        for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
-        return (double)res/joueurs.size();
+        if (joueurs == null) return 0;
+        if (joueurs.size() == 0) return 0;
+        int res = 0;
+        for (Joueur j : joueurs) res += j.getNotePerformancesRecentes();
+        return (double) res / joueurs.size();
     }
 
 }

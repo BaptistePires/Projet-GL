@@ -25,3 +25,8 @@
 .button:hover{
     -fx-background-color: gray;
 }
+
+.outline {
+    -fx-fill: white;
+
+}

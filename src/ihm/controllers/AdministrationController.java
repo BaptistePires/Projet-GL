@@ -46,6 +46,18 @@ public class AdministrationController {
     @FXML
     private Label etatMasse;
 
+    @FXML
+    private Label labelHistoClub;
+
+    @FXML
+    private Label labelDateNaissance;
+
+    @FXML
+    private Label labelHistoPres;
+
+    @FXML
+    private Label labelNomPres;
+
 
     public Equipe equipe;
 
@@ -91,6 +103,10 @@ public class AdministrationController {
             labelTrasnfert.setText(Integer.toString(equipe.getBudgetTransferts()));
             labelMasse.setText(Integer.toString(equipe.getMasseSalariale()));
             labelTeamBuilding.setText(Integer.toString(equipe.getBudgetTransferts()));
+            labelNomPres.setText(equipe.getPresident().getNom());
+            labelDateNaissance.setText(equipe.getPresident().getDateDeNaissance().toString());
+            labelHistoPres.setText(equipe.getPresident().getHistoriqueCarriere());
+            labelHistoClub.setText(equipe.getHistoireDuClub());
         });
     }
 }
