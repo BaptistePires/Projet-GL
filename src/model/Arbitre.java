@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 public class Arbitre extends Personne implements Serializable {
     private int severite;
@@ -10,6 +11,14 @@ public class Arbitre extends Personne implements Serializable {
     public static ArrayList<Arbitre> arbitresAll = new ArrayList<Arbitre>();
 
     public void initArbitre() {
+    }
+
+    public static ArrayList<Arbitre> getArbitresAll() {
+        return arbitresAll;
+    }
+
+    public static void setArbitresAll(ArrayList<Arbitre> arbitresAll) {
+        Arbitre.arbitresAll = arbitresAll;
     }
 
     public Arbitre(String nom, String prenom, Date dateDeNaissance, String historique) {
@@ -29,4 +38,22 @@ public class Arbitre extends Personne implements Serializable {
         this.severite = valeur;
     }
 
+    @Override
+    public String toString(){
+        return getNom()+" "+getPrenom();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Arbitre)) return false;
+        if (!super.equals(o)) return false;
+        Arbitre arbitre = (Arbitre) o;
+        return getSeverite() == arbitre.getSeverite();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getSeverite());
+    }
 }
