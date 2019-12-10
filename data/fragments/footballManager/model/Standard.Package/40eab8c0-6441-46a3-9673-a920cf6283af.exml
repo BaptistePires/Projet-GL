@@ -16,6 +16,7 @@
       <COMP relation="OwnedElement">
         <COMPID name="Window" mc="Standard.Class" uid="81856993-e824-418a-9d4f-3066db5d0f67"/>
         <COMPID name="Stage" mc="Standard.Class" uid="4a06ec05-cae0-4100-b2cd-636c491788f8"/>
+        <COMPID name="FileChooser" mc="Standard.Class" uid="32fa2653-a62a-4e00-bc29-c2d659ea67a7"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

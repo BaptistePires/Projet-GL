@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
@@ -29,6 +30,7 @@
                         <Font size="27.0" />
                      </font>
                   </Text>
+                  <Label fx:id="labelDateMsg" layoutX="719.0" layoutY="19.0" text="Label" />
                </children>
             </AnchorPane>
         </items>

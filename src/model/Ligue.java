@@ -159,9 +159,9 @@ public class Ligue implements Serializable {
         if (!(o instanceof Ligue)) return false;
         Ligue ligue = (Ligue) o;
         return Objects.equals(getNom(), ligue.getNom()) &&
-                        Objects.equals(calendrier, ligue.calendrier) &&
-                        Objects.equals(getEquipes(), ligue.getEquipes()) &&
-                        Objects.equals(arbitres, ligue.arbitres);
+                                Objects.equals(calendrier, ligue.calendrier) &&
+                                Objects.equals(getEquipes(), ligue.getEquipes()) &&
+                                Objects.equals(arbitres, ligue.arbitres);
     }
 
     @Override

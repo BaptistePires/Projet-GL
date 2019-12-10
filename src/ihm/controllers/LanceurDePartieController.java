@@ -1,5 +1,8 @@
 package ihm.controllers;
 
+import java.io.File;
+import java.net.URL;
+import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,27 +12,23 @@ import javafx.stage.FileChooser;
 import model.LanceurDePartie;
 import model.Main;
 
-import java.io.File;
-import java.net.URL;
-import java.util.Optional;
-
 public class LanceurDePartieController {
     @FXML
-    Button nouvellePartieBouton;
+     Button nouvellePartieBouton;
 
     @FXML
-    Button chargerPartieBouton;
+     Button chargerPartieBouton;
 
     @FXML
-    Button quitterBouton;
+     Button quitterBouton;
 
     @FXML
-    public void nouvellePartieAction(){
+    public void nouvellePartieAction() {
         TextInputDialog dialog = new TextInputDialog("partie_"+(int)(Math.random()*1000));
         dialog.setTitle("Nom de la partie");
         dialog.setHeaderText("Inserez le nom de la partie");
         dialog.setContentText("Veuillez entrer le nom sous lequel vous voudrez sauvegarder votre partie :");
-
+        
         Optional<String> result=dialog.showAndWait();;
         result.ifPresent(name -> {
             LanceurDePartie.INSTANCE.lancerNouvellePartie(name);
@@ -45,7 +44,7 @@ public class LanceurDePartieController {
     }
 
     @FXML
-    public void chargerPartieAction(){
+    public void chargerPartieAction() {
         final FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(Main.mainStage);
         if(file!=null){
@@ -60,7 +59,8 @@ public class LanceurDePartieController {
     }
 
     @FXML
-    public void quitterAction(){
+    public void quitterAction() {
         LanceurDePartie.INSTANCE.quitter();
     }
+
 }

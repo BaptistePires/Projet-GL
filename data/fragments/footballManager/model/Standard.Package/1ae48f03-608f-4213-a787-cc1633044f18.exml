@@ -15,6 +15,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="FXMLLoader" mc="Standard.Class" uid="61283fcb-b8ad-4357-878e-40200a78e221"/>
+        <COMPID name="FXML" mc="Standard.Class" uid="53042fbc-a212-439e-9ab8-82792ebad630"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

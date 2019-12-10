@@ -4,20 +4,45 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Information extends Evenement implements Serializable {
-     String description;
+
+    private String description;
+    private String titre;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
 
     public void avantEvenement() {
     }
 
     public void executerEvenement() {
+        System.out.println("hehe");
+        PartieSingleton.INSTANCE.getBoiteMail().addMessage(new Message(titre,description,getDateDeLEvenement()));
+        System.out.println(PartieSingleton.INSTANCE.getBoiteMail().getMessages());
     }
 
     public void apresEvenement() {
     }
 
-    public Information(String description, Date date) {
+    public static Information generateInformation(String description, String titre, Date date){
+        return new Information(description, titre, date);
+    }
+    private Information(String description, String titre, Date date) {
         super(false, date);
         this.description = description;
+        this.titre = titre;
     }
 
 }

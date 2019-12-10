@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1199.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherInfoJoueurController">
+<VBox fx:id="vb" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ab7878;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherInfoJoueurController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ab7878;" stylesheets="@style/styles.css">
+      <AnchorPane prefHeight="439.0" prefWidth="620.0">
          <children>
             <Label layoutX="323.0" layoutY="234.0" style="-fx-font-weight: 900;" text="Nom du joueur" textFill="#111111">
                <font>
@@ -77,19 +77,19 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="notePerfs" alignment="CENTER" layoutX="808.0" layoutY="235.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="nbButsSaison" alignment="CENTER" layoutX="808.0" layoutY="267.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="nbPassesDecSaison" alignment="CENTER" layoutX="808.0" layoutY="298.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="nbCartonsJauneSaison" alignment="CENTER" layoutX="808.0" layoutY="329.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="nbCartonsRougeSaison" alignment="CENTER" layoutX="808.0" layoutY="363.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="etatMoralJoueur" alignment="CENTER" layoutX="436.0" layoutY="299.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="attaque" alignment="CENTER" layoutX="436.0" layoutY="329.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="millieu" alignment="CENTER" layoutX="436.0" layoutY="363.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="defense" alignment="CENTER" layoutX="436.0" layoutY="396.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="poste" alignment="CENTER" layoutX="436.0" layoutY="428.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label fx:id="equipe" alignment="CENTER" layoutX="436.0" layoutY="460.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Button fx:id="btnRetour" layoutX="643.0" layoutY="542.0" mnemonicParsing="false" onAction="#retourCallBack" text="Retour" />
-            <Button fx:id="btnProposerContrat" layoutX="435.0" layoutY="542.0" mnemonicParsing="false" onAction="#proposerContratCallBack" text="Proposer un contrat" />
+            <Label fx:id="notePerfs" alignment="CENTER" layoutX="514.0" layoutY="30.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="nbButsSaison" alignment="CENTER" layoutX="514.0" layoutY="62.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="nbPassesDecSaison" alignment="CENTER" layoutX="514.0" layoutY="93.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="nbCartonsJauneSaison" alignment="CENTER" layoutX="514.0" layoutY="124.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="nbCartonsRougeSaison" alignment="CENTER" layoutX="514.0" layoutY="158.0" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="etatMoralJoueur" alignment="CENTER" layoutX="142.0" layoutY="94.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="attaque" alignment="CENTER" layoutX="142.0" layoutY="124.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="millieu" alignment="CENTER" layoutX="142.0" layoutY="158.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="defense" alignment="CENTER" layoutX="142.0" layoutY="191.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="poste" alignment="CENTER" layoutX="142.0" layoutY="223.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label fx:id="equipe" alignment="CENTER" layoutX="142.0" layoutY="255.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Button fx:id="btnRetour" layoutX="349.0" layoutY="337.0" mnemonicParsing="false" onAction="#retourCallBack" text="Retour" />
+            <Button fx:id="btnProposerContrat" layoutX="141.0" layoutY="337.0" mnemonicParsing="false" onAction="#proposerContratCallBack" text="Proposer un contrat" />
             <Label fx:id="alertMerca" layoutX="185.0" layoutY="310.0" textFill="RED" />
          </children>
       </AnchorPane>

@@ -312,8 +312,8 @@
                 <ID name="" mc="Infrastructure.Note" uid="160920e8-5085-4375-a4f6-1d3d0078d823"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Calendrier{" +
-                "journees=" + journees +
-                '}';]]></ATT>
+                        "journees=" + journees +
+                        '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -12,7 +12,6 @@ import model.PartieSingleton;
 import model.President;
 
 public class AdministrationController {
-
     @FXML
     private AnchorPane mainPane;
 
@@ -58,7 +57,6 @@ public class AdministrationController {
     @FXML
     private Label labelNomPres;
 
-
     public Equipe equipe;
 
     @FXML
@@ -93,7 +91,6 @@ public class AdministrationController {
 
     @FXML
     void retour(ActionEvent event) {
-
     }
 
     @FXML
@@ -110,4 +107,5 @@ public class AdministrationController {
             labelHistoClub.setText(equipe.getHistoireDuClub());
         });
     }
+
 }

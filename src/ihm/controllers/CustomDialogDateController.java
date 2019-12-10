@@ -1,19 +1,18 @@
 package ihm.controllers;
 
+import java.sql.Date;
+import java.time.ZoneId;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 import model.PartieSingleton;
 
-import java.sql.Date;
-import java.time.ZoneId;
-
 public class CustomDialogDateController {
     @FXML
-    DatePicker datePicker;
+     DatePicker datePicker;
 
     @FXML
-    public void validerAction(){
+    public void validerAction() {
         if(PartieSingleton.INSTANCE.getDateCourante().getJourCourant().after(Date.from(datePicker.getValue()
                 .atStartOfDay(ZoneId.systemDefault()).toInstant())))return;
         try{

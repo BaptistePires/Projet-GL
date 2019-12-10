@@ -1,5 +1,8 @@
 package ihm.controllers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -8,60 +11,79 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import model.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 public class StrategieController {
     @FXML
-    ChoiceBox<Strategie> strategieDefautChoice;
+     ChoiceBox<Strategie> strategieDefautChoice;
+
     @FXML
-    CheckBox strategieDefautCheck;
+     CheckBox strategieDefautCheck;
+
     @FXML
-    Spinner<Integer> aggressiviteSpinner;
+     Spinner<Integer> aggressiviteSpinner;
+
     @FXML
-    Spinner<Integer> passesSpinner;
+     Spinner<Integer> passesSpinner;
+
     @FXML
-    Spinner<Integer> defenseSpinner;
+     Spinner<Integer> defenseSpinner;
+
     @FXML
-    Spinner<Integer> milieuSpinner;
+     Spinner<Integer> milieuSpinner;
+
     @FXML
-    Spinner<Integer> attaqueSpinner;
+     Spinner<Integer> attaqueSpinner;
+
     @FXML
-    ChoiceBox<Joueur> ajouterJoueurChoice;
+     ChoiceBox<Joueur> ajouterJoueurChoice;
+
     @FXML
-    ChoiceBox<Joueur> retirerJoueurChoice;
+     ChoiceBox<Joueur> retirerJoueurChoice;
+
     @FXML
-    TableView<Joueur> joueurSelectViewTab;
+     TableView<Joueur> joueurSelectViewTab;
+
     @FXML
-    TableColumn<Joueur, Poste> posteCol;
+     TableColumn<Joueur,Poste> posteCol;
+
     @FXML
-    TableColumn<Joueur,String> nomCol;
+     TableColumn<Joueur,String> nomCol;
+
     @FXML
-    TableColumn<Joueur,String> prenomCol;
+     TableColumn<Joueur,String> prenomCol;
+
     @FXML
-    TableColumn<Joueur,Integer> physiqueCol;
+     TableColumn<Joueur,Integer> physiqueCol;
+
     @FXML
-    TableColumn<Joueur,Integer> moralCol;
+     TableColumn<Joueur,Integer> moralCol;
+
     @FXML
-    TableColumn<Joueur,Integer> noteCol;
+     TableColumn<Joueur,Integer> noteCol;
+
     @FXML
-    TableColumn<Joueur,Integer> cartonJCol;
+     TableColumn<Joueur,Integer> cartonJCol;
+
     @FXML
     TableColumn<Joueur,Integer> butsCol;
-    @FXML
-    public void initialize(){
+
+
+    @FXML public void initialize(){
         final List<Joueur> joueursAChoisir = new ArrayList<Joueur>(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getJoueurs());
         final ObservableList<Joueur> observableAjouterJoueur = FXCollections.observableArrayList(joueursAChoisir);
         ajouterJoueurChoice.setItems(observableAjouterJoueur);
         final List<Joueur> joueursARetirer = new ArrayList<Joueur>();
         final ObservableList<Joueur> observableRetirerJoueur = FXCollections.observableArrayList(joueursARetirer);
         retirerJoueurChoice.setItems(observableRetirerJoueur);
-
+        
         retirerJoueurChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Joueur>(){
             @Override
             public void changed(ObservableValue<? extends Joueur> selected, Joueur oldJoueur, Joueur newJoueur){
@@ -75,13 +97,13 @@ public class StrategieController {
                 }
             }
         } );
-
+        
         ajouterJoueurChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Joueur>(){
             @Override
             public void changed(ObservableValue<? extends Joueur> selected, Joueur oldJoueur, Joueur newJoueur){
                 observableRetirerJoueur.add(newJoueur);
                 observableAjouterJoueur.remove(newJoueur);
-
+        
                 for(int i=0;i<observableAjouterJoueur.size();i++){
                     if(observableAjouterJoueur.get(i)==null)observableAjouterJoueur.remove(i);
                 }
@@ -90,9 +112,9 @@ public class StrategieController {
                 }
             }
         } );
-
+        
         joueurSelectViewTab.setItems(observableRetirerJoueur);
-
+        
         ArrayList<Strategie> strategies = new ArrayList<Strategie>();
         strategies.add(new StrategieDefensive());
         strategies.add(new StrategieOffensive());
@@ -100,7 +122,7 @@ public class StrategieController {
         strategies.add(new StrategieUltraDefensive());
         strategies.add(new StrategieUltraOffensive());
         strategieDefautChoice.setItems(FXCollections.observableArrayList(strategies));
-
+        
         posteCol.setCellValueFactory(new PropertyValueFactory<Joueur, Poste>("poste"));
         nomCol.setCellValueFactory(new PropertyValueFactory<Joueur, String>("nom"));
         prenomCol.setCellValueFactory(new PropertyValueFactory<Joueur, String>("prenom"));
@@ -109,7 +131,7 @@ public class StrategieController {
         noteCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("notePerformancesRecentes"));
         cartonJCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("nbCartonJauneSaison"));
         butsCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("nbButsSaison"));
-
+        
         aggressiviteSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,100));
         passesSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,100));
         defenseSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,100));
@@ -122,8 +144,7 @@ public class StrategieController {
         attaqueSpinner.setEditable(true);
         aggressiviteSpinner.setEditable(true);
     }
-    @FXML
-    public void validerAction(){
+    @FXML public void validerAction(){
         if(retirerJoueurChoice.getItems()==null || retirerJoueurChoice.getItems().size()!=11){
             showAlert("Attention","Incohérence","Il faut avoir exactement 11 joueurs dans la formation");
             return;
@@ -146,7 +167,7 @@ public class StrategieController {
             choisie.setFormation(formation);
             PartieSingleton.INSTANCE.getEntraineur().getEquipe().setStrategie(strategieDefautChoice.getValue());
             this.showAlert("Information","Stratégie bien mise en place","Votre stratégie a été associée à votre équipe");
-
+        
         }else{
             final int aggressivite = aggressiviteSpinner.getValue();
             final int passes = passesSpinner.getValue();
@@ -176,8 +197,7 @@ public class StrategieController {
             }
         }
     }
-    @FXML
-    public void annulerAction(){
+    @FXML public void annulerAction(){
         try{
             Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
         }catch(Exception e){
@@ -186,12 +206,12 @@ public class StrategieController {
         }
     }
 
-    public static void showAlert(String titre, String header,String content){
+    public static void showAlert(String titre, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titre);
         alert.setHeaderText(header);
         alert.setContentText(content);
-
+        
         alert.showAndWait();
     }
 

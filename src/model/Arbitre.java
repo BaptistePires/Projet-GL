@@ -13,14 +13,6 @@ public class Arbitre extends Personne implements Serializable {
     public void initArbitre() {
     }
 
-    public static ArrayList<Arbitre> getArbitresAll() {
-        return arbitresAll;
-    }
-
-    public static void setArbitresAll(ArrayList<Arbitre> arbitresAll) {
-        Arbitre.arbitresAll = arbitresAll;
-    }
-
     public Arbitre(String nom, String prenom, Date dateDeNaissance, String historique) {
         super(nom, prenom, dateDeNaissance, historique);
     }
@@ -38,8 +30,16 @@ public class Arbitre extends Personne implements Serializable {
         this.severite = valeur;
     }
 
+    public static ArrayList<Arbitre> getArbitresAll() {
+        return arbitresAll;
+    }
+
+    public static void setArbitresAll(ArrayList<Arbitre> arbitresAll) {
+        Arbitre.arbitresAll = arbitresAll;
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return getNom()+" "+getPrenom();
     }
 
@@ -56,4 +56,5 @@ public class Arbitre extends Personne implements Serializable {
     public int hashCode() {
         return Objects.hash(super.hashCode(), getSeverite());
     }
+
 }
