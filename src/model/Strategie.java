@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.TreeMap;
 
 public abstract class Strategie implements Serializable {
@@ -113,6 +114,28 @@ public abstract class Strategie implements Serializable {
         e.setStrategie(s);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Strategie)) return false;
+        Strategie strategie = (Strategie) o;
+        return getAgressivite() == strategie.getAgressivite() &&
+                getPasses() == strategie.getPasses() &&
+                getDefense() == strategie.getDefense() &&
+                getMilieu() == strategie.getMilieu() &&
+                getAttaque() == strategie.getAttaque() &&
+                Objects.equals(getFormation(), strategie.getFormation());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFormation(), getAgressivite(), getPasses(), getDefense(), getMilieu(), getAttaque());
+    }
+
+    @Override
+    public String toString(){
+        return getClass().toString();
+    }
     public abstract void appliquer();
 
 }

@@ -5,19 +5,16 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
 import model.*;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Observable;
 
 public class StrategieController {
     @FXML
@@ -99,6 +96,9 @@ public class StrategieController {
         ArrayList<Strategie> strategies = new ArrayList<Strategie>();
         strategies.add(new StrategieDefensive());
         strategies.add(new StrategieOffensive());
+        strategies.add(new StrategieTransition());
+        strategies.add(new StrategieUltraDefensive());
+        strategies.add(new StrategieUltraOffensive());
         strategieDefautChoice.setItems(FXCollections.observableArrayList(strategies));
 
         posteCol.setCellValueFactory(new PropertyValueFactory<Joueur, Poste>("poste"));
@@ -115,6 +115,12 @@ public class StrategieController {
         defenseSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,100));
         milieuSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,100));
         attaqueSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,100));
+        aggressiviteSpinner.setEditable(true);
+        passesSpinner.setEditable(true);
+        defenseSpinner.setEditable(true);
+        milieuSpinner.setEditable(true);
+        attaqueSpinner.setEditable(true);
+        aggressiviteSpinner.setEditable(true);
     }
     @FXML
     public void validerAction(){
@@ -172,7 +178,12 @@ public class StrategieController {
     }
     @FXML
     public void annulerAction(){
-
+        try{
+            Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage de l'ecran principal du jeu : "+e.getClass()+" "+e.getMessage());
+        }
     }
 
     public static void showAlert(String titre, String header,String content){
