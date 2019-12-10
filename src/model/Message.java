@@ -5,11 +5,12 @@ import java.util.Date;
 
 public class Message extends NotreObservable implements Serializable {
     private String contenu;
+
+    private boolean lu = false;
+
     private String titre;
+
     private Date date;
-
-
-
 
     public Message() {
         super();
@@ -22,25 +23,28 @@ public class Message extends NotreObservable implements Serializable {
         this.titre = titre;
         this.date = date;
     }
-    private boolean lu=false;
 
-
-
-    public String getTitre(){
-        return titre;
-    }
     public String getContenu() {
         return contenu;
     }
-    public Date getDate(){ return date;}
-    public void setLu(){
+
+    public void setLu() {
         if(!lu){
             notifier();
             lu = true;
         }
     }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return titre;
     }
 

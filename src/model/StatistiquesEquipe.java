@@ -59,9 +59,9 @@ public class StatistiquesEquipe implements Serializable {
         if (!(o instanceof StatistiquesEquipe)) return false;
         StatistiquesEquipe that = (StatistiquesEquipe) o;
         return getNombreDeButsMarques() == that.getNombreDeButsMarques() &&
-                        getPossessionDeBalle() == that.getPossessionDeBalle() &&
-                        getNombreDePasses() == that.getNombreDePasses() &&
-                        Objects.equals(getEquipe(), that.getEquipe());
+                                getPossessionDeBalle() == that.getPossessionDeBalle() &&
+                                getNombreDePasses() == that.getNombreDePasses() &&
+                                Objects.equals(getEquipe(), that.getEquipe());
     }
 
     @Override
@@ -72,11 +72,11 @@ public class StatistiquesEquipe implements Serializable {
     @Override
     public String toString() {
         return "StatistiquesEquipe{" +
-                        "nombreDeButsMarques=" + nombreDeButsMarques +
-                        ", possessionDeBalle=" + possessionDeBalle +
-                        ", nombreDePasses=" + nombreDePasses +
-                        ", equipe=" + equipe +
-                        '}';
+                                "nombreDeButsMarques=" + nombreDeButsMarques +
+                                ", possessionDeBalle=" + possessionDeBalle +
+                                ", nombreDePasses=" + nombreDePasses +
+                                ", equipe=" + equipe +
+                                '}';
     }
 
 }

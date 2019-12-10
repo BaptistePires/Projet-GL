@@ -16,8 +16,6 @@ import model.Joueur;
 
 public class AfficherInfoJoueurController {
     @FXML
-    VBox vb;
-    @FXML
     private Label nomJoueur;
 
     @FXML
@@ -67,6 +65,9 @@ public class AfficherInfoJoueurController {
 
     private Joueur j;
 
+    @FXML
+     VBox vb;
+
     public void setJoueur(Joueur j) {
         this.j = j;
         init();
@@ -102,7 +103,7 @@ public class AfficherInfoJoueurController {
         }
     }
 
-    public void init(){
+    public void init() {
         nomJoueur.setText(j.getNom() + " " + j.getPrenom());
         etatPhysiqueJoueur.setText(Integer.toString(j.getEtatPhysique()));
         etatMoralJoueur.setText(Integer.toString(j.getMoral()));
@@ -110,7 +111,7 @@ public class AfficherInfoJoueurController {
         millieu.setText(Integer.toString(j.getMillieu()));
         defense.setText(Integer.toString(j.getDefense()));
         poste.setText(j.getPoste().toString());
-
+        
         equipe.setText(j.getEquipe().getNom());
         notePerfs.setText(Integer.toString(j.getNotePerformancesRecentes()));
         nbButsSaison.setText(Integer.toString(j.getNbButsSaison()));
@@ -120,7 +121,8 @@ public class AfficherInfoJoueurController {
     }
 
     @FXML
-    void initialize(){
+    void initialize() {
         if(j!=null)init();
     }
+
 }

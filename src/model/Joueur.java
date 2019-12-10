@@ -206,25 +206,25 @@ public class Joueur extends Personne implements Serializable {
         if (!(o instanceof Joueur)) return false;
         Joueur joueur = (Joueur) o;
         return getEtatPhysique() == joueur.getEtatPhysique() &&
-                                getMoral() == joueur.getMoral() &&
-                                getDefense() == joueur.getDefense() &&
-                                getMillieu() == joueur.getMillieu() &&
-                                getAttaque() == joueur.getAttaque() &&
-                                getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
-                                getNbButsSaison() == joueur.getNbButsSaison() &&
-                                getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
-                                getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
-                                getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
-                                getPoste() == joueur.getPoste() &&
-                                Objects.equals(getEquipe(), joueur.getEquipe()) &&
-                                Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());
+                                        getMoral() == joueur.getMoral() &&
+                                        getDefense() == joueur.getDefense() &&
+                                        getMillieu() == joueur.getMillieu() &&
+                                        getAttaque() == joueur.getAttaque() &&
+                                        getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
+                                        getNbButsSaison() == joueur.getNbButsSaison() &&
+                                        getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
+                                        getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
+                                        getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
+                                        getPoste() == joueur.getPoste() &&
+                                        Objects.equals(getEquipe(), joueur.getEquipe()) &&
+                                        Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getEtatPhysique(), getMoral(), getDefense(), getMillieu(), getAttaque(),
-                                getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
-                                getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());
+                                        getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
+                                        getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());
     }
 
     @Override

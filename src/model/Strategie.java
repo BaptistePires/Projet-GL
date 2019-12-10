@@ -117,11 +117,11 @@ public abstract class Strategie implements Serializable {
         if (!(o instanceof Strategie)) return false;
         Strategie strategie = (Strategie) o;
         return getAgressivite() == strategie.getAgressivite() &&
-                        getPasses() == strategie.getPasses() &&
-                        getDefense() == strategie.getDefense() &&
-                        getMilieu() == strategie.getMilieu() &&
-                        getAttaque() == strategie.getAttaque() &&
-                        Objects.equals(getFormation(), strategie.getFormation());
+                                getPasses() == strategie.getPasses() &&
+                                getDefense() == strategie.getDefense() &&
+                                getMilieu() == strategie.getMilieu() &&
+                                getAttaque() == strategie.getAttaque() &&
+                                Objects.equals(getFormation(), strategie.getFormation());
     }
 
     @Override

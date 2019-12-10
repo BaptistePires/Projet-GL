@@ -212,7 +212,7 @@ this.Attribute = value;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="61996347-620d-4151-a06a-f3b129142720"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8a0ecb3c-d040-4884-b28c-8cc8dfe1f114"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -332,7 +332,7 @@ this.Attribute = value;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="31278f5d-78c2-48c9-8e00-4053ad56b02b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1b734c21-6dfb-4e94-a71a-61c214bf9e9a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -77,6 +77,8 @@ dateCourante = new DateCourante();
 dateCourante.setJourCourant(new GregorianCalendar(2019, Calendar.JULY, 1).getTime());
 initFifa();
 INSTANCE = this;
+Information i = Information.generateInformation("Création de nouvelle partie texte","Création de partie titre", dateCourante.getJourCourant());
+i.executerEvenement();
 //L'initialisation de l'entraineur se fait au moment ou l'utilisateur saisit ses infos
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -150,6 +152,7 @@ INSTANCE = this;
                   <ATT name="Content"><![CDATA[try{
     ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomFichierSource));
     INSTANCE = (PartieSingleton) in.readObject();
+
 }catch(Exception e){
     e.printStackTrace();
     System.err.println("Erreur lors du chargement de la partie "+nomFichierSource+" : "+e.getClass()+" : "+e.getMessage());
@@ -952,10 +955,10 @@ notifier();
                 <ID name="" mc="Infrastructure.Note" uid="81c60754-340c-46d0-88b6-8db847fa27e3"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.equals(getNomFichierSauvegarde(), that.getNomFichierSauvegarde()) &&
-                        Objects.equals(getDateCourante(), that.getDateCourante()) &&
-                        Objects.equals(getFifa(), that.getFifa()) &&
-                        Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
-                        Objects.equals(getEntraineur(), that.getEntraineur());]]></ATT>
+                                Objects.equals(getDateCourante(), that.getDateCourante()) &&
+                                Objects.equals(getFifa(), that.getFifa()) &&
+                                Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
+                                Objects.equals(getEntraineur(), that.getEntraineur());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1111,12 +1114,12 @@ PartieSingleton that = (PartieSingleton) o;
                 <ID name="" mc="Infrastructure.Note" uid="acc1d2e1-7de1-43ec-be11-e1912d2fd240"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "PartieSingleton{" +
-                        "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
-                        ", dateCourante=" + dateCourante +
-                        ", fifa=" + fifa +
-                        ", boiteMail=" + boiteMail +
-                        ", entraineur=" + entraineur +
-                        '}';]]></ATT>
+                                "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
+                                ", dateCourante=" + dateCourante +
+                                ", fifa=" + fifa +
+                                ", boiteMail=" + boiteMail +
+                                ", entraineur=" + entraineur +
+                                '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1206,6 +1209,20 @@ notifier();
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+        <OBJECT>
+          <ID name="getInstance" mc="Standard.Operation" uid="1ef1c49f-5f72-4f3c-b5e1-332858e0f5fd"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getInstance]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
@@ -1232,7 +1249,7 @@ notifier();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="eb9a41a4-78b1-4c24-828d-1e5039298299"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="70501a3c-6cb0-420c-91a3-ed053970415f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1270,7 +1287,7 @@ notifier();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="cd013ba9-476d-4319-a4ce-cd3b80057a75"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8372b3a7-d7aa-40a1-ba1d-51ef1c1e1609"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1347,7 +1364,7 @@ notifier();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5fa15604-192e-47b9-a1f8-99a26553fc60"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1cb38779-b2dc-4eb1-a73a-39b67ba03503"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1422,7 +1439,7 @@ notifier();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="16a256dc-a70a-47ce-8d42-ca7be441602c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="90e194a5-d16f-44cb-b3b8-eb8a690dcc41"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1497,7 +1514,7 @@ notifier();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8e2ec69c-10d5-48f6-b118-2ca0559825cd"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4d631e11-1002-408f-86c5-55c99213333d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1572,7 +1589,7 @@ notifier();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="37a226e7-2659-42db-a1f3-4335ec7e362f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="10456da4-8097-4b71-bdba-4c75fd713e9f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

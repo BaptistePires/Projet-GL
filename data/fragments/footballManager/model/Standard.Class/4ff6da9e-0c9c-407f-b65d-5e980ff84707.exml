@@ -295,7 +295,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="60650c86-99c9-48ab-aecb-399e639557f6"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="da206a94-0024-4d5f-8140-6dc5058423e1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -386,7 +386,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a6ae759f-a77a-4d55-9280-42fc04538db7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d538b660-e026-4695-a497-6a0ce7ebf8f1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -477,7 +477,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c9cbbf37-e22e-4f57-9352-40e1e19d8bfc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="93a99b44-313d-43d9-902b-92b438aaf596"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -568,7 +568,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b0d11bbb-6256-4911-a582-dc0ca77e6b3f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="176b804e-28b1-430a-ad5c-3a98b0420e5d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -659,7 +659,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2b770edd-d0a3-4d92-b08c-ed9a7483aa0a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="302eb322-8309-41f3-95de-d501e342cc29"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -772,7 +772,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d75ae317-023d-410c-8a0f-252ac320038e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7599d658-17d9-46d7-90bb-074efd6234cc"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -893,7 +893,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7a4c8380-5b66-4324-b065-36d9a0a21b1b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8eb8d2d3-e880-40eb-a508-846ddfb3a6f3"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1014,7 +1014,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8bfba0d7-a2d2-4d23-847f-348cc01ab517"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f74c8a1b-e4a8-4ac7-ab52-b80b037042b6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1135,7 +1135,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="673c100f-6bcc-4c40-9c97-dc4f198d314e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="01283081-15d6-46e9-aaf2-9bb06e7b5f36"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1256,7 +1256,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="81b8684a-0561-4cb2-8bb8-bc7026996919"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9c800cdd-55e0-49e2-9aed-515ca6f1fd12"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1377,7 +1377,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7d2ad500-18b3-4354-88cb-1063bfd89d2b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="29762e2f-ba0c-41a5-8a42-2cb686658cd8"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1490,7 +1490,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f510f980-1c7a-4f23-bb82-a4e5293cb61f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e9452bbb-96ba-4ce5-a725-fcc149e67c9b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1611,7 +1611,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="dbeef78a-625d-4e8f-990d-dfb36cff7d79"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f192b995-cdfc-46a8-bb79-a4fc9f9381d6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1732,7 +1732,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7012de39-f3fe-4c67-889e-91a26d0bed51"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8cb40bfa-7e11-455a-baf0-3a11bd694390"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1853,7 +1853,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4fa37f42-a943-4743-b3a7-c7e3557cb422"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6dc97a04-7309-44eb-9623-05c61b763187"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1974,7 +1974,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="63c6d125-55c7-4ebd-8617-f1a142c75540"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e95c482e-472d-427f-88a4-b4afcfcf1a6a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2095,7 +2095,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="53a1a8e2-f7e7-4f48-848c-4e27bb012140"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="bf955bfc-e493-4c96-a51c-f244dd841364"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2186,7 +2186,7 @@ moralCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("moral")
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0de0d607-212b-46a9-a062-ed940b0a4321"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="88d5edc0-c198-4618-9adc-fefa3796b383"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

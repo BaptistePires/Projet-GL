@@ -29,6 +29,8 @@
         <COMPID name="TableView" mc="Standard.Class" uid="e3ef6427-b84a-4f8c-a296-ec8673a59b4d"/>
         <COMPID name="cell" mc="Standard.Package" uid="4cdf621d-bd38-4d60-a6d0-cd63d0ab5a8c"/>
         <COMPID name="TextField" mc="Standard.Class" uid="f6544b09-5983-47e3-95a9-697524916be7"/>
+        <COMPID name="Dialog" mc="Standard.Class" uid="269cb023-9549-406a-9470-1cd8890e2a76"/>
+        <COMPID name="Accordion" mc="Standard.Class" uid="007c59cd-94e8-406e-837d-cdb6147e4815"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
