@@ -159,7 +159,11 @@ public final class PartieSingleton extends NotreObservable implements Serializab
             if(evenements==null)continue;
             /* Tri des évenements (Les plus importants en tête de liste) */
             System.out.println("Evenements :"+evenements);
-            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
+            evenements.sort((o1, o2) -> {
+                if(o1.getClass().equals(Journee.class)&&o2.getClass().equals(Match.class))return 1;
+                if(o2.getClass().equals(Journee.class)&&o1.getClass().equals(Match.class))return -1;
+                return Boolean.compare(o2.getImportance(), o1.getImportance());
+            });
         
             /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
              * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
