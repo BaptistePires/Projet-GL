@@ -24,12 +24,11 @@
                 <TextField fx:id="inputMontantTransfert" layoutX="635.0" layoutY="415.0" prefHeight="26.0" prefWidth="174.0" />
                 <Label fx:id="labelDebut11" layoutX="432.0" layoutY="419.0" text="Montant du transfert" />
                 <Label layoutX="431.0" layoutY="475.0" text="Salaire annuel (euros)" />
-                <Button layoutX="429.0" layoutY="541.0" mnemonicParsing="false" onAction="#soumettreContrat" text="Proposer le contrat" />
-                <Button layoutX="709.0" layoutY="541.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
-            <Label fx:id="alertDebut" layoutX="332.0" layoutY="112.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
-            <Label fx:id="alertFin" layoutX="332.0" layoutY="172.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
-            <Label fx:id="alertMontant" layoutX="332.0" layoutY="232.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
-            <Label fx:id="alertSalaire" layoutX="332.0" layoutY="291.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
+                <Button layoutX="556.0" layoutY="538.0" mnemonicParsing="false" onAction="#soumettreContrat" text="Proposer le contrat" />
+            <Label fx:id="alertDebut" layoutX="848.0" layoutY="297.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
+            <Label fx:id="alertFin" layoutX="848.0" layoutY="358.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
+            <Label fx:id="alertMontant" layoutX="848.0" layoutY="419.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
+            <Label fx:id="alertSalaire" layoutX="848.0" layoutY="474.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
             <TextField fx:id="inputSalaire" layoutX="635.0" layoutY="470.0" prefHeight="26.0" prefWidth="174.0" />
             </children>
         </AnchorPane>
