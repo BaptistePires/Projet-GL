@@ -531,7 +531,7 @@ this.matchs = matchs;
                 <ID name="" mc="Infrastructure.Note" uid="a17886df-52fe-4860-8d3f-7b5911780e3d"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.equals(getDateJournee(), journee.getDateJournee()) &&
-                        Objects.equals(getMatchs(), journee.getMatchs());]]></ATT>
+                                Objects.equals(getMatchs(), journee.getMatchs());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -687,9 +687,9 @@ Journee journee = (Journee) o;
                 <ID name="" mc="Infrastructure.Note" uid="8bf915c6-26cc-45f2-9d09-3d770bd41051"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Journee{" +
-                        "dateJournee=" + dateJournee +
-                        ", matchs=" + matchs +
-                        '}';]]></ATT>
+                                "dateJournee=" + dateJournee +
+                                ", matchs=" + matchs +
+                                '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -729,7 +729,7 @@ Journee journee = (Journee) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c15999ab-cfcf-47b7-a74a-53b83247e776"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="309f3ae3-61ed-4004-aecd-1f5e727bf9b1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -84,10 +84,10 @@ public class StatistiquesJoueur implements Serializable {
         if (!(o instanceof StatistiquesJoueur)) return false;
         StatistiquesJoueur that = (StatistiquesJoueur) o;
         return getNombreDeButsMarques() == that.getNombreDeButsMarques() &&
-                        getNombreDeCartonsJaunes() == that.getNombreDeCartonsJaunes() &&
-                        getNombreDeCartonsRouges() == that.getNombreDeCartonsRouges() &&
-                        getNoteDuJoueur() == that.getNoteDuJoueur() &&
-                        Objects.equals(getJoueur(), that.getJoueur());
+                                getNombreDeCartonsJaunes() == that.getNombreDeCartonsJaunes() &&
+                                getNombreDeCartonsRouges() == that.getNombreDeCartonsRouges() &&
+                                getNoteDuJoueur() == that.getNoteDuJoueur() &&
+                                Objects.equals(getJoueur(), that.getJoueur());
     }
 
     @Override
@@ -98,12 +98,12 @@ public class StatistiquesJoueur implements Serializable {
     @Override
     public String toString() {
         return "StatistiquesJoueur{" +
-                        "nombreDeButsMarques=" + nombreDeButsMarques +
-                        ", nombreDeCartonsJaunes=" + nombreDeCartonsJaunes +
-                        ", nombreDeCartonsRouges=" + nombreDeCartonsRouges +
-                        ", noteDuJoueur=" + noteDuJoueur +
-                        ", joueur=" + joueur +
-                        '}';
+                                "nombreDeButsMarques=" + nombreDeButsMarques +
+                                ", nombreDeCartonsJaunes=" + nombreDeCartonsJaunes +
+                                ", nombreDeCartonsRouges=" + nombreDeCartonsRouges +
+                                ", noteDuJoueur=" + noteDuJoueur +
+                                ", joueur=" + joueur +
+                                '}';
     }
 
 }

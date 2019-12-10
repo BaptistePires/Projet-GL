@@ -1,6 +1,7 @@
 package ihm.controllers;
 
 import java.awt.event.ActionEvent;
+import java.util.Date;
 import java.util.Observable;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -9,6 +10,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SplitPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.effect.Light;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -17,10 +22,6 @@ import javafx.scene.text.TextFlow;
 import model.BoiteMail;
 import model.Message;
 import model.PartieSingleton;
-
-import java.awt.event.ActionEvent;
-import java.util.Date;
-import java.util.Observable;
 
 public class AfficherMessagesController {
     @FXML
@@ -38,24 +39,16 @@ public class AfficherMessagesController {
     @FXML
     private AnchorPane paneAfficherMsg;
 
-
     @FXML
     private TextArea contenuMessage;
 
     @FXML
     private Text titreMsg;
 
-    @FXML private Label labelDateMsg;
+    @FXML
+    private Label labelDateMsg;
 
     private BoiteMail boiteMail;
-
-    public BoiteMail getBoiteMail() {
-        return boiteMail;
-    }
-
-    public void setBoiteMail(BoiteMail boiteMail) {
-        this.boiteMail = boiteMail;
-    }
 
     @FXML
     private void initialize() {
@@ -71,10 +64,10 @@ public class AfficherMessagesController {
                 newValue.setLu();
             }
         });
-
-
+        
+        
         /*Platform.runLater(() -> {
-//          listView = new ListView<String>();
+        //          listView = new ListView<String>();
             ObservableList<Message> items = FXCollections.observableArrayList(boiteMail.getMessages());
             items.addAll(PartieSingleton.INSTANCE.getBoiteMail().getMessages());
             System.out.println(PartieSingleton.INSTANCE.getBoiteMail().getMessages());
@@ -103,13 +96,19 @@ public class AfficherMessagesController {
         });*/
     }
 
-    public void updateAfficherContenu (String contenu, String titre, Date date){
+    public void updateAfficherContenu(String contenu, String titre, Date date) {
         contenuMessage.setText(contenu);
         contenuMessage.setEditable(false);
         titreMsg.setText(titre);
         labelDateMsg.setText(String.format("%d-%d-%d",date.getDate(), date.getMonth()+1,date.getYear()+1900));
     }
 
+    public BoiteMail getBoiteMail() {
+        return boiteMail;
+    }
+
+    public void setBoiteMail(BoiteMail boiteMail) {
+        this.boiteMail = boiteMail;
+    }
+
 }
-
-

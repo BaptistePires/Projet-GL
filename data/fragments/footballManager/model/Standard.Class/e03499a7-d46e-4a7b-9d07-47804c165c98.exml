@@ -665,9 +665,9 @@ stadesAll.add(this);
                 <ID name="" mc="Infrastructure.Note" uid="d421ead5-8945-4020-9159-fbc442fde884"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return getNombrePlaces() == stade.getNombrePlaces() &&
-                Objects.equals(getNom(), stade.getNom()) &&
-                Objects.equals(getVille(), stade.getVille()) &&
-                Objects.equals(getHistoire(), stade.getHistoire());]]></ATT>
+                        Objects.equals(getNom(), stade.getNom()) &&
+                        Objects.equals(getVille(), stade.getVille()) &&
+                        Objects.equals(getHistoire(), stade.getHistoire());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -862,7 +862,7 @@ Stade stade = (Stade) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f96f5ae5-27a5-4749-bc39-0c5d3ab209e1"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6235673a-ab0a-4ad9-849c-1787b3cfd504"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -900,7 +900,7 @@ Stade stade = (Stade) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="69e20307-b739-4dfb-95a9-9cdc303dbdfc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0ed84df0-3875-4326-a3d5-0201e85dbde6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -938,7 +938,7 @@ Stade stade = (Stade) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="37d5bc10-5796-4448-b178-e4871f7c9730"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1d86b1ca-f899-4c50-a7c4-8ca8f9c11e64"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -976,7 +976,7 @@ Stade stade = (Stade) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c0d99b5c-1483-4bf1-8fc4-b16cc22dd87d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="07b1456e-cdcc-4dcf-ae3e-64ff84e2aad5"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

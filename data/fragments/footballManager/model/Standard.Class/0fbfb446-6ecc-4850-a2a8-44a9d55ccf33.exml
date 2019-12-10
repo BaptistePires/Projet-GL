@@ -1258,11 +1258,11 @@ e.setStrategie(s);
                 <ID name="" mc="Infrastructure.Note" uid="f16d0b37-dff8-4060-8c26-94ae4305980e"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return getAgressivite() == strategie.getAgressivite() &&
-                getPasses() == strategie.getPasses() &&
-                getDefense() == strategie.getDefense() &&
-                getMilieu() == strategie.getMilieu() &&
-                getAttaque() == strategie.getAttaque() &&
-                Objects.equals(getFormation(), strategie.getFormation());]]></ATT>
+                        getPasses() == strategie.getPasses() &&
+                        getDefense() == strategie.getDefense() &&
+                        getMilieu() == strategie.getMilieu() &&
+                        getAttaque() == strategie.getAttaque() &&
+                        Objects.equals(getFormation(), strategie.getFormation());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1457,7 +1457,7 @@ Strategie strategie = (Strategie) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0129b1d9-8f84-42e7-a0f4-d5bec9e50ff2"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ec562aa1-cf34-4808-abc8-5e92c9719b61"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1495,7 +1495,7 @@ Strategie strategie = (Strategie) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="1c8f6d39-cc28-4354-8523-07cb728c8140"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="60fae5d7-1e0d-4c43-8d76-bdcd9c148beb"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1533,7 +1533,7 @@ Strategie strategie = (Strategie) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="aade51af-c0d0-4091-8578-96e04354c214"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="af81694d-602d-4beb-888e-f661016d1ac4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1571,7 +1571,7 @@ Strategie strategie = (Strategie) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e72c64dc-acf3-4e8f-9ac8-643ef8e60ea5"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3aa73d75-3863-41e2-ba06-e99ac5e4010a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1609,7 +1609,7 @@ Strategie strategie = (Strategie) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="81487c3b-f2f4-4602-b9fc-419a7f9eba84"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cb890ff0-bca0-49b1-abd2-a61444b73b1e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

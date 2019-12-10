@@ -1,5 +1,6 @@
 package ihm.controllers;
 
+import java.time.Instant;
 import java.time.ZoneId;
 import java.util.Date;
 import javafx.collections.FXCollections;
@@ -14,10 +15,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.*;
-
-import java.time.Instant;
-import java.time.ZoneId;
-import java.util.Date;
 
 public class CreerNouvellePartieController {
     @FXML
@@ -64,7 +61,18 @@ public class CreerNouvellePartieController {
             System.err.println("Erreur lors de l'affichage de l'ecran principal du jeu : "+e.getClass()+" "+e.getMessage());
         }
     }
-    @FXML public void tmp(){
+
+    @FXML
+    void annulerAction() {
+        try{
+            Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../lanceurDePartie.fxml"))));
+        }catch(Exception e){
+            System.err.println("Echec lors du retour au menu principal : "+e.getClass() + " : "+e.getMessage());
+        }
+    }
+
+    @FXML
+    public void tmp() {
         final String nom = "Massyl";
         final String prenom = "DJEMAI";
         final String historique = "Hkayti Hkaya";
@@ -78,16 +86,6 @@ public class CreerNouvellePartieController {
         }catch(Exception e){
             e.printStackTrace();
             System.err.println("Erreur lors de l'affichage de l'ecran principal du jeu : "+e.getClass()+" "+e.getMessage());
-        }
-
-    }
-
-    @FXML
-    void annulerAction() {
-        try{
-            Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../lanceurDePartie.fxml"))));
-        }catch(Exception e){
-            System.err.println("Echec lors du retour au menu principal : "+e.getClass() + " : "+e.getMessage());
         }
     }
 

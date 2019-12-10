@@ -3085,18 +3085,18 @@ this.historiqueSaisons = historiqueSaisons;
                 <ID name="" mc="Infrastructure.Note" uid="803ced5d-1a45-4447-92df-cbcadabfb277"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return getEtatPhysique() == joueur.getEtatPhysique() &&
-                        getMoral() == joueur.getMoral() &&
-                        getDefense() == joueur.getDefense() &&
-                        getMillieu() == joueur.getMillieu() &&
-                        getAttaque() == joueur.getAttaque() &&
-                        getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
-                        getNbButsSaison() == joueur.getNbButsSaison() &&
-                        getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
-                        getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
-                        getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
-                        getPoste() == joueur.getPoste() &&
-                        Objects.equals(getEquipe(), joueur.getEquipe()) &&
-                        Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());]]></ATT>
+                                getMoral() == joueur.getMoral() &&
+                                getDefense() == joueur.getDefense() &&
+                                getMillieu() == joueur.getMillieu() &&
+                                getAttaque() == joueur.getAttaque() &&
+                                getNotePerformancesRecentes() == joueur.getNotePerformancesRecentes() &&
+                                getNbButsSaison() == joueur.getNbButsSaison() &&
+                                getNbPasseDecisiveSaison() == joueur.getNbPasseDecisiveSaison() &&
+                                getNbCartonJauneSaison() == joueur.getNbCartonJauneSaison() &&
+                                getNbCartonRougeSaison() == joueur.getNbCartonRougeSaison() &&
+                                getPoste() == joueur.getPoste() &&
+                                Objects.equals(getEquipe(), joueur.getEquipe()) &&
+                                Objects.equals(getHistoriqueSaisons(), joueur.getHistoriqueSaisons());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3188,8 +3188,8 @@ Joueur joueur = (Joueur) o;
                 <ID name="" mc="Infrastructure.Note" uid="a62c5654-978c-4ff5-8716-e057ace89944"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.hash(getEtatPhysique(), getMoral(), getDefense(), getMillieu(), getAttaque(),
-                        getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
-                        getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());]]></ATT>
+                                getNotePerformancesRecentes(), getNbButsSaison(), getNbPasseDecisiveSaison(), getNbCartonJauneSaison(),
+                                getNbCartonRougeSaison(), getPoste(), getEquipe(), getHistoriqueSaisons());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3303,7 +3303,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4bb37d24-d4b7-416b-a650-68e919d68b0e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3b4627d7-9ee0-4b4a-a766-203219b16cbc"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3341,7 +3341,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b65cc639-c6a8-41e4-9769-aa182bff0c7c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3a190f3a-1212-4c95-9135-9aaea490c23b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3379,7 +3379,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="87e20c98-0324-4fe7-acb9-70d0ea3d4889"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cf710e9d-47d3-41b0-b81b-576e31502c84"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3417,7 +3417,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e2cdf65d-ff74-4caa-8c3e-ae39a19426a7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="66851e29-43bb-4c89-bd66-86e40bc9e440"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3455,7 +3455,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d49ef3b7-6417-4e1c-9a58-183f060792b2"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="76c8796d-3071-43b1-b9e0-bdbd5fba9712"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3493,7 +3493,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b0af711f-08db-4b9f-a1e0-0eb6730f8b12"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="33c6c275-440f-490e-a53d-ce6fc4074eff"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3531,7 +3531,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="22927709-a4dd-4675-ab4d-fea69dc65860"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4fbf128a-4561-4e2c-8f55-ac88f2fd0112"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3569,7 +3569,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="57e209bf-430d-4c0e-ae65-1475a225774e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cf5cb620-f7de-428e-aa8a-b1d5bb7af9e4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3607,7 +3607,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="777829ae-df68-4762-8d0d-a5de025cbe42"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f040dd14-d75a-459a-8eca-05a5955c83d1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3645,7 +3645,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9354e936-2422-4c51-ad3e-d3ffd97ce616"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="81f1a2a4-bea8-4b3e-84cb-9db29ad74c81"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3685,7 +3685,7 @@ Joueur joueur = (Joueur) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="681b5297-b90c-4106-aa15-34a887d300c9"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c2011fc8-4267-4b8b-bbf2-b0e2a8bc19ed"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3805,7 +3805,7 @@ Joueur joueur = (Joueur) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c193abc4-96cd-4bb6-8e08-712ba6541f37"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c0b79f50-e597-4b57-b575-e4c8613f02bd"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

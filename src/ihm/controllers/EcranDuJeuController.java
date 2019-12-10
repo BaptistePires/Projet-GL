@@ -22,8 +22,14 @@ public class EcranDuJeuController implements Observateur {
     @FXML
      Pane pane1_1;
 
+    @FXML
+     Label msgNL;
+
+    @FXML
+     Label msgNLV;
+
     @Override
-    public void miseAJour(){
+    public void miseAJour() {
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
         if(PartieSingleton.INSTANCE.getBoiteMail().getNombreDeMessagesNonLus()!=0){
             msgNL.setVisible(true);
@@ -35,13 +41,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    Label msgNL;
-    @FXML
-    Label msgNLV;
-
-
-    @FXML
-    public void avancerTempsAction(){
+    public void avancerTempsAction() {
         PartieSingleton.INSTANCE.avancerLeTemps();
     }
 
@@ -60,7 +60,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void boiteReceptionAction(){
+    public void boiteReceptionAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../afficherMessages.fxml"));
             VBox dashboard = (VBox) fxmlLoader.load();
@@ -73,7 +73,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void equipeAction(){
+    public void equipeAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../equipe.fxml"));
             AnchorPane equipe = (AnchorPane) fxmlLoader.load();
@@ -89,7 +89,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void liguesAction(){
+    public void liguesAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../ligues.fxml"));
             AnchorPane ligues = (AnchorPane) fxmlLoader.load();
@@ -120,6 +120,7 @@ public class EcranDuJeuController implements Observateur {
         PartieSingleton.INSTANCE.sabonner(this);
         miseAJour();
     }
+
     @FXML
     public void dashBoardAction() {
         try{
@@ -134,7 +135,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void strategieAction(){
+    public void strategieAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../strategie.fxml"));
             GridPane dashboard = (GridPane) fxmlLoader.load();
@@ -147,7 +148,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void sauvegarderAction(){
+    public void sauvegarderAction() {
         LanceurDePartie.INSTANCE.sauvegarderPartie();
         StrategieController.showAlert("Sauvegarde","Partie sauvegardée", "On a sauvegardée votre" +
                 " partie sous le nom "+PartieSingleton.INSTANCE.getNomFichierSauvegarde());

@@ -57,7 +57,9 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="aa8bc149-05ea-4383-97ee-0405f7d632e9"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.j = j;]]></ATT>
+                  <ATT name="Content"><![CDATA[this.j = j;
+init();
+]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -263,7 +265,8 @@
                 <ID name="" mc="Infrastructure.Note" uid="b53d8bfa-c7e1-488f-9340-d790c0010deb"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try {
-    Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../lanceurDePartie.fxml"))));
+    Pane p = (Pane)vb.getParent();
+    p.getChildren().clear();
 } catch (Exception e) {
     System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
 }
@@ -282,7 +285,52 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="loadJoueur" mc="Standard.Operation" uid="30d02533-19cc-4852-a3d0-68927833727d"/>
+          <ID name="init" mc="Standard.Operation" uid="b851727e-1af6-4c42-b240-57463fc2ae6b"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[init]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="c0ecd5a4-ed14-4fc8-ad12-08134679de2f"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[nomJoueur.setText(j.getNom() + " " + j.getPrenom());
+etatPhysiqueJoueur.setText(Integer.toString(j.getEtatPhysique()));
+etatMoralJoueur.setText(Integer.toString(j.getMoral()));
+attaque.setText(Integer.toString(j.getAttaque()));
+millieu.setText(Integer.toString(j.getMillieu()));
+defense.setText(Integer.toString(j.getDefense()));
+poste.setText(j.getPoste().toString());
+
+equipe.setText(j.getEquipe().getNom());
+notePerfs.setText(Integer.toString(j.getNotePerformancesRecentes()));
+nbButsSaison.setText(Integer.toString(j.getNbButsSaison()));
+nbPassesDecSaison.setText(Integer.toString(j.getNbPasseDecisiveSaison()));
+nbCartonsJauneSaison.setText(Integer.toString(j.getNbCartonJauneSaison()));
+nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="initialize" mc="Standard.Operation" uid="4d0631e6-c9a9-4c7c-bd36-fa879a16b4dc"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -290,37 +338,13 @@
             <ATT name="Visibility">PackageVisibility</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[loadJoueur]]></ATT>
+            <ATT name="Name"><![CDATA[initialize]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <COMP relation="IO">
-              <OBJECT>
-                <ID name="event" mc="Standard.Parameter" uid="fae0dda8-0ade-4e6e-9491-797ef8cd8d6d"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">In</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[event]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <ID name="ActionEvent" mc="Standard.Class" uid="69447c49-3975-4f23-9f07-1eb4e42b14e1"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="775a52cb-5621-4e01-9778-774fddb93511"/>
+                <ID name="" mc="Infrastructure.Note" uid="db239b8b-f528-42e1-81c6-4f97c43386f1"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@FXML]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -334,25 +358,9 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="5db8be52-38bb-449d-b438-dd24af95c28e"/>
+                <ID name="" mc="Infrastructure.Note" uid="0394cbc1-3cb3-4209-9f21-990617c6d05a"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[j = new Joueur("Didier", "Drogba", new Date(), "cc");
-j.configure(2,5,8,46,95, 65, 26, 62, 26, 26, Poste.ATT, null, null);
-nomJoueur.setText(j.getNom() + " " + j.getPrenom());
-etatPhysiqueJoueur.setText(Integer.toString(j.getEtatPhysique()));
-etatMoralJoueur.setText(Integer.toString(j.getMoral()));
-attaque.setText(Integer.toString(j.getAttaque()));
-millieu.setText(Integer.toString(j.getMillieu()));
-defense.setText(Integer.toString(j.getDefense()));
-//        poste.setText(Integer.toString(j.getPoste()));
-
-//        equipe.setText(j.getEquipe().getNom());
-notePerfs.setText(Integer.toString(j.getNotePerformancesRecentes()));
-nbButsSaison.setText(Integer.toString(j.getNbButsSaison()));
-nbPassesDecSaison.setText(Integer.toString(j.getNbPasseDecisiveSaison()));
-nbCartonsJauneSaison.setText(Integer.toString(j.getNbCartonJauneSaison()));
-nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
-]]></ATT>
+                  <ATT name="Content"><![CDATA[if(j!=null)init();]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -429,7 +437,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4f850bbf-e61f-4260-9dcc-d5a731b8f299"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8afc35ee-ad09-4c8d-a59f-d2dc0ad7407f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -520,7 +528,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="89ae60e4-5cf0-4a60-b7a2-26e7a1c91f7c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="83e365ab-7dfc-424b-8553-01efbef00ac4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -611,7 +619,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5d2ff620-6221-484e-be73-fd6534dbff3b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6ed5c60b-6dca-4d4d-9b61-eb83e1b8ba84"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -702,7 +710,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9dd19934-ce43-4fa7-ad6b-e4c3aff57eb8"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c9ba5330-1b7b-43c0-9099-02ced8bbf657"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -793,7 +801,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7e0e0032-4f70-463e-952d-d753345c991f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="50a825c3-8afc-48e6-b8fe-2857e2d8dfa7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -884,7 +892,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="1bd3a1a5-f2e3-48a2-bbab-acbb8d1a71f5"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cd0aa743-7776-45d7-85ba-ec03a61125f2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -975,7 +983,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="cb92926c-0b16-4733-8c83-b1746db09a79"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b413763b-00df-4c2e-98b4-7106d19e1957"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1066,7 +1074,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9264d5e2-d1b2-4cbb-a125-b08ec52ad197"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9b2a3e7d-fe05-427b-9855-72e3816302d3"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1157,7 +1165,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="41cddf9e-ad1a-4e22-801a-12387aba742b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="13ef4a5f-3619-469a-b7bf-6933f33d1f67"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1248,7 +1256,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f9b0e739-ae0c-4483-823c-6c02e53bbeaa"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b9a57149-1cc1-43e4-bfff-c04f0d5e5f97"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1339,7 +1347,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="13e80320-b2aa-4f18-93f5-d25d351cbe31"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fd212413-014b-45bc-a6a5-6a874fc704d7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1430,7 +1438,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="1c9ffebd-fc86-419d-b142-54420555bd55"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="192ed6c3-1835-4802-a44c-ee9260aa80c4"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1521,7 +1529,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="64d2c30c-00c5-469a-bb44-975a003ec4aa"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="79a0d0c3-e736-4507-8cc8-ac7e00d4789a"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1612,7 +1620,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b25b4299-029d-45a4-8bd2-22902e6bbaf4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fb5c2a1d-af5d-486b-8d8c-95d54829fa38"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1703,7 +1711,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d8105af8-7ff7-4d8e-9380-353d3f118ed8"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dee665e1-14c1-4339-b758-5ad81820774d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1794,7 +1802,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a680884e-2f3e-4229-88eb-19c333db16ee"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="58d96408-b176-4d58-bc58-952ca1b72f5f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1885,7 +1893,7 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2da2886a-4200-4444-a413-9056eea39318"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5d35c336-1245-44ba-aa10-48f13518da95"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1893,6 +1901,97 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
                 <DEPENDENCIES>
                   <LINK relation="Definition">
                     <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="vb" mc="Standard.AssociationEnd" uid="056e9a53-4061-4b49-8793-a46eae62f392"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">PackageVisibility</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[vb]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="VBox" mc="Standard.Class" uid="76959492-40a4-4d82-9179-37f68a81f714"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="4834dee9-75cd-4458-ad90-a6350b11985f"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Private</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="vb" mc="Standard.AssociationEnd" uid="056e9a53-4061-4b49-8793-a46eae62f392"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="5cd89b07-8c35-4764-88ea-bb114153414c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="5cd89b07-8c35-4764-88ea-bb114153414c"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5b1e26e3-cae2-4267-b817-d08fedd51e41"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="fcc47a90-6480-4a0c-a142-3518704a877b"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1982,19 +2081,6 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Standard.ElementImport" uid="7c294a46-05e1-4e5e-b179-1be0d0b1c921"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="Name"></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="ImportedElement">
-              <ID name="VBox" mc="Standard.Class" uid="76959492-40a4-4d82-9179-37f68a81f714"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
           <ID name="" mc="Standard.ElementImport" uid="8d767e29-f60a-4832-ac21-f05935bc4358"/>
           <ATTRIBUTES>
             <ATT name="Visibility">Private</ATT>
@@ -2004,6 +2090,19 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
           <DEPENDENCIES>
             <LINK relation="ImportedElement">
               <FOREIGNID name="date" mc="Standard.DataType" uid="00000004-0000-0014-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="28aef4d6-4a62-47b9-960b-cd2e8bb0f743"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="Pane" mc="Standard.Class" uid="c9bd58ee-b09d-471e-b6bf-fb03543e6655"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

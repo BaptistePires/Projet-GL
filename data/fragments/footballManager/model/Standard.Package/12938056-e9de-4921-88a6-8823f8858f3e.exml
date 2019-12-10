@@ -26,6 +26,8 @@
         <COMPID name="AfficherInfoJoueurController" mc="Standard.Class" uid="3fd9d299-253e-4b0f-ac6d-d49dc7a3e5bc"/>
         <COMPID name="EcranDuJeuController" mc="Standard.Class" uid="ac4a9a42-b837-42a4-b5d2-c872155c3a50"/>
         <COMPID name="StatistiquesMatchController" mc="Standard.Class" uid="6a8d5aab-687a-4b32-8756-4aa1397f8484"/>
+        <COMPID name="EquipeController" mc="Standard.Class" uid="f681b563-d87a-44e1-a132-b935cb5c6217"/>
+        <COMPID name="LiguesController" mc="Standard.Class" uid="e9de94ce-f933-4df8-8fd6-aa35ac27537d"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
