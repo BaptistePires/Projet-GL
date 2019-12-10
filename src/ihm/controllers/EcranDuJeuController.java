@@ -16,6 +16,14 @@ import model.Observateur;
 import model.PartieSingleton;
 
 public class EcranDuJeuController implements Observateur {
+    @FXML
+     GridPane gridMain;
+
+    @FXML
+     Label dateLabel;
+
+    @FXML
+     Pane pane1_1;
 
     @Override
     public void miseAJour(){
@@ -47,8 +55,9 @@ public class EcranDuJeuController implements Observateur {
     public void avancerTempsAction(){
         PartieSingleton.INSTANCE.avancerLeTemps();
     }
+
     @FXML
-    public void avancerJusquaAction(){
+    public void avancerJusquaAction() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customDialogDate.fxml"));
         try{
             AnchorPane parent = (AnchorPane) fxmlLoader.load();
@@ -103,8 +112,7 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void administrationAction(){
-
+    public void administrationAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../administration.fxml"));
             VBox dashboard = (VBox) fxmlLoader.load();
@@ -123,7 +131,7 @@ public class EcranDuJeuController implements Observateur {
         miseAJour();
     }
     @FXML
-    public void dashBoardAction(){
+    public void dashBoardAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../tableauDeBord.fxml"));
             GridPane dashboard = (GridPane) fxmlLoader.load();
@@ -133,7 +141,6 @@ public class EcranDuJeuController implements Observateur {
             e.printStackTrace();
             System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
         }
-
     }
 
     @FXML

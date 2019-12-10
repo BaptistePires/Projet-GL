@@ -36,8 +36,8 @@ public class Fifa implements Serializable {
     @Override
     public String toString() {
         return "Fifa{" +
-                        "ligues=" + ligues +
-                        '}';
+                                "ligues=" + ligues +
+                                '}';
     }
 
 }

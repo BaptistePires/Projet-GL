@@ -874,10 +874,10 @@ this.statistiques = null;
                 <ID name="" mc="Infrastructure.Note" uid="d9108ceb-e38d-4002-943c-a11f4216ad25"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.equals(equipe1, match.equipe1) &&
-                Objects.equals(equipe2, match.equipe2) &&
-                Objects.equals(arbitre, match.arbitre) &&
-                Objects.equals(statistiques, match.statistiques) &&
-                Objects.equals(stade, match.stade);]]></ATT>
+                        Objects.equals(equipe2, match.equipe2) &&
+                        Objects.equals(arbitre, match.arbitre) &&
+                        Objects.equals(statistiques, match.statistiques) &&
+                        Objects.equals(stade, match.stade);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1033,12 +1033,12 @@ Match match = (Match) o;
                 <ID name="" mc="Infrastructure.Note" uid="5848217e-7c3b-4f8e-8c77-960edece837c"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Match{" +
-                "equipe1=" + equipe1 +
-                ", equipe2=" + equipe2 +
-                ", arbitre=" + arbitre +
-                ", statistiques=" + statistiques +
-                ", stade=" + stade +
-                '}';]]></ATT>
+                        "equipe1=" + equipe1 +
+                        ", equipe2=" + equipe2 +
+                        ", arbitre=" + arbitre +
+                        ", statistiques=" + statistiques +
+                        ", stade=" + stade +
+                        '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1115,7 +1115,7 @@ Match match = (Match) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="36782c1a-213d-4345-8834-81dd31e15df7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="cb503d38-acc5-49f8-a15f-d7c75d5952d1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1190,7 +1190,7 @@ Match match = (Match) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9bf98584-9486-45ea-93a7-013824bb4a7a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="960e78bf-9b71-4040-9d44-57d249ec392f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1265,7 +1265,7 @@ Match match = (Match) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a5134640-06bf-4539-8b1a-86103bbb1d38"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2b693aa3-1348-4ce8-9c31-f609cbb53888"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1340,7 +1340,7 @@ Match match = (Match) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0362e985-87af-42b3-8a24-694517a48c5b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2ca8d241-6ece-4c26-9341-d6e257321713"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1415,7 +1415,7 @@ Match match = (Match) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ab541d78-2a16-42f0-b84f-9779d9b793df"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0ce93197-89e6-482e-9f70-42b268640d72"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

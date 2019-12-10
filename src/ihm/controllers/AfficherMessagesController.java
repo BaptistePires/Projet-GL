@@ -1,5 +1,7 @@
 package ihm.controllers;
 
+import java.awt.event.ActionEvent;
+import java.util.Observable;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,7 +23,6 @@ import java.util.Date;
 import java.util.Observable;
 
 public class AfficherMessagesController {
-
     @FXML
     private VBox splitPane;
 
@@ -111,3 +112,4 @@ public class AfficherMessagesController {
 
     }
 
+}

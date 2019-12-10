@@ -431,7 +431,7 @@ DateCourante that = (DateCourante) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="77567f5e-1a5b-4421-a8a3-575c2e87e8c8"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a22b55b3-94e1-4067-8b56-29fcb59c6637"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

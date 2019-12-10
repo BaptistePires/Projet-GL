@@ -1,5 +1,6 @@
 package ihm.controllers;
 
+import java.util.Date;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,11 +12,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import model.*;
-
-import java.util.Date;
+import model.Joueur;
 
 public class AfficherInfoJoueurController {
-
     @FXML
     VBox vb;
     @FXML
@@ -76,6 +75,7 @@ public class AfficherInfoJoueurController {
     public Joueur getJoueur() {
         return j;
     }
+
     @FXML
     void proposerContratCallBack(ActionEvent event) {
         try {
@@ -88,7 +88,7 @@ public class AfficherInfoJoueurController {
             Main.mainStage.show();
         } catch (Exception e) {
             System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
-//            e.printStackTrace();
+        //            e.printStackTrace();
         }
     }
 

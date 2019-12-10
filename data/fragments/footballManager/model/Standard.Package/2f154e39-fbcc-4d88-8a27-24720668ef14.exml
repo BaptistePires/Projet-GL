@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="control" version="4">
+  <OBJECT>
+    <ID name="control" mc="Standard.Package" uid="2f154e39-fbcc-4d88-8a27-24720668ef14"/>
+    <PID name="scene" mc="Standard.Package" uid="2f602c2d-7f2e-4ad3-884a-e248dd6fe1b0"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[control]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="TextInputDialog" mc="Standard.Class" uid="2ee2ccd8-9f43-4306-883d-cbf31f0e6121"/>
+        <COMPID name="DatePicker" mc="Standard.Class" uid="4701d066-b2b5-4840-bad5-a8c43fb0be61"/>
+        <COMPID name="ListCell" mc="Standard.Class" uid="a1da6b0f-8f1a-4190-867d-74995ea903b7"/>
+        <COMPID name="Label" mc="Standard.Class" uid="6a391960-d3ac-4cc4-a7f6-0752d5681833"/>
+        <COMPID name="ListView" mc="Standard.Class" uid="f5792271-c78d-4766-bd44-f39d59a3b9d8"/>
+        <COMPID name="CheckBox" mc="Standard.Class" uid="335d5e00-ce7d-440b-873d-2f2d1342460b"/>
+        <COMPID name="TextArea" mc="Standard.Class" uid="b211038f-752c-4db5-ae26-2a9ef77f5e66"/>
+        <COMPID name="Button" mc="Standard.Class" uid="bac53431-1435-4fc7-8f51-1dd03e65c37a"/>
+        <COMPID name="Spinner" mc="Standard.Class" uid="24419504-8e51-4230-8975-e30cc319c5fc"/>
+        <COMPID name="SplitPane" mc="Standard.Class" uid="265a3c9f-bb19-47a9-bc07-c33e635f07d5"/>
+        <COMPID name="ChoiceBox" mc="Standard.Class" uid="ba303f47-b5b1-4d22-a600-0ff4d8701091"/>
+        <COMPID name="TableColumn" mc="Standard.Class" uid="dcaf9176-fa19-48e4-829a-f1d4120ee5fe"/>
+        <COMPID name="TableView" mc="Standard.Class" uid="e3ef6427-b84a-4f8c-a296-ec8673a59b4d"/>
+        <COMPID name="cell" mc="Standard.Package" uid="4cdf621d-bd38-4d60-a6d0-cd63d0ab5a8c"/>
+        <COMPID name="TextField" mc="Standard.Class" uid="f6544b09-5983-47e3-95a9-697524916be7"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="1236602a-486e-4b5c-86e8-a315f5f6aae6"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaExtern" mc="Infrastructure.TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

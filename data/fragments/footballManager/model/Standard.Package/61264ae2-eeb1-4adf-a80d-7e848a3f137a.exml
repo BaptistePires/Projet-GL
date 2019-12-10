@@ -18,6 +18,9 @@
         <COMPID name="stage" mc="Standard.Package" uid="40eab8c0-6441-46a3-9673-a920cf6283af"/>
         <COMPID name="fxml" mc="Standard.Package" uid="1ae48f03-608f-4213-a787-cc1633044f18"/>
         <COMPID name="application" mc="Standard.Package" uid="05d713ee-2365-4b6e-9ed5-9d8b3cabf3d9"/>
+        <COMPID name="beans" mc="Standard.Package" uid="faee12b5-2937-436e-a288-b1bfef18bf41"/>
+        <COMPID name="collections" mc="Standard.Package" uid="5c47c0cd-9d7c-40b3-84fb-1864b7f22b10"/>
+        <COMPID name="event" mc="Standard.Package" uid="00f00625-8745-497e-b83c-bb9a5c10bb60"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

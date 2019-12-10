@@ -491,8 +491,8 @@ Fifa fifa = (Fifa) o;
                 <ID name="" mc="Infrastructure.Note" uid="91c0d7eb-4a91-4587-a033-2096f72f9135"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Fifa{" +
-                "ligues=" + ligues +
-                '}';]]></ATT>
+                        "ligues=" + ligues +
+                        '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

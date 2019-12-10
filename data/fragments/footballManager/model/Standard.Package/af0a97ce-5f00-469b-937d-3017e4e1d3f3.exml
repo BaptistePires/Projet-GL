@@ -23,6 +23,7 @@
         <COMPID name="javax" mc="Standard.Package" uid="39508bfa-3baf-4658-9c06-fac0bcab9c13"/>
         <COMPID name="javafx" mc="Standard.Package" uid="61264ae2-eeb1-4adf-a80d-7e848a3f137a"/>
         <COMPID name="com" mc="Standard.Package" uid="121dc7db-80ce-45e7-addd-fc9256dcc844"/>
+        <COMPID name="ihm" mc="Standard.Package" uid="51142b0c-ae1f-44ee-8294-f29ada07d39b"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="footballManagerDiagrammeDesClasses Class diagram" mc="Standard.ClassDiagram" uid="3ce18249-4696-4010-b7c2-d68774fe008a"/>

@@ -128,10 +128,10 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         if (!(o instanceof PartieSingleton)) return false;
         PartieSingleton that = (PartieSingleton) o;
         return Objects.equals(getNomFichierSauvegarde(), that.getNomFichierSauvegarde()) &&
-                        Objects.equals(getDateCourante(), that.getDateCourante()) &&
-                        Objects.equals(getFifa(), that.getFifa()) &&
-                        Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
-                        Objects.equals(getEntraineur(), that.getEntraineur());
+                                Objects.equals(getDateCourante(), that.getDateCourante()) &&
+                                Objects.equals(getFifa(), that.getFifa()) &&
+                                Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
+                                Objects.equals(getEntraineur(), that.getEntraineur());
     }
 
     @Override
@@ -142,12 +142,12 @@ public final class PartieSingleton extends NotreObservable implements Serializab
     @Override
     public String toString() {
         return "PartieSingleton{" +
-                        "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
-                        ", dateCourante=" + dateCourante +
-                        ", fifa=" + fifa +
-                        ", boiteMail=" + boiteMail +
-                        ", entraineur=" + entraineur +
-                        '}';
+                                "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
+                                ", dateCourante=" + dateCourante +
+                                ", fifa=" + fifa +
+                                ", boiteMail=" + boiteMail +
+                                ", entraineur=" + entraineur +
+                                '}';
     }
 
     public void avancerLeTempsJusqua(Date date) {

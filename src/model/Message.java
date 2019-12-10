@@ -8,6 +8,11 @@ public class Message extends NotreObservable implements Serializable {
     private String titre;
     private Date date;
 
+    private boolean lu;
+
+    public void lire() {
+    }
+
     public Message() {
         super();
         lu = false;

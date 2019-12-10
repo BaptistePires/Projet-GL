@@ -184,7 +184,7 @@ this.description = description;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d32dad25-1935-4b49-a1b8-4e65bbb43fb0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="fb603c63-177c-443f-97bc-3ba0bf7e2e2f"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

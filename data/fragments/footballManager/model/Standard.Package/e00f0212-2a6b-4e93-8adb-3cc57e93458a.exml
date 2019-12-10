@@ -15,6 +15,8 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="Instant" mc="Standard.Class" uid="d79bf11a-3642-4840-bfcc-d5f1f5b47923"/>
+        <COMPID name="LocalDate" mc="Standard.Class" uid="5e1bc0bb-7888-4c31-94cc-4615368480a4"/>
+        <COMPID name="ZoneId" mc="Standard.Class" uid="370f34f8-e0c4-49fd-a4fe-f6def25281dc"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

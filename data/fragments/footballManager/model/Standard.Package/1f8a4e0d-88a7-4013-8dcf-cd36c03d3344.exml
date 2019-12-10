@@ -19,6 +19,7 @@
         <COMPID name="Serializable" mc="Standard.Interface" uid="711b58df-3a40-49d6-9173-5db09fdd3f28"/>
         <COMPID name="FileInputStream" mc="Standard.Class" uid="2b73542d-036c-40c3-9005-7f53ca55f2ca"/>
         <COMPID name="ObjectInputStream" mc="Standard.Class" uid="247b7c0c-f8af-422a-93e5-9dc3e47890c1"/>
+        <COMPID name="File" mc="Standard.Class" uid="6dc3a5e7-5db3-4204-a29c-8d1924d57044"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

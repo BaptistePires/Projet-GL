@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="controllers" version="4">
+  <OBJECT>
+    <ID name="controllers" mc="Standard.Package" uid="12938056-e9de-4921-88a6-8823f8858f3e"/>
+    <PID name="ihm" mc="Standard.Package" uid="51142b0c-ae1f-44ee-8294-f29ada07d39b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[controllers]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="AfficherMessagesController" mc="Standard.Class" uid="48382fcc-7506-424f-8092-10e2b711c084"/>
+        <COMPID name="StrategieController" mc="Standard.Class" uid="c76f7d06-ebd2-499d-ba85-8182a4d64c5f"/>
+        <COMPID name="CreerNouvellePartieController" mc="Standard.Class" uid="16cd91d4-4610-4ecb-874b-16406bb5110d"/>
+        <COMPID name="LanceurDePartieController" mc="Standard.Class" uid="a02618e4-df45-4b40-baaf-2a86627959df"/>
+        <COMPID name="CustomDialogDateController" mc="Standard.Class" uid="368f588d-6c7a-4479-9f3f-7ace10be6b8b"/>
+        <COMPID name="ProposerContratController" mc="Standard.Class" uid="abf640db-d1c6-488f-ad91-db1581b02a27"/>
+        <COMPID name="AdministrationController" mc="Standard.Class" uid="8886a04b-122a-4001-8969-ff90e8b152a5"/>
+        <COMPID name="TableauDeBordController" mc="Standard.Class" uid="7b9cdb04-4f05-4826-93d9-f64540dfb8ed"/>
+        <COMPID name="MatchController" mc="Standard.Class" uid="4ff6da9e-0c9c-407f-b65d-5e980ff84707"/>
+        <COMPID name="AfficherInfoJoueurController" mc="Standard.Class" uid="3fd9d299-253e-4b0f-ac6d-d49dc7a3e5bc"/>
+        <COMPID name="EcranDuJeuController" mc="Standard.Class" uid="ac4a9a42-b837-42a4-b5d2-c872155c3a50"/>
+        <COMPID name="StatistiquesMatchController" mc="Standard.Class" uid="6a8d5aab-687a-4b32-8756-4aa1397f8484"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

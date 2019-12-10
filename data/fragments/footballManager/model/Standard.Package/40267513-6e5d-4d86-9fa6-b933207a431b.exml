@@ -114,6 +114,9 @@
         </OBJECT>
         <COMPID name="Observateur" mc="Standard.Interface" uid="607a3f23-05e9-4bd6-8414-1e0ec8fe48a9"/>
         <COMPID name="NotreObservable" mc="Standard.Class" uid="132d8949-63ee-499b-b62d-2c64f2388b42"/>
+        <COMPID name="StrategieUltraDefensive" mc="Standard.Class" uid="4065c90a-1ca8-4dda-8754-93d9a414c042"/>
+        <COMPID name="StrategieUltraOffensive" mc="Standard.Class" uid="9c465d3f-d3bc-4b74-a09c-1fc1a316816d"/>
+        <COMPID name="StrategieTransition" mc="Standard.Class" uid="fb6688e1-2a8b-4f09-8b5b-33d9a1d37d1e"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

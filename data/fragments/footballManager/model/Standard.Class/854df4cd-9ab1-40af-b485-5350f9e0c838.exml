@@ -580,7 +580,7 @@ evenements.get(dateDeLEvenement).add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="34a24953-ce96-4f59-a4e8-85f86eb4ded4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6f0754dc-7028-4761-aa0f-e4c471b8e2a3"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -618,7 +618,7 @@ evenements.get(dateDeLEvenement).add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c08c8cba-cb51-43c6-8044-50bf3d9342b9"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9f93f63b-8bb0-403f-a801-b40131562f38"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -680,7 +680,7 @@ evenements.get(dateDeLEvenement).add(this);
                   </LINK>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="45ad994a-d1cb-437a-aac0-0babebffbcf9"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="19732cf5-18d9-4cee-a9c9-b30b71679726"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>

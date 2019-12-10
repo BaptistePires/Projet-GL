@@ -122,14 +122,14 @@ public class Contrat implements Serializable {
         if (!(o instanceof Contrat)) return false;
         Contrat contrat = (Contrat) o;
         return getSalaireAnnuelEuro() == contrat.getSalaireAnnuelEuro() &&
-                        getMontantDuTransfert() == contrat.getMontantDuTransfert() &&
-                        isAccepte() == contrat.isAccepte() &&
-                        Objects.equals(getDateDebut(), contrat.getDateDebut()) &&
-                        Objects.equals(getDateFin(), contrat.getDateFin()) &&
-                        Objects.equals(getPersonne(), contrat.getPersonne()) &&
-                        Objects.equals(getEquipeDestination(), contrat.getEquipeDestination()) &&
-                        Objects.equals(getEquipeSource(), contrat.getEquipeSource()) &&
-                        Objects.equals(getHistoriqueRenouvellements(), contrat.getHistoriqueRenouvellements());
+                                getMontantDuTransfert() == contrat.getMontantDuTransfert() &&
+                                isAccepte() == contrat.isAccepte() &&
+                                Objects.equals(getDateDebut(), contrat.getDateDebut()) &&
+                                Objects.equals(getDateFin(), contrat.getDateFin()) &&
+                                Objects.equals(getPersonne(), contrat.getPersonne()) &&
+                                Objects.equals(getEquipeDestination(), contrat.getEquipeDestination()) &&
+                                Objects.equals(getEquipeSource(), contrat.getEquipeSource()) &&
+                                Objects.equals(getHistoriqueRenouvellements(), contrat.getHistoriqueRenouvellements());
     }
 
     @Override
@@ -140,16 +140,16 @@ public class Contrat implements Serializable {
     @Override
     public String toString() {
         return "Contrat{" +
-                        "dateDebut=" + dateDebut +
-                        ", salaireAnnuelEuro=" + salaireAnnuelEuro +
-                        ", dateFin=" + dateFin +
-                        ", montantDuTransfert=" + montantDuTransfert +
-                        ", accepte=" + accepte +
-                        ", personne=" + personne +
-                        ", equipeDestination=" + equipeDestination +
-                        ", equipeSource=" + equipeSource +
-                        ", historiqueRenouvellements=" + historiqueRenouvellements +
-                        '}';
+                                "dateDebut=" + dateDebut +
+                                ", salaireAnnuelEuro=" + salaireAnnuelEuro +
+                                ", dateFin=" + dateFin +
+                                ", montantDuTransfert=" + montantDuTransfert +
+                                ", accepte=" + accepte +
+                                ", personne=" + personne +
+                                ", equipeDestination=" + equipeDestination +
+                                ", equipeSource=" + equipeSource +
+                                ", historiqueRenouvellements=" + historiqueRenouvellements +
+                                '}';
     }
 
 }

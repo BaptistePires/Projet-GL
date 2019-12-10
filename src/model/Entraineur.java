@@ -65,4 +65,5 @@ public class Entraineur extends Personne implements Serializable {
     public boolean demanderBudgetTeamBuilding() {
         return getEquipe().getPresident().traiterDemandeTeamBuilding();
     }
+
 }

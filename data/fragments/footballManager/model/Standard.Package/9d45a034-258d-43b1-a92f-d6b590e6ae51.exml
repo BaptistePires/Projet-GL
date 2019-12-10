@@ -19,6 +19,10 @@
         <COMPID name="TreeMap" mc="Standard.Class" uid="50fc6176-a938-417e-a990-41b8854e7d86"/>
         <COMPID name="Objects" mc="Standard.Class" uid="575ffaa1-8a37-4417-b116-970f722defad"/>
         <COMPID name="HashMap" mc="Standard.Class" uid="d9c3cc25-2b81-4f4c-ab6e-2ebafef17c34"/>
+        <COMPID name="Optional" mc="Standard.Class" uid="f62c87ee-60ca-4987-bf99-a5eb313d7b6a"/>
+        <COMPID name="Observable" mc="Standard.Class" uid="9f2e71cc-3d5f-4227-8163-83216a00259c"/>
+        <COMPID name="Collections" mc="Standard.Class" uid="d85ab63d-938f-4c36-b2fe-ae6e8e312bad"/>
+        <COMPID name="Random" mc="Standard.Class" uid="10ba4fa9-1769-457a-b4cb-c04fe9843480"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

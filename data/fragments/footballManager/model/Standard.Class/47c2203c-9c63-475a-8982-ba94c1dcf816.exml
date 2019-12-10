@@ -1136,9 +1136,9 @@ liguesAll.add(this);
                 <ID name="" mc="Infrastructure.Note" uid="87fb2839-07e2-427e-9143-3ada1b8a45b4"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.equals(getNom(), ligue.getNom()) &&
-                Objects.equals(calendrier, ligue.calendrier) &&
-                Objects.equals(getEquipes(), ligue.getEquipes()) &&
-                Objects.equals(arbitres, ligue.arbitres);]]></ATT>
+                        Objects.equals(calendrier, ligue.calendrier) &&
+                        Objects.equals(getEquipes(), ligue.getEquipes()) &&
+                        Objects.equals(arbitres, ligue.arbitres);]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1264,7 +1264,7 @@ Ligue ligue = (Ligue) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="28ed4b7a-86f7-4127-9a48-6890ce69f087"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1151180b-ccd3-4376-b004-93f4307de88d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1341,7 +1341,7 @@ Ligue ligue = (Ligue) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5bb282eb-6579-4502-aca9-b26fe3a254a4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="527f2670-dd1c-42cb-931a-0a27bf8062d0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

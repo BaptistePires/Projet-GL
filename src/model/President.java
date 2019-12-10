@@ -94,4 +94,5 @@ public class President extends Personne implements Serializable {
             return false;
         }
     }
+
 }
