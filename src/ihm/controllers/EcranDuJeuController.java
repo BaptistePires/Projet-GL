@@ -13,28 +13,28 @@ import model.Observateur;
 import model.PartieSingleton;
 
 public class EcranDuJeuController implements Observateur {
+    @FXML
+     GridPane gridMain;
+
+    @FXML
+     Label dateLabel;
+
+    @FXML
+     Pane pane1_1;
 
     @Override
-    public void miseAJour(){
+    public void miseAJour() {
         System.out.println("hi");
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
     }
 
     @FXML
-    GridPane gridMain;
-
-    @FXML
-    Label dateLabel;
-
-    @FXML
-    Pane pane1_1;
-
-    @FXML
-    public void avancerTempsAction(){
+    public void avancerTempsAction() {
         PartieSingleton.INSTANCE.avancerLeTemps();
     }
+
     @FXML
-    public void avancerJusquaAction(){
+    public void avancerJusquaAction() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../customDialogDate.fxml"));
         try{
             AnchorPane parent = (AnchorPane) fxmlLoader.load();
@@ -48,23 +48,19 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void boiteReceptionAction(){
-
+    public void boiteReceptionAction() {
     }
 
     @FXML
-    public void equipeAction(){
-
+    public void equipeAction() {
     }
 
     @FXML
-    public void liguesAction(){
-
+    public void liguesAction() {
     }
 
     @FXML
-    public void administrationAction(){
-
+    public void administrationAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../administration.fxml"));
             VBox dashboard = (VBox) fxmlLoader.load();
@@ -77,13 +73,13 @@ public class EcranDuJeuController implements Observateur {
     }
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
         PartieSingleton.INSTANCE.sabonner(this);
     }
 
     @FXML
-    public void dashBoardAction(){
+    public void dashBoardAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../tableauDeBord.fxml"));
             GridPane dashboard = (GridPane) fxmlLoader.load();
@@ -93,11 +89,10 @@ public class EcranDuJeuController implements Observateur {
             e.printStackTrace();
             System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
         }
-
     }
 
     @FXML
-    public void testAction(){
+    public void testAction() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../strategie.fxml"));
             GridPane dashboard = (GridPane) fxmlLoader.load();
@@ -108,4 +103,5 @@ public class EcranDuJeuController implements Observateur {
             System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
         }
     }
+
 }

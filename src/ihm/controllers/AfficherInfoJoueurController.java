@@ -1,5 +1,6 @@
 package ihm.controllers;
 
+import java.util.Date;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,11 +11,9 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import model.*;
-
-import java.util.Date;
+import model.Joueur;
 
 public class AfficherInfoJoueurController {
-
     @FXML
     private Label nomJoueur;
 
@@ -72,6 +71,7 @@ public class AfficherInfoJoueurController {
     public Joueur getJoueur() {
         return j;
     }
+
     @FXML
     void proposerContratCallBack(ActionEvent event) {
         try {
@@ -84,7 +84,7 @@ public class AfficherInfoJoueurController {
             Main.mainStage.show();
         } catch (Exception e) {
             System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
-//            e.printStackTrace();
+        //            e.printStackTrace();
         }
     }
 
@@ -97,7 +97,6 @@ public class AfficherInfoJoueurController {
         }
     }
 
-
     @FXML
     void loadJoueur(ActionEvent event) {
         j = new Joueur("Didier", "Drogba", new Date(), "cc");
@@ -108,13 +107,14 @@ public class AfficherInfoJoueurController {
         attaque.setText(Integer.toString(j.getAttaque()));
         millieu.setText(Integer.toString(j.getMillieu()));
         defense.setText(Integer.toString(j.getDefense()));
-//        poste.setText(Integer.toString(j.getPoste()));
-
-//        equipe.setText(j.getEquipe().getNom());
+        //        poste.setText(Integer.toString(j.getPoste()));
+        
+        //        equipe.setText(j.getEquipe().getNom());
         notePerfs.setText(Integer.toString(j.getNotePerformancesRecentes()));
         nbButsSaison.setText(Integer.toString(j.getNbButsSaison()));
         nbPassesDecSaison.setText(Integer.toString(j.getNbPasseDecisiveSaison()));
         nbCartonsJauneSaison.setText(Integer.toString(j.getNbCartonJauneSaison()));
         nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
     }
+
 }

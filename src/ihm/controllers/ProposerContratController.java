@@ -1,5 +1,8 @@
 package ihm.controllers;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,18 +13,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.*;
-
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+import model.Joueur;
 
 public class ProposerContratController {
-
-    public ProposerContratController() {
-        super();
-    }
-
     public static String ALERT_TEXT = "Veuillez rentrer une valeur valide.";
+
+    public String valLabel;
 
     @FXML
     private Label alertDebut;
@@ -56,24 +53,26 @@ public class ProposerContratController {
     @FXML
     private Label labelDebut11;
 
-
     @FXML
     private TextField inputSalaire;
-
 
     @FXML
     private Button soumettreContrat;
 
     public Joueur j;
 
-    public String valLabel;
+    public ProposerContratController() {
+        super();
+    }
+
     public void setJoueur(Joueur joueur) {
         nomJoueur.setText("Proposer un contrat à : " + joueur.getNom() + " " + joueur.getPrenom());
     }
+
     @FXML
     void retour(ActionEvent event) {
         try {
-
+        
             Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../afficherInfoJoueur.fxml"))));
         } catch (Exception e) {
             System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
@@ -83,21 +82,21 @@ public class ProposerContratController {
     @FXML
     void soumettreContrat(ActionEvent event) {
         boolean contratValide = true;
-
+        
         if(inputSalaire.getText().length() <= 0) {
             alertSalaire.setText(ALERT_TEXT);
         }else{
             try{
                 int salaire = Integer.parseInt(inputSalaire.getText());
-
+        
                 alertSalaire.setText("");
             }catch (NumberFormatException e) {
                 alertSalaire.setText("Veuillez entrer un entier");
                 contratValide = false;
             }
-
+        
         }
-
+        
         if(inputMontantTransfert.getText().length() <= 0) {
             alertMontant.setText(ALERT_TEXT);
         }else{
@@ -112,9 +111,9 @@ public class ProposerContratController {
                 contratValide = false;
                 alertMontant.setText("Veuillez entrer un entier.");
             }
-
+        
         }
-
+        
         if(!validateDate(dateDebut, alertDebut)){
             contratValide = false;
         }
@@ -135,7 +134,6 @@ public class ProposerContratController {
     }
 
     private boolean validateDate(DatePicker date, Label alertLabel) {
-
         LocalDate dateValue = date.getValue();
         if(dateValue != null) {
             alertLabel.setText("");
@@ -152,4 +150,5 @@ public class ProposerContratController {
             nomJoueur.setText("Proposer un contrat à " + j.getNom() + " " + j.getPrenom());
         });
     }
+
 }

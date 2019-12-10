@@ -48,7 +48,7 @@ public class Journee extends Evenement implements Serializable {
         if (!(o instanceof Journee)) return false;
         Journee journee = (Journee) o;
         return Objects.equals(getDateJournee(), journee.getDateJournee()) &&
-                        Objects.equals(getMatchs(), journee.getMatchs());
+                                Objects.equals(getMatchs(), journee.getMatchs());
     }
 
     @Override
@@ -59,9 +59,9 @@ public class Journee extends Evenement implements Serializable {
     @Override
     public String toString() {
         return "Journee{" +
-                        "dateJournee=" + dateJournee +
-                        ", matchs=" + matchs +
-                        '}';
+                                "dateJournee=" + dateJournee +
+                                ", matchs=" + matchs +
+                                '}';
     }
 
 }

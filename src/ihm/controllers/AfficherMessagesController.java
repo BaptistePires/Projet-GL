@@ -1,5 +1,7 @@
 package ihm.controllers;
 
+import java.awt.event.ActionEvent;
+import java.util.Observable;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,11 +17,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import model.Message;
 
-import java.awt.event.ActionEvent;
-import java.util.Observable;
-
 public class AfficherMessagesController {
-
     @FXML
     private VBox splitPane;
 
@@ -41,7 +39,7 @@ public class AfficherMessagesController {
     @FXML
     private void initialize() {
         Platform.runLater(() -> {
-//            listView = new ListView<String>();
+        //            listView = new ListView<String>();
             ObservableList<Message> items = FXCollections.observableArrayList();
             items.add(new Message("Msg 1"));
             items.add(new Message("Msg 2"));
@@ -67,15 +65,14 @@ public class AfficherMessagesController {
                 });
                 return cell;
             });
-
-
+        
+        
         });
     }
 
-        public void updateAfficherContenu (String contenu){
-            contenuMessage.setText(contenu);
-            ;
-        }
-
+    public void updateAfficherContenu(String contenu) {
+        contenuMessage.setText(contenu);
+        ;
     }
 
+}

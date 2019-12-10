@@ -10,4 +10,5 @@ public class StrategieOffensive extends Strategie implements Serializable {
         this.setPasses(50);
         this.setMilieu(50);
     }
+
 }

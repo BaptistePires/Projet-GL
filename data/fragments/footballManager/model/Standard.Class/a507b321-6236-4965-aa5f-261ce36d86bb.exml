@@ -1601,14 +1601,14 @@ this.equipeDestination = equipeDestination;
                 <ID name="" mc="Infrastructure.Note" uid="b7bf4d93-8548-4499-8e34-8027396ad458"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return getSalaireAnnuelEuro() == contrat.getSalaireAnnuelEuro() &&
-                getMontantDuTransfert() == contrat.getMontantDuTransfert() &&
-                isAccepte() == contrat.isAccepte() &&
-                Objects.equals(getDateDebut(), contrat.getDateDebut()) &&
-                Objects.equals(getDateFin(), contrat.getDateFin()) &&
-                Objects.equals(getPersonne(), contrat.getPersonne()) &&
-                Objects.equals(getEquipeDestination(), contrat.getEquipeDestination()) &&
-                Objects.equals(getEquipeSource(), contrat.getEquipeSource()) &&
-                Objects.equals(getHistoriqueRenouvellements(), contrat.getHistoriqueRenouvellements());]]></ATT>
+                        getMontantDuTransfert() == contrat.getMontantDuTransfert() &&
+                        isAccepte() == contrat.isAccepte() &&
+                        Objects.equals(getDateDebut(), contrat.getDateDebut()) &&
+                        Objects.equals(getDateFin(), contrat.getDateFin()) &&
+                        Objects.equals(getPersonne(), contrat.getPersonne()) &&
+                        Objects.equals(getEquipeDestination(), contrat.getEquipeDestination()) &&
+                        Objects.equals(getEquipeSource(), contrat.getEquipeSource()) &&
+                        Objects.equals(getHistoriqueRenouvellements(), contrat.getHistoriqueRenouvellements());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1764,16 +1764,16 @@ Contrat contrat = (Contrat) o;
                 <ID name="" mc="Infrastructure.Note" uid="287170fc-336b-4ef9-a4d0-b2192792ee6e"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Contrat{" +
-                "dateDebut=" + dateDebut +
-                ", salaireAnnuelEuro=" + salaireAnnuelEuro +
-                ", dateFin=" + dateFin +
-                ", montantDuTransfert=" + montantDuTransfert +
-                ", accepte=" + accepte +
-                ", personne=" + personne +
-                ", equipeDestination=" + equipeDestination +
-                ", equipeSource=" + equipeSource +
-                ", historiqueRenouvellements=" + historiqueRenouvellements +
-                '}';]]></ATT>
+                        "dateDebut=" + dateDebut +
+                        ", salaireAnnuelEuro=" + salaireAnnuelEuro +
+                        ", dateFin=" + dateFin +
+                        ", montantDuTransfert=" + montantDuTransfert +
+                        ", accepte=" + accepte +
+                        ", personne=" + personne +
+                        ", equipeDestination=" + equipeDestination +
+                        ", equipeSource=" + equipeSource +
+                        ", historiqueRenouvellements=" + historiqueRenouvellements +
+                        '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1813,7 +1813,7 @@ Contrat contrat = (Contrat) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="414b2d2b-333c-4145-b76a-89b46f1f655a"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e88435fa-2959-4f85-a965-4e46dbdd487e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1851,7 +1851,7 @@ Contrat contrat = (Contrat) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="6c20d962-c163-481f-ba3d-6a514744f3d0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="08870058-358f-49c3-942a-6ed3af9ae452"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1889,7 +1889,7 @@ Contrat contrat = (Contrat) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="33fbbe25-b9fa-4f24-aec9-0f991ce899e4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3617e71a-df01-4f01-8047-7a7e729bfe36"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1927,7 +1927,7 @@ Contrat contrat = (Contrat) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="70da0137-b2df-4a6f-bddd-1a8472473eed"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1b703c49-3348-4396-ac45-6787615ca1a6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1965,7 +1965,7 @@ Contrat contrat = (Contrat) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="82287b19-63a6-4ce6-8ccf-bdf258751245"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e61ccd05-bc87-4753-9374-4165d87ddf29"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2042,7 +2042,7 @@ Contrat contrat = (Contrat) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="da9f0e57-8d1b-452d-8e14-93954891bc03"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3ee2b7ab-96e8-42d5-8682-e8fd979dad18"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2117,7 +2117,7 @@ Contrat contrat = (Contrat) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d796df4b-ab06-493b-94ad-598452aba39d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="90c8da9e-dbf5-470f-b39e-2bc004068c09"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -2192,7 +2192,7 @@ Contrat contrat = (Contrat) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a7d03690-e3ce-4387-a819-65842628fb11"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3e1177b0-36ec-4d3a-b0d5-5324f7e29211"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

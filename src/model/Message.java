@@ -2,8 +2,13 @@ package model;
 
 import java.io.Serializable;
 
-public class Message implements Serializable  {
+public class Message implements Serializable {
     private String contenu;
+
+    private boolean lu;
+
+    public void lire() {
+    }
 
     public Message() {
         super();
@@ -14,16 +19,12 @@ public class Message implements Serializable  {
         super();
         this.contenu = contenu;
     }
-    private boolean lu;
-
-    public void lire() {
-    }
 
     public String getContenu() {
         return contenu;
     }
 
-    public void setLu(){
+    public void setLu() {
         lu = true;
     }
 

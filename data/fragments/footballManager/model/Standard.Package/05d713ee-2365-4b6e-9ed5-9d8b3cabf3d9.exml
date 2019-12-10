@@ -15,6 +15,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="Application" mc="Standard.Class" uid="7527ec08-5779-4f34-8211-fe0be95e9b97"/>
+        <COMPID name="Platform" mc="Standard.Class" uid="9834abce-cfba-483e-bed2-1d57ed6eba26"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

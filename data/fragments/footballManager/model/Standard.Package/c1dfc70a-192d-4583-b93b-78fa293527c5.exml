@@ -18,6 +18,9 @@
         <COMPID name="io" mc="Standard.Package" uid="1f8a4e0d-88a7-4013-8dcf-cd36c03d3344"/>
         <COMPID name="lang" mc="Standard.Package" uid="64e93214-6897-4bc0-89fb-10c916948645"/>
         <COMPID name="time" mc="Standard.Package" uid="e00f0212-2a6b-4e93-8adb-3cc57e93458a"/>
+        <COMPID name="awt" mc="Standard.Package" uid="89477466-eb36-4c5e-b945-4736cfc23f97"/>
+        <COMPID name="sql" mc="Standard.Package" uid="7bddd770-0334-4e1d-895f-eb070a90f6f1"/>
+        <COMPID name="net" mc="Standard.Package" uid="b03da698-6dba-4f6f-a5a7-f10415d6d7a9"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

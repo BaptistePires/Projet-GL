@@ -7,10 +7,6 @@ import java.util.Objects;
 import java.util.TreeMap;
 
 public abstract class Strategie implements Serializable {
-
-    HashMap<Joueur,Poste> formation=new HashMap<Joueur, Poste>();
-
-
     private int agressivite;
 
     private int passes;
@@ -21,6 +17,7 @@ public abstract class Strategie implements Serializable {
 
     private int attaque;
 
+     HashMap<Joueur, Poste> formation = new HashMap<Joueur, Poste>();
 
     public void placerJoueur(final Joueur joueur, final int indexPosition) {
     }
@@ -32,6 +29,8 @@ public abstract class Strategie implements Serializable {
 
     public void permuterJoueurs(final Joueur joueur1, final Joueur joueur2) {
     }
+
+    public abstract void appliquer();
 
     public static Strategie pickRandomStrategie() {
         if(Math.random()<0.5){
@@ -87,9 +86,7 @@ public abstract class Strategie implements Serializable {
         this.formation = formation;
     }
 
-
-
-    public static void pickRandomStrategie(Equipe e){
+    public static void pickRandomStrategie(Equipe e) {
         Strategie s;
         if(Math.random()<0.5){
             s= new StrategieDefensive();
@@ -120,11 +117,11 @@ public abstract class Strategie implements Serializable {
         if (!(o instanceof Strategie)) return false;
         Strategie strategie = (Strategie) o;
         return getAgressivite() == strategie.getAgressivite() &&
-                getPasses() == strategie.getPasses() &&
-                getDefense() == strategie.getDefense() &&
-                getMilieu() == strategie.getMilieu() &&
-                getAttaque() == strategie.getAttaque() &&
-                Objects.equals(getFormation(), strategie.getFormation());
+                        getPasses() == strategie.getPasses() &&
+                        getDefense() == strategie.getDefense() &&
+                        getMilieu() == strategie.getMilieu() &&
+                        getAttaque() == strategie.getAttaque() &&
+                        Objects.equals(getFormation(), strategie.getFormation());
     }
 
     @Override
@@ -133,9 +130,8 @@ public abstract class Strategie implements Serializable {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getClass().toString();
     }
-    public abstract void appliquer();
 
 }

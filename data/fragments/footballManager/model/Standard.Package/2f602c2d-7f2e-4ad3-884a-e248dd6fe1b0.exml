@@ -16,6 +16,11 @@
       <COMP relation="OwnedElement">
         <COMPID name="Parent" mc="Standard.Class" uid="d68fc1c9-8b57-4be3-a83e-ef0fab7d485b"/>
         <COMPID name="Scene" mc="Standard.Class" uid="bd5b80d1-1cf9-4011-aebd-4f38c0c090fa"/>
+        <COMPID name="control" mc="Standard.Package" uid="2f154e39-fbcc-4d88-8a27-24720668ef14"/>
+        <COMPID name="layout" mc="Standard.Package" uid="7641c33e-7c9f-4a2e-83f6-3e778571dec9"/>
+        <COMPID name="effect" mc="Standard.Package" uid="61698ce1-4bc1-4527-8e2a-719607db071a"/>
+        <COMPID name="text" mc="Standard.Package" uid="b65ccf06-8df9-47af-8c65-47494bf4bc06"/>
+        <COMPID name="input" mc="Standard.Package" uid="38458374-84f1-4242-ab84-50708b46df47"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

@@ -13,6 +13,16 @@ public class Stade implements Serializable {
 
     private String histoire;
 
+    public static ArrayList<Stade> stadesAll = new ArrayList<Stade>();
+
+    public Stade(String nom, int nombrePlaces, String ville, String histoire) {
+        this.nom = nom;
+        this.nombrePlaces = nombrePlaces;
+        this.ville = ville;
+        this.histoire = histoire;
+        stadesAll.add(this);
+    }
+
     public String getNom() {
         return nom;
     }
@@ -45,25 +55,15 @@ public class Stade implements Serializable {
         this.histoire = histoire;
     }
 
-    public static ArrayList<Stade> stadesAll = new ArrayList<Stade>();
-
-    public Stade(String nom, int nombrePlaces, String ville, String histoire) {
-        this.nom = nom;
-        this.nombrePlaces = nombrePlaces;
-        this.ville = ville;
-        this.histoire = histoire;
-        stadesAll.add(this);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Stade)) return false;
         Stade stade = (Stade) o;
         return getNombrePlaces() == stade.getNombrePlaces() &&
-                Objects.equals(getNom(), stade.getNom()) &&
-                Objects.equals(getVille(), stade.getVille()) &&
-                Objects.equals(getHistoire(), stade.getHistoire());
+                        Objects.equals(getNom(), stade.getNom()) &&
+                        Objects.equals(getVille(), stade.getVille()) &&
+                        Objects.equals(getHistoire(), stade.getHistoire());
     }
 
     @Override
@@ -72,7 +72,8 @@ public class Stade implements Serializable {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return nom;
     }
+
 }

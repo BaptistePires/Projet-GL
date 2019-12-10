@@ -108,9 +108,9 @@
                 <ID name="" mc="Infrastructure.Note" uid="e19e1107-9420-47ac-a4ee-65beeb7b9671"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[boolean reponse = joueurConvoite.etudierOffreTransfert(contratPropose);
-if(reponse) {
+if (reponse) {
     contratPropose.getEquipeSource().joueurs.remove(joueurConvoite);
-    contratPropose.getEquipeSource().masseSalariale-=contratPropose.getSalaireAnnuelEuro()/12;
+    contratPropose.getEquipeSource().masseSalariale -= contratPropose.getSalaireAnnuelEuro() / 12;
     contratPropose.getEquipeSource().budgetTransferts += contratPropose.getMontantDuTransfert();
 
     contratPropose.getEquipeDestination().joueurs.add(joueurConvoite);
@@ -153,14 +153,14 @@ if(reponse) {
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="df6acebe-6fa9-4854-a7d2-f2128c759a64"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[nbPoints=0;
-nbButsMarques=0;
-nbButsEncaisses=0;
-nbVictoires=0;
-nbMatchsNuls=0;
-nbDefaites=0;
+                  <ATT name="Content"><![CDATA[nbPoints = 0;
+nbButsMarques = 0;
+nbButsEncaisses = 0;
+nbVictoires = 0;
+nbMatchsNuls = 0;
+nbDefaites = 0;
 matchsDeLequipe = new ArrayList<Match>();
-strategie = Strategie.pickRandomStrategie();
+Strategie.pickRandomStrategie(this);
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -1403,8 +1403,8 @@ strategie = Strategie.pickRandomStrategie();
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="14780fd6-4257-4063-96f7-40bff05bfaa3"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[for(Equipe e :equipesAll){
-    if(e.nom.equals(nom))return e;
+                  <ATT name="Content"><![CDATA[for (Equipe e : equipesAll) {
+    if (e.nom.equals(nom)) return e;
 }
 //Otherwise
 ]]></ATT>
@@ -1515,6 +1515,28 @@ strategie = Strategie.pickRandomStrategie();
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
                   <ATT name="Name"><![CDATA[masseSalariale]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="budgetTeamBuilding" mc="Standard.Parameter" uid="d11087e3-df58-44af-ab70-3e0c4b205db5"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[budgetTeamBuilding]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -1669,6 +1691,7 @@ strategie = Strategie.pickRandomStrategie();
 this.histoireDuClub = histoireDuClub;
 this.budgetTransferts = budgetTransferts;
 this.masseSalariale = masseSalariale;
+this.budgetTeamBuilding = budgetTeamBuilding;
 this.joueurs = joueurs;
 this.entraineur = entraineur;
 this.president = president;
@@ -1815,7 +1838,7 @@ equipesAll.add(this);
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="budgetTransferts" mc="Standard.Parameter" uid="fb0cf8c6-e69a-4af3-b2ad-28eedc4945e1"/>
+                <ID name="newBudget" mc="Standard.Parameter" uid="6d2236a5-35b8-4140-9398-a45d82cacd01"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -1827,7 +1850,7 @@ equipesAll.add(this);
                   <ATT name="IsException">false</ATT>
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[budgetTransferts]]></ATT>
+                  <ATT name="Name"><![CDATA[newBudget]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -1841,7 +1864,14 @@ equipesAll.add(this);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="b4857f43-1d16-4553-94cf-821e7aa20446"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.budgetTransferts = budgetTransferts;]]></ATT>
+                  <ATT name="Content"><![CDATA[if(newBudget < 0) {
+    this.budgetTransferts = Integer.MAX_VALUE;
+}else if(newBudget <= 0) {
+    this.budgetTransferts = 0;
+}else {
+    this.budgetTransferts = newBudget;
+}
+]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1870,7 +1900,7 @@ equipesAll.add(this);
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="masseSalariale" mc="Standard.Parameter" uid="a9f978dc-74ac-4a17-abd6-b1b13cc03356"/>
+                <ID name="newBudget" mc="Standard.Parameter" uid="c0b49031-ff43-458f-9286-229cd6b8887e"/>
                 <ATTRIBUTES>
                   <ATT name="ParameterPassing">In</ATT>
                   <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
@@ -1882,7 +1912,7 @@ equipesAll.add(this);
                   <ATT name="IsException">false</ATT>
                   <ATT name="IsStream">false</ATT>
                   <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[masseSalariale]]></ATT>
+                  <ATT name="Name"><![CDATA[newBudget]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -1896,7 +1926,14 @@ equipesAll.add(this);
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="75760985-9e8f-4661-8e6e-40ba01c4796b"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[this.masseSalariale = masseSalariale;]]></ATT>
+                  <ATT name="Content"><![CDATA[if(newBudget < 0) {
+    this.masseSalariale = Integer.MAX_VALUE;
+}else if(newBudget <= 0) {
+    this.masseSalariale = 0;
+}else {
+    this.masseSalariale = newBudget;
+}
+]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3492,7 +3529,7 @@ Equipe equipe = (Equipe) o;
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="6afa8872-9872-4159-a8d2-b9bd74904254"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return (double)res/joueurs.size();]]></ATT>
+                  <ATT name="Content"><![CDATA[return (double) res / joueurs.size();]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3506,10 +3543,396 @@ Equipe equipe = (Equipe) o;
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="5ed6429e-8df5-4be7-9081-4a0d0231fab4"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[if(joueurs==null)return 0;
-if(joueurs.size()==0)return 0;
-int res=0;
-for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
+                  <ATT name="Content"><![CDATA[if (joueurs == null) return 0;
+if (joueurs.size() == 0) return 0;
+int res = 0;
+for (Joueur j : joueurs) res += j.getNotePerformancesRecentes();
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getBudgetTeamBuilding" mc="Standard.Operation" uid="20e5ffc9-4c4d-4d8d-992d-81a13b4b998c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getBudgetTeamBuilding]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Standard.Parameter" uid="752c8c3e-77d5-4310-b73a-cf6f4d74ab44"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="6a5db9b9-3715-4c46-b110-3641b624d70c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return budgetTeamBuilding;]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="Infrastructure.NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setBudgetTeamBuilding" mc="Standard.Operation" uid="08c720be-9d8b-43cb-853e-9b9ed6cd5333"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setBudgetTeamBuilding]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="newBudget" mc="Standard.Parameter" uid="e55e5bfd-8c4c-4ae7-a680-79ef50dd7288"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[newBudget]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4febbebf-5c59-413f-a00b-e6148c99855a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if(newBudget < 0) {
+    budgetTeamBuilding = Integer.MAX_VALUE;
+}else if(newBudget <= 0) {
+    budgetTeamBuilding = 0;
+}else {
+    budgetTeamBuilding = newBudget;
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Equipe" mc="Standard.Operation" uid="825e6345-d537-411d-8da4-5fbb05e5e6ee"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Equipe]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="nom" mc="Standard.Parameter" uid="6d62eafc-eb49-47f3-9f08-d4f076f61210"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[nom]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="histoireDuClub" mc="Standard.Parameter" uid="ddd61bf0-86c8-4e13-a369-93b148f5635b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[histoireDuClub]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="Standard.DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="budgetTransferts" mc="Standard.Parameter" uid="3b076b12-2d3b-43c0-b3f8-72aeef21475a"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[budgetTransferts]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="masseSalariale" mc="Standard.Parameter" uid="5249d098-bb1e-46db-951a-02ac139c9237"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[masseSalariale]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="joueurs" mc="Standard.Parameter" uid="bfb0762f-a8af-4203-a9ea-22ec21097022"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[joueurs]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Joueur" mc="Standard.Class" uid="3e75c2f1-f322-4da1-b60f-d041f2b2f83e"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="b53b3ab3-1517-40c0-8400-1cbbe8c41a6f"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="aea4daae-c388-4f97-b96a-11b8275bb7b5"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[List]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="type" mc="Infrastructure.TagType" uid="00000000-0000-3767-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="entraineur" mc="Standard.Parameter" uid="c68ddb26-baad-48ec-9468-c782ef96150c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[entraineur]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Entraineur" mc="Standard.Class" uid="a62c656b-c477-4c32-ac07-3cd92a19b277"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="president" mc="Standard.Parameter" uid="1f38bed4-4144-4be5-ab02-1ec07da35e3b"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[president]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="President" mc="Standard.Class" uid="6c0bfd95-523b-4303-bf50-8494bdd0b1a2"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="stade" mc="Standard.Parameter" uid="64f7fc63-d122-4e5b-8cf2-e919909e659d"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[stade]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Stade" mc="Standard.Class" uid="e03499a7-d46e-4a7b-9d07-47804c165c98"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ligue" mc="Standard.Parameter" uid="d8a2bebc-87ef-4822-8f9c-fd81d76cbedb"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[ligue]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Ligue" mc="Standard.Class" uid="47c2203c-9c63-475a-8982-ba94c1dcf816"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="create" mc="Infrastructure.Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="6f95f6ed-2c14-4b68-bf52-c4c32e236249"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[this.nom = nom;
+this.histoireDuClub = histoireDuClub;
+this.budgetTransferts = budgetTransferts;
+this.masseSalariale = masseSalariale;
+this.joueurs = joueurs;
+this.entraineur = entraineur;
+this.president = president;
+this.stade = stade;
+this.ligue = ligue;
+initEquipe();
+equipesAll.add(this);
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -3550,7 +3973,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c37b9a1c-0269-44b7-8cd6-9d2405d47238"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7baebb48-4a03-492f-96e9-751c2dc65a57"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3588,7 +4011,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a8087aa2-2c52-442f-a73b-05b2ed95acbc"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="813ac89f-4696-479c-bd6d-2d7fcaff4cbf"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3626,7 +4049,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="53c4df87-3e22-4b58-844f-2198523e14e4"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="958f5538-7fc2-466a-bd89-0107efb724c2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3664,7 +4087,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="fad5332a-5bcd-4720-9201-035c171eeff7"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="08bb09b0-0d84-4127-974e-d76b30baa238"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3702,7 +4125,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="20cfb90d-0e25-4a9f-b637-02075a0dbc36"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="55b544cc-45fc-40d2-bba5-8d582f34abda"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3740,7 +4163,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="00c7b4ab-30db-4016-a44a-7ea13aba3c49"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e2c01259-6e56-437a-b333-02be5a7b56a0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3778,7 +4201,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ca2d9981-7628-4bd9-9a38-46f9e8fb9c59"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e9ecf555-4c62-4668-a5bd-a10cbeadd411"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3816,7 +4239,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8b5e1f39-1d83-41f7-a16a-af8cd7ef2528"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2aa60eba-cb93-4dce-8f39-12d473922f6b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3854,7 +4277,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="6fcd6168-9628-482a-acdd-7f94cfffe585"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="bcfee50a-2881-462c-9adc-2c08cc66e500"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3892,7 +4315,45 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5477d16e-4c01-4f1f-9a8c-47c216b66afb"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c50301c3-016f-4ff8-8c97-95da98ca2606"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="budgetTeamBuilding" mc="Standard.Attribute" uid="3e0cc7ea-0287-461b-a750-a4ec7be9a02e"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[budgetTeamBuilding]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="integer" mc="Standard.DataType" uid="00000004-0000-0009-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8ad593b5-12bf-474e-9f33-1a50121c7ddd"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3969,7 +4430,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="f8fd91f2-c11e-4411-9b68-a207130a2599"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="f73c8e85-8f8a-47e6-8769-36ce1645d5f4"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -3989,7 +4450,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ff530bcd-cd11-45fb-93f1-26569f2af1ad"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2848242e-819a-4d8a-8ef0-920de77a0253"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4061,7 +4522,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="84963e57-41ad-49a5-8e03-6ceaec606c58"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="0f136941-fb82-456d-9082-992f9c7f9e51"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -4081,7 +4542,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="887a57bc-b0bd-4d9c-a69e-ec289e5d1cfe"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="bab27c27-ece1-4425-b6fb-bf108420b91e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4156,7 +4617,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b83c1da5-2d05-4bad-b0ec-da5c8d03523f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="83f2334f-b091-4b40-8f4e-4951eeb86100"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4234,7 +4695,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="97b887c8-066b-40fc-9102-04cb5e552114"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4c4a89e2-7a2b-4d15-983e-c56eaed16c15"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4511,7 +4972,7 @@ for(Joueur j:joueurs)res+=j.getNotePerformancesRecentes();
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ea18a4ec-0881-49ef-a579-b7b062589f86"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="bc6b5dea-020c-4a05-a336-377ee26e0258"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
