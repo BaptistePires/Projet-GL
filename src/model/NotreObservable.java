@@ -18,4 +18,5 @@ public class NotreObservable {
         for(Observateur o:abonnes)o.miseAJour();
     }
 
+
 }

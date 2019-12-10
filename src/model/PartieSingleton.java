@@ -38,6 +38,7 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         try{
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomFichierSource));
             INSTANCE = (PartieSingleton) in.readObject();
+
         }catch(Exception e){
             e.printStackTrace();
             System.err.println("Erreur lors du chargement de la partie "+nomFichierSource+" : "+e.getClass()+" : "+e.getMessage());

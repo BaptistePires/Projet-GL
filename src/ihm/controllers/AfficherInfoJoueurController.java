@@ -72,6 +72,7 @@ public class AfficherInfoJoueurController {
     public Joueur getJoueur() {
         return j;
     }
+
     @FXML
     void proposerContratCallBack(ActionEvent event) {
         try {
