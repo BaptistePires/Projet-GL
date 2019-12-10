@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Consulter les informations des joueurs" version="4">
   <OBJECT>
     <ID name="Consulter les informations des joueurs" mc="Standard.UseCase" uid="9b1ecc41-1165-47a5-a4d5-d12f14a2cb8c"/>
-    <PID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+    <PID name="Use Cases" mc="Standard.Package" uid="e83a9449-bdc3-43e3-831a-5a69fcbf769e"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -15,14 +15,14 @@
     <DEPENDENCIES>
       <COMP relation="Used">
         <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="d29bd677-df71-475c-9209-adcc88f7f826"/>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="503df8cd-b589-45b9-b1c5-cd437db7596d"/>
           <ATTRIBUTES>
             <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="intéragir avec les joueurs en leur envoyant une offre de transfert vers notre club" mc="Standard.UseCase" uid="e9f0c8db-9a3f-4df7-a1f5-25d614f9ec55"/>
+              <ID name="Consulter les informations des équipes" mc="Standard.UseCase" uid="8139aa82-c830-4846-b00d-5c17aa552469"/>
             </LINK>
             <LINK relation="Extension">
               <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
@@ -31,7 +31,7 @@
         </OBJECT>
       </COMP>
       <COMP relation="OwnedBehavior">
-        <COMPID name="Consulter les informations des joueurs" mc="Standard.Interaction" uid="9c7a7f37-4d1b-46b2-a0b7-a9311f2801f5"/>
+        <COMPID name="Interaction - Consulter les informations des joueurs" mc="Standard.Interaction" uid="9c7a7f37-4d1b-46b2-a0b7-a9311f2801f5"/>
       </COMP>
       <COMP relation="Descriptor">
         <OBJECT>

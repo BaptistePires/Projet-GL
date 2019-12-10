@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Class Structure" version="4">
+  <OBJECT>
+    <ID name="Class Structure" mc="Infrastructure.DiagramSet" uid="5893d408-a3b7-4a3a-89ef-25e01b841f9f"/>
+    <PID name="Auto Diagrams" mc="Infrastructure.DiagramSet" uid="c32db24f-5a59-4f00-bb58-c59d6d2d7b8a"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Class Structure]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="ReferencedDiagram">
+        <ID name="StrategieController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="ccbfc9dd-f534-4dd3-9760-b9db8680944c"/>
+        <ID name="MatchController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="24d78ddf-e5f3-4cf6-8f0e-0fe3b764cbdb"/>
+        <ID name="LanceurDePartieController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="da318b40-9f23-4bc6-811f-4a9c80ea324c"/>
+        <ID name="CustomDialogDateController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="38ee487e-e5ab-49fa-bafd-c54a0bd1b0b2"/>
+        <ID name="AdministrationController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="85758a5e-378d-4161-af1d-c2068bcb7106"/>
+        <ID name="EcranDuJeuController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6305bbdf-ce2c-45bb-ae9c-1952984d3304"/>
+        <ID name="EquipeController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="fa805cca-ebff-4a26-8c42-ccc78cfd691b"/>
+        <ID name="ProposerContratController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="9db69e2f-766b-44b7-9c76-e52000ade8c9"/>
+        <ID name="AfficherInfoJoueurController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="54d48144-7042-4938-a19b-c19976953549"/>
+        <ID name="StatistiquesMatchController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="4d5be502-2611-434b-8f3f-97cd66dd346d"/>
+        <ID name="AfficherMessagesController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6e5ba5fe-0a29-4010-a600-8de515d98ce5"/>
+        <ID name="TableauDeBordController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="2b7cc195-9d01-4592-87d5-763c33f1c267"/>
+        <ID name="CreerNouvellePartieController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="a12a4ce9-dad9-4bfc-a882-d321e830752e"/>
+        <ID name="LiguesController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6333667d-54aa-4a46-8c5e-f87e0ddc5350"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

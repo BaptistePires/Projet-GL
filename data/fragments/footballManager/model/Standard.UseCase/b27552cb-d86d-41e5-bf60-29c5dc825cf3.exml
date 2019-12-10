@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Demander un budget des transferts plus important" version="4">
   <OBJECT>
     <ID name="Demander un budget des transferts plus important" mc="Standard.UseCase" uid="b27552cb-d86d-41e5-bf60-29c5dc825cf3"/>
-    <PID name="footballmanager" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+    <PID name="Use Cases" mc="Standard.Package" uid="e83a9449-bdc3-43e3-831a-5a69fcbf769e"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -13,6 +13,23 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="Used">
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="0e4bb031-0157-4e0f-aa49-eb064c8fb058"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Consulter les informations de l'administration" mc="Standard.UseCase" uid="ee5a6d03-8d8f-4cb9-8cc3-288bb533ae05"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="734a57bc-9f67-442f-8af9-0772402b476b"/>

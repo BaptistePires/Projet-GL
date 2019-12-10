@@ -1056,6 +1056,9 @@ try{
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="CreerNouvellePartieController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="a12a4ce9-dad9-4bfc-a882-d321e830752e"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

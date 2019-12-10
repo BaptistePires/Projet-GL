@@ -1346,6 +1346,9 @@ labelDateMsg.setText(String.format("%d-%d-%d",date.getDate(), date.getMonth()+1,
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="AfficherMessagesController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6e5ba5fe-0a29-4010-a600-8de515d98ce5"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

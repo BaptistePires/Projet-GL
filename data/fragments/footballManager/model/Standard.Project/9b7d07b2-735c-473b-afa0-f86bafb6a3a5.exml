@@ -10,8 +10,7 @@
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="Model">
-        <COMPID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
-        <COMPID name="footballManagerDiagrammeDesClasses" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+        <COMPID name="footballManager" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
       </COMP>
       <COMP relation="DiagramRoot">
         <COMPID name="footballManager" mc="Infrastructure.DiagramSet" uid="055e9e8d-0445-4c86-923e-402048b8bb3a"/>
