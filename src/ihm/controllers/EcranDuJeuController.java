@@ -10,10 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import model.Equipe;
-import model.LanceurDePartie;
-import model.Observateur;
-import model.PartieSingleton;
+import model.*;
 
 public class EcranDuJeuController implements Observateur {
     @FXML
@@ -82,6 +79,7 @@ public class EcranDuJeuController implements Observateur {
             AnchorPane equipe = (AnchorPane) fxmlLoader.load();
             EquipeController ec = fxmlLoader.<EquipeController>getController();
             ec.setEquipe(PartieSingleton.INSTANCE.getEntraineur().getEquipe());
+            ec.setParentController(this);
             pane1_1.getChildren().clear();
             pane1_1.getChildren().add(equipe);
         }catch(Exception e){
@@ -153,5 +151,36 @@ public class EcranDuJeuController implements Observateur {
         LanceurDePartie.INSTANCE.sauvegarderPartie();
         StrategieController.showAlert("Sauvegarde","Partie sauvegardée", "On a sauvegardée votre" +
                 " partie sous le nom "+PartieSingleton.INSTANCE.getNomFichierSauvegarde());
+    }
+
+    public void setInfoJoueurController(Joueur j) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur.fxml"));
+
+            VBox dashboard = (VBox) fxmlLoader.load();
+            AfficherInfoJoueurController controller = fxmlLoader.<AfficherInfoJoueurController>getController();
+            controller.setJoueur(j);
+            controller.setParentController(this);
+            pane1_1.getChildren().clear();
+            pane1_1.getChildren().add(dashboard);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+        }
+    }
+
+    public void proposerContrat(Joueur j) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
+            VBox dashboard = (VBox) fxmlLoader.load();
+            ProposerContratController controller = fxmlLoader.<ProposerContratController>getController();
+            controller.setJoueur(j);
+            controller.setParentController(this);
+            pane1_1.getChildren().clear();
+            pane1_1.getChildren().add(dashboard);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+        }
     }
 }

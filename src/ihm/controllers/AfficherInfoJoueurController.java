@@ -67,6 +67,9 @@ public class AfficherInfoJoueurController {
 
     private Joueur j;
 
+    public void setJoueurIndex(int i) {
+        setJoueur(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getJoueurs().get(i));
+    }
     public void setJoueur(Joueur j) {
         this.j = j;
         init();
@@ -76,20 +79,27 @@ public class AfficherInfoJoueurController {
         return j;
     }
 
+    private EcranDuJeuController parentController;
+
+    public void setParentController(EcranDuJeuController c) {
+        parentController = c;
+    }
+
     @FXML
     void proposerContratCallBack(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
-            Parent root = (Parent) loader.load();
-            ProposerContratController controller = loader.<ProposerContratController>getController();
-            controller.j = j;
-            Scene scene = new Scene(root);
-            Main.mainStage.setScene(scene);
-            Main.mainStage.show();
-        } catch (Exception e) {
-            System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
-        //            e.printStackTrace();
-        }
+        parentController.proposerContrat(j);
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../proposerContrat.fxml"));
+//            Parent root = (Parent) loader.load();
+//            ProposerContratController controller = loader.<ProposerContratController>getController();
+//            controller.j = j;
+//            Scene scene = new Scene(root);
+//            Main.mainStage.setScene(scene);
+//            Main.mainStage.show();
+//        } catch (Exception e) {
+//            System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
+//        //            e.printStackTrace();
+//        }
     }
 
     @FXML

@@ -42,6 +42,11 @@ public class EquipeController {
 
     private Equipe equipe;
 
+    private EcranDuJeuController parentController;
+
+    public void setParentController(EcranDuJeuController c) {
+        this.parentController = c;
+    }
     public Equipe getEquipe() {
         return equipe;
     }
@@ -52,20 +57,22 @@ public class EquipeController {
     }
 
     @FXML public void voirJoueurSelectionne(){
+
         Joueur joueurSelectionne = joueursTV.getSelectionModel().getSelectedItem();
         if(joueurSelectionne!=null){
-            try{
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur.fxml"));
-                VBox root = loader.load();
-                AfficherInfoJoueurController controller = loader.<AfficherInfoJoueurController>getController();
-                controller.setJoueur(joueurSelectionne);
-                Pane parent = (Pane)nomEquipeLabel.getParent().getParent();
-                parent.getChildren().clear();
-                parent.getChildren().add(root);
-            }catch(Exception e){
-                e.printStackTrace();
-                System.err.println("Erreur lors du chargement du joueur selectionné");
-            }
+            parentController.setInfoJoueurController(joueurSelectionne);
+//            try{
+//                FXMLLoader loader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur.fxml"));
+//                VBox root = loader.load();
+//                AfficherInfoJoueurController controller = loader.<AfficherInfoJoueurController>getController();
+//                controller.setJoueur(joueurSelectionne);
+//                Pane parent = (Pane)nomEquipeLabel.getParent().getParent();
+//                parent.getChildren().clear();
+//                parent.getChildren().add(root);
+//            }catch(Exception e){
+//                e.printStackTrace();
+//                System.err.println("Erreur lors du chargement du joueur selectionné");
+//            }
         }
     }
 
@@ -104,11 +111,6 @@ public class EquipeController {
         rCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("nbCartonRougeSaison"));
 
         joueursTV.setItems(FXCollections.observableArrayList(equipe.getJoueurs()));
-
-    }
-
-    @FXML public void initialize(){
-        if(equipe!=null)init();
 
     }
 }

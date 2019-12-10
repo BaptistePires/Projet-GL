@@ -61,11 +61,14 @@ public class ProposerContratController {
 
     public Joueur j;
 
-    public ProposerContratController() {
-        super();
+    private EcranDuJeuController parentController;
+
+    public void setParentController(EcranDuJeuController c) {
+        parentController = c;
     }
 
     public void setJoueur(Joueur joueur) {
+        j = joueur;
         nomJoueur.setText("Proposer un contrat à : " + joueur.getNom() + " " + joueur.getPrenom());
     }
 
@@ -82,7 +85,8 @@ public class ProposerContratController {
     @FXML
     void soumettreContrat(ActionEvent event) {
         boolean contratValide = true;
-        
+
+        System.out.println(j);
         if(inputSalaire.getText().length() <= 0) {
             alertSalaire.setText(ALERT_TEXT);
         }else{
@@ -130,6 +134,7 @@ public class ProposerContratController {
                             PartieSingleton.INSTANCE.getEntraineur().getEquipe());
             //j.getEquipe().formulerOffreTransfert(contrat, j);
             contrat.getEquipeSource().formulerOffreTransfert(contrat, j);
+            parentController.equipeAction();
         }
     }
 
