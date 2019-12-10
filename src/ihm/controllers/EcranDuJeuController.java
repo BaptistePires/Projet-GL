@@ -42,14 +42,6 @@ public class EcranDuJeuController implements Observateur {
     @FXML
     Label msgNLV;
 
-    @FXML
-    GridPane gridMain;
-
-    @FXML
-    Label dateLabel;
-
-    @FXML
-    Pane pane1_1;
 
     @FXML
     public void avancerTempsAction(){

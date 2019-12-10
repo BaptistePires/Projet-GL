@@ -103,13 +103,13 @@ public class AfficherMessagesController {
         });*/
     }
 
-        public void updateAfficherContenu (String contenu, String titre, Date date){
-            contenuMessage.setText(contenu);
-            contenuMessage.setEditable(false);
-            titreMsg.setText(titre);
-            labelDateMsg.setText(String.format("%d-%d-%d",date.getDate(), date.getMonth()+1,date.getYear()+1900));
-        }
-
+    public void updateAfficherContenu (String contenu, String titre, Date date){
+        contenuMessage.setText(contenu);
+        contenuMessage.setEditable(false);
+        titreMsg.setText(titre);
+        labelDateMsg.setText(String.format("%d-%d-%d",date.getDate(), date.getMonth()+1,date.getYear()+1900));
     }
 
 }
+
+
