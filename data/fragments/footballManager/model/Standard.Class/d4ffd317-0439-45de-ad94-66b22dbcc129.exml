@@ -3302,22 +3302,22 @@ equipesAll.add(this);
                 <ID name="" mc="Infrastructure.Note" uid="8d1e0458-bf84-4ba1-9ee9-afbea5c4f7a8"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return getBudgetTransferts() == equipe.getBudgetTransferts() &&
-                getMasseSalariale() == equipe.getMasseSalariale() &&
-                getNbPoints() == equipe.getNbPoints() &&
-                getNbButsMarques() == equipe.getNbButsMarques() &&
-                getNbButsEncaisses() == equipe.getNbButsEncaisses() &&
-                getNbVictoires() == equipe.getNbVictoires() &&
-                getNbMatchsNuls() == equipe.getNbMatchsNuls() &&
-                getNbDefaites() == equipe.getNbDefaites() &&
-                Objects.equals(getNom(), equipe.getNom()) &&
-                Objects.equals(getHistoireDuClub(), equipe.getHistoireDuClub()) &&
-                Objects.equals(getJoueurs(), equipe.getJoueurs()) &&
-                Objects.equals(getEntraineur(), equipe.getEntraineur()) &&
-                Objects.equals(getPresident(), equipe.getPresident()) &&
-                Objects.equals(getStrategie(), equipe.getStrategie()) &&
-                Objects.equals(getHistoriqueSaisons(), equipe.getHistoriqueSaisons()) &&
-                Objects.equals(getStade(), equipe.getStade()) &&
-                Objects.equals(getLigue(), equipe.getLigue());]]></ATT>
+                        getMasseSalariale() == equipe.getMasseSalariale() &&
+                        getNbPoints() == equipe.getNbPoints() &&
+                        getNbButsMarques() == equipe.getNbButsMarques() &&
+                        getNbButsEncaisses() == equipe.getNbButsEncaisses() &&
+                        getNbVictoires() == equipe.getNbVictoires() &&
+                        getNbMatchsNuls() == equipe.getNbMatchsNuls() &&
+                        getNbDefaites() == equipe.getNbDefaites() &&
+                        Objects.equals(getNom(), equipe.getNom()) &&
+                        Objects.equals(getHistoireDuClub(), equipe.getHistoireDuClub()) &&
+                        Objects.equals(getJoueurs(), equipe.getJoueurs()) &&
+                        Objects.equals(getEntraineur(), equipe.getEntraineur()) &&
+                        Objects.equals(getPresident(), equipe.getPresident()) &&
+                        Objects.equals(getStrategie(), equipe.getStrategie()) &&
+                        Objects.equals(getHistoriqueSaisons(), equipe.getHistoriqueSaisons()) &&
+                        Objects.equals(getStade(), equipe.getStade()) &&
+                        Objects.equals(getLigue(), equipe.getLigue());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3404,8 +3404,8 @@ Equipe equipe = (Equipe) o;
                 <ID name="" mc="Infrastructure.Note" uid="2e39d95d-8061-4389-9d43-635d92d93b7f"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.hash(getNom(), getHistoireDuClub(), getBudgetTransferts(), getMasseSalariale(), getNbPoints(),
-                getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
-                getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());]]></ATT>
+                        getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
+                        getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -3973,7 +3973,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7baebb48-4a03-492f-96e9-751c2dc65a57"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1295cc95-44f3-4174-b3c1-2b312b52a01b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4011,7 +4011,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="813ac89f-4696-479c-bd6d-2d7fcaff4cbf"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="3cab4c78-8d5f-4c25-87ee-35af715da780"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4049,7 +4049,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="958f5538-7fc2-466a-bd89-0107efb724c2"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="b3335ebc-1012-4f49-8cdd-cb22005c28f8"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4087,7 +4087,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="08bb09b0-0d84-4127-974e-d76b30baa238"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dc53aba9-6465-4ac9-8576-5b0ce1896f35"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4125,7 +4125,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="55b544cc-45fc-40d2-bba5-8d582f34abda"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="237832d0-625a-4a11-947d-401ee2ee3439"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4163,7 +4163,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e2c01259-6e56-437a-b333-02be5a7b56a0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4e3daf8f-71cd-41e6-880e-c93bbfa9bae5"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4201,7 +4201,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e9ecf555-4c62-4668-a5bd-a10cbeadd411"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="68c5058a-fea1-4b1d-a30a-91d0127f5978"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4239,7 +4239,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2aa60eba-cb93-4dce-8f39-12d473922f6b"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4b79a3cd-0394-4339-a404-f0367a5c3261"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4277,7 +4277,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="bcfee50a-2881-462c-9adc-2c08cc66e500"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f18730ed-6610-4edb-aae7-7233362eb552"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4315,7 +4315,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c50301c3-016f-4ff8-8c97-95da98ca2606"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="360392f0-c3cd-45de-88ea-008cb45d337b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4353,7 +4353,7 @@ equipesAll.add(this);
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8ad593b5-12bf-474e-9f33-1a50121c7ddd"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d85bdda5-b09d-4ae7-b6e6-7ffc7f2e86f0"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4430,7 +4430,7 @@ equipesAll.add(this);
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="f73c8e85-8f8a-47e6-8769-36ce1645d5f4"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="db7ce996-2ead-43d9-bd17-d4d86327fa65"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -4450,7 +4450,7 @@ equipesAll.add(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="2848242e-819a-4d8a-8ef0-920de77a0253"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dc2d12a2-e9c1-414c-8170-d2dfc55e1de2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4522,7 +4522,7 @@ equipesAll.add(this);
                   </COMP>
                   <COMP relation="Tag">
                     <OBJECT>
-                      <ID name="" mc="Infrastructure.TaggedValue" uid="0f136941-fb82-456d-9082-992f9c7f9e51"/>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="1227de97-0831-4682-9401-38a27c85adfb"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -4542,7 +4542,7 @@ equipesAll.add(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="bab27c27-ece1-4425-b6fb-bf108420b91e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="f3ca9c02-d0e9-42c5-9ae0-46b564e83048"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4617,7 +4617,7 @@ equipesAll.add(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="83f2334f-b091-4b40-8f4e-4951eeb86100"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="6e013452-28d0-43e3-b5d4-f43403d31ab9"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4695,7 +4695,7 @@ equipesAll.add(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4c4a89e2-7a2b-4d15-983e-c56eaed16c15"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a270ec6e-50a2-4e0a-95ab-beedc03658fc"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -4972,7 +4972,7 @@ equipesAll.add(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="bc6b5dea-020c-4a05-a336-377ee26e0258"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="542bdd7e-3f04-4ce7-8bac-83eff86bb61c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

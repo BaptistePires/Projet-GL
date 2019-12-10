@@ -822,9 +822,9 @@ this.statistiquesJoueursB = statistiquesJoueursB;
                 <ID name="" mc="Infrastructure.Note" uid="aad33f23-67c4-40c2-a836-4f1d9161ca55"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.equals(getStatistiquesEquipeB(), that.getStatistiquesEquipeB()) &&
-                Objects.equals(getStatistiquesEquipeA(), that.getStatistiquesEquipeA()) &&
-                Objects.equals(getStatistiquesJoueursA(), that.getStatistiquesJoueursA()) &&
-                Objects.equals(getStatistiquesJoueursB(), that.getStatistiquesJoueursB());]]></ATT>
+                        Objects.equals(getStatistiquesEquipeA(), that.getStatistiquesEquipeA()) &&
+                        Objects.equals(getStatistiquesJoueursA(), that.getStatistiquesJoueursA()) &&
+                        Objects.equals(getStatistiquesJoueursB(), that.getStatistiquesJoueursB());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -980,11 +980,11 @@ Statistiques that = (Statistiques) o;
                 <ID name="" mc="Infrastructure.Note" uid="66e67246-7ecb-4d22-9a52-d137fdadfddc"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Statistiques{" +
-                "statistiquesEquipeB=" + statistiquesEquipeB +
-                ", statistiquesEquipeA=" + statistiquesEquipeA +
-                ", statistiquesJoueursA=" + statistiquesJoueursA +
-                ", statistiquesJoueursB=" + statistiquesJoueursB +
-                '}';]]></ATT>
+                        "statistiquesEquipeB=" + statistiquesEquipeB +
+                        ", statistiquesEquipeA=" + statistiquesEquipeA +
+                        ", statistiquesJoueursA=" + statistiquesJoueursA +
+                        ", statistiquesJoueursB=" + statistiquesJoueursB +
+                        '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1061,7 +1061,7 @@ Statistiques that = (Statistiques) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a08b9125-7a1c-4be6-be8e-71e973acec41"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="c9c9aaa7-6d9e-4a26-979b-f1d79e497137"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1136,7 +1136,7 @@ Statistiques that = (Statistiques) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="7fe626d0-034d-4c12-98f0-553f6284a75d"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="9854e66e-236b-4d40-839b-151a06bdddb9"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

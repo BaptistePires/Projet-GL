@@ -279,29 +279,29 @@ public class Equipe implements Serializable {
         if (!(o instanceof Equipe)) return false;
         Equipe equipe = (Equipe) o;
         return getBudgetTransferts() == equipe.getBudgetTransferts() &&
-                        getMasseSalariale() == equipe.getMasseSalariale() &&
-                        getNbPoints() == equipe.getNbPoints() &&
-                        getNbButsMarques() == equipe.getNbButsMarques() &&
-                        getNbButsEncaisses() == equipe.getNbButsEncaisses() &&
-                        getNbVictoires() == equipe.getNbVictoires() &&
-                        getNbMatchsNuls() == equipe.getNbMatchsNuls() &&
-                        getNbDefaites() == equipe.getNbDefaites() &&
-                        Objects.equals(getNom(), equipe.getNom()) &&
-                        Objects.equals(getHistoireDuClub(), equipe.getHistoireDuClub()) &&
-                        Objects.equals(getJoueurs(), equipe.getJoueurs()) &&
-                        Objects.equals(getEntraineur(), equipe.getEntraineur()) &&
-                        Objects.equals(getPresident(), equipe.getPresident()) &&
-                        Objects.equals(getStrategie(), equipe.getStrategie()) &&
-                        Objects.equals(getHistoriqueSaisons(), equipe.getHistoriqueSaisons()) &&
-                        Objects.equals(getStade(), equipe.getStade()) &&
-                        Objects.equals(getLigue(), equipe.getLigue());
+                                getMasseSalariale() == equipe.getMasseSalariale() &&
+                                getNbPoints() == equipe.getNbPoints() &&
+                                getNbButsMarques() == equipe.getNbButsMarques() &&
+                                getNbButsEncaisses() == equipe.getNbButsEncaisses() &&
+                                getNbVictoires() == equipe.getNbVictoires() &&
+                                getNbMatchsNuls() == equipe.getNbMatchsNuls() &&
+                                getNbDefaites() == equipe.getNbDefaites() &&
+                                Objects.equals(getNom(), equipe.getNom()) &&
+                                Objects.equals(getHistoireDuClub(), equipe.getHistoireDuClub()) &&
+                                Objects.equals(getJoueurs(), equipe.getJoueurs()) &&
+                                Objects.equals(getEntraineur(), equipe.getEntraineur()) &&
+                                Objects.equals(getPresident(), equipe.getPresident()) &&
+                                Objects.equals(getStrategie(), equipe.getStrategie()) &&
+                                Objects.equals(getHistoriqueSaisons(), equipe.getHistoriqueSaisons()) &&
+                                Objects.equals(getStade(), equipe.getStade()) &&
+                                Objects.equals(getLigue(), equipe.getLigue());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getNom(), getHistoireDuClub(), getBudgetTransferts(), getMasseSalariale(), getNbPoints(),
-                        getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
-                        getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());
+                                getNbButsMarques(), getNbButsEncaisses(), getNbVictoires(), getNbMatchsNuls(), getNbDefaites(),
+                                getJoueurs(), getEntraineur(), getPresident(), getStrategie(), getHistoriqueSaisons(), getStade(), getLigue());
     }
 
     @Override

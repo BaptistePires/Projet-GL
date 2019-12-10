@@ -61,9 +61,9 @@ public class Stade implements Serializable {
         if (!(o instanceof Stade)) return false;
         Stade stade = (Stade) o;
         return getNombrePlaces() == stade.getNombrePlaces() &&
-                        Objects.equals(getNom(), stade.getNom()) &&
-                        Objects.equals(getVille(), stade.getVille()) &&
-                        Objects.equals(getHistoire(), stade.getHistoire());
+                                Objects.equals(getNom(), stade.getNom()) &&
+                                Objects.equals(getVille(), stade.getVille()) &&
+                                Objects.equals(getHistoire(), stade.getHistoire());
     }
 
     @Override

@@ -950,7 +950,7 @@ if(r.nextBoolean()) {
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="5fe2ff2b-674a-4a08-9857-fa2564ef8e59"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1a3ffb36-13a2-4753-99f5-0a45368f01ad"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

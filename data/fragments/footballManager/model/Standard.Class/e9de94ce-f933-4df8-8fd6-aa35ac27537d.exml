@@ -1,0 +1,466 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="LiguesController" version="4">
+  <OBJECT>
+    <ID name="LiguesController" mc="Standard.Class" uid="e9de94ce-f933-4df8-8fd6-aa35ac27537d"/>
+    <PID name="controllers" mc="Standard.Package" uid="12938056-e9de-4921-88a6-8823f8858f3e"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[LiguesController]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="initialize" mc="Standard.Operation" uid="14fa8b69-0c74-4763-9e63-a23c71547ed5"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[initialize]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="3939374d-cb8d-499a-a64e-759458e78aed"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="c60c0239-0d97-4ed4-93fb-1874bfef779a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if(fifa==null){
+    fifa = PartieSingleton.INSTANCE.getFifa();
+}
+for(Ligue l: fifa.getLigues()){
+    AnchorPane ap = new AnchorPane();
+    TitledPane tp = new TitledPane();
+    tp.setText(l.getNom());
+    accordeon.getPanes().add(tp);
+    tp.setContent(ap);
+    TableView<Equipe> eqTV = new TableView<Equipe>();
+    eqTV.setItems(FXCollections.observableArrayList(l.getEquipes()));
+    eqTV.setMinWidth(ap.getPrefWidth());
+    Button btnGo = new Button("Aller à l'équipe séléctionnée");
+
+    VBox vb = new VBox();
+    vb.getChildren().addAll(eqTV, btnGo);
+    ap.getChildren().add(vb);
+
+    btnGo.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            Equipe equipeSelectionnee = eqTV.getSelectionModel().getSelectedItem();
+            if(equipeSelectionnee!=null){
+                try{
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../equipe.fxml"));
+                    AnchorPane anchorPane = (AnchorPane)loader.load();
+                    EquipeController ec = loader.<EquipeController>getController();
+                    ec.setEquipe(equipeSelectionnee);
+                    System.out.println(ec);
+                    Pane p = (Pane)accordeon.getParent().getParent();
+                    p.getChildren().clear();
+                    p.getChildren().add(anchorPane);
+                }catch(Exception e){
+                    e.printStackTrace();
+                    System.err.println("Erreur lors du chargement de l'équipe sélectionnée");
+                }
+            }
+        }
+    });
+
+    TableColumn<Equipe, String> nomCol = new TableColumn<Equipe, String>("Nom");
+    nomCol.setCellValueFactory(new PropertyValueFactory<Equipe, String>("nom"));
+
+    TableColumn<Equipe, Integer> nbBMarqu = new TableColumn<Equipe, Integer>("Buts P");
+    nbBMarqu.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbButsMarques"));
+
+    TableColumn<Equipe, Integer> nbBEncaiss = new TableColumn<Equipe, Integer>("Buts C");
+    nbBEncaiss.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbButsEncaisses"));
+
+    TableColumn<Equipe, Integer> nbVict = new TableColumn<Equipe, Integer>("Victoires" );
+    nbVict.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbVictoires"));
+
+    TableColumn<Equipe, Integer> nbNul = new TableColumn<Equipe, Integer>("Nuls");
+    nbNul.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbMatchsNuls"));
+
+    TableColumn<Equipe, Integer> nbDef = new TableColumn<Equipe, Integer>("Défaites");
+    nbDef.setCellValueFactory(new PropertyValueFactory<Equipe, Integer>("nbDefaites"));
+
+    TableColumn<Equipe, Strategie> strat = new TableColumn<Equipe, Strategie>("Stratégie");
+    strat.setCellValueFactory(new PropertyValueFactory<Equipe, Strategie>("strategie"));
+
+    TableColumn<Equipe, Stade> stade = new TableColumn<Equipe, Stade>("Stade");
+    stade.setCellValueFactory(new PropertyValueFactory<Equipe, Stade>("stade"));
+
+    eqTV.getColumns().addAll(nomCol, nbBMarqu, nbBEncaiss, nbVict, nbNul, nbDef, strat, stade);
+
+
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedEnd">
+        <OBJECT>
+          <ID name="accordeon" mc="Standard.AssociationEnd" uid="978ffdc1-ec6c-499e-9f36-064b5b5f3aa7"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">PackageVisibility</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[accordeon]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Accordion" mc="Standard.Class" uid="007c59cd-94e8-406e-837d-cdb6147e4815"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="3035e004-19f9-403d-a8bf-036b31773680"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Private</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="accordeon" mc="Standard.AssociationEnd" uid="978ffdc1-ec6c-499e-9f36-064b5b5f3aa7"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="9b2aa9e8-2963-4c7a-b9d9-3b9482365cf7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="9b2aa9e8-2963-4c7a-b9d9-3b9482365cf7"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="8005ae30-917e-4304-b85d-ef9ddd8441b6"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="8fa3b2cc-8fa8-4a51-b082-711c09cb937a"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="fifa" mc="Standard.AssociationEnd" uid="02674e5f-27e0-4233-9fd1-d6fb29148458"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">PackageVisibility</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[fifa]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Fifa" mc="Standard.Class" uid="f6f552f3-97d0-46a3-9677-42edcc7c2955"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="9932b3c8-de0b-4717-a9ed-3a25aa60d5b9"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Private</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="fifa" mc="Standard.AssociationEnd" uid="02674e5f-27e0-4233-9fd1-d6fb29148458"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="69b1b13f-2e1d-43b7-b6d0-8ac51f411ff2"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="69b1b13f-2e1d-43b7-b6d0-8ac51f411ff2"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="56f92f28-e4fd-46cd-bd8a-3fef991462b2"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedPackageImport">
+        <OBJECT>
+          <ID name="" mc="Standard.PackageImport" uid="cd4b48a1-4afb-4339-9c05-ead3e7da932a"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="control" mc="Standard.Package" uid="2f154e39-fbcc-4d88-8a27-24720668ef14"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.PackageImport" uid="1707b79c-25b4-41ae-9942-d137e2668f59"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedPackage">
+              <ID name="model" mc="Standard.Package" uid="40267513-6e5d-4d86-9fa6-b933207a431b"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedImport">
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="27c13bd0-d622-4d2a-9056-55bd488e0a70"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="FXCollections" mc="Standard.Class" uid="8a589db2-9833-48c5-b695-9ee5431e3c6b"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="508d9454-8a94-4005-8544-3ff5f0ffef6a"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="ActionEvent" mc="Standard.Class" uid="69447c49-3975-4f23-9f07-1eb4e42b14e1"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="6617e0d3-9b87-4a75-882c-e24c0b82012f"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="EventHandler" mc="Standard.Interface" uid="682b9b3e-09b1-4cd4-a8f7-dad8be556c6e"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="b0df0da2-d664-4ef8-a4b9-4fbdd808b908"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="FXML" mc="Standard.Class" uid="53042fbc-a212-439e-9ab8-82792ebad630"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="bd69d3f7-6b34-4d80-b8a5-8de3a347ef5b"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="FXMLLoader" mc="Standard.Class" uid="61283fcb-b8ad-4357-878e-40200a78e221"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="fa32b63a-21a0-4515-91c8-56c12c317f3d"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="PropertyValueFactory" mc="Standard.Class" uid="d4d3138a-4308-4dc2-9755-cb85434b2ace"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="f3e454f7-e42c-40a1-b9f9-b27a919e4152"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="AnchorPane" mc="Standard.Class" uid="5606f86a-16f0-4474-b123-229accbd7325"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="04b02e7f-478e-48c1-bacf-066134453413"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="GridPane" mc="Standard.Class" uid="3ac5c440-953a-4481-9ed2-b768c3c6088f"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="d4f9178a-3b5f-4970-864c-a27c3a859040"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="Pane" mc="Standard.Class" uid="c9bd58ee-b09d-471e-b6bf-fb03543e6655"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="60ec48af-633c-4e89-9e5c-1757a7903ccc"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="VBox" mc="Standard.Class" uid="76959492-40a4-4d82-9179-37f68a81f714"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

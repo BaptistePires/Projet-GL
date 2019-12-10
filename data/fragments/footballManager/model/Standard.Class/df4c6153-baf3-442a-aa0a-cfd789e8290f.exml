@@ -808,9 +808,9 @@ this.historiqueCarriere = historiqueCarriere;
                 <ID name="" mc="Infrastructure.Note" uid="f685336a-9829-4743-b042-bc0ccfd4963a"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return Objects.equals(getNom(), personne.getNom()) &&
-                        Objects.equals(getPrenom(), personne.getPrenom()) &&
-                        Objects.equals(getDateDeNaissance(), personne.getDateDeNaissance()) &&
-                        Objects.equals(getHistoriqueCarriere(), personne.getHistoriqueCarriere());]]></ATT>
+                                Objects.equals(getPrenom(), personne.getPrenom()) &&
+                                Objects.equals(getDateDeNaissance(), personne.getDateDeNaissance()) &&
+                                Objects.equals(getHistoriqueCarriere(), personne.getHistoriqueCarriere());]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -966,11 +966,11 @@ Personne personne = (Personne) o;
                 <ID name="" mc="Infrastructure.Note" uid="3ca08faf-23be-4b8a-a997-096c3e59795b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Personne{" +
-                        "nom='" + nom + '\'' +
-                        ", prenom='" + prenom + '\'' +
-                        ", dateDeNaissance=" + dateDeNaissance +
-                        ", historiqueCarriere='" + historiqueCarriere + '\'' +
-                        '}';]]></ATT>
+                                "nom='" + nom + '\'' +
+                                ", prenom='" + prenom + '\'' +
+                                ", dateDeNaissance=" + dateDeNaissance +
+                                ", historiqueCarriere='" + historiqueCarriere + '\'' +
+                                '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1010,7 +1010,7 @@ Personne personne = (Personne) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="04b2c5f3-8950-439c-8564-e48647f14136"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dd915cd5-dd30-47f6-9d62-ae1da69ce5c7"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1048,7 +1048,7 @@ Personne personne = (Personne) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="ad4e0f87-2ece-4774-960a-977143048064"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="a6b70787-2c5d-4c3f-bf53-86391d80dd56"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1086,7 +1086,7 @@ Personne personne = (Personne) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9bc2d8cd-8294-401f-a5e7-62cfc9ff926c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e773aaca-3ed3-46c5-a8dd-0e567cc8c236"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -1124,7 +1124,7 @@ Personne personne = (Personne) o;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8c343cd6-0679-4347-9000-b909edeb595c"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="70c160c3-8e88-457d-9450-a2cbcd05874c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

@@ -40,7 +40,7 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         try{
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(nomFichierSource));
             INSTANCE = (PartieSingleton) in.readObject();
-
+        
         }catch(Exception e){
             e.printStackTrace();
             System.err.println("Erreur lors du chargement de la partie "+nomFichierSource+" : "+e.getClass()+" : "+e.getMessage());
@@ -129,10 +129,10 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         if (!(o instanceof PartieSingleton)) return false;
         PartieSingleton that = (PartieSingleton) o;
         return Objects.equals(getNomFichierSauvegarde(), that.getNomFichierSauvegarde()) &&
-                                Objects.equals(getDateCourante(), that.getDateCourante()) &&
-                                Objects.equals(getFifa(), that.getFifa()) &&
-                                Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
-                                Objects.equals(getEntraineur(), that.getEntraineur());
+                                        Objects.equals(getDateCourante(), that.getDateCourante()) &&
+                                        Objects.equals(getFifa(), that.getFifa()) &&
+                                        Objects.equals(getBoiteMail(), that.getBoiteMail()) &&
+                                        Objects.equals(getEntraineur(), that.getEntraineur());
     }
 
     @Override
@@ -143,12 +143,12 @@ public final class PartieSingleton extends NotreObservable implements Serializab
     @Override
     public String toString() {
         return "PartieSingleton{" +
-                                "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
-                                ", dateCourante=" + dateCourante +
-                                ", fifa=" + fifa +
-                                ", boiteMail=" + boiteMail +
-                                ", entraineur=" + entraineur +
-                                '}';
+                                        "nomFichierSauvegarde='" + nomFichierSauvegarde + '\'' +
+                                        ", dateCourante=" + dateCourante +
+                                        ", fifa=" + fifa +
+                                        ", boiteMail=" + boiteMail +
+                                        ", entraineur=" + entraineur +
+                                        '}';
     }
 
     public void avancerLeTempsJusqua(Date date) {
@@ -159,7 +159,11 @@ public final class PartieSingleton extends NotreObservable implements Serializab
             if(evenements==null)continue;
             /* Tri des évenements (Les plus importants en tête de liste) */
             System.out.println("Evenements :"+evenements);
-            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
+            evenements.sort((o1, o2) -> {
+                if(o1.getClass().equals(Journee.class)&&o2.getClass().equals(Match.class))return 1;
+                if(o2.getClass().equals(Journee.class)&&o1.getClass().equals(Match.class))return -1;
+                return Boolean.compare(o2.getImportance(), o1.getImportance());
+            });
         
             /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
              * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
@@ -173,6 +177,9 @@ public final class PartieSingleton extends NotreObservable implements Serializab
             }
         }
         notifier();
+    }
+
+    public void getInstance() {
     }
 
 }

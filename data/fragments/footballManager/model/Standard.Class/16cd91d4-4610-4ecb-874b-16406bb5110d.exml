@@ -102,7 +102,6 @@ final Equipe equipe = equipeInput.getValue();
 Entraineur notreEntraineur = new Entraineur(nom, prenom, dateDeNaissance, historique, equipe);
 PartieSingleton.INSTANCE.initEntraineur(notreEntraineur);
 LanceurDePartie.INSTANCE.sauvegarderPartie();
-//TODO lancer le dashboard
 try{
     Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
 }catch(Exception e){
@@ -158,6 +157,65 @@ try{
     Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../lanceurDePartie.fxml"))));
 }catch(Exception e){
     System.err.println("Echec lors du retour au menu principal : "+e.getClass() + " : "+e.getMessage());
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="tmp" mc="Standard.Operation" uid="9d1fc164-53fb-4c2e-b918-a00e7f22b74e"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[tmp]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="b195a89e-20c2-4cf3-b13f-54deff663d0c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="6ff689c3-b3e5-4c01-8646-8d6f8fae9645"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[final String nom = "Massyl";
+final String prenom = "DJEMAI";
+final String historique = "Hkayti Hkaya";
+final Date dateDeNaissance =Date.from(Instant.EPOCH);
+final Equipe equipe = equipeInput.getItems().get(0);
+Entraineur notreEntraineur = new Entraineur(nom, prenom, dateDeNaissance, historique, equipe);
+PartieSingleton.INSTANCE.initEntraineur(notreEntraineur);
+LanceurDePartie.INSTANCE.sauvegarderPartie();
+try{
+    Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
+}catch(Exception e){
+    e.printStackTrace();
+    System.err.println("Erreur lors de l'affichage de l'ecran principal du jeu : "+e.getClass()+" "+e.getMessage());
 }
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -236,7 +294,7 @@ try{
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="3b54b675-be2b-4ba6-95ad-e6f840607339"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="1eb171c6-4f8b-4a06-b37a-0314c7b2be26"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -327,7 +385,7 @@ try{
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="9ef6f6bc-a03e-47b3-b820-4c3105a26f87"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5fb6fe9f-893f-45d8-a4fd-6b4506c9483c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -418,7 +476,7 @@ try{
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f9e29a15-be68-4b2c-8ef0-8dfb4bba3820"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="bb156114-cd7f-419b-8f47-30fc948b28b3"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -531,7 +589,7 @@ try{
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="e4ce5f46-73b9-4db5-88ab-7f49f4397668"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="110770aa-d136-4aaf-9246-c03e0dc89362"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -622,7 +680,7 @@ try{
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="4350f191-da0a-4f5e-8049-971d2a429f28"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="37cad6e2-e6ea-451f-b4bd-d82bd38f77b2"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -713,7 +771,7 @@ try{
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="0f753dcd-e1e2-4b13-a8b8-3c769730645f"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7674eb49-609d-4fab-bf02-7197a603be4e"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -804,7 +862,7 @@ try{
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="8d1bb791-6606-4051-b1cb-a6fbbb71dd58"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5658582b-00fb-4af1-b7a5-a0d87173502b"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -944,6 +1002,45 @@ try{
         </OBJECT>
         <OBJECT>
           <ID name="" mc="Standard.ElementImport" uid="bd803858-4c55-4463-a356-89488456ada6"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <FOREIGNID name="date" mc="Standard.DataType" uid="00000004-0000-0014-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="b7ad4652-848e-4530-829c-89e933d3e825"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="Instant" mc="Standard.Class" uid="d79bf11a-3642-4840-bfcc-d5f1f5b47923"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="689cb61e-8e38-4b6f-b14f-2d9b5be47ec6"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="ZoneId" mc="Standard.Class" uid="370f34f8-e0c4-49fd-a4fe-f6def25281dc"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="e044713f-e370-4949-b0e5-8bfb22b30fd8"/>
           <ATTRIBUTES>
             <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>

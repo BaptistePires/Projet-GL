@@ -47,8 +47,14 @@
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="41a94cdc-3028-43e0-8342-06eee204bc9b"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[System.out.println("hi");
-dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
+                  <ATT name="Content"><![CDATA[dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
+if(PartieSingleton.INSTANCE.getBoiteMail().getNombreDeMessagesNonLus()!=0){
+    msgNL.setVisible(true);
+    msgNLV.setText(String.valueOf(PartieSingleton.INSTANCE.getBoiteMail().getNombreDeMessagesNonLus()));
+}else{
+    msgNL.setVisible(false);
+    msgNLV.setVisible(false);
+}
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -191,6 +197,29 @@ try{
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="6e47b8e8-c486-45ae-9cc0-54c7efe8e7b9"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[try{
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../afficherMessages.fxml"));
+    VBox dashboard = (VBox) fxmlLoader.load();
+    pane1_1.getChildren().clear();
+    pane1_1.getChildren().add(dashboard);
+}catch(Exception e){
+    e.printStackTrace();
+    System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
@@ -222,6 +251,31 @@ try{
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="1751e41e-6ca3-4f26-a10a-e3da98a6a252"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[try{
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../equipe.fxml"));
+    AnchorPane equipe = (AnchorPane) fxmlLoader.load();
+    EquipeController ec = fxmlLoader.<EquipeController>getController();
+    ec.setEquipe(PartieSingleton.INSTANCE.getEntraineur().getEquipe());
+    pane1_1.getChildren().clear();
+    pane1_1.getChildren().add(equipe);
+}catch(Exception e){
+    e.printStackTrace();
+    System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
@@ -250,6 +304,29 @@ try{
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="8f0eea4f-c5d9-4e7c-a312-22ebd4017378"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[try{
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../ligues.fxml"));
+    AnchorPane ligues = (AnchorPane) fxmlLoader.load();
+    pane1_1.getChildren().clear();
+    pane1_1.getChildren().add(ligues);
+}catch(Exception e){
+    e.printStackTrace();
+    System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
+}
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -343,6 +420,7 @@ try{
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
 PartieSingleton.INSTANCE.sabonner(this);
+miseAJour();
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -412,7 +490,7 @@ PartieSingleton.INSTANCE.sabonner(this);
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="testAction" mc="Standard.Operation" uid="86453332-4fd7-485e-8f26-c93f148ecdba"/>
+          <ID name="strategieAction" mc="Standard.Operation" uid="94583829-2706-4027-9a3d-bf5ada448003"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
             <ATT name="Final">false</ATT>
@@ -420,13 +498,13 @@ PartieSingleton.INSTANCE.sabonner(this);
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[testAction]]></ATT>
+            <ATT name="Name"><![CDATA[strategieAction]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <COMP relation="Descriptor">
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="61e359a1-51a7-49ff-a019-2611f9d13fdd"/>
+                <ID name="" mc="Infrastructure.Note" uid="002cde3d-1446-4a2e-a3bd-976917eb12c5"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@FXML]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -440,7 +518,7 @@ PartieSingleton.INSTANCE.sabonner(this);
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="" mc="Infrastructure.Note" uid="50d97fa4-f6ab-4e0e-bfc4-ac12bd73003e"/>
+                <ID name="" mc="Infrastructure.Note" uid="1bfbbaa0-49a2-4c83-8034-3fd0d00a1ecc"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[try{
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../strategie.fxml"));
@@ -451,6 +529,54 @@ PartieSingleton.INSTANCE.sabonner(this);
     e.printStackTrace();
     System.err.println("Erreur lors de l'affichage du tableau de bord : "+e.getClass()+" "+e.getMessage());
 }
+]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="Infrastructure.NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="sauvegarderAction" mc="Standard.Operation" uid="b6ef049b-d938-4a87-b6d8-0ea71de68884"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[sauvegarderAction]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="a6ede5f9-8988-4285-8b01-8536f676250b"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="4a44af86-9e57-46f9-ad28-b823466e4291"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[LanceurDePartie.INSTANCE.sauvegarderPartie();
+StrategieController.showAlert("Sauvegarde","Partie sauvegardée", "On a sauvegardée votre" +
+        " partie sous le nom "+PartieSingleton.INSTANCE.getNomFichierSauvegarde());
 ]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
@@ -528,7 +654,7 @@ PartieSingleton.INSTANCE.sabonner(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a8a34463-eeca-40e2-942a-c9a3e0a572cf"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="133ac8ce-bec3-4e9e-a0dd-c96f7b28f10d"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -619,7 +745,7 @@ PartieSingleton.INSTANCE.sabonner(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="c6fdc3ca-21fe-4303-af91-d75c349d81b1"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="ff262650-4a12-4bd9-89f5-6a2204fd6643"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -710,7 +836,7 @@ PartieSingleton.INSTANCE.sabonner(this);
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d82608ba-d8ce-40aa-9ec9-df7a8e705058"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="e86ac142-eb99-4960-b84c-30c68093cc60"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -725,6 +851,188 @@ PartieSingleton.INSTANCE.sabonner(this);
             <COMP relation="Descriptor">
               <OBJECT>
                 <ID name="" mc="Infrastructure.Note" uid="d304a424-fff9-41a7-8ea7-94054a7db305"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="msgNL" mc="Standard.AssociationEnd" uid="da5488b0-1991-4c21-83a6-13327025fa8b"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">PackageVisibility</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[msgNL]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Label" mc="Standard.Class" uid="6a391960-d3ac-4cc4-a7f6-0752d5681833"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="343939b0-09c7-4931-bcda-e4aa1c1bad3a"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Private</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="msgNL" mc="Standard.AssociationEnd" uid="da5488b0-1991-4c21-83a6-13327025fa8b"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="1eff96f1-9cc4-4242-a657-21b33fcc0b20"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="1eff96f1-9cc4-4242-a657-21b33fcc0b20"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="aace2683-e7dd-4cd0-9d11-278bc07ff0a0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="66386a52-f2a8-42c9-a250-b55abcc7d8bf"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[@FXML]]></ATT>
+                  <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaAnnotation" mc="Infrastructure.NoteType" uid="000c0b48-0000-3aa1-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="msgNLV" mc="Standard.AssociationEnd" uid="c7195077-4e32-4c93-a3a1-742c921b7704"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">PackageVisibility</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[msgNLV]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Label" mc="Standard.Class" uid="6a391960-d3ac-4cc4-a7f6-0752d5681833"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="3b9c9f8c-b65f-40ba-b359-9e077b7b4bc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Private</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="msgNLV" mc="Standard.AssociationEnd" uid="c7195077-4e32-4c93-a3a1-742c921b7704"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="bef27bcd-ab8b-4ba4-a831-c34b1e0c594b"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="bef27bcd-ab8b-4ba4-a831-c34b1e0c594b"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="7d23fef6-1a0e-48e3-a67f-0bd0e4e3e0fc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Note" uid="38372bb7-26b9-4f7c-9fb6-469ca03a29ce"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[@FXML]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -844,6 +1152,45 @@ PartieSingleton.INSTANCE.sabonner(this);
           <DEPENDENCIES>
             <LINK relation="ImportedElement">
               <ID name="PartieSingleton" mc="Standard.Class" uid="c6f5fecf-3cf5-43b9-a196-0135700448f3"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="097751b5-2518-4a70-926b-916a74517085"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="Dialog" mc="Standard.Class" uid="269cb023-9549-406a-9470-1cd8890e2a76"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="6a506e0d-d7f5-4ae9-8c2e-58c11d1fd0b5"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="Equipe" mc="Standard.Class" uid="d4ffd317-0439-45de-ad94-66b22dbcc129"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.ElementImport" uid="1e60ddd3-dfb2-4c79-883e-2be28ce88934"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="LanceurDePartie" mc="Standard.Class" uid="240444ea-6d5d-489b-97a6-896a976b60be"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

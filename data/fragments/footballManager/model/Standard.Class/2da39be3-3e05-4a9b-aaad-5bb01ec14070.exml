@@ -503,8 +503,8 @@ Transfert transfert = (Transfert) o;
                 <ID name="" mc="Infrastructure.Note" uid="62be7e30-2e34-4d0a-b681-7bad6915651b"/>
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[return "Transfert{" +
-                        "contrat=" + contrat +
-                        '}';]]></ATT>
+                                "contrat=" + contrat +
+                                '}';]]></ATT>
                   <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -581,7 +581,7 @@ Transfert transfert = (Transfert) o;
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="a8d95941-5afa-4f6c-a5f9-156c4a8597e1"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="dfe123fc-473f-46f4-a1da-f2ddce4857c6"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

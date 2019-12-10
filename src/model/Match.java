@@ -84,10 +84,10 @@ public class Match extends Evenement implements Serializable {
         if (!(o instanceof Match)) return false;
         Match match = (Match) o;
         return Objects.equals(equipe1, match.equipe1) &&
-                                Objects.equals(equipe2, match.equipe2) &&
-                                Objects.equals(arbitre, match.arbitre) &&
-                                Objects.equals(statistiques, match.statistiques) &&
-                                Objects.equals(stade, match.stade);
+                                        Objects.equals(equipe2, match.equipe2) &&
+                                        Objects.equals(arbitre, match.arbitre) &&
+                                        Objects.equals(statistiques, match.statistiques) &&
+                                        Objects.equals(stade, match.stade);
     }
 
     @Override
@@ -98,12 +98,12 @@ public class Match extends Evenement implements Serializable {
     @Override
     public String toString() {
         return "Match{" +
-                                "equipe1=" + equipe1 +
-                                ", equipe2=" + equipe2 +
-                                ", arbitre=" + arbitre +
-                                ", statistiques=" + statistiques +
-                                ", stade=" + stade +
-                                '}';
+                                        "equipe1=" + equipe1 +
+                                        ", equipe2=" + equipe2 +
+                                        ", arbitre=" + arbitre +
+                                        ", statistiques=" + statistiques +
+                                        ", stade=" + stade +
+                                        '}';
     }
 
 }

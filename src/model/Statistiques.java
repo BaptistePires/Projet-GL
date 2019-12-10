@@ -62,9 +62,9 @@ public class Statistiques implements Serializable {
         if (!(o instanceof Statistiques)) return false;
         Statistiques that = (Statistiques) o;
         return Objects.equals(getStatistiquesEquipeB(), that.getStatistiquesEquipeB()) &&
-                        Objects.equals(getStatistiquesEquipeA(), that.getStatistiquesEquipeA()) &&
-                        Objects.equals(getStatistiquesJoueursA(), that.getStatistiquesJoueursA()) &&
-                        Objects.equals(getStatistiquesJoueursB(), that.getStatistiquesJoueursB());
+                                Objects.equals(getStatistiquesEquipeA(), that.getStatistiquesEquipeA()) &&
+                                Objects.equals(getStatistiquesJoueursA(), that.getStatistiquesJoueursA()) &&
+                                Objects.equals(getStatistiquesJoueursB(), that.getStatistiquesJoueursB());
     }
 
     @Override
@@ -75,11 +75,11 @@ public class Statistiques implements Serializable {
     @Override
     public String toString() {
         return "Statistiques{" +
-                        "statistiquesEquipeB=" + statistiquesEquipeB +
-                        ", statistiquesEquipeA=" + statistiquesEquipeA +
-                        ", statistiquesJoueursA=" + statistiquesJoueursA +
-                        ", statistiquesJoueursB=" + statistiquesJoueursB +
-                        '}';
+                                "statistiquesEquipeB=" + statistiquesEquipeB +
+                                ", statistiquesEquipeA=" + statistiquesEquipeA +
+                                ", statistiquesJoueursA=" + statistiquesJoueursA +
+                                ", statistiquesJoueursB=" + statistiquesJoueursB +
+                                '}';
     }
 
 }

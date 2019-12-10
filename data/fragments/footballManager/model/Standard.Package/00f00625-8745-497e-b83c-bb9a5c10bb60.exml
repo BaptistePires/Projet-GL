@@ -15,6 +15,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="ActionEvent" mc="Standard.Class" uid="69447c49-3975-4f23-9f07-1eb4e42b14e1"/>
+        <COMPID name="EventHandler" mc="Standard.Interface" uid="682b9b3e-09b1-4cd4-a8f7-dad8be556c6e"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

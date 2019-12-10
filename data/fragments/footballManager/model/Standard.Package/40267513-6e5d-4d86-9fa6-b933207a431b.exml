@@ -30,7 +30,6 @@
         <COMPID name="President" mc="Standard.Class" uid="6c0bfd95-523b-4303-bf50-8494bdd0b1a2"/>
         <COMPID name="Entraineur" mc="Standard.Class" uid="a62c656b-c477-4c32-ac07-3cd92a19b277"/>
         <COMPID name="PartieSingleton" mc="Standard.Class" uid="c6f5fecf-3cf5-43b9-a196-0135700448f3"/>
-        <COMPID name="Mercato" mc="Standard.Class" uid="d86b3a2c-a5f4-468f-9787-921dea9810ed"/>
         <COMPID name="Equipe" mc="Standard.Class" uid="d4ffd317-0439-45de-ad94-66b22dbcc129"/>
         <COMPID name="Personne" mc="Standard.Class" uid="df4c6153-baf3-442a-aa0a-cfd789e8290f"/>
         <COMPID name="Strategie" mc="Standard.Class" uid="0fbfb446-6ecc-4850-a2a8-44a9d55ccf33"/>

@@ -45,8 +45,8 @@ public class Transfert extends Evenement implements Serializable {
     @Override
     public String toString() {
         return "Transfert{" +
-                                "contrat=" + contrat +
-                                '}';
+                                        "contrat=" + contrat +
+                                        '}';
     }
 
 }

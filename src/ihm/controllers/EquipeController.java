@@ -1,5 +1,6 @@
 package ihm.controllers;
 
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,33 +13,71 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import model.*;
-
-import java.util.Date;
+import model.Equipe;
 
 public class EquipeController {
-    @FXML Label nomEquipeLabel;
-    @FXML Label nomLigueLabel;
-    @FXML Label stadeDescLabel;
-    @FXML Label nomPresidentLabel;
-    @FXML Label nomEntraineurLabel;
-    @FXML TextArea histoireTextArea;
+    @FXML
+     Label nomEquipeLabel;
 
-    @FXML TableView<Joueur> joueursTV;
+    @FXML
+     Label nomLigueLabel;
 
-    @FXML TableColumn<Joueur, Poste>  posteCol;
-    @FXML TableColumn<Joueur, String> nomCol;
-    @FXML TableColumn<Joueur, String> prenomCol;
-    @FXML TableColumn<Joueur, Date> naissCol;
-    @FXML TableColumn<Joueur, Integer> phyCol;
-    @FXML TableColumn<Joueur, Integer> moralCol;
-    @FXML TableColumn<Joueur, Integer> defCol;
-    @FXML TableColumn<Joueur, Integer> milCol;
-    @FXML TableColumn<Joueur, Integer> attCol;
-    @FXML TableColumn<Joueur, Integer> noteCol;
-    @FXML TableColumn<Joueur, Integer> butCol;
-    @FXML TableColumn<Joueur, Integer> pdCol;
-    @FXML TableColumn<Joueur, Integer> jCol;
-    @FXML TableColumn<Joueur, Integer> rCol;
+    @FXML
+     Label stadeDescLabel;
+
+    @FXML
+     Label nomPresidentLabel;
+
+    @FXML
+     Label nomEntraineurLabel;
+
+    @FXML
+     TextArea histoireTextArea;
+
+    @FXML
+     TableView<Joueur> joueursTV;
+
+    @FXML
+     TableColumn<Joueur,Poste> posteCol;
+
+    @FXML
+     TableColumn<Joueur,String> nomCol;
+
+    @FXML
+     TableColumn<Joueur,String> prenomCol;
+
+    @FXML
+     TableColumn<Joueur,Date> naissCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> phyCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> moralCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> defCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> milCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> attCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> noteCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> butCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> pdCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> jCol;
+
+    @FXML
+     TableColumn<Joueur,Integer> rCol;
 
     private Equipe equipe;
 
@@ -76,7 +115,8 @@ public class EquipeController {
         }
     }
 
-    @FXML public void toMenuPrincipal(){
+    @FXML
+    public void toMenuPrincipal() {
         try{
             Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
         }catch(Exception e){
@@ -85,7 +125,7 @@ public class EquipeController {
         }
     }
 
-    public void init(){
+    public void init() {
         if(equipe==null) return;
         nomEquipeLabel.setText(equipe.getNom());
         nomPresidentLabel.setText(equipe.getPresident().getNom() + " " + equipe.getPresident().getPrenom());
@@ -94,7 +134,7 @@ public class EquipeController {
         nomEntraineurLabel.setText(equipe.getEntraineur().getNom()+" "+equipe.getEntraineur().getPrenom());
         histoireTextArea.setEditable(false);
         histoireTextArea.setText(equipe.getHistoireDuClub());
-
+        
         posteCol.setCellValueFactory(new PropertyValueFactory<Joueur, Poste>("poste"));
         nomCol.setCellValueFactory(new PropertyValueFactory<Joueur, String>("nom"));
         prenomCol.setCellValueFactory(new PropertyValueFactory<Joueur, String>("prenom"));
@@ -109,8 +149,13 @@ public class EquipeController {
         pdCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("nbPasseDecisiveSaison"));
         jCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("nbCartonJauneSaison"));
         rCol.setCellValueFactory(new PropertyValueFactory<Joueur, Integer>("nbCartonRougeSaison"));
-
+        
         joueursTV.setItems(FXCollections.observableArrayList(equipe.getJoueurs()));
-
     }
+
+    @FXML
+    public void initialize() {
+        if(equipe!=null)init();
+    }
+
 }
