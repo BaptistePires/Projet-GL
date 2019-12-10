@@ -96,6 +96,7 @@ public class AdministrationController {
     @FXML
     public void initialize() {
         Platform.runLater(() -> {
+
             equipe = PartieSingleton.INSTANCE.getEntraineur().getEquipe();
             labelTrasnfert.setText(Integer.toString(equipe.getBudgetTransferts()));
             labelMasse.setText(Integer.toString(equipe.getMasseSalariale()));

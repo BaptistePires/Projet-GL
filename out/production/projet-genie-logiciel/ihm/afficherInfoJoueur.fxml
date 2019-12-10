@@ -10,69 +10,69 @@
    <children>
       <AnchorPane prefHeight="439.0" prefWidth="620.0">
          <children>
-            <Label layoutX="29.0" layoutY="29.0" style="-fx-font-weight: 900;" text="Nom du joueur" textFill="#111111">
+            <Label layoutX="323.0" layoutY="234.0" style="-fx-font-weight: 900;" text="Nom du joueur" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="nomJoueur" alignment="CENTER" layoutX="145.0" layoutY="30.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textOverrun="WORD_ELLIPSIS" />
-            <Label layoutX="29.0" layoutY="61.0" style="-fx-font-weight: 900;" text="Etat physique" textFill="#111111">
+            <Label fx:id="nomJoueur" alignment="CENTER" layoutX="439.0" layoutY="235.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textOverrun="WORD_ELLIPSIS" />
+            <Label layoutX="323.0" layoutY="266.0" style="-fx-font-weight: 900;" text="Etat physique" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="etatPhysiqueJoueur" alignment="CENTER" layoutX="142.0" layoutY="62.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
-            <Label layoutX="29.0" layoutY="93.0" style="-fx-font-weight: 900;" text="Etat moral" textFill="#111111">
+            <Label fx:id="etatPhysiqueJoueur" alignment="CENTER" layoutX="436.0" layoutY="267.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
+            <Label layoutX="323.0" layoutY="298.0" style="-fx-font-weight: 900;" text="Etat moral" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="190.0" style="-fx-font-weight: 900;" text="Défense" textFill="#111111">
+            <Label layoutX="323.0" layoutY="395.0" style="-fx-font-weight: 900;" text="Défense" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="157.0" style="-fx-font-weight: 900;" text="Millieu" textFill="#111111">
+            <Label layoutX="323.0" layoutY="362.0" style="-fx-font-weight: 900;" text="Millieu" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="123.0" style="-fx-font-weight: 900;" text="Attaque" textFill="#111111">
+            <Label layoutX="323.0" layoutY="328.0" style="-fx-font-weight: 900;" text="Attaque" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="222.0" style="-fx-font-weight: 900;" text="Poste" textFill="#111111">
+            <Label layoutX="323.0" layoutY="427.0" style="-fx-font-weight: 900;" text="Poste" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="254.0" style="-fx-font-weight: 900;" text="Equipe" textFill="#111111">
+            <Label layoutX="323.0" layoutY="459.0" style="-fx-font-weight: 900;" text="Equipe" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="300.0" layoutY="29.0" style="-fx-font-weight: 900;" text="Note Performances" textFill="#111111">
+            <Label layoutX="594.0" layoutY="234.0" style="-fx-font-weight: 900;" text="Note Performances" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="300.0" layoutY="61.0" style="-fx-font-weight: 900;" text="Nombre buts cette saison" textFill="#111111">
+            <Label layoutX="594.0" layoutY="266.0" style="-fx-font-weight: 900;" text="Nombre buts cette saison" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="300.0" layoutY="93.0" style="-fx-font-weight: 900;" text="Nombre de passes décisives" textFill="#111111">
+            <Label layoutX="594.0" layoutY="298.0" style="-fx-font-weight: 900;" text="Nombre de passes décisives" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="300.0" layoutY="123.0" style="-fx-font-weight: 900;" text="Nombre carton jaunes" textFill="#111111">
+            <Label layoutX="594.0" layoutY="328.0" style="-fx-font-weight: 900;" text="Nombre carton jaunes" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="300.0" layoutY="157.0" style="-fx-font-weight: 900;" text="Nombre carton rouges" textFill="#111111">
+            <Label layoutX="594.0" layoutY="362.0" style="-fx-font-weight: 900;" text="Nombre carton rouges" textFill="#111111">
                <font>
                   <Font size="14.0" />
                </font>
