@@ -8,29 +8,29 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.ProposerContratController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="801.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.ProposerContratController">
     <children>
-        <AnchorPane prefHeight="434.0" prefWidth="600.0" styleClass="bgAfficherJoueur" stylesheets="@style/styles.css">
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="803.0" prefWidth="1203.0" style="-fx-background-color: #ab7878;" stylesheets="@style/styles.css">
             <children>
-                <Label fx:id="nomJoueur" alignment="CENTER" layoutX="-1.0" layoutY="22.0" prefHeight="27.0" prefWidth="600.0" style="-fx-font-weight: 900;" stylesheets="@style/styles.css" text="Proposez un contrat à :  nom joueur">
+                <Label fx:id="nomJoueur" alignment="CENTER" layoutX="302.0" layoutY="237.0" prefHeight="27.0" prefWidth="600.0" style="-fx-font-weight: 900;" stylesheets="@style/styles.css" text="Proposez un contrat à :  nom joueur">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <DatePicker fx:id="dateDebut" layoutX="332.0" layoutY="78.0" />
-                <DatePicker fx:id="dateFin" layoutX="332.0" layoutY="139.0" />
-                <Label fx:id="labelDebut" layoutX="118.0" layoutY="82.0" text="Date de début du contrat" />
-                <Label fx:id="labelDebut1" layoutX="128.0" layoutY="143.0" text="Date de findu contrat" />
-                <TextField fx:id="inputMontantTransfert" layoutX="332.0" layoutY="200.0" prefHeight="26.0" prefWidth="174.0" />
-                <Label fx:id="labelDebut11" layoutX="129.0" layoutY="204.0" text="Montant du transfert" />
-                <Label layoutX="128.0" layoutY="260.0" text="Salaire annuel (euros)" />
-                <Button layoutX="126.0" layoutY="326.0" mnemonicParsing="false" onAction="#soumettreContrat" text="Proposer le contrat" />
-                <Button layoutX="406.0" layoutY="326.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+                <DatePicker fx:id="dateDebut" layoutX="635.0" layoutY="293.0" />
+                <DatePicker fx:id="dateFin" layoutX="635.0" layoutY="354.0" />
+                <Label fx:id="labelDebut" layoutX="421.0" layoutY="297.0" text="Date de début du contrat" />
+                <Label fx:id="labelDebut1" layoutX="431.0" layoutY="358.0" text="Date de findu contrat" />
+                <TextField fx:id="inputMontantTransfert" layoutX="635.0" layoutY="415.0" prefHeight="26.0" prefWidth="174.0" />
+                <Label fx:id="labelDebut11" layoutX="432.0" layoutY="419.0" text="Montant du transfert" />
+                <Label layoutX="431.0" layoutY="475.0" text="Salaire annuel (euros)" />
+                <Button layoutX="429.0" layoutY="541.0" mnemonicParsing="false" onAction="#soumettreContrat" text="Proposer le contrat" />
+                <Button layoutX="709.0" layoutY="541.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
             <Label fx:id="alertDebut" layoutX="332.0" layoutY="112.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
             <Label fx:id="alertFin" layoutX="332.0" layoutY="172.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
             <Label fx:id="alertMontant" layoutX="332.0" layoutY="232.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
             <Label fx:id="alertSalaire" layoutX="332.0" layoutY="291.0" prefHeight="18.0" prefWidth="174.0" textFill="RED" />
-            <TextField fx:id="inputSalaire" layoutX="332.0" layoutY="255.0" prefHeight="26.0" prefWidth="174.0" />
+            <TextField fx:id="inputSalaire" layoutX="635.0" layoutY="470.0" prefHeight="26.0" prefWidth="174.0" />
             </children>
         </AnchorPane>
     </children>

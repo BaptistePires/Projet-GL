@@ -100,9 +100,7 @@ public class AfficherInfoJoueurController {
 
 
     @FXML
-    void loadJoueur(ActionEvent event) {
-        j = new Joueur("Didier", "Drogba", new Date(), "cc");
-        j.configure(2,5,8,46,95, 65, 26, 62, 26, 26, Poste.ATT, null, null);
+    public void initialize(){
         nomJoueur.setText(j.getNom() + " " + j.getPrenom());
         etatPhysiqueJoueur.setText(Integer.toString(j.getEtatPhysique()));
         etatMoralJoueur.setText(Integer.toString(j.getMoral()));
@@ -118,4 +116,23 @@ public class AfficherInfoJoueurController {
         nbCartonsJauneSaison.setText(Integer.toString(j.getNbCartonJauneSaison()));
         nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
     }
+//    @FXML
+//    void loadJoueur(ActionEvent event) {
+//        j = new Joueur("Didier", "Drogba", new Date(), "cc");
+//        j.configure(2,5,8,46,95, 65, 26, 62, 26, 26, Poste.ATT, null, null);
+//        nomJoueur.setText(j.getNom() + " " + j.getPrenom());
+//        etatPhysiqueJoueur.setText(Integer.toString(j.getEtatPhysique()));
+//        etatMoralJoueur.setText(Integer.toString(j.getMoral()));
+//        attaque.setText(Integer.toString(j.getAttaque()));
+//        millieu.setText(Integer.toString(j.getMillieu()));
+//        defense.setText(Integer.toString(j.getDefense()));
+////        poste.setText(Integer.toString(j.getPoste()));
+//
+////        equipe.setText(j.getEquipe().getNom());
+//        notePerfs.setText(Integer.toString(j.getNotePerformancesRecentes()));
+//        nbButsSaison.setText(Integer.toString(j.getNbButsSaison()));
+//        nbPassesDecSaison.setText(Integer.toString(j.getNbPasseDecisiveSaison()));
+//        nbCartonsJauneSaison.setText(Integer.toString(j.getNbCartonJauneSaison()));
+//        nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
+//    }
 }
