@@ -31,6 +31,8 @@ public final class PartieSingleton extends NotreObservable implements Serializab
         dateCourante.setJourCourant(new GregorianCalendar(2019, Calendar.JULY, 1).getTime());
         initFifa();
         INSTANCE = this;
+        Information i = Information.generateInformation("Création de nouvelle partie texte","Création de partie titre", dateCourante.getJourCourant());
+        i.executerEvenement();
         //L'initialisation de l'entraineur se fait au moment ou l'utilisateur saisit ses infos
     }
 

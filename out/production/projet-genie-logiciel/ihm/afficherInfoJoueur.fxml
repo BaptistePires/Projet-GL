@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherInfoJoueurController">
+<VBox fx:id="vb" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ab7878;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherInfoJoueurController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="514.0" stylesheets="@style/styles.css">
+      <AnchorPane prefHeight="439.0" prefWidth="620.0">
          <children>
             <Label layoutX="29.0" layoutY="29.0" style="-fx-font-weight: 900;" text="Nom du joueur" textFill="#111111">
                <font>
@@ -91,13 +90,8 @@
             <Label fx:id="equipe" alignment="CENTER" layoutX="142.0" layoutY="255.0" prefHeight="18.0" prefWidth="114.0" style="-fx-font-weight: 600;" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" />
             <Button fx:id="btnRetour" layoutX="349.0" layoutY="337.0" mnemonicParsing="false" onAction="#retourCallBack" text="Retour" />
             <Button fx:id="btnProposerContrat" layoutX="141.0" layoutY="337.0" mnemonicParsing="false" onAction="#proposerContratCallBack" text="Proposer un contrat" />
-            <Button fx:id="btnProposerContrat1" layoutX="322.0" layoutY="265.0" mnemonicParsing="false" onAction="#loadJoueur" text="Load joueur( temp)" />
             <Label fx:id="alertMerca" layoutX="185.0" layoutY="310.0" textFill="RED" />
          </children>
-         <styleClass>
-            <String fx:value="bgAfficherJoueur" />
-            <String fx:value="bgAfficherJoueur" />
-         </styleClass>
       </AnchorPane>
    </children>
 </VBox>

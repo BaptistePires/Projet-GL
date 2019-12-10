@@ -53,8 +53,9 @@ public class StrategieController {
     TableColumn<Joueur,Integer> cartonJCol;
     @FXML
     TableColumn<Joueur,Integer> butsCol;
-    @FXML
-    public void initialize(){
+
+
+    @FXML public void initialize(){
         final List<Joueur> joueursAChoisir = new ArrayList<Joueur>(PartieSingleton.INSTANCE.getEntraineur().getEquipe().getJoueurs());
         final ObservableList<Joueur> observableAjouterJoueur = FXCollections.observableArrayList(joueursAChoisir);
         ajouterJoueurChoice.setItems(observableAjouterJoueur);
@@ -122,8 +123,7 @@ public class StrategieController {
         attaqueSpinner.setEditable(true);
         aggressiviteSpinner.setEditable(true);
     }
-    @FXML
-    public void validerAction(){
+    @FXML public void validerAction(){
         if(retirerJoueurChoice.getItems()==null || retirerJoueurChoice.getItems().size()!=11){
             showAlert("Attention","Incohérence","Il faut avoir exactement 11 joueurs dans la formation");
             return;
@@ -176,8 +176,7 @@ public class StrategieController {
             }
         }
     }
-    @FXML
-    public void annulerAction(){
+    @FXML public void annulerAction(){
         try{
             Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../ecranDuJeu.fxml"))));
         }catch(Exception e){

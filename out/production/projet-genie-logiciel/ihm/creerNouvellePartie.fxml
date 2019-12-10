@@ -84,5 +84,6 @@
             <Insets />
          </opaqueInsets>
       </HBox>
+      <Button mnemonicParsing="false" onAction="#tmp" text="tmp" GridPane.columnIndex="2" GridPane.rowIndex="6" />
    </children>
 </GridPane>
