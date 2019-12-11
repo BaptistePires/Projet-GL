@@ -1892,6 +1892,9 @@ if(dateValue != null) {
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="ProposerContratController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="9db69e2f-766b-44b7-9c76-e52000ade8c9"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

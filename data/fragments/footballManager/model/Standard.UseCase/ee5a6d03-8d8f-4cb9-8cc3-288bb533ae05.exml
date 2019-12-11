@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Consulter les informations de l'administration" version="4">
   <OBJECT>
     <ID name="Consulter les informations de l'administration" mc="Standard.UseCase" uid="ee5a6d03-8d8f-4cb9-8cc3-288bb533ae05"/>
-    <PID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+    <PID name="Use Cases" mc="Standard.Package" uid="e83a9449-bdc3-43e3-831a-5a69fcbf769e"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -13,55 +13,9 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
-      <COMP relation="Used">
-        <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="c7fcf78f-49d0-4de0-afb8-ea0e5cedcebe"/>
-          <ATTRIBUTES>
-            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="Demander d'allouer plus de masse salariale" mc="Standard.UseCase" uid="1fe12c9c-9def-495b-bb88-b658544d073a"/>
-            </LINK>
-            <LINK relation="Extension">
-              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="6654f480-40a7-4944-81f4-1ed286ce2b29"/>
-          <ATTRIBUTES>
-            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="Demander un budget des transferts plus important" mc="Standard.UseCase" uid="b27552cb-d86d-41e5-bf60-29c5dc825cf3"/>
-            </LINK>
-            <LINK relation="Extension">
-              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="94a05c68-299f-4218-9b25-21117f4951ff"/>
-          <ATTRIBUTES>
-            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="Demander d'allouer plus de budget pour les team building" mc="Standard.UseCase" uid="1236615b-e8f2-4c9c-946c-9e54e4d6c31d"/>
-            </LINK>
-            <LINK relation="Extension">
-              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-      </COMP>
       <COMP relation="OwnedBehavior">
-        <COMPID name="Interaction" mc="Standard.Interaction" uid="d99bde82-3a46-4392-bf5b-b2ba2b852458"/>
+        <COMPID name="Interaction - Consulter les informations de l'administration" mc="Standard.Interaction" uid="aecd1a29-2220-455a-be78-5a594e7ef174"/>
+        <COMPID name="Interaction - Demander augmentation des budgets" mc="Standard.Interaction" uid="8d507c97-134a-4913-bf02-6f0b323ab518"/>
       </COMP>
       <COMP relation="Descriptor">
         <OBJECT>

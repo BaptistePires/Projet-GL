@@ -3766,6 +3766,9 @@ equipeVT2.setItems(FXCollections.observableArrayList(statistiques.getStatistique
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="StatistiquesMatchController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="4d5be502-2611-434b-8f3f-97cd66dd346d"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

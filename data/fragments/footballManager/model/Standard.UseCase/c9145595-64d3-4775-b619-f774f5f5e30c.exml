@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Consulter les informations des Ligues" version="4">
   <OBJECT>
     <ID name="Consulter les informations des Ligues" mc="Standard.UseCase" uid="c9145595-64d3-4775-b619-f774f5f5e30c"/>
-    <PID name="footballmanagerUseCases" mc="Standard.Package" uid="5e9c93c1-3a46-44ee-8c25-bd80408c5c42"/>
+    <PID name="Use Cases" mc="Standard.Package" uid="e83a9449-bdc3-43e3-831a-5a69fcbf769e"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>

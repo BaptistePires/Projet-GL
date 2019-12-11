@@ -2647,6 +2647,9 @@ alert.showAndWait();
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="StrategieController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="ccbfc9dd-f534-4dd3-9760-b9db8680944c"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

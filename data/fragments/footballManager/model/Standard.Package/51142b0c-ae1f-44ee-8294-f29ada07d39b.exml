@@ -19,6 +19,10 @@
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="ihm (subpackage_structure_autodiagram)" mc="Standard.ClassDiagram" uid="0c034ea9-6b39-4035-abe1-efb18517e1d5"/>
+        <COMPID name="controllers (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="801e79e0-c3ed-42a9-a8ce-4303f53b7dd9"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

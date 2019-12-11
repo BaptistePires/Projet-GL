@@ -7,6 +7,10 @@
       <ATT name="Name"><![CDATA[footballManager]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
-    <DEPENDENCIES></DEPENDENCIES>
+    <DEPENDENCIES>
+      <COMP relation="Sub">
+        <COMPID name="Auto Diagrams" mc="Infrastructure.DiagramSet" uid="c32db24f-5a59-4f00-bb58-c59d6d2d7b8a"/>
+      </COMP>
+    </DEPENDENCIES>
   </OBJECT>
 </EXT>
