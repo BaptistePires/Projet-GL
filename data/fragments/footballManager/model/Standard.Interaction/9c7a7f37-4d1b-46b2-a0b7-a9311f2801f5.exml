@@ -13,7 +13,7 @@
         <OBJECT>
           <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="68847d52-2755-4ed0-9b22-bc7749755030"/>
           <ATTRIBUTES>
-            <ATT name="LineNumber">50</ATT>
+            <ATT name="LineNumber">71</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -25,7 +25,7 @@
                   <ATT name="Argument"></ATT>
                   <ATT name="KindOfMessage">CompleteKind</ATT>
                   <ATT name="SortOfMessage">SyncCall</ATT>
-                  <ATT name="Sequence"><![CDATA[1]]></ATT>
+                  <ATT name="Sequence"><![CDATA[2]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -53,7 +53,7 @@
         <OBJECT>
           <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="5162abb3-d667-490d-87b7-85f1b58d316b"/>
           <ATTRIBUTES>
-            <ATT name="LineNumber">50</ATT>
+            <ATT name="LineNumber">71</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -73,7 +73,7 @@
         <OBJECT>
           <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="c37a0dc9-69b0-43cb-b9e5-76e19902b21d"/>
           <ATTRIBUTES>
-            <ATT name="LineNumber">1700</ATT>
+            <ATT name="LineNumber">1721</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -108,7 +108,7 @@
         <OBJECT>
           <ID name="" mc="Standard.ExecutionSpecification" uid="46ffee12-564a-448a-ae5f-b180f66c9fea"/>
           <ATTRIBUTES>
-            <ATT name="LineNumber">50</ATT>
+            <ATT name="LineNumber">71</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -128,7 +128,7 @@
         <OBJECT>
           <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="97b7a8a0-a565-462d-bc24-f29e5cf78f84"/>
           <ATTRIBUTES>
-            <ATT name="LineNumber">1700</ATT>
+            <ATT name="LineNumber">1721</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
@@ -1585,7 +1585,7 @@
                   <ATT name="Argument"></ATT>
                   <ATT name="KindOfMessage">CompleteKind</ATT>
                   <ATT name="SortOfMessage">SyncCall</ATT>
-                  <ATT name="Sequence"><![CDATA[2]]></ATT>
+                  <ATT name="Sequence"><![CDATA[1]]></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
@@ -2304,7 +2304,7 @@
         </OBJECT>
       </COMP>
       <COMP relation="Product">
-        <COMPID name="Sequence Diagram - Consulter les informations de l'administrationConsulter les informations des joueurs" mc="Standard.SequenceDiagram" uid="a8624921-ac00-4391-bd77-e9ba1ccc7c16"/>
+        <COMPID name="Sequence Diagram - Consulter les informations des joueurs" mc="Standard.SequenceDiagram" uid="a8624921-ac00-4391-bd77-e9ba1ccc7c16"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

@@ -279,6 +279,9 @@
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="NotreObservable (structure_autodiagram)" mc="Standard.ClassDiagram" uid="5b025d60-384a-4167-aa92-034f344553a5"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

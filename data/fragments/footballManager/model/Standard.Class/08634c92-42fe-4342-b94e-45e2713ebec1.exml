@@ -654,6 +654,9 @@ this.titre = titre;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Information (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6cc5d1da-3ea8-4f03-90ca-7555a8c92df9"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

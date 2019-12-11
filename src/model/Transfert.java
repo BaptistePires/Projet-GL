@@ -12,7 +12,8 @@ public class Transfert extends Evenement implements Serializable {
 
     public void executerEvenement() {
         PartieSingleton.INSTANCE.getBoiteMail().addMessage(new Message("Un transfert s'est passé pour le joueur  "
-                +contrat.getPersonne().getNom()," et le club "+contrat.getEquipeDestination(), getDateDeLEvenement()));
+                +contrat.getPersonne().getNom()," et le club "+contrat.getEquipeDestination(),
+                getDateDeLEvenement()));
     }
 
     public void apresEvenement() {

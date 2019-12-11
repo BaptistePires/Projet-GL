@@ -1,5 +1,8 @@
-#Tue Dec 10 18:42:47 CET 2019
+#Wed Dec 11 18:31:26 CET 2019
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.development.perspective.parentId=app.ui.ext_com.partstack.bottom
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.diagram.perspective.parentId=app.ui.ext_com.partstack.right
+org.modelio.diagram.editor.OpenedDiagrams2='Interaction - Sauvegarder une partie' {a77eb172-b0b4-4aec-9ba0-15007388a06a} Standard.SequenceDiagram
+org.modelio.diagram.editor.OpenedDiagrams1='Interaction - Cr\u00E9er une nouvelle partie' {0241f28b-c561-4395-831d-4544d25b6c17} Standard.SequenceDiagram
+org.modelio.diagram.editor.OpenedDiagrams0='Interaction - Charger une partie' {0c2e5f5a-80fc-43a7-8b72-abe55239d8ed} Standard.SequenceDiagram
 org.modelio.module.propertytab.JavaDesigner\ v3.8.01\ GModule\ @file\:///home/llo0702/.modelio/3.8/modules/JavaDesigner_3.8.01/JavaDesigner_3.8.01.jmdac\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts

@@ -497,6 +497,9 @@ sauvegarderPartie();
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
+      <COMP relation="Product">
+        <COMPID name="LanceurDePartie (structure_autodiagram)" mc="Standard.ClassDiagram" uid="a4661568-c20e-44f6-aef5-5f3380fd1194"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

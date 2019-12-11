@@ -655,6 +655,9 @@ Fifa fifa = (Fifa) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Fifa (structure_autodiagram)" mc="Standard.ClassDiagram" uid="63058543-5dd3-4c36-8676-4786650a863c"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

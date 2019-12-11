@@ -9,7 +9,6 @@
     </ATTRIBUTES>
     <DEPENDENCIES>
       <LINK relation="ReferencedDiagram">
-        <ID name="ihm (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="fa0544d9-e81b-4a43-a43f-3dd696cd9f48"/>
         <ID name="controllers (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="801e79e0-c3ed-42a9-a8ce-4303f53b7dd9"/>
       </LINK>
     </DEPENDENCIES>

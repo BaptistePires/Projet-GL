@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>Document</title>
+  <meta content="Document Publisher, www.modeliosoft.com/" name="generator"/>
+	<link href="docp-print.css" media="print" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript">
+     function hideLoading() {
+          document.getElementById('divLoading').style.display = "none";
+          document.getElementById('divFrameHolder').style.display = "block";
+     }
+   
+     function getPageName(url) {
+          var index = url.lastIndexOf("/") + 1;
+          var filenameWithExtension = url.substr(index);
+          var filename = filenameWithExtension.split(".")[0];
+          return filename;
+     }
+  
+     function updateSidebarFrameSrc() {
+          var currentpagename = getPageName(window.location.pathname);
+          document.getElementById("sidebar_frame").src="index.html?page=" + currentpagename;
+     }  
+  
+     if (window.addEventListener)
+          window.addEventListener("load", updateSidebarFrameSrc, false);
+     else if (window.attachEvent)
+          window.attachEvent("onload", updateSidebarFrameSrc);
+     else 
+          window.onload = updateSidebarFrameSrc;
+  </script> 
+  <link href="default.css" media="screen" rel="stylesheet" type="text/css"/></head>
+  <body>
+    <div id="container">        
+      <div id="content">          
+        <div id="header">            
+          <div id="logo"><img src="img/logo.png"/></div>
+          <h1 class="documentTitle">Document</h1>
+          <h2 class="documentType">Subject</h2>            
+        </div>
+				<div id="gTable">
+					<div id="tSidebar"><div id="divLoading"><img alt="" src="img/ajax-loader.gif"/></div><div id="divFrameHolder"><iframe frameborder="0" id="sidebar_frame" src="index.html"><p>Votre navigateur ne supporte pas les iframes.</p></iframe></div><script type="text/javascript">document.getElementById('divLoading').style.display = "block";
+document.getElementById('divFrameHolder').style.display = "none";
+document.getElementById('sidebar_frame').onload = function() {
+hideLoading();
+}</script></div>
+          <div id="tMainArea">
+            <div id="navbar"><ul><li id="prev"><a href="38.html" title="38.html">&lt; Précédent</a></li><li class="disable" id="summary">Modèle</li><li id="next"><a href="40.html" title="40.html">Suivant &gt;</a></li></ul></div>
+            <div id="page"><div><div align="LEFT" characterStyle="None" class="Titre4" sectionStyle="Titre4" startOnNewPage="true"><a name="toc1.2.3.1" target="_top"><!--anchor--></a>DateCourante (structure_autodiagram)<a name="_4196c4f6-1415-464b-a839-7c2456b64427" target="_top"><!--anchor--></a></div><div align="LEFT" class="Texte" paragraphStyle="Texte" startOnNewPage="false">ClassDiagram &lt;&lt;Auto Diagram&gt;&gt;</div><div align="LEFT" class="Texte" paragraphStyle="Texte" startOnNewPage="false">DateCourante (structure_autodiagram)</div><a name="#Table 40" target="_top"><!--anchor--></a><div id="tableContainer"><table class="ListeclaireAccent1" horizontal="true" tableStyle="ListeclaireAccent1"><caption>Table 40 - "DateCourante (structure_autodiagram)" properties</caption><tr class="odd"><th><div align="CENTER" class="Normal" paragraphStyle="Normal" startOnNewPage="false">Name</div></th><th><div align="CENTER" class="Normal" paragraphStyle="Normal" startOnNewPage="false">Value</div></th></tr><tr class="even"><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">Name</div></td><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">DateCourante (structure_autodiagram)</div></td></tr><tr class="odd"><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">Origin</div></td><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false"/><a href="39.html#_4196c4f6-1415-464b-a839-7c2456b64427" target="_top"/></td></tr><tr class="even"><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">PreviewData</div></td><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">data:image/png;base64,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</div></td></tr><tr class="odd"><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">UiDataVersion</div></td><td><div align="LEFT" class="Normal" paragraphStyle="Normal" startOnNewPage="false">14</div></td></tr></table></div><div>
+</div><a name="#Figure 9" target="_top"><!--anchor--></a><center><img alt="DateCourante (structure_autodiagram)" height="226.0" paragraphStyle="IMAGE" src="img/4196c4f6-1415-464b-a839-7c2456b64427.png" usemap="#4196c4f6-1415-464b-a839-7c2456b64427" width="200.0"/></center><div align="CENTER" class="Lgende" paragraphStyle="Lgende">Figure 9 DateCourante (structure_autodiagram)</div><map name="4196c4f6-1415-464b-a839-7c2456b64427"><area ALT="DateCourante" coords="0,126,200,226" href="38.html#_19df163b-2151-4476-b0a8-7f43dde4bf8c" name="4196c4f6-1415-464b-a839-7c2456b64427" shape="rect"/><area ALT="Serializable" coords="67,1,159,25" href="13.html#_711b58df-3a40-49d6-9173-5db09fdd3f28" name="4196c4f6-1415-464b-a839-7c2456b64427" shape="rect"/><area ALT="Serializable" coords="41,0,67,26" href="13.html#_711b58df-3a40-49d6-9173-5db09fdd3f28" name="4196c4f6-1415-464b-a839-7c2456b64427" shape="rect"/></map></div></div>
+            <br/>
+            <div class="spacer" id="navbar"><ul><li id="prev"><a href="38.html" title="38.html">&lt; Précédent</a></li><li class="disable" id="summary">Modèle</li><li id="next"><a href="40.html" title="40.html">Suivant &gt;</a></li></ul></div>  
+            <div id="footer"><p>Document généré automatiquement par Modelio Document Publisher.<br/><a href="http://www.modeliosoft.com">www.modeliosoft.com</a></p></div>
+          </div>            
+        </div>           
+      </div>
+    </div>
+  </body>
+</html>

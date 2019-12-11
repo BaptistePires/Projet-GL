@@ -1010,6 +1010,9 @@ Arbitre arbitre = (Arbitre) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Arbitre (structure_autodiagram)" mc="Standard.ClassDiagram" uid="b54d62d1-245d-4857-9ba7-bf26ee42998c"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

@@ -22,6 +22,8 @@ public class StatistiquesJoueur implements Serializable {
         joueur.setNbCartonJauneSaison(joueur.getNbCartonJauneSaison()+nombreDeCartonsJaunes);
         joueur.setNbCartonRougeSaison(joueur.getNbCartonRougeSaison()+nombreDeCartonsRouges);
         joueur.setNotePerformancesRecentes(noteDuJoueur);
+        joueur.setMoral(joueur.getMoral()-1);
+        joueur.setEtatPhysique(joueur.getEtatPhysique()-3);
     }
 
     public int getNombreDePassesDecisives() {

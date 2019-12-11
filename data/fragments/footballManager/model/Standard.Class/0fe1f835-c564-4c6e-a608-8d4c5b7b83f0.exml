@@ -907,6 +907,9 @@ Journee journee = (Journee) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Journee (structure_autodiagram)" mc="Standard.ClassDiagram" uid="d01b3443-e741-4fe9-970b-a8ec55b37ac4"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

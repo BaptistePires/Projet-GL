@@ -600,6 +600,9 @@ this.date = date;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Message (structure_autodiagram)" mc="Standard.ClassDiagram" uid="4c706f83-07e7-4439-8007-4def74f49661"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

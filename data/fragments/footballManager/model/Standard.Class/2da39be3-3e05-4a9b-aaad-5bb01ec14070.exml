@@ -643,6 +643,9 @@ Transfert transfert = (Transfert) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Transfert (structure_autodiagram)" mc="Standard.ClassDiagram" uid="3bc21dc2-6fe7-4624-84a2-442a5dc43d40"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

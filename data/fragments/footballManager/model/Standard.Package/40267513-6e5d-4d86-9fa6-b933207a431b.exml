@@ -2,7 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="model" version="4">
   <OBJECT>
     <ID name="model" mc="Standard.Package" uid="40267513-6e5d-4d86-9fa6-b933207a431b"/>
-    <PID name="footballManagerDiagrammeDesClassesEtSequences" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+    <PID name="footballManager" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -109,6 +109,9 @@
             <LINK relation="Extension">
               <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
             </LINK>
+            <COMP relation="Product">
+              <COMPID name="Poste (structure_autodiagram)" mc="Standard.ClassDiagram" uid="223207df-8d6b-498a-95c6-e6b11256a9a0"/>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <COMPID name="Observateur" mc="Standard.Interface" uid="607a3f23-05e9-4bd6-8414-1e0ec8fe48a9"/>

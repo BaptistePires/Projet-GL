@@ -2353,6 +2353,9 @@ Contrat contrat = (Contrat) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Contrat (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6acd697d-86c0-4f4f-af07-da7a9b9d742d"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

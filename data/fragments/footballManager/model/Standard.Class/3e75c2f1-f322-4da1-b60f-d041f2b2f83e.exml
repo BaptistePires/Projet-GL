@@ -3971,6 +3971,9 @@ Joueur joueur = (Joueur) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Joueur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="46d941d4-9b73-4486-a843-044fc1a881e7"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

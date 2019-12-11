@@ -364,6 +364,9 @@ this.Attribute = value;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="StatistiquesSaisonEquipe (structure_autodiagram)" mc="Standard.ClassDiagram" uid="f81b7349-57c7-4df1-b085-c6537e4c0d07"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

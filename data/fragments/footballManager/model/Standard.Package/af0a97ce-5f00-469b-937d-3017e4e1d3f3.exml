@@ -24,7 +24,6 @@
       </COMP>
       <COMP relation="Product">
         <COMPID name="footballManagerDiagrammeDesClasses Class diagram" mc="Standard.ClassDiagram" uid="3ce18249-4696-4010-b7c2-d68774fe008a"/>
-        <COMPID name="ihm (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="fa0544d9-e81b-4a43-a43f-3dd696cd9f48"/>
         <COMPID name="footballmanager Use Case diagram" mc="Standard.UseCaseDiagram" uid="416e350c-d206-4928-a766-199eb5988ddf"/>
       </COMP>
     </DEPENDENCIES>

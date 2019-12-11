@@ -5019,6 +5019,9 @@ equipesAll.add(this);
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Equipe (structure_autodiagram)" mc="Standard.ClassDiagram" uid="bea9b5c4-1793-4437-bbe0-b93c0cbf671c"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

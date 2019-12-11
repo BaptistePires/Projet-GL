@@ -23,6 +23,44 @@
         <ID name="TableauDeBordController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="2b7cc195-9d01-4592-87d5-763c33f1c267"/>
         <ID name="CreerNouvellePartieController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="a12a4ce9-dad9-4bfc-a882-d321e830752e"/>
         <ID name="LiguesController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6333667d-54aa-4a46-8c5e-f87e0ddc5350"/>
+        <ID name="Entraineur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="996e99ad-741d-4af6-8c3c-7fb60f201ea6"/>
+        <ID name="Ligue (structure_autodiagram)" mc="Standard.ClassDiagram" uid="f8479ac6-2f93-429f-b036-5c2e35d7970b"/>
+        <ID name="StrategieDefensive (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6be3533d-30f4-432a-a4ed-a8c427762af5"/>
+        <ID name="Personne (structure_autodiagram)" mc="Standard.ClassDiagram" uid="baf7ebf7-8323-4dad-bd06-0bc8667f38c4"/>
+        <ID name="StrategieUltraDefensive (structure_autodiagram)" mc="Standard.ClassDiagram" uid="c042476f-7fd0-4d2d-9728-6ca42e0a67d4"/>
+        <ID name="BoiteMail (structure_autodiagram)" mc="Standard.ClassDiagram" uid="ce317ad5-8ebf-495d-8f35-5554520342f7"/>
+        <ID name="Fifa (structure_autodiagram)" mc="Standard.ClassDiagram" uid="63058543-5dd3-4c36-8676-4786650a863c"/>
+        <ID name="LanceurDePartie (structure_autodiagram)" mc="Standard.ClassDiagram" uid="a4661568-c20e-44f6-aef5-5f3380fd1194"/>
+        <ID name="Statistiques (structure_autodiagram)" mc="Standard.ClassDiagram" uid="2ea7baa4-0db2-4b7d-a80d-44f3d72fdec7"/>
+        <ID name="President (structure_autodiagram)" mc="Standard.ClassDiagram" uid="93b7678c-dd9c-4895-8892-fd429ecb7498"/>
+        <ID name="StatistiquesSaisonJoueur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="fce1f2c4-9fcb-49db-8653-a3ffe9a18b20"/>
+        <ID name="Strategie (structure_autodiagram)" mc="Standard.ClassDiagram" uid="61d02e47-ec10-4b07-9cbf-25f965efec7c"/>
+        <ID name="Calendrier (structure_autodiagram)" mc="Standard.ClassDiagram" uid="0b2d8cd1-bbfd-4e4a-b4fd-db5571fec487"/>
+        <ID name="DateCourante (structure_autodiagram)" mc="Standard.ClassDiagram" uid="4196c4f6-1415-464b-a839-7c2456b64427"/>
+        <ID name="Evenement (structure_autodiagram)" mc="Standard.ClassDiagram" uid="3d85fa54-8842-42c2-9e04-ee6c903827bc"/>
+        <ID name="ContratFactory (structure_autodiagram)" mc="Standard.ClassDiagram" uid="fe457e0f-cd24-4a7e-995d-b7044ed852a1"/>
+        <ID name="Stade (structure_autodiagram)" mc="Standard.ClassDiagram" uid="d17d0ef0-019e-4380-9fd6-9ca1e0577857"/>
+        <ID name="NotreObservable (structure_autodiagram)" mc="Standard.ClassDiagram" uid="5b025d60-384a-4167-aa92-034f344553a5"/>
+        <ID name="Transfert (structure_autodiagram)" mc="Standard.ClassDiagram" uid="3bc21dc2-6fe7-4624-84a2-442a5dc43d40"/>
+        <ID name="Journee (structure_autodiagram)" mc="Standard.ClassDiagram" uid="d01b3443-e741-4fe9-970b-a8ec55b37ac4"/>
+        <ID name="MessageFactorySingleton (structure_autodiagram)" mc="Standard.ClassDiagram" uid="26719d83-1fc3-4cab-8334-26054a1174cc"/>
+        <ID name="Equipe (structure_autodiagram)" mc="Standard.ClassDiagram" uid="bea9b5c4-1793-4437-bbe0-b93c0cbf671c"/>
+        <ID name="Contrat (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6acd697d-86c0-4f4f-af07-da7a9b9d742d"/>
+        <ID name="StatistiquesEquipe (structure_autodiagram)" mc="Standard.ClassDiagram" uid="dfab93ae-685b-427b-af7f-0ace73667c98"/>
+        <ID name="Main (structure_autodiagram)" mc="Standard.ClassDiagram" uid="07924cd3-4b97-4163-9586-17ed4a6b525f"/>
+        <ID name="Observateur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="8d80552e-4742-48ee-8806-5e110920f9d4"/>
+        <ID name="Arbitre (structure_autodiagram)" mc="Standard.ClassDiagram" uid="b54d62d1-245d-4857-9ba7-bf26ee42998c"/>
+        <ID name="Information (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6cc5d1da-3ea8-4f03-90ca-7555a8c92df9"/>
+        <ID name="StrategieOffensive (structure_autodiagram)" mc="Standard.ClassDiagram" uid="a41ee1b3-6361-438a-a509-d8eafb541b20"/>
+        <ID name="Joueur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="46d941d4-9b73-4486-a843-044fc1a881e7"/>
+        <ID name="Poste (structure_autodiagram)" mc="Standard.ClassDiagram" uid="223207df-8d6b-498a-95c6-e6b11256a9a0"/>
+        <ID name="StatistiquesJoueur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="90bd2753-25af-48b1-8e32-0788584705d3"/>
+        <ID name="PartieSingleton (structure_autodiagram)" mc="Standard.ClassDiagram" uid="ea9f5104-366f-4f9d-91ef-5d6045c6f3bc"/>
+        <ID name="StrategieTransition (structure_autodiagram)" mc="Standard.ClassDiagram" uid="42f4f70c-d878-4619-9eb2-580c5b1ff564"/>
+        <ID name="Match (structure_autodiagram)" mc="Standard.ClassDiagram" uid="42b76916-9a0d-429e-a27a-95d1692328d3"/>
+        <ID name="Message (structure_autodiagram)" mc="Standard.ClassDiagram" uid="4c706f83-07e7-4439-8007-4def74f49661"/>
+        <ID name="StatistiquesSaisonEquipe (structure_autodiagram)" mc="Standard.ClassDiagram" uid="f81b7349-57c7-4df1-b085-c6537e4c0d07"/>
+        <ID name="StrategieUltraOffensive (structure_autodiagram)" mc="Standard.ClassDiagram" uid="afd312a8-272e-40a6-9008-288a8279edfe"/>
       </LINK>
     </DEPENDENCIES>
   </OBJECT>

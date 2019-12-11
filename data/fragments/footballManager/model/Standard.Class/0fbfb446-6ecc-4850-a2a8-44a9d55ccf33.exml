@@ -1740,6 +1740,9 @@ Strategie strategie = (Strategie) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Strategie (structure_autodiagram)" mc="Standard.ClassDiagram" uid="61d02e47-ec10-4b07-9cbf-25f965efec7c"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

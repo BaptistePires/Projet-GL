@@ -1820,6 +1820,9 @@ notifier();
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
+      <COMP relation="Product">
+        <COMPID name="PartieSingleton (structure_autodiagram)" mc="Standard.ClassDiagram" uid="ea9f5104-366f-4f9d-91ef-5d6045c6f3bc"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

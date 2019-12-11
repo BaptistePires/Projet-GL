@@ -344,6 +344,9 @@
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="StatistiquesSaisonJoueur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="fce1f2c4-9fcb-49db-8653-a3ffe9a18b20"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

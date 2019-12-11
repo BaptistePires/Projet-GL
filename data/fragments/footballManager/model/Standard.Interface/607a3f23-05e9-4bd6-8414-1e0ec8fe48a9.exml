@@ -32,6 +32,9 @@
       <LINK relation="Extension">
         <FOREIGNID name="JavaInterface" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0267-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="Observateur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="8d80552e-4742-48ee-8806-5e110920f9d4"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

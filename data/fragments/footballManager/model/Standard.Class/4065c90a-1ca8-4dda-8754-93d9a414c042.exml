@@ -85,6 +85,9 @@ this.setMilieu(30);
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="StrategieUltraDefensive (structure_autodiagram)" mc="Standard.ClassDiagram" uid="c042476f-7fd0-4d2d-9728-6ca42e0a67d4"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

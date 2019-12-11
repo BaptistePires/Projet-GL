@@ -537,6 +537,9 @@ m.sabonner(this);
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="BoiteMail (structure_autodiagram)" mc="Standard.ClassDiagram" uid="ce317ad5-8ebf-495d-8f35-5554520342f7"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

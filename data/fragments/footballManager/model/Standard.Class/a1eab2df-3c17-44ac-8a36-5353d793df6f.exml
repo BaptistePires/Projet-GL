@@ -1459,6 +1459,9 @@ StatistiquesJoueur that = (StatistiquesJoueur) o;
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="StatistiquesJoueur (structure_autodiagram)" mc="Standard.ClassDiagram" uid="90bd2753-25af-48b1-8e32-0788584705d3"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>
