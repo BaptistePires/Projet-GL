@@ -1198,6 +1198,9 @@ StrategieController.showAlert("Sauvegarde","Partie sauvegardée", "On a sauvegar
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="EcranDuJeuController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="6305bbdf-ce2c-45bb-ae9c-1952984d3304"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

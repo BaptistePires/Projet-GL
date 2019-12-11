@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Use Cases" version="4">
+  <OBJECT>
+    <ID name="Use Cases" mc="Standard.Package" uid="e83a9449-bdc3-43e3-831a-5a69fcbf769e"/>
+    <PID name="footballManager" mc="Standard.Package" uid="af0a97ce-5f00-469b-937d-3017e4e1d3f3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Use Cases]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="User" mc="Standard.Actor" uid="a6787322-a0b7-409e-8316-261ed93e00cc"/>
+        <COMPID name="Organiser un team building à l'équipe manipulée (entrainée)" mc="Standard.UseCase" uid="c49dacdd-8ff6-4350-9d71-74df322b8755"/>
+        <COMPID name="Consulter le tableau de bord" mc="Standard.UseCase" uid="0ff8e194-c089-44f3-993f-a1f41370e57d"/>
+        <COMPID name="Consulter les informations des Ligues" mc="Standard.UseCase" uid="c9145595-64d3-4775-b619-f774f5f5e30c"/>
+        <COMPID name="Consulter les informations des équipes" mc="Standard.UseCase" uid="8139aa82-c830-4846-b00d-5c17aa552469"/>
+        <COMPID name="Consulter les informations de l'administration" mc="Standard.UseCase" uid="ee5a6d03-8d8f-4cb9-8cc3-288bb533ae05"/>
+        <COMPID name="Consulter les informations des joueurs" mc="Standard.UseCase" uid="9b1ecc41-1165-47a5-a4d5-d12f14a2cb8c"/>
+        <COMPID name="Visualiser la stratégie de l'équipe manipulée (entrainée)" mc="Standard.UseCase" uid="9a9e8ccd-e64c-46ff-86af-21e45410f020"/>
+        <COMPID name="Modifier la stratégie de l'équipe manipulée (entrainée)" mc="Standard.UseCase" uid="bfc49c4e-9cf2-467e-af48-864218c47846"/>
+        <COMPID name="Faire avancer le temps (virtuel)  jusqu'au prochain évenement" mc="Standard.UseCase" uid="d8f0bbd2-e91a-42bb-9977-1c26cf88922d"/>
+        <COMPID name="Parcourir les messages reçus" mc="Standard.UseCase" uid="a8505c1e-aad6-4dc4-8e9f-cb32c070a23b"/>
+        <COMPID name="intéragir avec les joueurs en leur envoyant une offre de transfert vers notre club" mc="Standard.UseCase" uid="e9f0c8db-9a3f-4df7-a1f5-25d614f9ec55"/>
+        <COMPID name="Demander d'allouer plus de masse salariale" mc="Standard.UseCase" uid="1fe12c9c-9def-495b-bb88-b658544d073a"/>
+        <COMPID name="Demander un budget des transferts plus important" mc="Standard.UseCase" uid="b27552cb-d86d-41e5-bf60-29c5dc825cf3"/>
+        <COMPID name="Demander d'allouer plus de budget pour les team building" mc="Standard.UseCase" uid="1236615b-e8f2-4c9c-946c-9e54e4d6c31d"/>
+        <COMPID name="Creer une nouvelle partie" mc="Standard.UseCase" uid="75715947-bdcc-4ac4-8c9e-388c64cd0e85"/>
+        <COMPID name="Charger une partie" mc="Standard.UseCase" uid="9ef966ff-6ae1-4ab4-b636-ba8057dce2f9"/>
+        <COMPID name="Sauvegarder une partie" mc="Standard.UseCase" uid="1c0d50ba-4f8c-4d12-a90d-9de5880b149b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -2895,6 +2895,9 @@ joueursTV.setItems(FXCollections.observableArrayList(equipe.getJoueurs()));
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="EquipeController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="fa805cca-ebff-4a26-8c42-ccc78cfd691b"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>
