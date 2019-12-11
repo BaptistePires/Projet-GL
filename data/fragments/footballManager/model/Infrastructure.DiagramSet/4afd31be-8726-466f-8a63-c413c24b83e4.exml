@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Dependency" version="4">
+  <OBJECT>
+    <ID name="Dependency" mc="Infrastructure.DiagramSet" uid="4afd31be-8726-466f-8a63-c413c24b83e4"/>
+    <PID name="Auto Diagrams" mc="Infrastructure.DiagramSet" uid="c32db24f-5a59-4f00-bb58-c59d6d2d7b8a"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Dependency]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="ReferencedDiagram">
+        <ID name="ihm (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="fa0544d9-e81b-4a43-a43f-3dd696cd9f48"/>
+        <ID name="controllers (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="801e79e0-c3ed-42a9-a8ce-4303f53b7dd9"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

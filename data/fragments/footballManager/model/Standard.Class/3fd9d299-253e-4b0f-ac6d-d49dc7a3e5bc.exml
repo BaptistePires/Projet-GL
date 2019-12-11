@@ -2110,6 +2110,9 @@ nbCartonsRougeSaison.setText(Integer.toString(j.getNbCartonRougeSaison()));
       <LINK relation="Extension">
         <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
       </LINK>
+      <COMP relation="Product">
+        <COMPID name="AfficherInfoJoueurController (structure_autodiagram)" mc="Standard.ClassDiagram" uid="54d48144-7042-4938-a19b-c19976953549"/>
+      </COMP>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>
