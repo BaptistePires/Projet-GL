@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="gridMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="920.0" prefWidth="1400.0" styleClass="mainWindow" stylesheets="@style/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.EcranDuJeuController">
+<GridPane fx:id="gridMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="920.0" prefWidth="1400.0" styleClass="mainWindow" stylesheets="@style/styles.css" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.EcranDuJeuController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="692.0" minWidth="10.0" prefWidth="226.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="1174.0" minWidth="10.0" prefWidth="1174.0" />
@@ -59,7 +59,6 @@
             </Button>
          </children>
       </VBox>
-      <Pane fx:id="pane1_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
             <Label fx:id="dateLabel" prefHeight="39.0" prefWidth="573.0" text="Date" textFill="WHITE">
@@ -93,5 +92,6 @@
             </Label>
          </children>
       </VBox>
+      <Pane fx:id="pane1_1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    </children>
 </GridPane>

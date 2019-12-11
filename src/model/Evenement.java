@@ -54,6 +54,6 @@ public abstract class Evenement implements Serializable {
         this.dateDeLEvenement = dateDeLEvenement;
         evenements.putIfAbsent(dateDeLEvenement, new ArrayList<Evenement>());
         evenements.get(dateDeLEvenement).add(this);
+        //System.out.println(dateDeLEvenement);
     }
-
 }

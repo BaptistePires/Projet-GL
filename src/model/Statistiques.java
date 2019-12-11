@@ -15,6 +15,10 @@ public class Statistiques implements Serializable {
     private List<StatistiquesJoueur> statistiquesJoueursB = new ArrayList<StatistiquesJoueur> ();
 
     public void apresMatchMiseAJour() {
+        statistiquesEquipeA.updateEquipe();
+        statistiquesEquipeB.updateEquipe();
+        for(StatistiquesJoueur j:statistiquesJoueursA)j.update();
+        for(StatistiquesJoueur j:statistiquesJoueursB)j.update();
     }
 
     public Statistiques(StatistiquesEquipe statistiquesEquipeB, StatistiquesEquipe statistiquesEquipeA, List<StatistiquesJoueur> statistiquesJoueursA, List<StatistiquesJoueur> statistiquesJoueursB) {
@@ -75,11 +79,15 @@ public class Statistiques implements Serializable {
     @Override
     public String toString() {
         return "Statistiques{" +
-                                "statistiquesEquipeB=" + statistiquesEquipeB +
-                                ", statistiquesEquipeA=" + statistiquesEquipeA +
-                                ", statistiquesJoueursA=" + statistiquesJoueursA +
-                                ", statistiquesJoueursB=" + statistiquesJoueursB +
-                                '}';
+                            "statistiquesEquipeB=" + statistiquesEquipeB +
+                            ", statistiquesEquipeA=" + statistiquesEquipeA +
+                            ", statistiquesJoueursA=" + statistiquesJoueursA +
+                            ", statistiquesJoueursB=" + statistiquesJoueursB +
+                            '}';
+    }
+
+    public void updateEquipes(){
+
     }
 
 }

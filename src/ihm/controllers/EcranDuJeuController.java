@@ -33,11 +33,17 @@ public class EcranDuJeuController implements Observateur {
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
         if(PartieSingleton.INSTANCE.getBoiteMail().getNombreDeMessagesNonLus()!=0){
             msgNL.setVisible(true);
+            msgNLV.setVisible(true);
             msgNLV.setText(String.valueOf(PartieSingleton.INSTANCE.getBoiteMail().getNombreDeMessagesNonLus()));
         }else{
             msgNL.setVisible(false);
             msgNLV.setVisible(false);
         }
+    }
+    @Override
+    public void miseAJour(NotreObservable o){
+        miseAJour();
+        o.seDesabonner(this);
     }
 
     @FXML
@@ -118,6 +124,7 @@ public class EcranDuJeuController implements Observateur {
     public void initialize() {
         dateLabel.setText(PartieSingleton.INSTANCE.getDateCourante().toString());
         PartieSingleton.INSTANCE.sabonner(this);
+        PartieSingleton.INSTANCE.getBoiteMail().sabonner(this);
         miseAJour();
     }
 

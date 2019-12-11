@@ -12,9 +12,8 @@ public class Information extends Evenement implements Serializable {
     }
 
     public void executerEvenement() {
-        System.out.println("hehe");
         PartieSingleton.INSTANCE.getBoiteMail().addMessage(new Message(titre,description,getDateDeLEvenement()));
-        System.out.println(PartieSingleton.INSTANCE.getBoiteMail().getMessages());
+        //System.out.println(PartieSingleton.INSTANCE.getBoiteMail().getMessages());
     }
 
     public void apresEvenement() {

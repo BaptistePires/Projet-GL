@@ -51,7 +51,7 @@ public class LiguesController {
                             AnchorPane anchorPane = (AnchorPane)loader.load();
                             EquipeController ec = loader.<EquipeController>getController();
                             ec.setEquipe(equipeSelectionnee);
-                            System.out.println(ec);
+                            //System.out.println(ec);
                             Pane p = (Pane)accordeon.getParent().getParent();
                             p.getChildren().clear();
                             p.getChildren().add(anchorPane);

@@ -20,7 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import model.*;
 
-public class StrategieController {
+public class StrategieController extends NotreObservable{
     @FXML
      ChoiceBox<Strategie> strategieDefautChoice;
 
@@ -162,9 +162,9 @@ public class StrategieController {
             Strategie choisie =null;
             if(strategieDefautChoice.getValue().getClass().equals(StrategieDefensive.class))choisie = new StrategieDefensive();
             else /*if(strategieDefautChoice.getValue().getClass().equals(StrategieOffensive.class))*/choisie = new StrategieOffensive();
-            HashMap<Joueur,Poste> formation = new HashMap<Joueur, Poste>();
+            List<Joueur> formation = new ArrayList<Joueur>();
             for(Joueur j:retirerJoueurChoice.getItems()){
-                formation.putIfAbsent(j,j.getPoste());
+                formation.add(j);
             }
             choisie.setFormation(formation);
             PartieSingleton.INSTANCE.getEntraineur().getEquipe().setStrategie(strategieDefautChoice.getValue());
@@ -177,7 +177,7 @@ public class StrategieController {
             final int milieu = milieuSpinner.getValue();
             final int attaque = attaqueSpinner.getValue();
             if(milieu+defense+attaque>100){
-                showAlert("Attention","Incohérence","Il ne faut pas que la somme de défense, milieu et attaque soit supérieure à 100");
+                showAlert("Attention",(milieu)+" "+defense+" "+attaque+"Incohérence","Il ne faut pas que la somme de défense, milieu et attaque soit supérieure à 100");
             }else{
                 Strategie s = new Strategie() {
                     @Override
@@ -189,12 +189,13 @@ public class StrategieController {
                         setAttaque(attaque);
                     }
                 };
-                HashMap<Joueur,Poste> formation = new HashMap<Joueur, Poste>();
+                List<Joueur> formation = new ArrayList<Joueur>();
                 for(Joueur j:retirerJoueurChoice.getItems()){
-                    formation.putIfAbsent(j,j.getPoste());
+                    formation.add(j);
                 }
                 s.setFormation(formation);
                 PartieSingleton.INSTANCE.getEntraineur().getEquipe().setStrategie(s);
+                notifier(this);
                 this.showAlert("Information","Stratégie bien mise en place","Votre stratégie a été associée à votre équipe");
             }
         }
@@ -212,6 +213,7 @@ public class StrategieController {
 
     public static void showAlert(String titre, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setWidth(700);
         alert.setTitle(titre);
         alert.setHeaderText(header);
         alert.setContentText(content);

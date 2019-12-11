@@ -1,10 +1,7 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.TreeMap;
+import java.util.*;
 
 public abstract class Strategie implements Serializable {
     private int agressivite;
@@ -17,7 +14,7 @@ public abstract class Strategie implements Serializable {
 
     private int attaque;
 
-     HashMap<Joueur, Poste> formation = new HashMap<Joueur, Poste>();
+     List<Joueur> formation = new ArrayList<Joueur>();
 
     public void placerJoueur(final Joueur joueur, final int indexPosition) {
     }
@@ -78,11 +75,11 @@ public abstract class Strategie implements Serializable {
         this.attaque = attaque;
     }
 
-    public HashMap<Joueur, Poste> getFormation() {
+    public List<Joueur> getFormation() {
         return formation;
     }
 
-    public void setFormation(HashMap<Joueur, Poste> formation) {
+    public void setFormation(List<Joueur> formation) {
         this.formation = formation;
     }
 
@@ -91,10 +88,10 @@ public abstract class Strategie implements Serializable {
         if(Math.random()<0.5){
             s= new StrategieDefensive();
         }else s= new StrategieDefensive();
-        HashMap<Joueur, Poste> f = new HashMap<Joueur, Poste>();
+        ArrayList<Joueur> f = new ArrayList<Joueur>();
         for(int i =0;i<e.getJoueurs().size();i++){
             if(e.getJoueurs().get(i).getPoste().equals(Poste.GB)){
-                f.putIfAbsent(e.getJoueurs().get(i),Poste.GB);
+                f.add(e.getJoueurs().get(i));
                 break;
             }
         }
@@ -104,7 +101,7 @@ public abstract class Strategie implements Serializable {
             if(added==11)break;
             if(!j.getPoste().equals(Poste.GB)){
                 added++;
-                f.putIfAbsent(j,j.getPoste());
+                f.add(j);
             }
         }
         s.setFormation(f);

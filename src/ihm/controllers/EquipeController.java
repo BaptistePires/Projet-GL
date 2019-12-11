@@ -99,19 +99,19 @@ public class EquipeController {
 
         Joueur joueurSelectionne = joueursTV.getSelectionModel().getSelectedItem();
         if(joueurSelectionne!=null){
-            parentController.setInfoJoueurController(joueurSelectionne);
-//            try{
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur.fxml"));
-//                VBox root = loader.load();
-//                AfficherInfoJoueurController controller = loader.<AfficherInfoJoueurController>getController();
-//                controller.setJoueur(joueurSelectionne);
-//                Pane parent = (Pane)nomEquipeLabel.getParent().getParent();
-//                parent.getChildren().clear();
-//                parent.getChildren().add(root);
-//            }catch(Exception e){
-//                e.printStackTrace();
-//                System.err.println("Erreur lors du chargement du joueur selectionné");
-//            }
+            //parentController.setInfoJoueurController(joueurSelectionne);
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur.fxml"));
+                VBox root = loader.load();
+                AfficherInfoJoueurController controller = loader.<AfficherInfoJoueurController>getController();
+                controller.setJoueur(joueurSelectionne);
+                Pane parent = (Pane)nomEquipeLabel.getParent().getParent();
+                parent.getChildren().clear();
+                parent.getChildren().add(root);
+            }catch(Exception e){
+                e.printStackTrace();
+                System.err.println("Erreur lors du chargement du joueur selectionné");
+            }
         }
     }
 

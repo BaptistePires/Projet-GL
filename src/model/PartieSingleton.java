@@ -64,12 +64,19 @@ public final class PartieSingleton extends NotreObservable implements Serializab
             List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
             if(evenements==null)continue;
             /* Tri des évenements (Les plus importants en tête de liste) */
-            evenements.sort((o1, o2) -> Boolean.compare(o2.getImportance(), o1.getImportance()));
+            evenements.sort((o1, o2) -> {
+                if(o1.getClass().equals(Journee.class)&&o2.getClass().equals(Match.class))return 1;
+                if(o2.getClass().equals(Journee.class)&&o1.getClass().equals(Match.class))return -1;
+                return Boolean.compare(o2.getImportance(), o1.getImportance());
+            });
         
             /* Si le premier evenement de la liste est important, on arrête d'avancer le temps, sinon
             * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
             * et on recommence. */
             if(evenements.get(0).getImportance()) {
+                for(Evenement e: evenements) {
+                    e.processEvenement();
+                }
                 break;
             }else{
                 for(Evenement e: evenements) {
@@ -121,6 +128,7 @@ public final class PartieSingleton extends NotreObservable implements Serializab
 
     public void setEntraineur(Entraineur entraineur) {
         this.entraineur = entraineur;
+        for(Match m:entraineur.getEquipe().getMatchsDeLequipe())m.setImportance(true);
     }
 
     @Override
@@ -158,7 +166,7 @@ public final class PartieSingleton extends NotreObservable implements Serializab
             List<Evenement> evenements = Evenement.getEvenementsPourLaDate(dateCourante.getJourCourant());
             if(evenements==null)continue;
             /* Tri des évenements (Les plus importants en tête de liste) */
-            System.out.println("Evenements :"+evenements);
+            //System.out.println("Evenements :"+evenements);
             evenements.sort((o1, o2) -> {
                 if(o1.getClass().equals(Journee.class)&&o2.getClass().equals(Match.class))return 1;
                 if(o2.getClass().equals(Journee.class)&&o1.getClass().equals(Match.class))return -1;
@@ -169,6 +177,9 @@ public final class PartieSingleton extends NotreObservable implements Serializab
              * cela signifie qu'il n'y a aucun evenement important ce jour la, on les execute tous
              * et on recommence. */
             if(evenements.get(0).getImportance()) {
+                for(Evenement e: evenements) {
+                    e.processEvenement();
+                }
                 break;
             }else{
                 for(Evenement e: evenements) {

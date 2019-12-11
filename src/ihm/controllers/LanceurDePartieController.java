@@ -34,7 +34,7 @@ public class LanceurDePartieController {
             LanceurDePartie.INSTANCE.lancerNouvellePartie(name);
             try{
                 URL resource = getClass().getResource("../creerNouvellePartie.fxml");
-                System.out.println(resource);
+                //System.out.println(resource);
                 Main.mainStage.setScene(new Scene(FXMLLoader.load(resource)));
             }catch(Exception e){
                 e.printStackTrace();

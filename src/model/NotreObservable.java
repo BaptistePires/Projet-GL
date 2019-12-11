@@ -17,5 +17,6 @@ public class NotreObservable {
     public void notifier() {
         for(Observateur o:abonnes)o.miseAJour();
     }
+    public void notifier(NotreObservable x){for(Observateur o:abonnes)o.miseAJour(x);}
 
 }

@@ -2,15 +2,22 @@ package ihm.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import model.Joueur;
 import model.Match;
+import model.NotreObservable;
 import model.Poste;
 
 public class MatchController {
+    @FXML
+    GridPane rootGrid;
+
     @FXML
      Label dateLabel;
 
@@ -87,8 +94,8 @@ public class MatchController {
         stadeLabel.setText(match.getStade().toString());
         equipe1Label.setText(match.getEquipe1().getNom());
         equipe2Label.setText(match.getEquipe2().getNom());
-        equipe1VT.setItems(FXCollections.observableArrayList(match.getEquipe1().getStrategie().getFormation().keySet()));
-        equipe2VT.setItems(FXCollections.observableArrayList(match.getEquipe2().getStrategie().getFormation().keySet()));
+        equipe1VT.setItems(FXCollections.observableArrayList(match.getEquipe1().getStrategie().getFormation()));
+        equipe2VT.setItems(FXCollections.observableArrayList(match.getEquipe2().getStrategie().getFormation()));
         
         posCol1.setCellValueFactory(new PropertyValueFactory<Joueur, Poste>("poste"));
         posCol2.setCellValueFactory(new PropertyValueFactory<Joueur, Poste>("poste"));
@@ -108,6 +115,21 @@ public class MatchController {
 
     @FXML
     public void lancerMatchAction() {
+        try{
+            match.jouerMatch();
+            Pane p = (Pane)rootGrid.getParent();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../statistiquesMatch.fxml"));
+            GridPane gp = (GridPane)loader.load();
+            StatistiquesMatchController controller = loader.<StatistiquesMatchController>getController();
+            controller.setMatch(match);
+            p.getChildren().clear();
+            p.getChildren().add(gp);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("Erreur lors de l'affichage des statistiques du match");
+        }
     }
+    @FXML public void retourAuTableauDeBordAction(){
 
+    }
 }

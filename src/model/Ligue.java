@@ -55,7 +55,7 @@ public class Ligue implements Serializable {
     }
 
     public void initCalendrier() {
-        System.out.println("init calendrier");
+        //System.out.println("init calendrier");
         List<Journee> journees = new ArrayList<Journee>();
         Date today = PartieSingleton.INSTANCE.getDateCourante().getJourCourant();
         if(equipes==null){

@@ -6,6 +6,8 @@ import java.util.Objects;
 public class StatistiquesJoueur implements Serializable {
     private int nombreDeButsMarques;
 
+    private int nombreDePassesDecisives;
+
     private int nombreDeCartonsJaunes;
 
     private int nombreDeCartonsRouges;
@@ -13,6 +15,22 @@ public class StatistiquesJoueur implements Serializable {
     private int noteDuJoueur;
 
     private Joueur joueur;
+
+    public void update(){
+        joueur.setNbButsSaison(joueur.getNbButsSaison()+nombreDeButsMarques);
+        joueur.setNbPasseDecisiveSaison(joueur.getNbPasseDecisiveSaison()+nombreDePassesDecisives);
+        joueur.setNbCartonJauneSaison(joueur.getNbCartonJauneSaison()+nombreDeCartonsJaunes);
+        joueur.setNbCartonRougeSaison(joueur.getNbCartonRougeSaison()+nombreDeCartonsRouges);
+        joueur.setNotePerformancesRecentes(noteDuJoueur);
+    }
+
+    public int getNombreDePassesDecisives() {
+        return nombreDePassesDecisives;
+    }
+
+    public void setNombreDePassesDecisives(int nombreDePassesDecisives) {
+        this.nombreDePassesDecisives = nombreDePassesDecisives;
+    }
 
     public String getNom() {
         return joueur.getNom();
@@ -30,8 +48,9 @@ public class StatistiquesJoueur implements Serializable {
         return joueur.getMoral();
     }
 
-    public StatistiquesJoueur(int nombreDeButsMarques, int nombreDeCartonsJaunes, int nombreDeCartonsRouges, int noteDuJoueur, Joueur joueur) {
+    public StatistiquesJoueur(int nombreDeButsMarques, int nombreDePassesDecisives, int nombreDeCartonsJaunes, int nombreDeCartonsRouges, int noteDuJoueur, Joueur joueur) {
         this.nombreDeButsMarques = nombreDeButsMarques;
+        this.nombreDePassesDecisives = nombreDePassesDecisives;
         this.nombreDeCartonsJaunes = nombreDeCartonsJaunes;
         this.nombreDeCartonsRouges = nombreDeCartonsRouges;
         this.noteDuJoueur = noteDuJoueur;
@@ -86,19 +105,22 @@ public class StatistiquesJoueur implements Serializable {
         return getNombreDeButsMarques() == that.getNombreDeButsMarques() &&
                                 getNombreDeCartonsJaunes() == that.getNombreDeCartonsJaunes() &&
                                 getNombreDeCartonsRouges() == that.getNombreDeCartonsRouges() &&
+                                getNombreDePassesDecisives()==that.getNombreDePassesDecisives() &&
                                 getNoteDuJoueur() == that.getNoteDuJoueur() &&
                                 Objects.equals(getJoueur(), that.getJoueur());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNombreDeButsMarques(), getNombreDeCartonsJaunes(), getNombreDeCartonsRouges(), getNoteDuJoueur(), getJoueur());
+        return Objects.hash(getNombreDeButsMarques(), getNombreDePassesDecisives(), getNombreDeCartonsJaunes(),
+                getNombreDeCartonsRouges(), getNoteDuJoueur(), getJoueur());
     }
 
     @Override
     public String toString() {
         return "StatistiquesJoueur{" +
                                 "nombreDeButsMarques=" + nombreDeButsMarques +
+                                "nombreDePassesDecisives=" + nombreDePassesDecisives +
                                 ", nombreDeCartonsJaunes=" + nombreDeCartonsJaunes +
                                 ", nombreDeCartonsRouges=" + nombreDeCartonsRouges +
                                 ", noteDuJoueur=" + noteDuJoueur +

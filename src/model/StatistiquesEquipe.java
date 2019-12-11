@@ -6,11 +6,28 @@ import java.util.Objects;
 public class StatistiquesEquipe implements Serializable {
     private int nombreDeButsMarques;
 
+    private int nombreDeButsEncaisses;
+
     private int possessionDeBalle;
 
     private int nombreDePasses;
 
     private Equipe equipe;
+
+    public void updateEquipe(){
+        equipe.setNbButsMarques(equipe.getNbButsMarques()+nombreDeButsMarques);
+        equipe.setNbButsEncaisses(equipe.getNbButsEncaisses()+ nombreDeButsEncaisses);
+        if(nombreDeButsEncaisses==nombreDeButsMarques)equipe.setNbPoints(equipe.getNbPoints()+1);
+        else if(nombreDeButsEncaisses<nombreDeButsMarques)equipe.setNbPoints(equipe.getNbPoints()+3);
+    }
+
+    public int getNombreDeButsEncaisses() {
+        return nombreDeButsEncaisses;
+    }
+
+    public void setNombreDeButsEncaisses(int nombreDeButsEncaisses) {
+        this.nombreDeButsEncaisses = nombreDeButsEncaisses;
+    }
 
     public int getNombreDePasses() {
         // Automatically generated method. Please delete this comment before entering specific code.
@@ -46,8 +63,9 @@ public class StatistiquesEquipe implements Serializable {
         this.equipe = equipe;
     }
 
-    public StatistiquesEquipe(int nombreDeButsMarques, int possessionDeBalle, int nombreDePasses, Equipe equipe) {
+    public StatistiquesEquipe(int nombreDeButsMarques, int nombreDeButsEncaisses, int possessionDeBalle, int nombreDePasses, Equipe equipe) {
         this.nombreDeButsMarques = nombreDeButsMarques;
+        this.nombreDeButsEncaisses = nombreDeButsEncaisses;
         this.possessionDeBalle = possessionDeBalle;
         this.nombreDePasses = nombreDePasses;
         this.equipe = equipe;
@@ -60,19 +78,22 @@ public class StatistiquesEquipe implements Serializable {
         StatistiquesEquipe that = (StatistiquesEquipe) o;
         return getNombreDeButsMarques() == that.getNombreDeButsMarques() &&
                                 getPossessionDeBalle() == that.getPossessionDeBalle() &&
+                                getNombreDeButsEncaisses() == that.getNombreDeButsEncaisses() &&
                                 getNombreDePasses() == that.getNombreDePasses() &&
                                 Objects.equals(getEquipe(), that.getEquipe());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNombreDeButsMarques(), getPossessionDeBalle(), getNombreDePasses(), getEquipe());
+        return Objects.hash(getNombreDeButsMarques(), getNombreDeButsEncaisses(), getPossessionDeBalle(),
+                getNombreDePasses(), getEquipe());
     }
 
     @Override
     public String toString() {
         return "StatistiquesEquipe{" +
                                 "nombreDeButsMarques=" + nombreDeButsMarques +
+                                "nombreDeButsEncaisses=" + nombreDeButsEncaisses +
                                 ", possessionDeBalle=" + possessionDeBalle +
                                 ", nombreDePasses=" + nombreDePasses +
                                 ", equipe=" + equipe +

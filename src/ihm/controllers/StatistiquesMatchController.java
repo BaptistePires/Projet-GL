@@ -118,12 +118,12 @@ public class StatistiquesMatchController {
 
     public void setMatch(Match match) {
         this.match = match;
+        init();
     }
 
-    @FXML
-    public void initialize() {
+    public void init(){
         //TODO Vérifier la validité des objets match et statistiques
-        
+
         dateLabel.setText(match.getDateDeLEvenement().toString());
         stadeLabel.setText(match.getStade().toString());
         arbitreLabel.setText(match.getArbitre().toString());
@@ -135,7 +135,7 @@ public class StatistiquesMatchController {
         passes2Label.setText(String.valueOf(statistiques.getStatistiquesEquipeB().getNombreDePasses()));
         possession1Label.setText(String.valueOf(statistiques.getStatistiquesEquipeA().getPossessionDeBalle()));
         possession2Label.setText(String.valueOf(statistiques.getStatistiquesEquipeB().getPossessionDeBalle()));
-        
+
         nomCol1.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, String>("nom"));
         prenomCol1.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, String>("prenom"));
         phyCol1.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("physique"));
@@ -144,7 +144,7 @@ public class StatistiquesMatchController {
         jauneCol1.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("nombreDeCartonsJaunes"));
         rougeCol1.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("nombreDeCartonsRouges"));
         noteCol1.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("noteDuJoueur"));
-        
+
         nomCol2.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, String>("nom"));
         prenomCol2.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, String>("prenom"));
         phyCol2.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("physique"));
@@ -153,9 +153,14 @@ public class StatistiquesMatchController {
         jauneCol2.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("nombreDeCartonsJaunes"));
         rougeCol2.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("nombreDeCartonsRouges"));
         noteCol2.setCellValueFactory(new PropertyValueFactory<StatistiquesJoueur, Integer>("noteDuJoueur"));
-        
+
         equipeVT1.setItems(FXCollections.observableArrayList(statistiques.getStatistiquesJoueursA()));
         equipeVT2.setItems(FXCollections.observableArrayList(statistiques.getStatistiquesJoueursB()));
+
+    }
+    @FXML
+    public void initialize() {
+        if(match!=null)init();
     }
 
     @FXML

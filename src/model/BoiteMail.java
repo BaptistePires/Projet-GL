@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BoiteMail implements Serializable, Observateur {
+public class BoiteMail extends NotreObservable implements Serializable, Observateur {
     private int nombreDeMessagesNonLus = 0;
 
     private List<Message> messages = new ArrayList<Message> ();
@@ -30,8 +30,14 @@ public class BoiteMail implements Serializable, Observateur {
     @Override
     public void miseAJour() {
         nombreDeMessagesNonLus--;
+        notifier();
     }
 
+    @Override
+    public void miseAJour(NotreObservable o){
+        miseAJour();
+        o.seDesabonner(this);
+    }
     public void removeMessage(Message m) {
         messages.remove(m);
     }

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="splitPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ab7878;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherMessagesController">
+<VBox fx:id="splitPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ab7878;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ihm.controllers.AfficherMessagesController">
    <children>
       <SplitPane fx:id="mainPane" dividerPositions="0.29797979797979796" prefHeight="807.0" prefWidth="1244.0">
         <items>
@@ -30,7 +30,7 @@
                         <Font size="27.0" />
                      </font>
                   </Text>
-                  <Label fx:id="labelDateMsg" layoutX="719.0" layoutY="19.0" text="Label" />
+                  <Label fx:id="labelDateMsg" layoutX="719.0" layoutY="19.0" />
                </children>
             </AnchorPane>
         </items>

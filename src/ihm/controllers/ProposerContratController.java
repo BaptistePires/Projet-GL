@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import model.*;
 import model.Joueur;
 
@@ -19,6 +21,9 @@ public class ProposerContratController {
     public static String ALERT_TEXT = "Veuillez rentrer une valeur valide.";
 
     public String valLabel;
+
+    @FXML
+    VBox vb;
 
     @FXML
     private Label alertDebut;
@@ -59,7 +64,7 @@ public class ProposerContratController {
     @FXML
     private Button soumettreContrat;
 
-    public Joueur j;
+    private Joueur j;
 
     private EcranDuJeuController parentController;
 
@@ -75,8 +80,14 @@ public class ProposerContratController {
     @FXML
     void retour(ActionEvent event) {
         try {
-        
-            Main.mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../afficherInfoJoueur.fxml"))));
+            Pane p = (Pane)(vb.getParent());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur"));
+            VBox parent = (VBox) loader.load();
+            AfficherInfoJoueurController c = loader.<AfficherInfoJoueurController>getController();
+            c.setJoueur(j);
+            p.getChildren().clear();
+            p.getChildren().add(parent);
+
         } catch (Exception e) {
             System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
         }
@@ -86,7 +97,7 @@ public class ProposerContratController {
     void soumettreContrat(ActionEvent event) {
         boolean contratValide = true;
 
-        System.out.println(j);
+        //System.out.println(j);
         if(inputSalaire.getText().length() <= 0) {
             alertSalaire.setText(ALERT_TEXT);
         }else{
@@ -134,7 +145,8 @@ public class ProposerContratController {
                             PartieSingleton.INSTANCE.getEntraineur().getEquipe());
             //j.getEquipe().formulerOffreTransfert(contrat, j);
             contrat.getEquipeSource().formulerOffreTransfert(contrat, j);
-            parentController.equipeAction();
+            //parentController.equipeAction();
+
         }
     }
 

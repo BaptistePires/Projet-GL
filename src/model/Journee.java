@@ -15,6 +15,7 @@ public class Journee extends Evenement implements Serializable {
     }
 
     public void executerEvenement() {
+        PartieSingleton.INSTANCE.getBoiteMail().addMessage(new Message("Une journée du championnat s'est déroulée","Des matchs ont eu lieu le", getDateDeLEvenement()));
     }
 
     public void apresEvenement() {
