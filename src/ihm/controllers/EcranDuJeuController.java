@@ -157,7 +157,6 @@ public class EcranDuJeuController implements Observateur {
     public void setInfoJoueurController(Joueur j) {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../afficherInfoJoueur.fxml"));
-
             VBox dashboard = (VBox) fxmlLoader.load();
             AfficherInfoJoueurController controller = fxmlLoader.<AfficherInfoJoueurController>getController();
             controller.setJoueur(j);

@@ -102,12 +102,14 @@ public class AfficherInfoJoueurController {
 
     @FXML
     void retourCallBack(ActionEvent event) {
-        try {
-            Pane p = (Pane)vb.getParent();
-            p.getChildren().clear();
-        } catch (Exception e) {
-            System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
-        }
+//        try {
+//            Pane p = (Pane).getParent();
+//            p.getChildren().clear();
+
+//        } catch (Exception e) {
+//            System.err.println("Echec lors du retour au menu principal : " + e.getClass() + " : " + e.getMessage());
+//        }
+        System.out.println("");
     }
 
     public void init() {
